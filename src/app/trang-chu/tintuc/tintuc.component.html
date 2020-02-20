@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-12 text-center " style="height: 30px;">
+    <a
+      [ngClass]="{ active: loaiTinTuc == 'DienAnh' }"
+      (click)="chonLoaiTin('DienAnh')"
+      >Điện Ảnh 24h</a
+    >
+    <a
+      [ngClass]="{ active: loaiTinTuc == 'Review' }"
+      (click)="chonLoaiTin('Review')"
+      >Review</a
+    >
+    <a
+      [ngClass]="{ active: loaiTinTuc == 'KhuyenMai' }"
+      (click)="chonLoaiTin('KhuyenMai')"
+      >Khuyễn mãi</a
+    >
+  </div>
+</div>
+
+<div [ngSwitch]="loaiTinTuc">
+  <div *ngSwitchCase="'DienAnh'">
+    <app-dien-anh></app-dien-anh>
+  </div>
+  <div *ngSwitchCase="'Review'">
+    <app-review></app-review>
+  </div>
+  <div *ngSwitchCase="'KhuyenMai'">
+    <app-khuyen-mai></app-khuyen-mai>
+  </div>
+</div>

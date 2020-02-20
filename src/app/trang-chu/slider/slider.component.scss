@@ -1,0 +1,13 @@
+.carousel{
+    margin-top:70px;
+    ol{
+        li{
+            border-radius: 50%;
+            width: 10px;
+            height: 10px;
+        }
+        .active{
+            background-color: red;
+        }
+    }
+}
