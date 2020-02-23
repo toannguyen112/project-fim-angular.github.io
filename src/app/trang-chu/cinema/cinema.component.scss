@@ -1,0 +1,48 @@
+@import "../../../scss//main.scss";
+.cinema {
+  display: flex;
+  border: 1px solid $gray-1;
+  .cinema-navigation {
+    border-right: 1px solid $gray-1;
+    width: 10%;
+    ul {
+      padding: 0;
+      li {
+        margin-bottom: 23px;
+        list-style: none;
+
+        a {
+          padding: 30px;
+          text-decoration: none;
+
+          img {
+            width: 50px;
+
+            opacity: 0.5;
+          }
+
+          &:hover {
+            img {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .cinema-tab-content {
+    max-height: 500px;  
+    overflow-x: hidden;
+    width: 40%;
+    overflow-y: auto;
+    border-right: 1px solid $gray-1;
+  }
+
+  .cinema-listFilm {
+    max-height: 500px;
+    width: 50%;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+}

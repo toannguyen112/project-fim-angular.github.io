@@ -15,3 +15,25 @@
     }
   }
 }
+.wrapButtonSeeMoreNews {
+  button {
+    font-size: 14px;
+    color: #949494;
+    font-family: "SF Regular";
+    border: 1px solid #949494;
+    border-radius: 4px;
+    text-align: center;
+    background: 0 0;
+    padding: 7px 25px;
+    transition: all 0.2s;
+    margin: auto;
+    margin-top: 35px;
+    margin-bottom: 20px;
+    display: block;
+    &:hover {
+      background-color: #fb4226;
+      border-color: #fb4226;
+      color: white;
+    }
+  }
+}

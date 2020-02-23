@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FormLienHeComponent } from './form-lien-he.component';
+import { CinemaItemComponent } from './cinema-item.component';
 
-describe('FormLienHeComponent', () => {
-  let component: FormLienHeComponent;
-  let fixture: ComponentFixture<FormLienHeComponent>;
+describe('CinemaItemComponent', () => {
+  let component: CinemaItemComponent;
+  let fixture: ComponentFixture<CinemaItemComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FormLienHeComponent ]
+      declarations: [ CinemaItemComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FormLienHeComponent);
+    fixture = TestBed.createComponent(CinemaItemComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

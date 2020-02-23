@@ -1,0 +1,48 @@
+.InfoFilm {
+    margin-top: 50px;
+  color: white;
+
+  .infoFilm__cotent {
+    .rowLeftInfo {
+      margin: 0;
+      p:nth-child(1) {
+        width: 35%;
+      }
+    }
+  }
+
+  .newsMoreHot {
+    .rowLeftInfo {
+        margin-top: 60px;
+      .new-item {
+        img {
+          width: 276px;
+          height: 129px;
+        }
+        .new__info {
+          p {
+            &:hover {
+              color: #fb4226;
+            }
+          }
+        }
+        .newLikeComment {
+          display: flex;
+          .new__like {
+            i {
+              margin-right: 10px;
+            }
+          }
+          .new__comment {
+            margin-left: 20px;
+            img {
+              margin-right: 10px;
+              width: 16px;
+              height: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
