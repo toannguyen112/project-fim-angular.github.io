@@ -5,13 +5,14 @@ import { DetailMainInfoComponent } from './detail-main-info/detail-main-info.com
 import { LichChieuComponent } from './lich-chieu/lich-chieu.component';
 import { ThongTinFilmComponent } from './thong-tin-film/thong-tin-film.component';
 import { DanhGiaComponent } from './danh-gia/danh-gia.component';
+import { TrangChuModule } from '../trang-chu/trang-chu.module';
 
 
 
 @NgModule({
   declarations: [DetailComponent, DetailMainInfoComponent, LichChieuComponent, ThongTinFilmComponent, DanhGiaComponent],
   imports: [
-    CommonModule
+    CommonModule ,TrangChuModule
   ],
   exports : [DetailComponent ,DetailMainInfoComponent ,LichChieuComponent,ThongTinFilmComponent,DanhGiaComponent]
 })

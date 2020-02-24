@@ -1,0 +1,105 @@
+.danhGia {
+  margin: auto;
+  width: 586px;
+  .danhGia__about {
+    padding: 14px 21px;
+    background-color: #fff;
+    border-radius: 4px;
+    .danhGia__about-left {
+      display: flex;
+      justify-content: space-between;
+      .user-img {
+        img {
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+        }
+        span {
+          margin-left: 5px;
+          font-size: 14px;
+        }
+      }
+    }
+    .danhGia__about-right {
+      opacity: 0.5;
+    }
+  }
+
+  .userComment {
+    margin: 14px 0;
+    background-color: #fff;
+    padding: 14px 21px;
+    border-radius: 4px;
+    .userComment-head {
+      display: flex;
+      justify-content: space-between;
+      .user {
+        display: flex;
+        align-items: center;
+        img {
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+        }
+        .user__info {
+          margin-left: 14px;
+          span {
+            display: block;
+          }
+
+          span:nth-child(2) {
+            font-size: 10px;
+            color: #9b9b9b;
+          }
+        }
+      }
+      .ratingNumber {
+        .number {
+          text-align: center;
+        }
+        .rating {
+          img {
+            width: 8px;
+            height: 8px;
+          }
+        }
+      }
+    }
+    .userComment-body {
+      p {
+        padding-top: 5px;
+        font-size: 14px;
+        color: black;
+        letter-spacing: -0.2px;
+      }
+    }
+    .userComment-footer {
+      border-top: 1px solid #e6e6e6;
+      padding-top: 5px;
+      img {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+
+  .viewMore {
+    margin-top: 35px;
+    text-align: center;
+    .btn-viewMore {
+      font-size: 14px;
+      color: #949494;
+
+      border: 1px solid #949494;
+      border-radius: 4px;
+      text-align: center;
+      background: 0 0;
+      padding: 7px 25px;
+      &:hover {
+        background-color: #fb4226;
+        border-color: #fb4226;
+        color: #fff !important;
+      }
+    }
+  }
+}

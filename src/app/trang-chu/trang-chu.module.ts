@@ -30,7 +30,7 @@ import { FooterComponent } from "./footer/footer.component";
     DienAnhComponent,
     ReviewComponent,
     KhuyenMaiComponent,
-    TrangChuComponent,
+
     ItemTinTucComponent,
     CinemaComponent,
     CinemaItemComponent,
@@ -55,8 +55,7 @@ import { FooterComponent } from "./footer/footer.component";
     CinemaComponent,
     CinemaItemComponent,
     CinemaFilmItemComponent,
-    FooterComponent,
-    TrangChuComponent
+    FooterComponent
   ]
 })
 export class TrangChuModule {}

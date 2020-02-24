@@ -1,0 +1,13 @@
+.InfoFilm {
+  margin-top: 50px;
+ color: #000;
+
+  .infoFilm__cotent {
+    .rowLeftInfo {
+      margin: 0;
+      p:nth-child(1) {
+        width: 35%;
+      }
+    }
+  }
+}
