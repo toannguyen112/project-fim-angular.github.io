@@ -36,6 +36,7 @@ import { DanhgiaCinemaComponent } from "./detail-cinema-page/detail-cinema-page/
 import { LichchieuCinemaComponent } from "./detail-cinema-page/detail-cinema-page/lichchieu-cinema/lichchieu-cinema.component";
 import { ThongtinCinemaComponent } from "./detail-cinema-page/detail-cinema-page/thongtin-cinema/thongtin-cinema.component";
 import { DetailPageComponent } from './detail-page/detail-page.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -73,7 +74,8 @@ import { DetailPageComponent } from './detail-page/detail-page.component';
     ItemPhimComponent,
     ItemTinTucComponent,
     DetailPageComponent,
-    DetailCinemaPageComponent
+    DetailCinemaPageComponent,
+    ProfileComponent
   ],
   imports: [CommonModule, RouterModule],
   exports: [

@@ -1,13 +1,120 @@
-.carousel{
-    margin-top:70px;
-    ol{
-        li{
-            border-radius: 50%;
-            width: 10px;
-            height: 10px;
-        }
-        .active{
-            background-color: red;
-        }
+.carousel {
+  ol {
+    bottom: 10%;
+    li {
+      border-radius: 50%;
+      width: 10px;
+      height: 10px;
     }
+    .active {
+      background-color: red;
+    }
+  }
+  .playTrailer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: 0 0;
+    border: none;
+
+    img {
+      display: none;
+      width: 80px;
+    }
+  }
+  .homeTools {
+    display: flex;
+    // max-width: 940px;
+    position: absolute;
+    left: 50%;
+    bottom: 0%;
+    transform: translate(-50%, 50%);
+    background-color: #fff;
+    border-radius: 5px;
+    height: 80px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    .dropdown {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      position: relative;
+      cursor: pointer;
+    }
+    .dropdown_phim {
+      width: 282px;
+
+      .dropdown__content {
+        position: absolute;
+        top: 75%;
+        left: 0;
+        background-color: #fff;
+        border-radius: 4px;
+        padding: 5px 0;
+        margin: 2px 0 0;
+        font-size: 14px;
+        z-index: 99;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        display: none;
+        .list {
+          list-style: none;
+          padding: 0;
+          .item {
+            a {
+              display: block;
+              padding: 3px 20px;
+              clear: both;
+              font-weight: 400;
+              line-height: 1.42857143;
+              color: #333;
+              white-space: nowrap;
+              text-decoration: none;
+              &:hover {
+                background-color: #60c5ef;
+                color: #fff;
+              }
+            }
+          }
+        }
+      }
+
+      &:hover {
+        .dropdown__content {
+          display: block;
+        }
+      }
+    }
+    .dropdown_rap {
+      @extend .dropdown_phim;
+      width: 164px;
+    }
+    .dropdown_ngayxem {
+      @extend .dropdown_phim;
+      width: 164px;
+    }
+    .dropdown_xuatchieu {
+      @extend .dropdown_phim;
+      width: 164px;
+    }
+    .muave {
+      width: 164px;
+      button {
+        color: #fff;
+        background-color: #4a4a4a;
+        border: none;
+        text-transform: uppercase;
+        border-radius: 4px;
+        padding: 10px 10px;
+      }
+    }
+  }
+
+  &:hover {
+    .playTrailer {
+      img {
+        display: block;
+      }
+    }
+  }
 }

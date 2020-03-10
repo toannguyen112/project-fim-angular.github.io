@@ -9,6 +9,7 @@ import { RegisteredComponent } from "./home/registered/registered/registered.com
 import { TrangChuComponent } from "./home/trang-chu/trang-chu.component";
 import { DetailCinemaPageComponent } from "./home/detail-cinema-page/detail-cinema-page/detail-cinema-page.component";
 import { DetailPageComponent } from "./home/detail-page/detail-page.component";
+import { ProfileComponent } from './home/profile/profile.component';
 
 const routes: Routes = [
   {
@@ -35,6 +36,10 @@ const routes: Routes = [
   {
     path: "registered",
     component: RegisteredComponent
+  },
+  {
+    path :"profile" ,
+    component : ProfileComponent
   }
 ];
 
