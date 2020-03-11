@@ -1,0 +1,43 @@
+.row{
+  margin: 0;
+}
+.profile {
+  padding-top: 100px;
+  .profile__content {
+    .profile__content-header {
+      text-align: center;
+
+      font-size: 50px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .profile__content__body {
+      background-color: #000;
+      color: white;
+      border-radius: 4px;
+      overflow: hidden;
+      .profile__content__body__list {
+        list-style: none;
+        padding: 0;
+        .profile__content__body--list--item {
+          text-align: center;
+          padding: 20px;
+          transition: ease 0.5s;
+          cursor: pointer;
+          &:hover {
+            background-color: #009688 !important;
+            color: white;
+          }
+        }
+        .profile__content__body--list--item.active {
+          background-color: #009688 !important;
+          color: white;
+        }
+      }
+
+      .profile__content__body--content {
+        
+      }
+    }
+  }
+}
