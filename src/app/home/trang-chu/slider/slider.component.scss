@@ -25,7 +25,7 @@
   }
   .homeTools {
     display: flex;
-    // max-width: 940px;
+    max-width: 940px;
     position: absolute;
     left: 50%;
     bottom: 0%;
@@ -41,6 +41,11 @@
       padding: 20px;
       position: relative;
       cursor: pointer;
+      &:hover {
+        .dropdown__content {
+          display: block;
+        }
+      }
     }
     .dropdown_phim {
       width: 282px;
@@ -76,12 +81,6 @@
               }
             }
           }
-        }
-      }
-
-      &:hover {
-        .dropdown__content {
-          display: block;
         }
       }
     }

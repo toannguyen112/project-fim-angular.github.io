@@ -1,4 +1,16 @@
 .cinema-list-item {
+  position: relative;
+  &::after{
+    position: absolute;
+    width: 100%;
+    left: 50%;
+    bottom: 0;
+    content: "";
+    transform: translateX(-50%);
+    width: calc(100% - 30px);
+    border-bottom: 1px solid #fff;
+    border-color: rgba(238, 238, 238, 0.88);
+  }
   padding: 10px;
   display: flex;
   .cinema-list-item-img {

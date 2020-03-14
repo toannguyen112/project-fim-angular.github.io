@@ -1,0 +1,93 @@
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modelId">
+  Thêm người dùng
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"> Thêm người dùng</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6 col-sm-6">
+            <mat-form-field class="example-full-width">
+              <mat-label>Tài khoản</mat-label>
+              <input matInput placeholder="Ex. Pizza" value="Sushi">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <mat-label>Mật khẩu</mat-label>
+              <input matInput placeholder="Ex. Pizza" value="Sushi">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <mat-label>Họ tên</mat-label>
+              <input matInput placeholder="Ex. Pizza" value="Sushi">
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-sm-6">
+            <mat-form-field class="example-full-width">
+              <mat-label>Email</mat-label>
+              <input matInput placeholder="Ex. Pizza" value="Sushi">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <mat-label>Số điện thoại</mat-label>
+              <input matInput placeholder="Ex. Pizza" value="Sushi">
+            </mat-form-field>
+           <div class="form-group">
+             <label for="">Loại người dùng</label>
+             <select class="form-control" name="" id="">
+               <option>Khách hàng</option>
+               <option>quản trị</option>
+               
+             </select>
+           </div>
+            
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+<mat-form-field>
+  <mat-label>Filter</mat-label>
+  <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium">
+</mat-form-field>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="position">
+    <th mat-header-cell *matHeaderCellDef> No. </th>
+    <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="weight">
+    <th mat-header-cell *matHeaderCellDef> Weight </th>
+    <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="symbol">
+    <th mat-header-cell *matHeaderCellDef> Symbol </th>
+    <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

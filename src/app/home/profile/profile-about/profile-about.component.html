@@ -1,8 +1,8 @@
 <div class="row profileAbout">
-    <div class="col-md-4  profile__img">
+    <div class="col-md-4 p-0 profile__img">
         <img class="img-fluid"
             src="https://instagram.fsgn6-1.fna.fbcdn.net/v/t51.2885-19/s320x320/66482175_334260424128185_7085073249431715840_n.jpg?_nc_ht=instagram.fsgn6-1.fna.fbcdn.net&_nc_ohc=aA94PXO8tu8AX-Xde22&oh=aaa613024daaabd6704dccece050afbd&oe=5E99B1B6"
-            alt="">
+            alt="" />
     </div>
     <div class="col-md-8 profile__info">
         <ul class="profile__info__list">
@@ -34,10 +34,66 @@
             <li class="profile__info__list--item">
                 <div class="li1">Address</div>
                 <div class="li2">:</div>
-                <div class="li3">Parma Via Modena, 40019, Sant'Agata Bolognese, BO, Italy</div>
+                <div class="li3">
+                    Parma Via Modena, 40019, Sant'Agata Bolognese, BO, Italy
+                </div>
             </li>
-
-
         </ul>
+        <div class="btn-capnhat ">
+            <button class="btn btn-success" data-toggle="modal" data-target="#modelId">
+                cập nhật
+            </button>
+        </div>
+        <!-- Button trigger modal -->
+
+        <!-- Modal -->
+        <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content" style="color:#000;">
+                    <div class="modal-header ">
+                        <h5 class="modal-title ">Cập nhật</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body ">
+                        <form>
+                            <div class="form-group">
+                                <label for="">Email</label>
+                                <input type="email" name="" id="" class="form-control" placeholder="Email"
+                                    aria-describedby="helpId" />
+                            </div>
+                            <div class="form-group">
+                                <label for="">Họ Tên</label>
+                                <input type="text" name="" id="" class="form-control" placeholder="Họ Tên"
+                                    aria-describedby="helpId" />
+                            </div>
+                            <div class="form-group">
+                                <label for="">Tài khoản</label>
+                                <input type="text" name="" id="" class="form-control" placeholder="Tài khoản"
+                                    aria-describedby="helpId" />
+                            </div>
+                            <div class="form-group">
+                                <label for="">Mật khẩu</label>
+                                <input type="text" name="" id="" class="form-control" placeholder="Mật khẩu"
+                                    aria-describedby="helpId" />
+                            </div>
+                            <div class="form-group">
+                                <label for="">Số điện thoại</label>
+                                <input type="text" name="" id="" class="form-control" placeholder="Số điện thoại"
+                                    aria-describedby="helpId" />
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                            Close
+                        </button>
+                        <button type="button" class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

@@ -1,30 +1,21 @@
 <app-header></app-header>
 <div class="container profile">
   <div class="profile__content">
-    <h3 class="profile__content-header">profile user</h3>
+    <h3 class="profile__content-header">profile </h3>
     <div class="profile__content__body">
       <div class="row">
         <div class="col-md-2 col-sm-2 p-0">
           <ul class="profile__content__body__list">
-            <li
-              class="profile__content__body--list--item "
-              (click)="choosenComponent('about')"
-              [ngClass]="{active: choosen === 'about'}"
-            >
+            <li class="profile__content__body--list--item " (click)="choosenComponent('about')"
+              [ngClass]="{active: choosen === 'about'}">
               Thông tin cá nhân
             </li>
-            <li
-              class="profile__content__body--list--item"
-              (click)="choosenComponent('history')"
-               [ngClass]="{active: choosen === 'history'}"
-            >
+            <li class="profile__content__body--list--item" (click)="choosenComponent('history')"
+              [ngClass]="{active: choosen === 'history'}">
               Lịch sử đặt vé
             </li>
-            <li
-              class="profile__content__body--list--item"
-              (click)="choosenComponent('contact')"
-              [ngClass]="{active: choosen === 'contact'}"
-            >
+            <li class="profile__content__body--list--item" (click)="choosenComponent('contact')"
+              [ngClass]="{active: choosen === 'contact'}">
               Liên lạc
             </li>
           </ul>

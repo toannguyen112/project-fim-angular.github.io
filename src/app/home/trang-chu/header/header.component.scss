@@ -1,11 +1,14 @@
 header {
   .navbar {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
     padding: 0;
     .navbar-brand {
       width: 25%;
       img {
         width: 50px;
         height: 50px;
+        cursor: pointer;
+        outline: none;
       }
     }
 
@@ -29,7 +32,7 @@ header {
     }
     .user {
       width: 25%;
-
+      text-align: center;
       .user__content {
         text-align: right;
         a {
@@ -39,10 +42,10 @@ header {
         }
       }
       .userAcount {
-        display: flex;
-        align-items: center;
-        justify-content: center;
         position: relative;
+        display: inline-block;
+        cursor: pointer;
+        outline: none;
         img {
           width: 40px;
           border-radius: 50%;
@@ -54,5 +57,11 @@ header {
         }
       }
     }
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .user {
+    display: none;
   }
 }

@@ -37,6 +37,11 @@ import { LichchieuCinemaComponent } from "./detail-cinema-page/detail-cinema-pag
 import { ThongtinCinemaComponent } from "./detail-cinema-page/detail-cinema-page/thongtin-cinema/thongtin-cinema.component";
 import { DetailPageComponent } from './detail-page/detail-page.component';
 import { ProfileComponent } from './profile/profile.component';
+import { ProfileAboutComponent } from './profile/profile-about/profile-about.component';
+import { ProfileHistoryComponent } from './profile/profile-history/profile-history.component';
+import { ProfileContactComponent } from './profile/profile-contact/profile-contact.component';
+import { ProfileHistoryItemComponent } from './profile/profile-history-item/profile-history-item.component';
+import { CinemaTheatersComponent } from './trang-chu/cinema-theaters/cinema-theaters.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +54,7 @@ import { ProfileComponent } from './profile/profile.component';
     DetailPageComponent,
     CheckoutHeaderComponent,
     DanhgiaCinemaComponent,
+    ItemTinTucComponent,
    
 
     LichchieuCinemaComponent,
@@ -75,7 +81,12 @@ import { ProfileComponent } from './profile/profile.component';
     ItemTinTucComponent,
     DetailPageComponent,
     DetailCinemaPageComponent,
-    ProfileComponent
+    ProfileComponent,
+    ProfileAboutComponent,
+    ProfileHistoryComponent,
+    ProfileContactComponent,
+    ProfileHistoryItemComponent,
+    CinemaTheatersComponent
   ],
   imports: [CommonModule, RouterModule],
   exports: [

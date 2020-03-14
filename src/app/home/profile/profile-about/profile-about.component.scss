@@ -9,12 +9,14 @@
       }
     }
     .profile__info {
+      padding: 10px;
       .profile__info__list {
         padding: 0;
         list-style: none;
         .profile__info__list--item {
           padding: 20px;
           display: flex;
+          border-bottom: 1px solid #777;
           .li3.colorhover {
             &:hover {
               color: #009688;
@@ -30,6 +32,9 @@
             width: 70%;
           }
         }
+      }
+      .btn-capnhat{
+        text-align: right;
       }
     }
   }

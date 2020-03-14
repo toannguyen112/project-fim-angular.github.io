@@ -1,0 +1,12 @@
+.new {
+  nav-down: auto;
+  display: flex;
+  .new-img {
+    margin-right: 10px;
+    width: 100px;
+    height: 70px;
+    img {
+      border-radius: 3px;
+    }
+  }
+}

@@ -1,3 +1,4 @@
+import { AdminManageComponent } from "./admin/admin-manage/admin-manage.component";
 import { CheckoutComponent } from "./home/checkout/checkout/checkout.component";
 
 import { NgModule } from "@angular/core";
@@ -9,7 +10,7 @@ import { RegisteredComponent } from "./home/registered/registered/registered.com
 import { TrangChuComponent } from "./home/trang-chu/trang-chu.component";
 import { DetailCinemaPageComponent } from "./home/detail-cinema-page/detail-cinema-page/detail-cinema-page.component";
 import { DetailPageComponent } from "./home/detail-page/detail-page.component";
-import { ProfileComponent } from './home/profile/profile.component';
+import { ProfileComponent } from "./home/profile/profile.component";
 
 const routes: Routes = [
   {
@@ -17,6 +18,7 @@ const routes: Routes = [
     component: TrangChuComponent
   },
   { path: "detail", component: DetailPageComponent },
+
   {
     path: "cinema",
     component: DetailCinemaPageComponent
@@ -38,8 +40,18 @@ const routes: Routes = [
     component: RegisteredComponent
   },
   {
-    path :"profile" ,
-    component : ProfileComponent
+    path: "profile",
+    component: ProfileComponent
+  },
+  {
+    path: "admin",
+    component: AdminManageComponent,
+    children: [
+      {
+        path: "manage",
+        component: AdminManageComponent
+      }
+    ]
   }
 ];
 

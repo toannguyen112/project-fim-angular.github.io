@@ -2,7 +2,7 @@
   margin: 0;
 }
 .profile {
-  padding-top: 100px;
+  padding-top: 50px;
   .profile__content {
     .profile__content-header {
       text-align: center;
@@ -23,6 +23,7 @@
           text-align: center;
           padding: 20px;
           transition: ease 0.5s;
+          border-bottom: 1px solid #777;
           cursor: pointer;
           &:hover {
             background-color: #009688 !important;
