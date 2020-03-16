@@ -1,5 +1,5 @@
 .carousel {
-  ol {
+  .carousel-indicators {
     bottom: 10%;
     li {
       border-radius: 50%;
@@ -10,19 +10,37 @@
       background-color: red;
     }
   }
-  .playTrailer {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: 0 0;
-    border: none;
+  .carousel-inner {
+    .carousel-item {
+      position: relative;
+      img {
+        width: 100%;
+      }
+      button.playTrailer {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: 0 0;
+        border: none;
+        display: none;
+        img {
+          transition: ease all 0.4s;
+          display: block;
+          &:hover {
+            opacity: 0.7;
+          }
+        }
+      }
 
-    img {
-      display: none;
-      width: 80px;
+      &:hover {
+        button.playTrailer {
+          display: block;
+        }
+      }
     }
   }
+
   .homeTools {
     display: flex;
     max-width: 940px;
@@ -105,14 +123,6 @@
         text-transform: uppercase;
         border-radius: 4px;
         padding: 10px 10px;
-      }
-    }
-  }
-
-  &:hover {
-    .playTrailer {
-      img {
-        display: block;
       }
     }
   }
