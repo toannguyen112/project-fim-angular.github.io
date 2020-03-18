@@ -1,5 +1,5 @@
-<div style="cursor: pointer;" class="movie__item item" routerLink="/detail">
-    <img [src]="itemPhim.HinhAnh" alt="">
-    <p>{{itemPhim.TenPhim}}</p>
+<div style="cursor: pointer;" class="movie__item item " [routerLink]="['/detail',itemPhim.maPhim]">
+    <img [src]="itemPhim.hinhAnh" alt="">
+    <p>{{itemPhim.tenPhim}}</p>
     <button>Đặt vé</button>
 </div>

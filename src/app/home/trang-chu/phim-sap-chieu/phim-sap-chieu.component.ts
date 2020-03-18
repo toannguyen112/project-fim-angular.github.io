@@ -1,5 +1,6 @@
-import { Component, OnInit, AfterViewInit } from "@angular/core";
+import { Component, OnInit, AfterViewInit, Input } from "@angular/core";
 import $ from "jquery";
+import { Film } from "src/app/models/film";
 declare var $: any;
 @Component({
   selector: "app-phim-sap-chieu",
@@ -8,16 +9,13 @@ declare var $: any;
 })
 export class PhimSapChieuComponent implements OnInit, AfterViewInit {
   constructor() {}
-  DanhSachPhimSapChieu = [
-    {TenPhim:"Thor: Ragnarok",HinhAnh:'../../../assets/img/thor-ragnarok-15088151416399.jpg'},
-    {TenPhim:"Ferdinand",HinhAnh:'../../../assets/img/pokemon-to-chon-cau-pokemon-i-choose-you-15095249219579.jpg'},
-    {TenPhim:"Trùm Hương Cảng",HinhAnh:'../../../assets/img/trum-huong-cang-chasing-the-dragon-15088270130890.jpg'},
-    {TenPhim:"Ferdinand",HinhAnh:'../../../assets/img/ferdinand.jpg'},
-    {TenPhim:"Trải nghiệm điểm chết",HinhAnh:'../../../assets/img/trai-nghiem-diem-chet-flatliners-15093522963475.jpg'},
-  ];
 
+  @Input("danhSachPhimSapChieu") danhSachPhimSapChieu: Film[] = [];
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log(this.danhSachPhimSapChieu);
+    
+  }
   ngAfterViewInit() {
     $(".owl-carousel").owlCarousel({
       loop: true,

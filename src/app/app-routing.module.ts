@@ -11,38 +11,47 @@ import { TrangChuComponent } from "./home/trang-chu/trang-chu.component";
 import { DetailCinemaPageComponent } from "./home/detail-cinema-page/detail-cinema-page/detail-cinema-page.component";
 import { DetailPageComponent } from "./home/detail-page/detail-page.component";
 import { ProfileComponent } from "./home/profile/profile.component";
+import { HomeLayoutComponent } from './home/home-layout/home-layout.component';
 
 const routes: Routes = [
   {
     path: "",
-    component: TrangChuComponent
+    component: HomeLayoutComponent,
+    children:[
+      {
+        path : "",
+        component : TrangChuComponent
+      },
+      { path: "detail/:id", component: DetailPageComponent },
+      {
+        path: "cinema",
+        component: DetailCinemaPageComponent
+      },
+      {
+        path: "checkout",
+        component: CheckoutComponent
+      },
+      {
+        path: "room",
+        component: DetailRoomComponent
+      },
+      {
+        path: "login",
+        component: LoginComponent
+      },
+      {
+        path: "registered",
+        component: RegisteredComponent
+      },
+      {
+        path: "profile",
+        component: ProfileComponent
+      },
+    ]
   },
-  { path: "detail", component: DetailPageComponent },
+  
 
-  {
-    path: "cinema",
-    component: DetailCinemaPageComponent
-  },
-  {
-    path: "checkout",
-    component: CheckoutComponent
-  },
-  {
-    path: "room",
-    component: DetailRoomComponent
-  },
-  {
-    path: "login",
-    component: LoginComponent
-  },
-  {
-    path: "registered",
-    component: RegisteredComponent
-  },
-  {
-    path: "profile",
-    component: ProfileComponent
-  },
+ 
   {
     path: "admin",
     component: AdminManageComponent,

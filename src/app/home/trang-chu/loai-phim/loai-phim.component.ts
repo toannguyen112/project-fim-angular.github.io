@@ -1,5 +1,5 @@
+import { Film } from "./../../../models/film";
 import { Component, OnInit, Input } from "@angular/core";
-import { Film } from "src/app/models/film";
 
 @Component({
   selector: "app-loai-phim",
@@ -7,13 +7,15 @@ import { Film } from "src/app/models/film";
   styleUrls: ["./loai-phim.component.scss"]
 })
 export class LoaiPhimComponent implements OnInit {
-  @Input() phim: Film[] = [];
-  dangChieuStatus: boolean = true;
+  public dangChieuStatus: boolean = true;
+  @Input("danhSachPhimDangChieu") danhSachPhimDangChieu: Film[] = [];
+  @Input("danhSachPhimSapChieu") danhSachPhimSapChieu: Film[] = [];
 
   constructor() {}
 
   ngOnInit() {
-    console.log(this.phim);
+    console.log(this.danhSachPhimDangChieu.length);
+    console.log(this.danhSachPhimSapChieu.length);
   }
 
   hienPhimDangChieu() {

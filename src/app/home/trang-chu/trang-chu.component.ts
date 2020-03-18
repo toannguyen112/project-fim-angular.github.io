@@ -1,7 +1,7 @@
+import { FilmService } from "./../../services/film.service";
 import { Component, OnInit, OnDestroy } from "@angular/core";
-import { FilmService } from "src/app/services/film.service";
-import { Subscription } from "rxjs";
 import { Film } from "src/app/models/film";
+import { Subscription } from "rxjs";
 
 @Component({
   selector: "app-trang-chu",
@@ -9,19 +9,26 @@ import { Film } from "src/app/models/film";
   styleUrls: ["./trang-chu.component.scss"]
 })
 export class TrangChuComponent implements OnInit, OnDestroy {
+  constructor(private filmService: FilmService) {}
+  public sub = new Subscription();
   public danhSachPhim: Film[] = [];
-  private subDanhSachPhim = new Subscription();
-
-  constructor(private filmsService: FilmService) {}
+  public danhSachPhimDangChieu: Film[] = [];
+  public danhSachPhimSapChieu: Film[] = [];
 
   ngOnInit() {
-    this.subDanhSachPhim = this.filmsService
-      .getListFilms()
-      .subscribe(result => {
-        this.danhSachPhim = result;
-      });
+    this.sub = this.filmService.getListFilms().subscribe(res => {
+      this.danhSachPhim = res;
+      for (let i = 0; i < res.length; i++) {
+        if (i < 10) {
+          this.danhSachPhimDangChieu.push(res[i]);
+        } else {
+          this.danhSachPhimSapChieu.push(res[i]);
+        }
+      }
+    });
   }
+
   ngOnDestroy() {
-    this.subDanhSachPhim.unsubscribe();
+    this.sub.unsubscribe();
   }
 }

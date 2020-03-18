@@ -8,11 +8,11 @@
 </div>
 <div class="row">
   <div class="col-12 mt-2" *ngIf="dangChieuStatus; else phimSapChieu">
-    <app-phim-dang-chieu></app-phim-dang-chieu>
+    <app-phim-dang-chieu [danhSachPhimDangChieu]="danhSachPhimDangChieu"> </app-phim-dang-chieu>
   </div>
   <ng-template #phimSapChieu>
     <div class="col-12 mt-2">
-      <app-phim-sap-chieu></app-phim-sap-chieu>
+      <app-phim-sap-chieu [danhSachPhimSapChieu]="danhSachPhimSapChieu"></app-phim-sap-chieu>
     </div>
   </ng-template>
 </div>
