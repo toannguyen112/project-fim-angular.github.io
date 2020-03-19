@@ -42,7 +42,7 @@ import { ProfileHistoryComponent } from "./profile/profile-history/profile-histo
 import { ProfileContactComponent } from "./profile/profile-contact/profile-contact.component";
 import { ProfileHistoryItemComponent } from "./profile/profile-history-item/profile-history-item.component";
 import { CinemaTheatersComponent } from "./trang-chu/cinema-theaters/cinema-theaters.component";
-import { ItemPhimSapChieuComponent } from './trang-chu/item-phim-sap-chieu/item-phim-sap-chieu.component';
+import { ItemPhimSapChieuComponent } from "./trang-chu/item-phim-sap-chieu/item-phim-sap-chieu.component";
 
 @NgModule({
   declarations: [

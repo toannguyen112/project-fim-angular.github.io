@@ -2,7 +2,7 @@
 .cinema {
   display: flex;
   border: 1px solid $gray-1;
-  height: 700px;
+  height: 600px;
   .cinema-navigation {
     border-right: 1px solid $gray-1;
     width: 10%;
@@ -15,9 +15,12 @@
 
 .cinema-tab-content {
   width: 40%;
+  height: 600px;
+  overflow-y: scroll;
   border-right: 1px solid $gray-1;
 }
 
 .cinema-listFilm {
+  overflow-y: scroll;
   width: 50%;
 }

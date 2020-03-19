@@ -4,15 +4,17 @@
                 src="https://s3img.vcdn.vn/mobile/123phim/2020/02/ky-sinh-trung-parasite-c18-15819299838185_60x60.jpg"
                 alt=""></div>
         <div class="cinema-film-info">
-            <span class="age"> C18</span> <span class="text">ky sinh trung</span>
+            <span class="age"> C18</span> <span class="text"> {{itemPhim.tenPhim}} </span>
             <p class="info">132 phút - TIX 9.1 - IMDb 8.6</p>
         </div>
     </div>
     <div class="cinema-film-bottom">
 
         <p>2D Digital</p>
-        <span class="time">15:15</span>
-        <span class="time">15:15</span>
+        <span class="time" *ngFor="let time of lstLichChieuTheoPhim">
+            {{time.ngayChieuGioChieu}}
+        </span>
+        
     </div>
 
 </div>

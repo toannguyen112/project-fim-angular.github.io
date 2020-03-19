@@ -29,8 +29,10 @@ export class FilmService {
   }
 
   // lấy chi tiết phim
-  getFilmDetail(maPhim: string): Observable<any> {
-    let obser = this._http.get(this.api.getFilmDetail + maPhim);
+  getFilmDetail(maPhim: any): Observable<any> {
+    let obser = this._http
+      .get(this.api.getFilmDetail + maPhim)
+      .pipe(map((res: Response) => res));
     return obser;
   }
 

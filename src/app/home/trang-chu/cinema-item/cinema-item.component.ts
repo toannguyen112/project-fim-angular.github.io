@@ -1,15 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
+import { TransformDataService } from "src/app/services/transformData.service";
 
 @Component({
-  selector: 'app-cinema-item',
-  templateUrl: './cinema-item.component.html',
-  styleUrls: ['./cinema-item.component.scss']
+  selector: "app-cinema-item",
+  templateUrl: "./cinema-item.component.html",
+  styleUrls: ["./cinema-item.component.scss"]
 })
 export class CinemaItemComponent implements OnInit {
+  @Input("cumRap") cumRap: any;
+  @Output("emitLichChieuPhim") emitLichChieuPhim  = new EventEmitter()
 
-  constructor() { }
+  constructor(private transformData: TransformDataService) {}
 
-  ngOnInit() {
+  ngOnInit() {}
+  showListFilm(){
+    this.emitLichChieuPhim.emit(this.cumRap)
+   
+   
+    
   }
-
 }

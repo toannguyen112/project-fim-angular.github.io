@@ -1,4 +1,4 @@
-<div style="cursor: pointer;" class="movie__item item" routerLink="/detail">
+<div style="cursor: pointer;" class="movie__item item" [routerLink]="['/detail',itemPhim.maPhim]">
     <img [src]="itemPhim.hinhAnh" alt="">
     <p>{{itemPhim.tenPhim}}</p>
     <button>Đặt vé</button>

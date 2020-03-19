@@ -1,28 +1,18 @@
 <div class="cinema">
-    <div class="cinema-navigation">
-        <ul class="cinema__list">
-           <app-cinema-theaters></app-cinema-theaters>
-           <app-cinema-theaters></app-cinema-theaters>
-           <app-cinema-theaters></app-cinema-theaters>
+  <div class="cinema-navigation">
+    <ul class="cinema__list">
+      <app-cinema-theaters *ngFor="let rap of heThongRap" [rap]="rap" (emitRap)="selectCinema($event)" ></app-cinema-theaters>
+    </ul>
+  </div>
 
+  <div class="cinema-tab-content">
+    <app-cinema-item *ngFor="let item of listCumRap" [cumRap]="item"
+    (emitLichChieuPhim)="onListLichChieu($event)"
+    > </app-cinema-item>
 
-        </ul>
-    </div>
-
-    <div class="cinema-tab-content">
-        <app-cinema-item></app-cinema-item>
-        <app-cinema-item></app-cinema-item>
-        <app-cinema-item></app-cinema-item>
-
-    </div>
-    <div class="cinema-listFilm">
-        <app-cinema-film-item></app-cinema-film-item>
-        <app-cinema-film-item></app-cinema-film-item>
-
-
-
-
-
-
-    </div>
+  </div>
+  <div class="cinema-listFilm">
+    <app-cinema-film-item *ngFor="let itemPhim of listPhim" [itemPhim]="itemPhim"  [lstLichChieuTheoPhim]="lstLichChieuTheoPhim"   ></app-cinema-film-item>
+    
+  </div>
 </div>

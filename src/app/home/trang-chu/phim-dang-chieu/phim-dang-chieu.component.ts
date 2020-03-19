@@ -8,46 +8,30 @@ declare var $: any;
   styleUrls: ["./phim-dang-chieu.component.scss"]
 })
 export class PhimDangChieuComponent implements OnInit, AfterViewInit {
-  
   @Input("danhSachPhimDangChieu") danhSachPhimDangChieu: Film[] = [];
-  public phimDangChieu : any[]= [
-    {
-      tenPhim : "toan nguyen dep trai",
-      hinhAnh : "http://movie0706.cybersoft.edu.vn/hinhanh/trainwreck.jpg"
-    },
-    {
-      tenPhim : "toan nguyen dep trai",
-      hinhAnh : "http://movie0706.cybersoft.edu.vn/hinhanh/trainwreck.jpg"
-    },
-    {
-      tenPhim : "toan nguyen dep trai",
-      hinhAnh : "http://movie0706.cybersoft.edu.vn/hinhanh/trainwreck.jpg"
-    }
-  ]
 
   constructor() {}
 
   ngOnInit() {
-    console.log(this.danhSachPhimDangChieu.length);
-    
+    // console.log(this.danhSachPhimDangChieu.length);
   }
 
   ngAfterViewInit() {
-    $(".owl-carousel").owlCarousel({
-      loop: true,
-      margin: 10,
-      nav: true,
-      responsive: {
-        0: {
-          items: 1
-        },
-        600: {
-          items: 3
-        },
-        1000: {
-          items: 4
-        }
-      }
-    });
+    // $(".owl-carousel").owlCarousel({
+    //   loop: true,
+    //   margin: 10,
+    //   nav: true,
+    //   responsive: {
+    //     0: {
+    //       items: 1
+    //     },
+    //     600: {
+    //       items: 3
+    //     },
+    //     1000: {
+    //       items: 4
+    //     }
+    //   }
+    // });
   }
 }
