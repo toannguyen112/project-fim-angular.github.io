@@ -24,7 +24,7 @@ const routes: Routes = [
       },
       { path: "detail/:id", component: DetailPageComponent },
       {
-        path: "cinema",
+        path: "cinema/:id",
         component: DetailCinemaPageComponent
       },
       {

@@ -1,45 +1,16 @@
 <div class="detailFilm-bottom">
   <div class="detailFilm-bottom--left">
     <ul class="cinema-list">
-      <li class="cinema-list-item">
+      <li class="cinema-list-item" *ngFor="let rap of heThong" style="cursor: pointer;"
+        (click)="selectRap(rap.cumRapChieu)">
         <div class="cinema-list-item-content">
-          <img src="https://s3img.vcdn.vn/123phim/2018/09/ee621ee05dcd4565caead4f29421b41e.png" alt="" />
+          <img [src]="rap.logo" alt="" />
           <div class="cinema-info">
-            <h5>CGV</h5>
+            <h5 style="text-transform: uppercase;">{{ rap.tenHeThongRap }}</h5>
             <span>79k/vé CGV x3 vé cuối tuần</span>
           </div>
         </div>
       </li>
-
-      <li class="cinema-list-item">
-        <div class="cinema-list-item-content">
-          <img src="https://s3img.vcdn.vn/123phim/2018/09/ee621ee05dcd4565caead4f29421b41e.png" alt="" />
-          <div class="cinema-info">
-            <h5>CGV</h5>
-            <span>79k/vé CGV x3 vé cuối tuần</span>
-          </div>
-        </div>
-      </li>
-
-      <li class="cinema-list-item">
-        <div class="cinema-list-item-content">
-          <img src="https://s3img.vcdn.vn/123phim/2018/09/ee621ee05dcd4565caead4f29421b41e.png" alt="" />
-          <div class="cinema-info">
-            <h5>CGV</h5>
-            <span>79k/vé CGV x3 vé cuối tuần</span>
-          </div>
-        </div>
-      </li>
-      <li class="cinema-list-item">
-        <div class="cinema-list-item-content">
-           <img src="https://s3img.vcdn.vn/123phim/2018/09/ee621ee05dcd4565caead4f29421b41e.png" alt="" />
-           <div class="cinema-info">
-             <h5>CGV</h5>
-             <span>79k/vé CGV x3 vé cuối tuần</span>
-           </div>
-        </div>
-       </li>
-
     </ul>
   </div>
   <div class="detailFilm-bottom--right">
@@ -76,43 +47,21 @@
       </ul>
     </div>
     <div class="cinemaFilm">
-      <div class="cinemaFilm-tab-item">
+      <div class="cinemaFilm-tab-item" *ngFor="let item of cumRapChieu">
         <div class="cinemaFilm-tab-top">
           <img src="https://s3img.vcdn.vn/123phim/2018/09/cgv-crescent-mall-15380174094679.jpg" alt="" />
           <div class="cinemaFilm-item--info">
-            <span class="cinema-name">CGV - Crescent Mall</span>
-            <span class="cinema-map">Lầu 5, Crescent Mall Đại lộ Nguyễn Văn Linh, Phú Mỹ Hưng Quận
-              7 TP. Hồ Chí Minh</span>
+            <span class="cinema-name"> {{ item.tenCumRap }} </span>
+            <span class="cinema-map">Lầu 5, Crescent Mall Đại lộ Nguyễn Văn Linh, Phú Mỹ Hưng Quận 7
+              TP. Hồ Chí Minh</span>
           </div>
         </div>
         <div class="cinemaFilm-tab-bot">
           <h5 href="">2D Digital | Cine & Living Room</h5>
-          <span class="time-film"><span class="text-clolor">12:40</span> ~ 14:37</span>
-          <span class="time-film"><span class="text-clolor">12:40</span> ~ 14:37</span>
-
+          <span class="time-film" *ngFor="let lich of lichChieuPhim"><span class="text-clolor">
+              {{ lich.ngayChieuGioChieu }} </span> ~
+            14:37</span>
         </div>
-
-
-      </div>
-
-
-      <div class="cinemaFilm-tab-item">
-        <div class="cinemaFilm-tab-top">
-          <img src="https://s3img.vcdn.vn/123phim/2018/09/cgv-crescent-mall-15380174094679.jpg" alt="" />
-          <div class="cinemaFilm-item--info">
-            <span class="cinema-name">CGV - Crescent Mall</span>
-            <span class="cinema-map">Lầu 5, Crescent Mall Đại lộ Nguyễn Văn Linh, Phú Mỹ Hưng Quận
-              7 TP. Hồ Chí Minh</span>
-          </div>
-        </div>
-        <div class="cinemaFilm-tab-bot">
-          <h5 href="">2D Digital | Cine & Living Room</h5>
-          <span class="time-film"><span class="text-clolor">12:40</span> ~ 14:37</span>
-          <span class="time-film"><span class="text-clolor">12:40</span> ~ 14:37</span>
-
-        </div>
-
-
       </div>
     </div>
   </div>

@@ -14,10 +14,7 @@ export class CinemaTheatersComponent implements OnInit {
   @Output("emitRap") emitRap = new EventEmitter();
   public heThongRap: any[] = [];
   public sub: Subscription;
-  constructor(
-    private rapService: RapService,
-    private transformData: TransformDataService
-  ) {}
+  constructor() {}
 
   ngOnInit() {}
   selectCinema(value) {

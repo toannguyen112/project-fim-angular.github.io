@@ -2,7 +2,8 @@
   display: flex;
   background-color: #fff;
   border-radius: 4px;
-  margin-top: 30px;
+
+  height: 713px;
 
   .detailFilm-bottom--left {
     width: 248px;
@@ -14,7 +15,7 @@
         .cinema-list-item-content {
           display: flex;
           border-bottom: 1px solid #ebebec;
-          padding-bottom : 10px ;
+          padding-bottom: 10px;
           img {
             width: 50px;
             height: 50px;
@@ -30,7 +31,6 @@
             }
           }
         }
-       
       }
     }
   }

@@ -8,15 +8,15 @@ import { TransformDataService } from "src/app/services/transformData.service";
 })
 export class CinemaItemComponent implements OnInit {
   @Input("cumRap") cumRap: any;
-  @Output("emitLichChieuPhim") emitLichChieuPhim  = new EventEmitter()
+  @Output("emitLichChieuPhim") emitLichChieuPhim = new EventEmitter();
 
-  constructor(private transformData: TransformDataService) {}
+  constructor() {}
 
-  ngOnInit() {}
-  showListFilm(){
-    this.emitLichChieuPhim.emit(this.cumRap)
-   
-   
-    
+  ngOnInit() {
+    console.log(this.cumRap);
   }
+  showListFilm() {
+    this.emitLichChieuPhim.emit(this.cumRap);
+  }
+  
 }

@@ -1,6 +1,7 @@
 <app-header></app-header>
 <div class="detailMainInfo">
   <img class="img-main" [src]="detailPhim.hinhAnh" alt="" />
+  <div class="base"></div>
   <div class="overplay"></div>
   <div class="detailFilm ">
     <div class="detailFilm-top">
@@ -10,8 +11,7 @@
         </div>
         <div class="col-md-6 detailFilm-text">
           <span class="dateFilm"> {{ detailPhim.ngayKhoiChieu }} </span>
-          <span class="nameFilm"
-            ><span class="agetext">C16</span> {{ detailPhim.tenPhim }}
+          <span class="nameFilm"><span class="agetext">C16</span> {{ detailPhim.tenPhim }}
           </span>
           <span class="time">
             100 phút - 0 IMDb - 2D/Digital
@@ -28,37 +28,23 @@
             <img src="https://tix.vn/app/assets/img/icons/star1.png" alt="" />
             <img src="https://tix.vn/app/assets/img/icons/star1.png" alt="" />
             <img src="https://tix.vn/app/assets/img/icons/star1.png" alt="" />
-            <img
-              class="number"
-              src="https://tix.vn/app/assets/img/icons/star1.2.png"
-              alt=""
-            />
+            <img class="number" src="https://tix.vn/app/assets/img/icons/star1.2.png" alt="" />
             <span class="comment">
-              {{ detailPhim.danhGia }} người đánh giá</span
-            >
+              {{ detailPhim.danhGia }} người đánh giá</span>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="detail-nav">
+    <div class="detail-nav mb-5" >
       <ul>
-        <li
-          [ngClass]="{ active: loai == 'lichchieu' }"
-          (click)="chonLoai('lichchieu')"
-        >
+        <li [ngClass]="{ active: loai == 'lichchieu' }" (click)="chonLoai('lichchieu')">
           Lịch Chiếu
         </li>
-        <li
-          [ngClass]="{ active: loai == 'thongtin' }"
-          (click)="chonLoai('thongtin')"
-        >
+        <li [ngClass]="{ active: loai == 'thongtin' }" (click)="chonLoai('thongtin')">
           Thông Tin
         </li>
-        <li
-          [ngClass]="{ active: loai == 'danhgia' }"
-          (click)="chonLoai('danhgia')"
-        >
+        <li [ngClass]="{ active: loai == 'danhgia' }" (click)="chonLoai('danhgia')">
           Đánh Giá
         </li>
       </ul>

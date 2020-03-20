@@ -43,6 +43,7 @@ import { ProfileContactComponent } from "./profile/profile-contact/profile-conta
 import { ProfileHistoryItemComponent } from "./profile/profile-history-item/profile-history-item.component";
 import { CinemaTheatersComponent } from "./trang-chu/cinema-theaters/cinema-theaters.component";
 import { ItemPhimSapChieuComponent } from "./trang-chu/item-phim-sap-chieu/item-phim-sap-chieu.component";
+import { HomeToolsComponent } from './trang-chu/home-tools/home-tools.component';
 
 @NgModule({
   declarations: [
@@ -87,7 +88,8 @@ import { ItemPhimSapChieuComponent } from "./trang-chu/item-phim-sap-chieu/item-
     ProfileContactComponent,
     ProfileHistoryItemComponent,
     CinemaTheatersComponent,
-    ItemPhimSapChieuComponent
+    ItemPhimSapChieuComponent,
+    HomeToolsComponent
   ],
   imports: [CommonModule, RouterModule],
   exports: [
