@@ -1,10 +1,10 @@
+import { FormsModule } from '@angular/forms';
 import { SliderComponent } from "./trang-chu/slider/slider.component";
 
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { LoginComponent } from "./login/login/login.component";
 import { RegisteredComponent } from "./registered/registered/registered.component";
-import { DetailRoomComponent } from "./detail-room/detail-room/detail-room.component";
 import { CheckoutComponent } from "./checkout/checkout/checkout.component";
 
 import { CheckoutHeaderComponent } from "./checkout/checkout/checkout-header/checkout-header.component";
@@ -43,16 +43,18 @@ import { ProfileContactComponent } from "./profile/profile-contact/profile-conta
 import { ProfileHistoryItemComponent } from "./profile/profile-history-item/profile-history-item.component";
 import { CinemaTheatersComponent } from "./trang-chu/cinema-theaters/cinema-theaters.component";
 import { ItemPhimSapChieuComponent } from "./trang-chu/item-phim-sap-chieu/item-phim-sap-chieu.component";
-import { HomeToolsComponent } from './trang-chu/home-tools/home-tools.component';
-import {MatInputModule} from '@angular/material/input';
-import { ModalLoginRegisterComponent } from './modal-login-register/modal-login-register.component';
+import { HomeToolsComponent } from "./trang-chu/home-tools/home-tools.component";
+import { MatInputModule } from "@angular/material/input";
+import { ModalLoginRegisterComponent } from "./modal-login-register/modal-login-register.component";
+import { CheckoutContentComponent } from "./checkout/checkout/checkout-content/checkout-content.component";
+import { CheckoutOfficeDetailComponent } from "./checkout/checkout/checkout-office-detail/checkout-office-detail.component";
+import { MatRadioModule } from "@angular/material/radio";
 
 @NgModule({
   declarations: [
     TrangChuComponent,
     LoginComponent,
     RegisteredComponent,
-    DetailRoomComponent,
 
     CheckoutComponent,
     DetailPageComponent,
@@ -92,14 +94,16 @@ import { ModalLoginRegisterComponent } from './modal-login-register/modal-login-
     CinemaTheatersComponent,
     ItemPhimSapChieuComponent,
     HomeToolsComponent,
-    ModalLoginRegisterComponent
+    ModalLoginRegisterComponent,
+    CheckoutContentComponent,
+    CheckoutOfficeDetailComponent
   ],
-  imports: [CommonModule, RouterModule,MatInputModule],
+  imports: [CommonModule, RouterModule, MatInputModule, MatRadioModule
+  ,FormsModule],
   exports: [
     TrangChuComponent,
     LoginComponent,
     RegisteredComponent,
-    DetailRoomComponent,
 
     CheckoutComponent,
     DetailPageComponent,

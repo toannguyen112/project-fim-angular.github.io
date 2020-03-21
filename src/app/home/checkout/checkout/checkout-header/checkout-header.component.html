@@ -2,8 +2,8 @@
     <div class="row">
         <div class="col-md-6 col-sm-12 header__left">
             <ul>
-                <li class="active"><span class="stepnumber">01</span> CHỌN LOẠI VÉ</li>
-                <li><span class="stepnumber">02</span> CHỌN GHẾ & THANH TOÁN</li>
+                <li [ngClass]="{active: status}"><span class="stepnumber">01</span> CHỌN LOẠI VÉ</li>
+                <li [ngClass]="{active: !status}"><span class="stepnumber">02</span> CHỌN GHẾ & THANH TOÁN</li>
                 <li><span class="stepnumber">03</span> KẾT QUẢ ĐẶT VÉ</li>
             </ul>
         </div>

@@ -15,8 +15,9 @@
   <div class="cinema-film-bottom collapse show" id="collapseOne" aria-labelledby="headingOne"
     data-parent="#accordionExample">
     <p>2D Digital</p>
-    <span *ngFor="let item of itemPhim.lstLichChieuTheoPhim" class="time" style="cursor: pointer;"  >
-      {{item.ngayChieuGioChieu}}
+    <span *ngFor="let item of itemPhim.lstLichChieuTheoPhim" class="time mx-1" style="cursor: pointer;"
+      [routerLink]="['/checkout',item.maLichChieu]" routerLinkActive="router-link-active">
+      {{item.ngayChieuGioChieu | date:'mm:ss'}}
     </span>
   </div>
 </div>

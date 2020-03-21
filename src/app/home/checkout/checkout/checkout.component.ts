@@ -11,6 +11,7 @@ import { PhongveService } from "src/app/services/phongve.service";
 export class CheckoutComponent implements OnInit {
   public thongTinPhim: any;
   public sub: Subscription;
+  public status: boolean = true;
   constructor(
     private phongVeService: PhongveService,
     private route: ActivatedRoute
@@ -26,5 +27,10 @@ export class CheckoutComponent implements OnInit {
           console.log(res.thongTinPhim);
         });
     });
+  }
+  changeStatus(value) {
+    console.log(value);
+
+    this.status = value;
   }
 }

@@ -1,5 +1,14 @@
-<!-- header checkout -->
-<app-checkout-header></app-checkout-header>
-<app-checkout-content [thongTinPhim]="thongTinPhim"> </app-checkout-content>
-
-<!-- checkout body -->
+<app-checkout-header [status]="status" ></app-checkout-header>
+<app-checkout-content
+  [thongTinPhim]="thongTinPhim"
+  (emitNavigate)="changeStatus($event)"
+  *ngIf="status; else chiTietPhongVe"
+>
+</app-checkout-content>
+<ng-template #chiTietPhongVe>
+  <app-checkout-office-detail
+    [thongTinPhim]="thongTinPhim"
+    [init]="300"
+  ></app-checkout-office-detail>
+</ng-template>
+<!-- <app-checkout-office-detail [thongTinPhim]="thongTinPhim" [init]="300"></app-checkout-office-detail> -->

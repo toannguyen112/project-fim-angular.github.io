@@ -14,16 +14,15 @@ export class CinemaComponent implements OnInit, OnDestroy {
   public listCumRap: any[] = [];
   public listPhim: any[] = [];
   public lstLichChieuTheoPhim: any[] = [];
-  constructor(
-    private rapService: RapService,
-    private transformData: TransformDataService
-  ) {}
+
+  constructor(private rapService: RapService) {}
 
   ngOnInit() {
     this.sub = this.rapService.layThongTinHeThongRap().subscribe(res => {
       this.heThongRap = res;
     });
   }
+
   ngOnDestroy() {
     this.sub.unsubscribe();
   }

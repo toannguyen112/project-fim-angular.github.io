@@ -1,231 +1,205 @@
 @mixin seatColor($bgcolor) {
-    background-color: $bgcolor;
-    width: 17px;
-    height: 13px;
-  }
-  @mixin img($width, $height) {
-    width: $width;
-    height: $height;
-  }
-  .row {
-    margin: 0;
-  }
-  
-  .roomContent {
-    margin-top: 80px;
-  
-    .chooseSeat {
-      padding: 40px;
-      .chooseSeat__top {
-        .chooseSeat__top--left {
-          display: flex;
-          align-items: center;
-          img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-          }
-          .info {
-            padding-left: 10px;
-            .cinema {
-              font-size: 16px;
-              margin-bottom: 5px;
-              span {
-                color: #8bc541;
-              }
-            }
-            .day {
-              line-height: 5px;
-              font-size: 14px;
-              color: #9b9b9b;
-            }
-          }
-        }
-        .chooseSeat__top--right {
-          .timeSeat {
-            text-align: right;
-            height: 100%;
-            .time-text {
-              font-size: 10px;
-              color: #9b9b9b;
-  
-              margin: 0;
-            }
-            .time {
-              font-family: "SF Medium";
-              line-height: 1;
-              font-size: 29px;
-              color: #fb4226;
-  
-              margin: 0;
-            }
-          }
-        }
-      }
-  
-      .screen {
-        margin-top: 20px;
+  background-color: $bgcolor;
+  width: 17px;
+  height: 13px;
+}
+@mixin img($width, $height) {
+  width: $width;
+  height: $height;
+}
+.row {
+  margin: 0;
+}
+
+.roomContent {
+  margin-top: 80px;
+
+  .chooseSeat {
+    padding: 40px;
+    .chooseSeat__top {
+      .chooseSeat__top--left {
+        display: flex;
+        align-items: center;
         img {
-          width: 100%;
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
         }
-      }
-      .chooseSeat__body {
-        padding: 0 107px;
-        .row {
-          span {
-            width: 10%;
-          }
-          .btn-seat {
-            width: 90%;
-            button {
-              border: none;
-              margin: 0 5px;
-              width: 25px;
-              height: 25px;
-              border-radius: 5px;
+        .info {
+          padding-left: 10px;
+          .cinema {
+            font-size: 16px;
+            margin-bottom: 5px;
+            span {
+              color: #8bc541;
             }
           }
+          .day {
+            line-height: 5px;
+            font-size: 14px;
+            color: #9b9b9b;
+          }
         }
       }
-      .chooseSeat__bottom {
-        margin-top: 30px;
-        padding: 0 100px;
-        text-align: center;
-        .seatInfo {
+      .chooseSeat__top--right {
+        .timeSeat {
+          text-align: right;
+          height: 100%;
+          .time-text {
+            font-size: 10px;
+            color: #9b9b9b;
+
+            margin: 0;
+          }
+          .time {
+            font-family: "SF Medium";
+            line-height: 1;
+            font-size: 29px;
+            color: #fb4226;
+
+            margin: 0;
+          }
+        }
+      }
+    }
+
+    .screen {
+      margin-top: 20px;
+      img {
+        width: 100%;
+      }
+    }
+    .chooseSeat__body {
+      padding: 0 107px;
+      .row {
+        span {
+          width: 10%;
+        }
+        .btn-seat {
+          width: 90%;
           button {
             border: none;
+            margin: 0 5px;
             width: 25px;
             height: 25px;
             border-radius: 5px;
           }
-          .seat-vip {
-            @include seatColor(red);
-          }
-          .seat-load {
-            @include seatColor(green);
-          }
-          .seat-has-user {
-            @include seatColor(gray);
-          }
-          .seat-no-choose {
-            @include seatColor(gray);
-          }
-          p {
-            color: #9b9b9b;
-            font-size: 12px;
-          }
         }
       }
     }
-  
-    .payment {
-      p {
-        font-weight: bold;
-      }
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-      .payment__content {
-        padding: 42px 30px 25px 30px;
-  
-        .name {
-          border-bottom: 1px dashed #e9e9e9;
-          p {
-            margin: 0;
-  
-            span {
-              background-color: #00ac4d;
-              margin-right: 5px;
-              font-size: 12px;
-              color: #fff;
-              border-radius: 4px;
-              padding: 0 5px;
-            }
-          }
-          p:nth-child(3) {
-            margin-top: 5px;
-            font-family: "SF Regular";
-            font-size: 14px;
-          }
+    .chooseSeat__bottom {
+      margin-top: 30px;
+      padding: 0 100px;
+      text-align: center;
+      .seatInfo {
+        button {
+          border: none;
+          width: 25px;
+          height: 25px;
+          border-radius: 5px;
         }
-        .price {
-          border-bottom: 1px dashed #e9e9e9;
-  
-          .seat {
-            color: #fb4226;
-          }
+        .seat-vip {
+          @include seatColor(red);
         }
-        .price__number {
-          .number {
-            color: #44c020 !important;
-            font-size: 16px;
-            text-align: right;
-          }
+        .seat-load {
+          @include seatColor(green);
         }
-        .wrapper-email {
-          border-bottom: 1px dashed #e9e9e9;
-          label {
-            font-size: 12px;
-            font-weight: 300;
-            width: 10%;
-          }
-          input {
-            border: none;
-            width: 100%;
-          }
+        .seat-has-user {
+          @include seatColor(gray);
         }
-        .wrapper-phone {
-          @extend .wrapper-email;
+        .seat-no-choose {
+          @include seatColor(gray);
         }
-        .categoryPayment {
-          .row {
-            margin: 5px 0;
-            align-items: center;
-            input {
-              background-color: #fff;
-  
-              width: 22px;
-              height: 22px;
-              border: 1px solid #4a90e2;
-              border-radius: 50%;
-              outline: 0;
-              margin: 0;
-            }
-            img {
-              border-radius: 5px;
-              margin-left: 35px;
-              margin-right: 15px;
-  
-              max-width: 40px;
-              @include img(30px, 40px);
-            }
-            .category {
-              p {
-                margin: 0;
-              }
-            }
-          }
+        p {
+          color: #9b9b9b;
+          font-size: 12px;
         }
-        .alert {
-          padding-left: 40px;
-          padding-right: 40px;
-          margin: 0;
-          text-align: center;
-          font-weight: 500;
-          img {
-            @include img(16px, 16px);
-          }
-          span {
-            font-size: 14px;
-            color: #4a4a4a;
-          }
-        }
-      }
-      .buyTicket {
-        background-color: #afafaf;
-        text-align: center;
-        padding: 10px;
-        color: white;
-        font-size: 24px;
       }
     }
   }
-  
+
+  .payment {
+    p {
+      font-weight: bold;
+    }
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    .payment__content {
+      padding: 42px 30px 25px 30px;
+
+      .name {
+        border-bottom: 1px dashed #e9e9e9;
+        p {
+          margin: 0;
+
+          span {
+            background-color: #00ac4d;
+            margin-right: 5px;
+            font-size: 12px;
+            color: #fff;
+            border-radius: 4px;
+            padding: 0 5px;
+          }
+        }
+        p:nth-child(3) {
+          margin-top: 5px;
+          font-family: "SF Regular";
+          font-size: 14px;
+        }
+      }
+      .price {
+        border-bottom: 1px dashed #e9e9e9;
+
+        .seat {
+          color: #fb4226;
+        }
+      }
+      .price__number {
+        .number {
+          color: #44c020 !important;
+          font-size: 16px;
+          text-align: right;
+        }
+      }
+      .wrapper-email {
+        border-bottom: 1px dashed #e9e9e9;
+        label {
+          font-size: 12px;
+          font-weight: 300;
+          width: 10%;
+        }
+        input {
+          border: none;
+          width: 100%;
+        }
+      }
+      .wrapper-phone {
+        @extend .wrapper-email;
+      }
+
+      .alert {
+        padding-left: 40px;
+        padding-right: 40px;
+        margin: 0;
+        text-align: center;
+        font-weight: 500;
+        img {
+          @include img(16px, 16px);
+        }
+        span {
+          font-size: 14px;
+          color: #4a4a4a;
+        }
+      }
+    }
+    .buyTicket {
+      background-color: #afafaf;
+      text-align: center;
+      padding: 10px;
+      color: white;
+      font-size: 24px;
+    }
+    .buyTicket.active {
+      background-color: red;
+    }
+  }
+}
