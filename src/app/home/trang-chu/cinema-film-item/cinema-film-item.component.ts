@@ -7,11 +7,8 @@ import { Component, OnInit, Input } from "@angular/core";
 })
 export class CinemaFilmItemComponent implements OnInit {
   @Input("itemPhim") itemPhim: any[] = [];
-  @Input("lstLichChieuTheoPhim") lstLichChieuTheoPhim: any[] = [];
 
   ngOnInit() {
-    for (let item in this.itemPhim) {
-      console.log(item);
-    }
+    console.log(this.itemPhim);
   }
 }

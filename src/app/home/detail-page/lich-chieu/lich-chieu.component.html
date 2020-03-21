@@ -47,8 +47,8 @@
       </ul>
     </div>
     <div class="cinemaFilm">
-      <div class="cinemaFilm-tab-item" *ngFor="let item of cumRapChieu">
-        <div class="cinemaFilm-tab-top">
+      <div class="cinemaFilm-tab-item accordion" *ngFor="let item of cumRapChieu"   id="accordionExample" style="cursor: pointer;">
+        <div class="cinemaFilm-tab-top" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
           <img src="https://s3img.vcdn.vn/123phim/2018/09/cgv-crescent-mall-15380174094679.jpg" alt="" />
           <div class="cinemaFilm-item--info">
             <span class="cinema-name"> {{ item.tenCumRap }} </span>
@@ -56,7 +56,7 @@
               TP. Hồ Chí Minh</span>
           </div>
         </div>
-        <div class="cinemaFilm-tab-bot">
+        <div class="cinemaFilm-tab-bot collapse show" id="collapseOne"  aria-labelledby="headingOne" data-parent="#accordionExample">
           <h5 href="">2D Digital | Cine & Living Room</h5>
           <span class="time-film" *ngFor="let lich of lichChieuPhim"><span class="text-clolor">
               {{ lich.ngayChieuGioChieu }} </span> ~

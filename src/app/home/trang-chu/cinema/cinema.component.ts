@@ -37,10 +37,5 @@ export class CinemaComponent implements OnInit, OnDestroy {
   }
   onListLichChieu(value) {
     this.listPhim = value.danhSachPhim;
-
-    for (const item of value.danhSachPhim) {
-      this.lstLichChieuTheoPhim = item.lstLichChieuTheoPhim;
-      console.log(this.lstLichChieuTheoPhim);
-    }
   }
 }

@@ -1,10 +1,20 @@
 <header>
   <nav class="navbar navbar-expand-sm navbar-light">
     <div class="navbar-brand">
-      <img src="https://tix.vn/app/assets/img/icons/web-logo.png" [routerLink]="['/']" />
+      <img
+        src="https://tix.vn/app/assets/img/icons/web-logo.png"
+        [routerLink]="['/']"
+      />
     </div>
-    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
-      aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+    <button
+      class="navbar-toggler d-lg-none"
+      type="button"
+      data-toggle="collapse"
+      data-target="#collapsibleNavId"
+      aria-controls="collapsibleNavId"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="collapsibleNavId">
@@ -24,10 +34,23 @@
       </ul>
     </div>
     <div class="user">
-      <div class="user__content ">
-        <a href="" [routerLink]="['/registered']"> Đăng kí</a>
-        <a href="" [routerLink]="['/login']">Đăng nhập</a>
+      <!-- Modal -->
+
+      <div
+        class="user__content "
+        (click)="login('true')"
+        data-toggle="modal"
+        data-target="#modalDangNhap"
+       
+      >
+        <img
+          class="user__img"
+          src="https://tix.vn/app/assets/img/avatar.png"
+          alt=""
+        />
+        <p>Đăng nhập</p>
       </div>
+
       <!-- <div class="userAcount" [routerLink]="['/profile']">
 
         <img
@@ -38,7 +61,6 @@
 
 
       </div> -->
-
     </div>
   </nav>
 </header>

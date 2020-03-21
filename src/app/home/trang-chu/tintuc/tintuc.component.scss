@@ -1,4 +1,11 @@
-.row {
+.homeNews {
+  background-image: url("https://tix.vn/app/assets/img/icons/back-news.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 120px;
+  margin: 40px 0;
+}
+.tintuc {
   .active {
     color: red;
   }

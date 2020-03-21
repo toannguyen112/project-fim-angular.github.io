@@ -1,27 +1,71 @@
-.movie__item img {
-  width: 100%;
-  height: 318px;
-  border-radius: 5px;
-}
-.movie__item p {
-  font-size: 18px;
-  margin: 15px;
-}
-.movie__item button {
-  background-color: #fa5238;
-  border: none;
-  padding: 10px 20px;
-  color: white;
-  display: block;
-  width: 100%;
-  font-size: 20px;
-  border-radius: 5px;
-  display: none;
-  margin-top: 10px;
-}
-.movie__item:hover button {
-  display: block;
-}
-.movie__item:hover p {
-  display: none;
+.movie__item {
+  position: relative;
+  .movie__item__cotent {
+    position: relative;
+    img {
+      width: 100%;
+      height: 318px;
+      border-radius: 5px;
+    }
+    .overPlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      background: linear-gradient(to top, #000, transparent 100%);
+      top: 0;
+      left: 0;
+      display: none;
+      
+
+      .overPlayImg {
+        position: absolute;
+        border-radius: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 50px;
+        height: 50px;
+        opacity: 1;
+        &hover{
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+  .name {
+    height: 60px;
+    text-align: left;
+    font-size: 18px;font-family: 'SF Medium';line-height: 22px;
+    font-weight: 600;
+  }
+  .btnDatve {
+    background-color: #fa5238;
+    border: none;
+    padding: 10px;
+    color: white;
+
+    width: 100%;
+    font-size: 20px;
+    border-radius: 5px;
+    display: none;
+    margin-top: 10px;
+  }
+
+  &:hover {
+    .movie__item__cotent {
+      .overPlay {
+        display: block;
+        opacity: 1;
+      }
+    }
+  }
+  &:hover {
+    .name {
+      display: none;
+    }
+    .btnDatve {
+      display: block;
+    }
+  }
 }

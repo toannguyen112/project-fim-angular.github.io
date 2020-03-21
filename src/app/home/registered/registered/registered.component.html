@@ -1,38 +1,84 @@
-<div class="login">
-  <div class="login__content">
-    <div class="login__content__logo">
-      <img src="https://tix.vn/app/assets/img/login/group@2x.png" alt="" />
-    </div>
-    <div class="login__message">
-      Đăng kí để được nhiều ưu đãi, mua vé
-      <br />
-      và bảo mật thông tin!
-    </div>
-
-    <div class="register__user">
-      <form>
-        <div class="form-group">
-          <label for="exampleInputPassword1">Họ Tên</label>
-          <input type="text" class="form-control" id="exampleInputPassword1" />
-        </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1">Email</label>
-          <input type="email" class="form-control" id="exampleInputPassword1" />
-        </div>
-        <div class="form-group">
-          <label for="exampleInputEmail1">Tài khoản</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
-        </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1">Mật khẩu</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" />
-        </div>
-
-        <button type="submit" class="btn btn-primary">Đăng kí</button>
-      </form>
-    </div>
-    <div class="signin-close" [routerLink]="['/']">
-
-    </div>
+<form class="dangKi" action="">
+  <div class="form-group ">
+    <span><i class="fa fa-user-circle" aria-hidden="true"></i>
+    </span>
+    <input
+      type="text"
+      name=""
+      id=""
+      class="form-control"
+      placeholder="Họ Tên"
+      aria-describedby="helpId"
+    />
   </div>
+  <div class="form-group ">
+    <span><i class="fa fa-user-o" aria-hidden="true"></i></span>
+    <input
+      type="text"
+      name=""
+      id=""
+      class="form-control"
+      placeholder="Tài Khoản"
+      aria-describedby="helpId"
+    />
+  </div>
+  <div class="form-group ">
+    <span><i class="fa fa-key" aria-hidden="true"></i> </span>
+    <input
+      type="text"
+      name=""
+      id=""
+      class="form-control"
+      placeholder="Mật khẩu"
+      aria-describedby="helpId"
+    />
+  </div>
+  <div class="form-group ">
+    <span><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
+    <input
+      type="text"
+      name=""
+      id=""
+      class="form-control"
+      placeholder="Email"
+      aria-describedby="helpId"
+    />
+  </div>
+
+  <div class="form-group ">
+    <span><i class="fa fa-mobile" aria-hidden="true"></i> </span>
+    <input
+      type="text"
+      name=""
+      id=""
+      class="form-control"
+      placeholder="Số Điện thoại"
+      aria-describedby="helpId"
+    />
+  </div>
+  <div class="wrapper__signUp">
+    <div class="rememberMe">
+      <input type="checkbox" />
+      Remember me
+    </div>
+    <button class="signUp">
+      Đăng kí
+    </button>
+  </div>
+</form>
+<div class="form-34or">
+  <span class="pros">
+    <span class="or">or</span>
+  </span>
+</div>
+<div class="social">
+  <div class="icon face">
+    <i class="fa fa-facebook" aria-hidden="true"></i>
+  </div>
+  <div class="icon google">
+    <i class="fa fa-google-plus" aria-hidden="true"></i>
+  </div>
+</div>
+<div class="remember">
+  <p>Already a member? <a href="">Đăng nhập</a></p>
 </div>

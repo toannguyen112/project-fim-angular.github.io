@@ -44,6 +44,8 @@ import { ProfileHistoryItemComponent } from "./profile/profile-history-item/prof
 import { CinemaTheatersComponent } from "./trang-chu/cinema-theaters/cinema-theaters.component";
 import { ItemPhimSapChieuComponent } from "./trang-chu/item-phim-sap-chieu/item-phim-sap-chieu.component";
 import { HomeToolsComponent } from './trang-chu/home-tools/home-tools.component';
+import {MatInputModule} from '@angular/material/input';
+import { ModalLoginRegisterComponent } from './modal-login-register/modal-login-register.component';
 
 @NgModule({
   declarations: [
@@ -89,9 +91,10 @@ import { HomeToolsComponent } from './trang-chu/home-tools/home-tools.component'
     ProfileHistoryItemComponent,
     CinemaTheatersComponent,
     ItemPhimSapChieuComponent,
-    HomeToolsComponent
+    HomeToolsComponent,
+    ModalLoginRegisterComponent
   ],
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule,MatInputModule],
   exports: [
     TrangChuComponent,
     LoginComponent,

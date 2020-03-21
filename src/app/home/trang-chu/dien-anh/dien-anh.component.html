@@ -47,12 +47,12 @@
             <div class="dienAnh-item">
                 <div class="dienAnh-img" style="height:200px">
                     <img class="img-fluid"
-                        src="https://s3img.vcdn.vn/123phim/2020/01/9d3c3c5edb8d4c7cad12e469c3f149f6.jpg" alt="">
+                        src="https://s3img.vcdn.vn/123phim/2020/03/cac-rap-chieu-phim-tai-thanh-pho-ho-chi-minh-hue-tam-dung-hoat-dong-tu-18h00-ngay-15-03-2020-den-31-03-2020-15843570029298.jpg" alt="">
 
                 </div>
                 <div class="dienAnh-info">
                     <p>Cùng nhau câm lặng với trailer mới của siêu phẩm A Quiet Place 2</p>
-                    <span>Một vùng đất mới, một câu chuyện mới và một nỗi lo mới.</span>
+                    <span>Theo chỉ đạo của UBND TP.HCM và TP. Huế, để đảm bảo an toàn cho khách hàng và phòng tránh nguy cơ lây lan của dịch COVID-19, TIX xin phép </span>
 
                 </div>
                 <div class="blockIconFacebook">
@@ -66,12 +66,12 @@
             <div class="dienAnh-item">
                 <div class="dienAnh-img" style="height:200px" x>
                     <img class="img-fluid"
-                        src="https://s3img.vcdn.vn/123phim/2020/01/b9ec8ac5d0c03f7e17c35424924d8d1f.jpg" alt="">
+                        src="https://s3img.vcdn.vn/123phim/2020/03/837f23782617347393261b53bb9e43cc.jpg" alt="">
 
                 </div>
                 <div class="dienAnh-info">
-                    <p>Cùng nhau câm lặng với trailer mới của siêu phẩm A Quiet Place 2</p>
-                    <span>Một vùng đất mới, một câu chuyện mới và một nỗi lo mới.</span>
+                    <p>Dàn diễn viên 'siêu hot' góp mặt trong Bloodshot gồm có những ai?</p>
+                    <span>Là tác phẩm mở màn cho Vũ trụ Điện ảnh Valiant, chắc hẳn những cái tên bảo chứng phòng vé cũng là lý do sẽ mang đến thành công cho Bloodshot.</span>
 
                 </div>
                 <div class="blockIconFacebook">
@@ -83,9 +83,8 @@
 
         <div class="col-md-4">
             <div class="listNews">
-                   <app-item-tin-tuc></app-item-tin-tuc>
-                   <app-item-tin-tuc></app-item-tin-tuc>
-                   <app-item-tin-tuc></app-item-tin-tuc>
+                   <app-item-tin-tuc *ngFor="let new of news" [news]="new" ></app-item-tin-tuc>
+                  
             </div>
         </div>
 

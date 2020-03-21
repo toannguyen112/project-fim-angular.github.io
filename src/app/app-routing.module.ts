@@ -28,7 +28,7 @@ const routes: Routes = [
         component: DetailCinemaPageComponent
       },
       {
-        path: "checkout",
+        path: "checkout/:maLichChieu",
         component: CheckoutComponent
       },
       {

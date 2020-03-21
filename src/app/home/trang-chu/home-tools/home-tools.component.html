@@ -1,64 +1,82 @@
 <div class="homeTools">
-    <div class=" dropdown  dropdown_phim">
-      <div class="text">Phim</div>
-      <div class="icon"><i class="fa fa-caret-down" aria-hidden="true" style="cursor: pointer;"></i></div>
-      <div class="dropdown__content">
-        <ul class="list">
-          <li class="item">
-            <a href="">Nắng 3: Lời Hứa Của Cha (C16)</a>
-
-          </li>
-          <li class="item">
-            <a href="">Truy Tìm Phép Thuật - Onward</a>
-
-          </li>
-          <li class="item">
-            <a href="">Quý Ông Sở Thú - Mr. Zoo: The Missing VIP (C13)</a>
-
-          </li>
-        </ul>
-      </div>
+  <div class=" dropdown  dropdown_phim" type="button" aria-expanded="false">
+    <div class="text" *ngIf="showPhim === ''; else phim">Phim</div>
+    <ng-template #phim>
+      <div class="text"> {{ showPhim }}</div>
+    </ng-template>
+    <div class="icon">
+      <i class="fa fa-caret-down" aria-hidden="true" style="cursor: pointer;"></i>
     </div>
-    <div class=" dropdown  dropdown_rap ">
-      <div class="text">Rạp</div>
-      <div class="icon"><i class="fa fa-caret-down" aria-hidden="true"></i></div>
-      <div class="dropdown__content">
-        <ul class="list">
-          <li class="item">
-            <a href="">Vui lòng chọn phim</a>
-
-          </li>
-
-        </ul>
-      </div>
-    </div>
-    <div class=" dropdown  dropdown_ngayxem">
-      <div class="text">Ngày xem</div>
-      <div class="icon"><i class="fa fa-caret-down" aria-hidden="true"></i></div>
-      <div class="dropdown__content">
-        <ul class="list">
-          <li class="item">
-            <a href="">Vui lòng chọn phim và rạp</a>
-
-          </li>
-
-        </ul>
-      </div>
-    </div>
-    <div class=" dropdown  dropdown_xuatchieu">
-      <div class="text">Suất chiếu</div>
-      <div class="icon"><i class="fa fa-caret-down" aria-hidden="true"></i></div>
-      <div class="dropdown__content">
-        <ul class="list">
-          <li class="item">
-            <a href="">Vui lòng chọn phim rạp và ngày xem</a>
-
-          </li>
-
-        </ul>
-      </div>
-    </div>
-    <div class=" dropdown  muave">
-      <button>Mua vé ngay</button>
+    <div class="dropdown__content ">
+      <ul class="list">
+        <li class="item dropdown-item" *ngFor="let phim of DanhSachPhim" (click)="selectPhim(phim.tenPhim)">
+          <p>{{ phim.tenPhim }}</p>
+        </li>
+      </ul>
     </div>
   </div>
+
+  <div class=" dropdown  dropdown_rap ">
+    <div class="text" *ngIf="showRap === ''; else rap">Rạp</div>
+    <ng-template #rap>
+      <div class="text">{{ showRap }}</div>
+    </ng-template>
+
+    <div class="icon"><i class="fa fa-caret-down" aria-hidden="true"></i></div>
+    <div class="dropdown__content">
+      <ul class="list">
+        <li class="item">
+          <p *ngIf="showPhim === ''; else Rap">
+            Vui lòng chọn phim
+          </p>
+          <ng-template #Rap>
+            <p *ngFor="let rap of dsRap" (click)="selectRap(rap.ten)">{{rap.ten}} </p>
+
+          </ng-template>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class=" dropdown  dropdown_ngayxem">
+    <div class="text" *ngIf="showNgayXem === ''; else ngayxem">Ngay xem</div>
+    <ng-template #ngayxem>
+      <div class="text">{{ showNgayXem }}</div>
+    </ng-template>
+    <div class="icon"><i class="fa fa-caret-down" aria-hidden="true"></i></div>
+    <div class="dropdown__content">
+      <ul class="list">
+        <li class="item">
+          <p *ngIf="showRap === ''; else ngayXem">Vui lòng chọn phim và rạp</p>
+          <ng-template #ngayXem>
+            <p (click)="selectNgayXem('11/02/2000')">11/02/2000</p>
+            <p (click)="selectNgayXem('1/02/1999')">1/02/1999</p>
+          </ng-template>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class=" dropdown  dropdown_xuatchieu">
+    <div class="text" *ngIf="showSuatChieu ==='' ;else suatchieu">Suất chiếu</div>
+    <ng-template #suatchieu>
+
+      <div class="text"> {{ showSuatChieu }}</div>
+    </ng-template>
+    <div class="icon"><i class="fa fa-caret-down" aria-hidden="true"></i></div>
+    <div class="dropdown__content">
+      <ul class="list">
+        <li class="item">
+          <p *ngIf="showNgayXem === ''; else suatChieu">
+            Vui lòng chọn phim ,rạp và ngày xem
+          </p>
+          <ng-template #suatChieu>
+            <p (click)="selectSuatChieu('12h')">12h</p>
+            <p (click)="selectSuatChieu('1h')">1h</p>
+          </ng-template>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class=" dropdown  muave">
+    <button (click)="muaVe()">Mua vé ngay</button>
+  </div>
+</div>

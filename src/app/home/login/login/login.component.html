@@ -1,39 +1,37 @@
-<div class="login">
-    <div class="login__content">
-        <div class="btnClose">
-            
-        </div>
-        <div class="login__content__logo">
-            <img src="https://tix.vn/app/assets/img/login/group@2x.png" alt="">
-        </div>
-        <div class="login__message">
-            Đăng nhập để được nhiều ưu đãi, mua vé
-            <br>
-            và bảo mật thông tin!
-        </div>
-        <div class="login__Category">
-            <a href=""><img src="https://tix.vn/app/assets/img/login/btn-FB.png" alt=""></a>
-            
-        </div>
-        <div class="login__user">
-            <form>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">User Name</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1">
-                </div>
-                
-                <button type="submit" class="btn btn-primary">Login</button>
-                <p>Nếu chưa có tài khoản hãy đăng kí tại đây</p>
-              </form>
-        </div>
-        <div class="login-close" [routerLink]="['/']">
-
-        </div>
-        
-    </div>
+<p>Sign in using social media to get quick access</p>
+<div class="wrapper_btn row m-0">
+    <button class="btnFace col-6">
+        <i class="fa fa-facebook" aria-hidden="true"></i>
+        FaceBook
+    </button>
+    <button class="btnGg col-6">
+        <i class="fa fa-google" aria-hidden="true"></i>
+        Google
+    </button>
 </div>
+<div class="form-34or">
+    <span class="pros">
+        <span class="or">or</span>
+    </span>
+</div>
+<form class="example-form">
+    <mat-form-field class="example-full-width">
+        <mat-label>Tài khoản</mat-label>
+        <input matInput placeholder="" value="">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width">
+        <mat-label>Mật khẩu</mat-label>
+        <input matInput placeholder="" value="">
+    </mat-form-field>
+
+    <button class="sub">
+        Đăng nhập
+    </button>
+    <p class="signUp">
+        Chưa có tài khoản?
+        <a href="">Đăng kí</a>
+    </p>
+
+
+</form>
