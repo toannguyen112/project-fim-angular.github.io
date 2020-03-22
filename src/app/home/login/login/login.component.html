@@ -1,37 +1,39 @@
 <p>Sign in using social media to get quick access</p>
 <div class="wrapper_btn row m-0">
-    <button class="btnFace col-6">
-        <i class="fa fa-facebook" aria-hidden="true"></i>
-        FaceBook
-    </button>
-    <button class="btnGg col-6">
-        <i class="fa fa-google" aria-hidden="true"></i>
-        Google
-    </button>
+  <button class="btnFace col-6">
+    <i class="fa fa-facebook" aria-hidden="true"></i>
+    FaceBook
+  </button>
+  <button class="btnGg col-6">
+    <i class="fa fa-google" aria-hidden="true"></i>
+    Google
+  </button>
 </div>
 <div class="form-34or">
-    <span class="pros">
-        <span class="or">or</span>
-    </span>
+  <span class="pros">
+    <span class="or">or</span>
+  </span>
 </div>
-<form class="example-form">
-    <mat-form-field class="example-full-width">
-        <mat-label>Tài khoản</mat-label>
-        <input matInput placeholder="" value="">
-    </mat-form-field>
-    <br>
-    <mat-form-field class="example-full-width">
-        <mat-label>Mật khẩu</mat-label>
-        <input matInput placeholder="" value="">
-    </mat-form-field>
+<form
+  class="example-form"
+  #formDangNhap="ngForm"
+  (ngSubmit)="dangNhap(formDangNhap.value)"
+>
+  <mat-form-field class="example-full-width">
+    <mat-label>Tài khoản</mat-label>
+    <input matInput value="" name="taiKhoan" ngModel />
+  </mat-form-field>
+  <br />
+  <mat-form-field class="example-full-width">
+    <mat-label>Mật khẩu</mat-label>
+    <input matInput value="" name="matKhau" ngModel />
+  </mat-form-field>
 
-    <button class="sub">
-        Đăng nhập
-    </button>
-    <p class="signUp">
-        Chưa có tài khoản?
-        <a href="">Đăng kí</a>
-    </p>
-
-
+  <button class="sub">
+    Đăng nhập
+  </button>
+  <p class="signUp">
+    Chưa có tài khoản?
+    <a href="">Đăng kí</a>
+  </p>
 </form>

@@ -18,7 +18,8 @@ export class TrangChuComponent implements OnInit, OnDestroy {
   public danhSachPhim: Film[] = [];
   public danhSachPhimDangChieu: Film[] = [];
   public danhSachPhimSapChieu: Film[] = [];
-  public login: boolean;
+  public status: boolean;
+  public user: any;
 
   ngOnInit() {
     this.sub = this.filmService.getListFilms().subscribe(res => {
@@ -39,7 +40,10 @@ export class TrangChuComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.sub.unsubscribe();
   }
-  emitLogin(value) {
-    this.login = value;
+  reciveStatus(value) {
+    this.status = value;
+  }
+  reciveUser(user) {
+    this.user = user;
   }
 }

@@ -6,14 +6,15 @@ import { BehaviorSubject } from "rxjs";
 })
 export class TransformDataService {
   private data = new BehaviorSubject([]);
-  public asData = this.data.asObservable()
-  public dataDsPhim = new BehaviorSubject([])
-  public asDataPhim = this.dataDsPhim.asObservable()
+  public asData = this.data.asObservable();
+  public dataDsPhim = new BehaviorSubject([]);
+  public asDataPhim = this.dataDsPhim.asObservable();
+
   constructor() {}
-  public transformData(thamso){
-    this.data.next(thamso)
+  public transformData(thamso) {
+    this.data.next(thamso);
   }
-  public transDanhSachPhim(thamso){
-    this.dataDsPhim.next(thamso)
+  public transDanhSachPhim(thamso) {
+    this.dataDsPhim.next(thamso);
   }
 }

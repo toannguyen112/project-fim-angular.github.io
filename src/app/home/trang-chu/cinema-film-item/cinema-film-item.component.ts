@@ -9,6 +9,6 @@ export class CinemaFilmItemComponent implements OnInit {
   @Input("itemPhim") itemPhim: any[] = [];
 
   ngOnInit() {
-    console.log(this.itemPhim);
+   
   }
 }

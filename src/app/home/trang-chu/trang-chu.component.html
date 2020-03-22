@@ -1,4 +1,4 @@
-<app-header (emitLogin)="emitLogin($event)"></app-header>
+<app-header (emitStatus)="reciveStatus($event)"  [user]="user" ></app-header>
 <app-slider></app-slider>
 <div class="container text-center pt-5">
   <app-loai-phim
@@ -16,5 +16,5 @@
 <app-footer></app-footer>
 
 <!-- modal_login_registered  -->
-<app-modal-login-register></app-modal-login-register>
+<app-modal-login-register  (emitUser)="reciveUser($event)" ></app-modal-login-register>
 <!-- end  -->

@@ -23,7 +23,7 @@
               <span class="dangKi" (click)="selectType(true)" [ngClass]="{active: type}">Đăng kí</span>
             </div>
           </div>
-          <app-login *ngIf="!type; else dangki"></app-login>
+          <app-login *ngIf="!type; else dangki"  (emitUser)="reciveUser($event)"  ></app-login>
           <ng-template #dangki>
             <app-registered></app-registered>
           </ng-template>

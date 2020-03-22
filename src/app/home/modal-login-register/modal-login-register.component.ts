@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Output, EventEmitter } from "@angular/core";
 
 @Component({
   selector: "app-modal-login-register",
@@ -6,12 +6,15 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./modal-login-register.component.scss"]
 })
 export class ModalLoginRegisterComponent implements OnInit {
+  @Output("emitUser") emitUser = new EventEmitter();
   public type: boolean = false;
   constructor() {}
 
   ngOnInit() {}
   selectType(value) {
     this.type = value;
-    console.log(this.type);
+  }
+  reciveUser(user) {
+    this.emitUser.emit(user);
   }
 }

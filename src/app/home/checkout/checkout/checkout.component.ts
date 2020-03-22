@@ -19,7 +19,7 @@ export class CheckoutComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      console.log(params.maLichChieu);
+     
       this.sub = this.phongVeService
         .chiTietPhongVe(params.maLichChieu)
         .subscribe(res => {
@@ -29,8 +29,6 @@ export class CheckoutComponent implements OnInit {
     });
   }
   changeStatus(value) {
-    console.log(value);
-
     this.status = value;
   }
 }

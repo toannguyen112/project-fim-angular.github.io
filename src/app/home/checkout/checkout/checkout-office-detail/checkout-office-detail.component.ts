@@ -33,7 +33,7 @@ export class CheckoutOfficeDetailComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    // this.startCountdown();
+    this.startCountdown();
   }
   startCountdown() {
     if (this.init && this.init > 0) {
