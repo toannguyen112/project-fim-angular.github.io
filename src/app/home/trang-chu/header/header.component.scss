@@ -40,7 +40,10 @@ header {
     }
     .user {
       width: 25%;
-      text-align: center;
+      display: flex;
+      align-items: center;
+
+      justify-content: flex-end;
       .user__content {
         display: flex;
         align-items: center;
@@ -63,22 +66,73 @@ header {
         display: inline-block;
         cursor: pointer;
         outline: none;
-        img {
-          width: 40px;
+        padding-right: 20px;
+        .userAcount__img {
+          width: 30px;
+          height: 30px;
           border-radius: 50%;
         }
-        .name {
+        .userAcount__name {
           margin-left: 5px;
           font-weight: 500;
           font-size: 15px;
         }
+        .userAcount__logout {
+          position: absolute;
+          top: 100%;
+          width: 120px;
+          text-align: center;
+          display: none;
+          padding: 5px;
+          border-radius: 4px;
+          background-color: #888888;
+          cursor: pointer;
+          p {
+            margin: 0;
+            color: #fff;
+          }
+        }
+
+        &:hover {
+          .userAcount__logout {
+            display: block;
+          }
+        }
+      }
+
+      .place {
+        .dropdown {
+          .dropdown-toggle {
+            color: #9b9b9b;
+            background-color: #fff;
+            border: none;
+            display: flex;
+            align-items: center;
+            outline: none;
+            justify-content: space-between;
+            &::after {
+              display: none;
+            }
+
+            .dropdow__selected {
+              font-size: 15px;
+            }
+            .iconDropdown {
+              padding-left: 40px;
+            }
+          }
+          .dropdown-menu {
+            width: 160px;
+
+            .dropdown-item {
+              transition: all .5s;
+              &:hover{
+                background-color: #60c5ef;
+              }
+            }
+          }
+        }
       }
     }
-  }
-}
-
-@media only screen and (max-width: 500px) {
-  .user {
-    display: none;
   }
 }

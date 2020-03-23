@@ -15,26 +15,33 @@ export class TrangChuComponent implements OnInit, OnDestroy {
     private transform: TransformDataService
   ) {}
   public sub = new Subscription();
-  public danhSachPhim: Film[] = [];
-  public danhSachPhimDangChieu: Film[] = [];
-  public danhSachPhimSapChieu: Film[] = [];
+  // public danhSachPhim: Film[] = [];
+  // public danhSachPhimDangChieu: Film[] = [];
+  // public danhSachPhimSapChieu: Film[] = [];
   public status: boolean;
-  public user: any;
+  public movieList: Film[] = [];
 
   ngOnInit() {
+    this.movieList = this.filmService.movieList;
+    this.filmService.emitterMovieList.subscribe((newMovieList: Film[]) => {
+      this.movieList = newMovieList;
+      console.log(this.movieList);
+    });
     this.sub = this.filmService.getListFilms().subscribe(res => {
-      for (let i = 0; i < res.length; i++) {
-        this.danhSachPhim.push(res[i]);
+      //gửi data lên service, lưu vào biến movieList
+      this.filmService.setDanhSachPhim(res);
+      // for (let i = 0; i < res.length; i++) {
+      //   this.danhSachPhim.push(res[i]);
 
-        if (i < 4) {
-          this.danhSachPhimDangChieu.push(res[i]);
-        } else {
-          this.danhSachPhimSapChieu.push(res[i]);
-        }
-      }
+      //   if (i < 4) {
+      //     this.danhSachPhimDangChieu.push(res[i]);
+      //   } else {
+      //     this.danhSachPhimSapChieu.push(res[i]);
+      //   }
+      // }
     });
 
-    this.transform.transDanhSachPhim(this.danhSachPhim);
+    // this.transform.transDanhSachPhim(this.danhSachPhim);
   }
 
   ngOnDestroy() {

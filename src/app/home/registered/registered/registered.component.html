@@ -2,7 +2,7 @@
   class="dangKi"
   action=""
   #formDangKi="ngForm"
-  (ngSubmit)="dangKi(formDangKi.value)"
+  (ngSubmit)="dangKi(formDangKi)"
 >
   <div class="form-group ">
     <span><i class="fa fa-user-circle" aria-hidden="true"></i> </span>
@@ -26,7 +26,13 @@
       placeholder="Tài Khoản"
       aria-describedby="helpId"
       ngModel
+      #taiKhoan="ngModel"
     />
+    <div *ngIf="taiKhoan.errors && (taiKhoan.dirty || taiKhoan.touched)">
+      <div *ngIf="taiKhoan.errors.required" class="alert alert-danger">
+        *Vui lòng nhập tài khoản
+      </div>
+    </div>
   </div>
   <div class="form-group ">
     <span><i class="fa fa-key" aria-hidden="true"></i> </span>
@@ -38,7 +44,27 @@
       placeholder="Mật khẩu"
       aria-describedby="helpId"
       ngModel
+      #matKhau="ngModel"
     />
+    <div *ngIf="matKhau.errors && (matKhau.dirty || matKhau.touched)">
+      <div *ngIf="matKhau.errors.required" class="alert alert-danger">
+        * Vui lòng nhập mật khẩu
+      </div>
+
+      <div
+        *ngIf="
+          (matKhau.errors.minlength || matKhau.errors.maxlength) &&
+          !matKhau.errors.pattern
+        "
+        class="alert alert-danger"
+      >
+        * Mật khẩu phải có từ 8 tới 16 kí tự
+      </div>
+
+      <div *ngIf="matKhau.errors.pattern" class="alert alert-danger">
+        * Mật khẩu nhập vào phải là số
+      </div>
+    </div>
   </div>
   <div class="form-group ">
     <span><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
@@ -62,37 +88,16 @@
       class="form-control"
       placeholder="Số Điện thoại"
       aria-describedby="helpId"
-      ngModel
+     ngModel
     />
   </div>
-  <div class="form-group ">
-    <span><i class="fa fa-mobile" aria-hidden="true"></i> </span>
-    <input
-      type="text"
-      name="maNhom"
-      id=""
-      class="form-control"
-      placeholder="ma nhom"
-      aria-describedby="helpId"
-      ngModel
-    />
-  </div>
-  <div class="form-group ">
-    <label for="">Loai Nguoi Dung</label>
-    <input
-      type="radio"
-      ngModel
-      name="maLoaiNguoiDung"
-      value="KhacHang"
-    />KhacHang
-    <input type="radio" ngModel name="maLoaiNguoiDung" value="QuanTri" />Admin
-  </div>
+
   <div class="wrapper__signUp">
     <div class="rememberMe">
       <input type="checkbox" />
       Remember me
     </div>
-    <button class="signUp">
+    <button class="signUp" type="submit" [disabled]="formDangKi.invalid">
       Đăng kí
     </button>
   </div>

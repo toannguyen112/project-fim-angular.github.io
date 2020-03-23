@@ -1,7 +1,9 @@
+import { Film } from "src/app/models/film";
 import { Component, OnInit, AfterViewInit, Input } from "@angular/core";
 import $ from "jquery";
-import { Film } from "src/app/models/film";
+import { FilmService } from "src/app/services/film.service";
 declare var $: any;
+
 @Component({
   selector: "app-phim-dang-chieu",
   templateUrl: "./phim-dang-chieu.component.html",
@@ -9,10 +11,20 @@ declare var $: any;
 })
 export class PhimDangChieuComponent implements OnInit, AfterViewInit {
   @Input("danhSachPhimDangChieu") danhSachPhimDangChieu: any[] = [];
-  public ds: any[] = [];
-  constructor() {}
+  public movieList: Film[] = [];
+  constructor(private filmService: FilmService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.movieList = this.filmService.movieList;
+    this.filmService.emitterMovieList.subscribe(res => {
+      this.movieList = res;
+      console.log(this.movieList);
+    });
 
-  ngAfterViewInit() {}
+
+    
+  }
+  ngAfterViewInit() {
+    
+  }
 }

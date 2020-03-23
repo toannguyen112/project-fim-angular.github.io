@@ -1,18 +1,27 @@
 <div class="row mt-5">
   <div class="col-12">
-    <a [ngClass]="{'active': dangChieuStatus}" class="mr-2" (click)="hienPhimDangChieu()"> Đang
-      Chiếu</a>
-    <a [ngClass]="{'active': !dangChieuStatus}" (click)="hienPhimSapChieu()"> Sắp
-      Chiếu</a>
+    <a
+      [ngClass]="{ active: dangChieuStatus }"
+      class="mr-2"
+      (click)="hienPhimDangChieu()"
+    >
+      Đang Chiếu</a
+    >
+    <a [ngClass]="{ active: !dangChieuStatus }" (click)="hienPhimSapChieu()">
+      Sắp Chiếu</a
+    >
   </div>
 </div>
 <div class="row">
   <div class="col-12 mt-2" *ngIf="dangChieuStatus; else phimSapChieu">
-    <app-phim-dang-chieu [danhSachPhimDangChieu]="danhSachPhimDangChieu"> </app-phim-dang-chieu>
+    <app-phim-dang-chieu [danhSachPhimDangChieu]="movieList">
+    </app-phim-dang-chieu>
   </div>
   <ng-template #phimSapChieu>
     <div class="col-12 mt-2">
-      <app-phim-sap-chieu [danhSachPhimSapChieu]="danhSachPhimSapChieu"></app-phim-sap-chieu>
+      <app-phim-sap-chieu
+        [danhSachPhimSapChieu]="movieList"
+      ></app-phim-sap-chieu>
     </div>
   </ng-template>
 </div>

@@ -24,26 +24,49 @@
       </ul>
     </div>
     <div class="user">
-      <!-- Modal dangki && dang nhap -->
+
+      <!-- user  -->
       <ng-container *ngIf="credentials ; else account">
 
         <div class="userAcount">
-          <img
+          <img class="userAcount__img"
             src="
         https://instagram.fsgn6-1.fna.fbcdn.net/v/t51.2885-19/s320x320/66482175_334260424128185_7085073249431715840_n.jpg?_nc_ht=instagram.fsgn6-1.fna.fbcdn.net&_nc_ohc=aA94PXO8tu8AX-Xde22&oh=aaa613024daaabd6704dccece050afbd&oe=5E99B1B6"
             alt="" />
-          <span class="name"> {{ credentials.taiKhoan }} </span>
-          <button class=" btn btn-danger" (click)="dangXuat()">dang xuat</button>
+          <span class="userAcount__img"> {{ credentials.taiKhoan }} </span>
+          <div class="userAcount__logout" (click)="dangXuat()">
+            <p>Đăng xuất</p>
+          </div>
+
         </div>
       </ng-container>
-     
-      <!-- user  -->
+      <!-- Modal dangki && dang nhap -->
       <ng-template #account>
         <div class="user__content " (click)="login('true')" data-toggle="modal" data-target="#modalDangNhap">
           <img class="user__img" src="https://tix.vn/app/assets/img/avatar.png" alt="" />
           <p>Đăng nhập</p>
         </div>
       </ng-template>
+
+
+      <div class="place">
+        <div class="dropdown">
+          <button class=" dropdown-toggle" type="button" id="place" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            <img src="https://tix.vn/app/assets/img/icons/location-header.png" alt="">
+            <div class="dropdow__selected">
+              Vũng tàu
+            </div>
+            <img src="https://tix.vn/app/assets/img/icons/dropdown-icon.png" class="iconDropdown" alt="">
+          </button>
+          <div class="dropdown-menu" aria-labelledby="place">
+            <button class="dropdown-item" type="button">Hồ Chí Minh</button>
+            <button class="dropdown-item" type="button">Đà Nẵng </button>
+
+          </div>
+        </div>
+      </div>
     </div>
+
   </nav>
 </header>

@@ -1,12 +1,13 @@
 import { HttpClient } from "@angular/common/http";
 
-import { Injectable } from "@angular/core";
+import { Injectable, Output, EventEmitter } from "@angular/core";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
 @Injectable({
   providedIn: "root"
 })
 export class FilmService {
+  constructor(private _http: HttpClient) {}
   readonly api = {
     // đối tương quản lí api
     getListFilm:
@@ -17,14 +18,19 @@ export class FilmService {
       "http://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayThongTinPhim?MaPhim="
   };
 
-  constructor(private _http: HttpClient) {}
+  public movieList: any[] = [];
+  @Output("danhSachPhim") emitterMovieList = new EventEmitter();
 
+  // luu danhSachPhim
+  setDanhSachPhim(movieList) {
+    this.movieList = movieList;
+    this.emitterMovieList.emit(this.movieList);
+  }
   // lấy danh sách phim
   getListFilms(): Observable<any> {
     let observable = this._http
       .get(this.api.getListFilm)
       .pipe(map((res: Response) => res));
-
     return observable;
   }
 

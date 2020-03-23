@@ -25,7 +25,7 @@ export class HomeToolsComponent implements OnInit {
   ngOnInit() {
     this.transform.asDataPhim.subscribe(res => {
       this.DanhSachPhim = res;
-      console.log(res);
+      // console.log(res);
     });
   }
   selectPhim(tenPhim) {
@@ -34,10 +34,10 @@ export class HomeToolsComponent implements OnInit {
   }
   selectRap(e) {
     this.showRap = e;
-    console.log(this.showRap);
+    // console.log(this.showRap);
   }
   selectNgayXem(e) {
-    console.log(e);
+    // console.log(e);
     this.showNgayXem = e;
   }
   selectSuatChieu(e) {

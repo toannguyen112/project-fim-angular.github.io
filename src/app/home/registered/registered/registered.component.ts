@@ -2,6 +2,7 @@ import { DangKi } from "src/app/models/dangKi";
 import { Subscription } from "rxjs";
 import { Component, OnInit, OnDestroy } from "@angular/core";
 import { UserService } from "src/app/services/user.service";
+import { NgForm } from "@angular/forms";
 
 @Component({
   selector: "app-registered",
@@ -13,12 +14,16 @@ export class RegisteredComponent implements OnInit {
   constructor(private userService: UserService) {}
 
   ngOnInit() {}
- 
-  dangKi(data: DangKi) {
-    console.log(data);
-    this.userService.dangKi(data).subscribe(
+
+  dangKi(data: NgForm) {
+    const user = {
+      ...data.form.value,
+      maNhom: "GP01",
+      maLoaiNguoiDung: "KhachHang"
+    };
+
+    this.userService.dangKi(user).subscribe(
       res => {
-        console.log(res);
         alert("Đăng kí thành công");
       },
       error => {

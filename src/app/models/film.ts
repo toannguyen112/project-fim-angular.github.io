@@ -6,6 +6,6 @@ export class Film {
   public hinhAnh: string;
   public moTa: string;
   public maNhom: string;
-  public ngayKhoiChieu: string;
+  public ngayKhoiChieu: Date;
   public danhGia: number;
 }

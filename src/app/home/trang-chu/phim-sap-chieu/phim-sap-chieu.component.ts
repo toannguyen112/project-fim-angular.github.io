@@ -1,6 +1,7 @@
 import { Component, OnInit, AfterViewInit, Input } from "@angular/core";
 import $ from "jquery";
 import { Film } from "src/app/models/film";
+import { FilmService } from "src/app/services/film.service";
 declare var $: any;
 @Component({
   selector: "app-phim-sap-chieu",
@@ -8,13 +9,16 @@ declare var $: any;
   styleUrls: ["./phim-sap-chieu.component.scss"]
 })
 export class PhimSapChieuComponent implements OnInit, AfterViewInit {
-  constructor() {}
-
+  constructor(private filmService: FilmService) {}
+  public movieList: Film[] = [];
   @Input("danhSachPhimSapChieu") danhSachPhimSapChieu: Film[] = [];
 
   ngOnInit() {
-    console.log(this.danhSachPhimSapChieu);
-    
+    this.movieList = this.filmService.movieList;
+    this.filmService.emitterMovieList.subscribe(res => {
+      this.movieList = res;
+      console.log(this.movieList);
+    });
   }
   ngAfterViewInit() {
     $(".owl-carousel").owlCarousel({
