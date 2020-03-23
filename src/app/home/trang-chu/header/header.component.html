@@ -24,31 +24,26 @@
       </ul>
     </div>
     <div class="user">
-      <!-- Modal dangki &7 dang nhap -->
-      <ng-container *ngIf="user ; else account">
+      <!-- Modal dangki && dang nhap -->
+      <ng-container *ngIf="credentials ; else account">
+
         <div class="userAcount">
           <img
             src="
-          https://instagram.fsgn6-1.fna.fbcdn.net/v/t51.2885-19/s320x320/66482175_334260424128185_7085073249431715840_n.jpg?_nc_ht=instagram.fsgn6-1.fna.fbcdn.net&_nc_ohc=aA94PXO8tu8AX-Xde22&oh=aaa613024daaabd6704dccece050afbd&oe=5E99B1B6"
-            alt="">
-          <span class="name"> {{user.taiKhoan}} </span>
-          <button class="btn btn-success" (click)="dangXuat()">Đăng xuất</button>
+        https://instagram.fsgn6-1.fna.fbcdn.net/v/t51.2885-19/s320x320/66482175_334260424128185_7085073249431715840_n.jpg?_nc_ht=instagram.fsgn6-1.fna.fbcdn.net&_nc_ohc=aA94PXO8tu8AX-Xde22&oh=aaa613024daaabd6704dccece050afbd&oe=5E99B1B6"
+            alt="" />
+          <span class="name"> {{ credentials.taiKhoan }} </span>
+          <button class=" btn btn-danger" (click)="dangXuat()">dang xuat</button>
         </div>
-
       </ng-container>
-
-
+     
       <!-- user  -->
       <ng-template #account>
         <div class="user__content " (click)="login('true')" data-toggle="modal" data-target="#modalDangNhap">
           <img class="user__img" src="https://tix.vn/app/assets/img/avatar.png" alt="" />
           <p>Đăng nhập</p>
         </div>
-
-
       </ng-template>
-
-
     </div>
   </nav>
 </header>

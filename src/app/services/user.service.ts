@@ -1,16 +1,26 @@
 import { DangKi } from "src/app/models/dangKi";
-import { map } from "rxjs/operators";
-
 import { HttpClient } from "@angular/common/http";
-import { Injectable } from "@angular/core";
+import { Injectable, Output, EventEmitter } from "@angular/core";
 import { Observable } from "rxjs";
 import { DangNhap } from "../models/dangNhap";
 import { HttpHeaders } from "@angular/common/http";
+
 @Injectable({
   providedIn: "root"
 })
 export class UserService {
   constructor(private _http: HttpClient) {}
+
+  // store 
+  public credentials :  any ;
+  @Output("credentials") credentialEmitter = new EventEmitter();
+
+
+  setCredentials(credentials) : void {
+    this.credentials = credentials ;
+    this.credentialEmitter.emit(this.credentials)
+  }
+   
   httpOptions = {
     headers: new HttpHeaders({
       "Content-Type": "application/json",

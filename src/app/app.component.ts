@@ -1,10 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
+import { UserService } from "./services/user.service";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.scss"]
 })
-export class AppComponent {
-  title = 'project-film';
+export class AppComponent implements OnInit {
+  constructor(private userService: UserService){}
+  title = "project-film";
+  ngOnInit() {
+    const credentialString = localStorage.getItem("credentials");
+    if (credentialString) {
+      this.userService.setCredentials(JSON.parse(credentialString));
+    }
+  }
 }

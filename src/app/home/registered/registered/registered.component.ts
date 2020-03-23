@@ -8,7 +8,7 @@ import { UserService } from "src/app/services/user.service";
   templateUrl: "./registered.component.html",
   styleUrls: ["./registered.component.scss"]
 })
-export class RegisteredComponent implements OnInit, OnDestroy {
+export class RegisteredComponent implements OnInit {
   public sub: Subscription;
   constructor(private userService: UserService) {}
 

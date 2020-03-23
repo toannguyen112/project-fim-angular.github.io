@@ -43,7 +43,4 @@ export class TrangChuComponent implements OnInit, OnDestroy {
   reciveStatus(value) {
     this.status = value;
   }
-  reciveUser(user) {
-    this.user = user;
-  }
 }
