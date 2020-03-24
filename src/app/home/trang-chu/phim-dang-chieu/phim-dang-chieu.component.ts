@@ -18,7 +18,7 @@ export class PhimDangChieuComponent implements OnInit, AfterViewInit {
     this.movieList = this.filmService.movieList;
     this.filmService.emitterMovieList.subscribe(res => {
       this.movieList = res;
-      console.log(this.movieList);
+      
     });
 
 

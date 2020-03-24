@@ -49,6 +49,7 @@ import { ModalLoginRegisterComponent } from "./modal-login-register/modal-login-
 import { CheckoutContentComponent } from "./checkout/checkout/checkout-content/checkout-content.component";
 import { CheckoutOfficeDetailComponent } from "./checkout/checkout/checkout-office-detail/checkout-office-detail.component";
 import { MatRadioModule } from "@angular/material/radio";
+import { LoadingComponent } from './loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -96,7 +97,8 @@ import { MatRadioModule } from "@angular/material/radio";
     HomeToolsComponent,
     ModalLoginRegisterComponent,
     CheckoutContentComponent,
-    CheckoutOfficeDetailComponent
+    CheckoutOfficeDetailComponent,
+    LoadingComponent
   ],
   imports: [CommonModule, RouterModule, MatInputModule, MatRadioModule
   ,FormsModule],
@@ -104,7 +106,7 @@ import { MatRadioModule } from "@angular/material/radio";
     TrangChuComponent,
     LoginComponent,
     RegisteredComponent,
-
+    LoadingComponent,
     CheckoutComponent,
     DetailPageComponent,
     CheckoutHeaderComponent,

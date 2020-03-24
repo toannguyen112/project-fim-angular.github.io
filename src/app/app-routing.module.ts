@@ -11,6 +11,7 @@ import { DetailCinemaPageComponent } from "./home/detail-cinema-page/detail-cine
 import { DetailPageComponent } from "./home/detail-page/detail-page.component";
 import { ProfileComponent } from "./home/profile/profile.component";
 import { HomeLayoutComponent } from "./home/home-layout/home-layout.component";
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   {
@@ -41,7 +42,8 @@ const routes: Routes = [
       },
       {
         path: "profile",
-        component: ProfileComponent
+        component: ProfileComponent,
+        canActivate : [AuthGuard]
       }
     ]
   },

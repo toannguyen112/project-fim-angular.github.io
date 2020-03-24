@@ -24,10 +24,10 @@
           <div class="profile__content__body--content">
             <div [ngSwitch]="choosen">
               <div *ngSwitchCase="'about'">
-                <app-profile-about></app-profile-about>
+                <app-profile-about [thongTinTaiKhoan]="thongTinTaiKhoan" ></app-profile-about>
               </div>
               <div *ngSwitchCase="'history'">
-                <app-profile-history></app-profile-history>
+                <app-profile-history [thongTinTaiKhoan] ="thongTinTaiKhoan" ></app-profile-history>
               </div>
               <div *ngSwitchCase="'contact'">
                 <app-profile-contact></app-profile-contact>
@@ -39,3 +39,4 @@
     </div>
   </div>
 </div>
+<app-footer></app-footer>

@@ -1,10 +1,9 @@
-<app-header (emitStatus)="reciveStatus($event)"   ></app-header>
+
+<app-header (emitStatus)="reciveStatus($event)"></app-header>
 <app-slider></app-slider>
 <div class="container text-center pt-5">
-  <app-loai-phim
-    [danhSachPhimDangChieu]="danhSachPhimDangChieu"
-    [danhSachPhimSapChieu]="danhSachPhimSapChieu"
-  ></app-loai-phim>
+  <app-loai-phim [danhSachPhimDangChieu]="danhSachPhimDangChieu" [danhSachPhimSapChieu]="danhSachPhimSapChieu">
+  </app-loai-phim>
 </div>
 
 <div class="container">
@@ -16,5 +15,6 @@
 <app-footer></app-footer>
 
 <!-- modal_login_registered  -->
-<app-modal-login-register  (emitUser)="reciveUser($event)" ></app-modal-login-register>
+<app-modal-login-register (emitUser)="reciveUser($event)"></app-modal-login-register>
 <!-- end  -->
+
