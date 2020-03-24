@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { TransformDataService } from "src/app/services/transformData.service";
+import { FilmService } from "src/app/services/film.service";
 
 @Component({
   selector: "app-home-tools",
@@ -20,12 +21,12 @@ export class HomeToolsComponent implements OnInit {
   public showRap: string = "";
   public showNgayXem: string = "";
   public showSuatChieu: string = "";
-  constructor(private transform: TransformDataService) {}
+  constructor(private _filmService: FilmService) {}
 
   ngOnInit() {
-    this.transform.asDataPhim.subscribe(res => {
+    this.DanhSachPhim = this._filmService.movieList;
+    this._filmService.emitterMovieList.subscribe(res => {
       this.DanhSachPhim = res;
-      // console.log(res);
     });
   }
   selectPhim(tenPhim) {

@@ -1,8 +1,7 @@
 <div class="profileHistory">
     <ul class="profileHistory__list">
-                <app-profile-history-item></app-profile-history-item>
-                <app-profile-history-item></app-profile-history-item>
-                <app-profile-history-item></app-profile-history-item>
+        <app-profile-history-item *ngFor="let thongTin of thongTinDatVe" [thongTin]="thongTin" ></app-profile-history-item>
+
 
     </ul>
 </div>

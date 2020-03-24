@@ -7,12 +7,12 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ProfileHistoryComponent implements OnInit {
   @Input("thongTinTaiKhoan") thongTinTaiKhoan : any ;
-  public lichSuDatVe : []
+  public thongTinDatVe : []
   constructor() { }
 
   ngOnInit() {
-   this.lichSuDatVe = this.thongTinTaiKhoan.thongTinDatVe
-   console.log(this.lichSuDatVe);
+   this.thongTinDatVe = this.thongTinTaiKhoan.thongTinDatVe
+   console.log(this.thongTinDatVe);
    
     
   }

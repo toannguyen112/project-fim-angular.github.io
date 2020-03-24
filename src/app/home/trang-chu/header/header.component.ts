@@ -20,7 +20,6 @@ export class HeaderComponent implements OnInit {
     this.credentials = this.userService.credentials;
     this.userService.credentialEmitter.subscribe(newCredentials => {
       this.credentials = newCredentials;
-      console.log(this.credentials);
     });
   }
 

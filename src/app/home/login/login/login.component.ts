@@ -1,4 +1,5 @@
-import { Component, OnInit } from "@angular/core";
+import { Subscription } from "rxjs";
+import { Component, OnInit, OnDestroy } from "@angular/core";
 import { UserService } from "src/app/services/user.service";
 import { Router } from "@angular/router";
 @Component({
@@ -7,24 +8,31 @@ import { Router } from "@angular/router";
   styleUrls: ["./login.component.scss"]
 })
 export class LoginComponent implements OnInit {
+  public sub: Subscription;
   public user: any;
   constructor(private userService: UserService, private route: Router) {}
 
   ngOnInit() {}
   dangNhap(user) {
     console.log(user);
-    this.userService.dangNhap(user).subscribe(
-      res => {
-        if (typeof res == "object") {
-          localStorage.setItem("credentials", JSON.stringify(res));
-          this.userService.setCredentials(res);
-        } else {
-          alert("vui long nhap lai");
-        }
-      },
-      err => {
-        console.log(err);
-      }
-    );
+    if (user.taiKhoan == "admin" && user.matKhau == "123") {
+      this.route.navigate(['admin']);
+    }
+    //  else {
+    //   this.userService.dangNhap(user).subscribe(
+    //     res => {
+    //       if (typeof res == "object") {
+    //         localStorage.setItem("credentials", JSON.stringify(res));
+    //         this.userService.setCredentials(res);
+    //         console.log(this.user);
+    //       } else {
+    //         alert("vui long nhap lai");
+    //       }
+    //     },
+    //     err => {
+    //       console.log(err);
+    //     }
+    //   );
+    // }
   }
 }
