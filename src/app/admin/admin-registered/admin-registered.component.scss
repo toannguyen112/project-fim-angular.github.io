@@ -1,0 +1,98 @@
+.AdminRegistered {
+  .AdminRegistered__content {
+    padding: 100px 200px;
+
+    .AdminRegistered__content--left {
+      width: 50%;
+      .wrapperContent__left--title {
+        font-size: 45px;
+        margin: 0;
+        color: #333;
+        font-weight: 700;
+      }
+      .wrapperContent__left--text {
+        color: #666;
+        letter-spacing: 1px;
+        line-height: 1.8em;
+        font-size: 16px;
+        font-weight: 400;
+      }
+      .wrapperContent__left--img {
+        img {
+          width: 445px;
+        }
+      }
+    }
+    .AdminRegistered__content--right {
+      width: 50%;
+
+      .wrapper__right {
+        .wrapper__right--title {
+          font-size: 26px;
+          margin-bottom: 10px;
+          color: #333;
+          letter-spacing: 2px;
+        }
+        .wrapper__right--text {
+          margin: 0;
+          color: #666;
+          letter-spacing: 1px;
+          line-height: 1.8em;
+          font-size: 16px;
+        }
+        form {
+          label {
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+            color: #000;
+            margin-bottom: 5px;
+            font-size: 13px;
+            padding-left: 0px;
+          }
+          .wrapper__taiKhoan,
+          .wrapper__matKhau {
+            padding: 10px;
+            display: flex;
+            border: 1px solid #ddd;
+            background: #fff;
+            margin-top: 10px;
+            margin-bottom: 20px;
+
+            span {
+              width: 16px;
+              color: #01cd74;
+            }
+            input {
+              outline: none;
+              padding: 0 10px;
+              border: none;
+              width: 100%;
+            }
+          }
+          .admin__login {
+            .btn__login {
+              padding: 12px 14px;
+              background-color: blue;
+              border: none;
+              outline: none;
+              background: #ff4040;
+              color: #fff;
+              text-transform: uppercase;
+            }
+          }
+        }
+        .wrraper__footer {
+          padding-top: 10px;
+          .text__footer {
+            color: #666;
+            .text__link {
+              color: #ff4040;
+            }
+          }
+        }
+      }
+    }
+  }
+}

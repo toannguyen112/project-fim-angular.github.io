@@ -146,7 +146,7 @@
         alt="" />
       <div class="profile_details__info">
         <p class="name">
-          Admin Name
+          Admin {{credentialsAdmin.taiKhoan}}
         </p>
         <p class="administrator">
           Administrator
@@ -172,7 +172,7 @@
           <i class="fa fa-suitcase" aria-hidden="true"></i>
           <span> Profile</span>
         </div>
-        <div class="dropdown-item-admin">
+        <div class="dropdown-item-admin" (click)="dangXuat()">
           <i class="fa fa-sign-out" aria-hidden="true"></i>
           <span> Logout</span>
         </div>

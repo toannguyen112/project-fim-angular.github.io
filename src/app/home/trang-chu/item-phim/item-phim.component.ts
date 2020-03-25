@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Film } from 'src/app/models/film';
 
 @Component({
-  selector: 'app-item-phim-dang-chieu',
+  selector: 'app-item-phim',
   templateUrl: './item-phim.component.html',
   styleUrls: ['./item-phim.component.scss']
 })

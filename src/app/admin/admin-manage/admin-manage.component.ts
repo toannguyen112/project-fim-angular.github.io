@@ -1,4 +1,6 @@
 import { Component, OnInit } from "@angular/core";
+import { UserService } from "src/app/services/user.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-admin-manage",
@@ -9,10 +11,17 @@ export class AdminManageComponent implements OnInit {
   public show: boolean = false;
   public showDownArrow: boolean = false;
   public type: string = "quanLiPhim";
+  public credentialsAdmin: any;
+  constructor(private _userService: UserService, private _route: Router) {}
 
-  constructor() {}
+  ngOnInit() {
+    this.credentialsAdmin = this._userService.credentialsAdmin;
+    console.log(this.credentialsAdmin);
 
-  ngOnInit() {}
+    this._userService.credentialsAdminEmitter.subscribe(res => {
+      this.credentialsAdmin = res;
+    });
+  }
 
   showSideBar() {
     this.show = !this.show;
@@ -24,5 +33,10 @@ export class AdminManageComponent implements OnInit {
 
   chosenType(value: string) {
     this.type = value;
+  }
+  dangXuat() {
+    this._userService.setCredentials(null);
+    localStorage.removeItem("admin");
+    this._route.navigate(["/admin/registered"]);
   }
 }

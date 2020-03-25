@@ -10,12 +10,15 @@ import { MatPaginatorModule } from "@angular/material";
 import { QuanliphimContentComponent } from "./admin-manage/quanliphim-content/quanliphim-content.component";
 import { QuanlinguoidungContentComponent } from "./admin-manage/quanlinguoidung-content/quanlinguoidung-content.component";
 import { MatButtonModule } from "@angular/material/button";
+import { AdminRegisteredComponent } from "./admin-registered/admin-registered.component";
+import { FormsModule } from "@angular/forms";
 @NgModule({
   declarations: [
     AdminLayoutComponent,
     AdminManageComponent,
     QuanliphimContentComponent,
-    QuanlinguoidungContentComponent
+    QuanlinguoidungContentComponent,
+    AdminRegisteredComponent
   ],
   imports: [
     CommonModule,
@@ -24,7 +27,8 @@ import { MatButtonModule } from "@angular/material/button";
     MatInputModule,
     MatFormFieldModule,
     MatPaginatorModule,
-    MatButtonModule
+    MatButtonModule,
+    FormsModule
   ]
 })
 export class AdminModule {}

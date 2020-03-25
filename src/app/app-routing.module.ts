@@ -11,7 +11,9 @@ import { DetailCinemaPageComponent } from "./home/detail-cinema-page/detail-cine
 import { DetailPageComponent } from "./home/detail-page/detail-page.component";
 import { ProfileComponent } from "./home/profile/profile.component";
 import { HomeLayoutComponent } from "./home/home-layout/home-layout.component";
-import { AuthGuard } from './auth.guard';
+import { AuthGuard } from "./auth.guard";
+import { AdminRegisteredComponent } from "./admin/admin-registered/admin-registered.component";
+import { AdminLayoutComponent } from "./admin/admin-layout/admin-layout.component";
 
 const routes: Routes = [
   {
@@ -43,18 +45,23 @@ const routes: Routes = [
       {
         path: "profile",
         component: ProfileComponent,
-        canActivate : [AuthGuard]
+        canActivate: [AuthGuard]
       }
     ]
   },
 
   {
     path: "admin",
-    component: AdminManageComponent,
+    component: AdminLayoutComponent,
     children: [
+      { path: "admin", component: AdminRegisteredComponent },
       {
         path: "manage",
         component: AdminManageComponent
+      },
+      {
+        path: "registered",
+        component: AdminRegisteredComponent
       }
     ]
   }

@@ -1,0 +1,52 @@
+<div class="AdminRegistered">
+  <div class=" AdminRegistered__content row">
+    <div class=" col-md-6 col-sm-6 AdminRegistered__content--left">
+      <div class="wrapperContent__left">
+        <h1 class="wrapperContent__left--title">
+          Manage Your Business Account
+        </h1>
+        <p class="wrapperContent__left--text">
+          Donec dictum nisl nec mi lacinia, sed maximus tellus eleifend. Proin
+          molestie cursus sapien ac eleifend.
+        </p>
+        <div class="wrapperContent__left--img">
+          <img src="./../../../assets//img//admin.jpg" alt="" />
+        </div>
+      </div>
+    </div>
+    <div class=" col-md-6 col-sm-6 AdminRegistered__content--right">
+      <div class="wrapper__right">
+        <h2 class="wrapper__right--title">Login To Your Account</h2>
+        <p class="wrapper__right--text">Enter your details to login.</p>
+        <form #formDangNhap="ngForm" (ngSubmit)="dangNhap(formDangNhap.value)">
+          <label for="">Tài khoản</label>
+          <div class="wrapper__taiKhoan">
+            <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+            <input type="text" placeholder="Enter Your Email" #taiKhoan name="taiKhoan" ngModel />
+          </div>
+          <label for="">Mật Khẩu</label>
+          <div class="wrapper__matKhau">
+            <span><i class="fa fa-lock" aria-hidden="true"></i></span>
+            <input type="text" placeholder="Enter Password"  name="matKhau" #matKhau ngModel/>
+          </div>
+
+          <div class="admin__login">
+            <button type="submit" class="btn__login">
+              Đăng nhập
+            </button>
+          </div>
+        </form>
+        <div class="wrraper__footer">
+          <p class="text__footer">
+            By clicking login, you agree to our
+            <a class="text__link" href="">Terms & Conditions!</a>
+          </p>
+          <p class="text__footer">
+            Dont have an account?
+            <a class="text__link" href="">Register here</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

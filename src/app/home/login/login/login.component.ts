@@ -14,25 +14,18 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {}
   dangNhap(user) {
-    console.log(user);
-    if (user.taiKhoan == "admin" && user.matKhau == "123") {
-      this.route.navigate(['admin']);
-    }
-    //  else {
-    //   this.userService.dangNhap(user).subscribe(
-    //     res => {
-    //       if (typeof res == "object") {
-    //         localStorage.setItem("credentials", JSON.stringify(res));
-    //         this.userService.setCredentials(res);
-    //         console.log(this.user);
-    //       } else {
-    //         alert("vui long nhap lai");
-    //       }
-    //     },
-    //     err => {
-    //       console.log(err);
-    //     }
-    //   );
-    // }
+    this.userService.dangNhap(user).subscribe(
+      res => {
+        if (typeof res == "object") {
+          localStorage.setItem("credentials", JSON.stringify(res));
+          this.userService.setCredentials(res);
+        } else {
+          alert("vui long nhap lai");
+        }
+      },
+      err => {
+        console.log(err);
+      }
+    );
   }
 }
