@@ -1,13 +1,15 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 
 import { Injectable, Output, EventEmitter } from "@angular/core";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
+import { UserService } from "./user.service";
 @Injectable({
   providedIn: "root"
 })
 export class FilmService {
-  constructor(private _http: HttpClient) {}
+  token = JSON.parse(localStorage.getItem("admin")).accessToken;
+  constructor(private _http: HttpClient, private _userService: UserService) {}
   readonly api = {
     // đối tương quản lí api
     getListFilm:
@@ -15,7 +17,9 @@ export class FilmService {
     searchFilm:
       "http://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP01&tenPhim=",
     getFilmDetail:
-      "http://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayThongTinPhim?MaPhim="
+      "http://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayThongTinPhim?MaPhim=",
+    deleteFilm:
+      "http://movie0706.cybersoft.edu.vn/api/QuanLyPhim/XoaPhim?MaPhim="
   };
 
   public movieList: any[] = [];
@@ -46,5 +50,19 @@ export class FilmService {
   searchFilm(tenPhim: string): Observable<any> {
     let obser = this._http.get(this.api.searchFilm + tenPhim);
     return obser;
+  }
+
+  // xoa phim
+
+  DeleteFilm(maPhim: string) {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        "Content-Type": "application/json",
+        Authorization: "Bearer" + this.token
+      })
+    };
+    console.log(httpOptions);
+
+    return this._http.delete(this.api.deleteFilm + maPhim, httpOptions);
   }
 }

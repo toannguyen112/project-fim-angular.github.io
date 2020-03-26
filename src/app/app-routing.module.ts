@@ -14,6 +14,7 @@ import { HomeLayoutComponent } from "./home/home-layout/home-layout.component";
 import { AuthGuard } from "./auth.guard";
 import { AdminRegisteredComponent } from "./admin/admin-registered/admin-registered.component";
 import { AdminLayoutComponent } from "./admin/admin-layout/admin-layout.component";
+import { AdminGuard } from './admin.guard';
 
 const routes: Routes = [
   {
@@ -58,6 +59,7 @@ const routes: Routes = [
       {
         path: "manage",
         component: AdminManageComponent
+        , canActivate :[AdminGuard]
       },
       {
         path: "registered",

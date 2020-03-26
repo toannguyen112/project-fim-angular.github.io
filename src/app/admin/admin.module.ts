@@ -12,6 +12,7 @@ import { QuanlinguoidungContentComponent } from "./admin-manage/quanlinguoidung-
 import { MatButtonModule } from "@angular/material/button";
 import { AdminRegisteredComponent } from "./admin-registered/admin-registered.component";
 import { FormsModule } from "@angular/forms";
+import {NgxPaginationModule} from 'ngx-pagination';
 @NgModule({
   declarations: [
     AdminLayoutComponent,
@@ -28,7 +29,8 @@ import { FormsModule } from "@angular/forms";
     MatFormFieldModule,
     MatPaginatorModule,
     MatButtonModule,
-    FormsModule
+    FormsModule,
+    NgxPaginationModule
   ]
 })
 export class AdminModule {}
