@@ -1,7 +1,7 @@
 <header>
   <nav class="navbar navbar-expand-sm navbar-light">
     <div class="navbar-brand">
-      <img src="https://tix.vn/app/assets/img/icons/web-logo.png" [routerLink]="['/']" />
+      <img class="logo" src="https://www.bhdstar.vn/wp-content/themes/bhd/assets/images/logo.png" [routerLink]="['/']" />
     </div>
     <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
       aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,7 +33,7 @@
             src="
         https://instagram.fsgn6-1.fna.fbcdn.net/v/t51.2885-19/s320x320/66482175_334260424128185_7085073249431715840_n.jpg?_nc_ht=instagram.fsgn6-1.fna.fbcdn.net&_nc_ohc=aA94PXO8tu8AX-Xde22&oh=aaa613024daaabd6704dccece050afbd&oe=5E99B1B6"
             alt="" />
-          <span class="userAcount__img"> {{ credentials.taiKhoan }} </span>
+          <!-- <span class="userAcount__name"> {{ credentials.taiKhoan }} </span> -->
           <div class="userAcount__logout" (click)="dangXuat()">
             <p>Đăng xuất</p>
           </div>
@@ -46,6 +46,8 @@
           <img class="user__img" src="https://tix.vn/app/assets/img/avatar.png" alt="" />
           <p>Đăng nhập</p>
         </div>
+        
+        
       </ng-template>
 
 
@@ -67,6 +69,10 @@
         </div>
       </div>
     </div>
-
+    <div class="line__header">
+      <img src="https://www.bhdstar.vn/wp-content/themes/bhd/assets/images/line-header1.png" alt="">
+    </div>
   </nav>
+
+  
 </header>

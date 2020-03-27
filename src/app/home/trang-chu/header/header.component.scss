@@ -3,15 +3,18 @@ header {
   top: 0;
   width: 100%;
   z-index: 999;
+  
 
   .navbar {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-    padding: 0;
-    background-color: #fff;
+    padding: 0 10px;
+    background: #111111;
     height: 60px;
+
+    position: relative;
     .navbar-brand {
       width: 25%;
-      img {
+      .logo {
         width: 50px;
         height: 50px;
         cursor: pointer;
@@ -21,12 +24,13 @@ header {
 
     .navbar-collapse {
       justify-content: space-around;
-      background-color: #fff;
+      
+
       .navbar-nav {
         margin: 0;
         .nav-item {
           a {
-            color: #000;
+            color: #fff;
             transition: all 0.2s;
             text-decoration: none;
             font-weight: 500;
@@ -68,18 +72,20 @@ header {
         outline: none;
         padding-right: 20px;
         .userAcount__img {
-          width: 30px;
-          height: 30px;
+          width: 40px;
+          height: 40px;
           border-radius: 50%;
         }
         .userAcount__name {
           margin-left: 5px;
           font-weight: 500;
           font-size: 15px;
+          color: #fff;
         }
         .userAcount__logout {
           position: absolute;
           top: 100%;
+          left: -65%;
           width: 120px;
           text-align: center;
           display: none;
@@ -125,14 +131,20 @@ header {
             width: 160px;
 
             .dropdown-item {
-              transition: all .5s;
-              &:hover{
+              transition: all 0.5s;
+              &:hover {
                 background-color: #60c5ef;
               }
             }
           }
         }
       }
+    }
+    .line__header {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translate(-50%, 0);
     }
   }
 }
