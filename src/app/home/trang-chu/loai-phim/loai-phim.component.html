@@ -1,27 +1,27 @@
-<div class="row mt-5">
-  <div class="col-12">
-    <a
-      [ngClass]="{ active: dangChieuStatus }"
-      class="mr-2"
-      (click)="hienPhimDangChieu()"
-    >
-      Đang Chiếu</a
-    >
+<div class="row mt-5 header__title">
+  <div class="col-12 text-left">
+    <a [ngClass]="{ active: dangChieuStatus }" class="mr-2" (click)="hienPhimDangChieu()">
+      Đang Chiếu</a>
     <a [ngClass]="{ active: !dangChieuStatus }" (click)="hienPhimSapChieu()">
-      Sắp Chiếu</a
-    >
+      Sắp Chiếu</a>
   </div>
 </div>
-<div class="row">
-    <div class="col-12 mt-2" *ngIf="dangChieuStatus; else phimSapChieu">
-      <app-phim-dang-chieu [danhSachPhimDangChieu]="movieList">
-      </app-phim-dang-chieu>
-    </div>
+<div class="row body__content">
+  <div class="col-12 mt-2 " *ngIf="dangChieuStatus; else phimSapChieu">
+    <app-phim-dang-chieu>
+    </app-phim-dang-chieu>
+
+
+
+  </div>
   <ng-template #phimSapChieu>
-    <div class="col-12 mt-2">
-      <app-phim-sap-chieu
-        [danhSachPhimSapChieu]="movieList"
-      ></app-phim-sap-chieu>
+    <div class="col-12 mt-2 ">
+      <app-phim-sap-chieu></app-phim-sap-chieu>
     </div>
   </ng-template>
+</div>
+<div class="btnXemThem">
+  <button class="btnXemThem__button">Xem Thêm
+    <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+  </button>
 </div>

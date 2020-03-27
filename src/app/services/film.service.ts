@@ -25,11 +25,30 @@ export class FilmService {
   public movieList: any[] = [];
   @Output("danhSachPhim") emitterMovieList = new EventEmitter();
 
+  public movieSapChieu: any[] = [];
+  @Output("danhSachPhimSapChieu")
+  emiiterdanhSachPhimSapChieu = new EventEmitter();
+
+  public movieDangChieu: any[] = [];
+  @Output("danhSachPhimDangChieu")
+  emitterdanSachPhimDangChieu = new EventEmitter();
   // luu danhSachPhim
   setDanhSachPhim(movieList) {
     this.movieList = movieList;
     this.emitterMovieList.emit(this.movieList);
   }
+  // luu danh Sach phim dang chieu
+  setDanhSachPhimSDangChieu(movie) {
+    this.movieDangChieu = movie;
+    this.emitterdanSachPhimDangChieu.emit(this.movieDangChieu);
+  }
+  // luu danhSacgPHim Sap chieu
+
+  setDanhSachPhimSapChieu(movie) {
+    this.movieSapChieu = movie;
+    this.emiiterdanhSachPhimSapChieu.emit(this.movieSapChieu);
+  }
+
   // lấy danh sách phim
   getListFilms(): Observable<any> {
     let observable = this._http

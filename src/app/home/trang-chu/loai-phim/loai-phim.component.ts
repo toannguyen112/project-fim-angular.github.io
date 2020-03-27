@@ -13,7 +13,10 @@ export class LoaiPhimComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+   
+    
+  }
 
   hienPhimDangChieu() {
     this.dangChieuStatus = true;

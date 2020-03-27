@@ -1,5 +1,5 @@
 import { Component, OnInit, AfterViewInit, Input } from "@angular/core";
-import $ from "jquery";
+
 import { Film } from "src/app/models/film";
 import { FilmService } from "src/app/services/film.service";
 declare var $: any;
@@ -8,34 +8,18 @@ declare var $: any;
   templateUrl: "./phim-sap-chieu.component.html",
   styleUrls: ["./phim-sap-chieu.component.scss"]
 })
-export class PhimSapChieuComponent implements OnInit, AfterViewInit {
+export class PhimSapChieuComponent implements OnInit {
   constructor(private filmService: FilmService) {}
   public movieList: Film[] = [];
-  @Input("danhSachPhimSapChieu") danhSachPhimSapChieu: Film[] = [];
-
+  public list: Film[] = [];
   ngOnInit() {
-    this.movieList = this.filmService.movieList;
-    this.filmService.emitterMovieList.subscribe(res => {
+    // this.movieList = this.filmService.movieList;
+    // for (let i = 10; i < 18; i++) {
+    //   this.list.push(this.movieList[i]);
+    // }
+    this.movieList = this.filmService.movieSapChieu;
+    this.filmService.emiiterdanhSachPhimSapChieu.subscribe(res => {
       this.movieList = res;
-      console.log(this.movieList);
-    });
-  }
-  ngAfterViewInit() {
-    $(".owl-carousel").owlCarousel({
-      loop: true,
-      margin: 10,
-      nav: true,
-      responsive: {
-        0: {
-          items: 1
-        },
-        600: {
-          items: 3
-        },
-        1000: {
-          items: 4
-        }
-      }
     });
   }
 }

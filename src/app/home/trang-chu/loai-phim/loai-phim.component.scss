@@ -1,9 +1,38 @@
-a{
- color: black;
- font-weight: bold;
- cursor: pointer;
+.header__title {
+  margin-bottom: 20px;
+  a {
+    color: #a0a3a7;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 10px 0;
+    cursor: pointer;
+  }
+  a.active {
+    border-bottom: 1px solid orange;
+    color: #000000;
+  }
 }
-.active{
-    color: red;
-    font-size: 20px;
+
+.btnXemThem {
+  text-align: right;
+  padding: 40px 0;
+  .btnXemThem__button {
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #f26b38;
+    border: 1px solid #f26b38;
+    padding: 15px 20px;
+    text-decoration: none;
+    line-height: 1;
+    background: transparent;
+    i {
+      padding-left: 10px;
+    }
+    &:hover {
+      background-color: #f26b38;
+      color: #ffffff;
+    }
+  }
 }

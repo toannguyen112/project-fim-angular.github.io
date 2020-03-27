@@ -1,6 +1,6 @@
 <app-header></app-header>
 <div class="detailMainInfo">
-  <img class="img-main" [src]="detailPhim.hinhAnh" alt="" />
+  <!-- <img class="img-main" [src]="detailPhim.hinhAnh" alt="" />
   <div class="base"></div>
   <div class="overplay"></div>
   <div class="detailFilm ">
@@ -35,7 +35,7 @@
               src="https://tix.vn/app/assets/img/icons/star1.2.png"
               alt=""
             />
-            <span class="comment">
+            <div class="comment">
               {{ detailPhim.danhGia }} người đánh giá</span
             >
           </div>
@@ -75,6 +75,128 @@
       </div>
       <div *ngSwitchCase="'danhgia'">
         <app-danh-gia></app-danh-gia>
+      </div>
+    </div>
+  </div> -->
+
+  <div class="detailMainInfo__content container ">
+
+    <div class="row">
+      <div class="col-md-8 detailMainInfo__content--left">
+        <div class="row detail__header">
+          <div class="col-md-5 detail__header--img ">
+            <img class="img-fluid" [src]="detailPhim.hinhAnh" alt="" />
+            <img class="overPlay" src="https://tix.vn/app/assets/img/icons/play-video.png" alt="">
+          </div>
+          <div class=" col-md-7 detail__header--info">
+            <h2 class="nameFilm"> {{detailPhim.tenPhim}} </h2>
+            <h2 class="subname">SA MẠC CHẾT</h2>
+            <div class="wraperDanhGia">
+              <div class="wraperDanhGia__start">
+                <div class="iconStart"> <i class="fa fa-star" aria-hidden="true"></i></div>
+                <div class="wraperDanhGia__number">
+                  <span>7.9</span>
+                  <span>/10</span>
+                  <div>406</div>
+
+                </div>
+                <div class="btnDanhGia">
+                  <button class="btn_danhGia">Đánh giá</button>
+                </div>
+              </div>
+
+            </div>
+            <div class="wrapperTime">
+              <span><i class="fa fa-clock-o" aria-hidden="true"></i></span>
+              <span class="time__text">103 Phút</span>
+              <span class="like"> <i class="fa fa-thumbs-up mr-1" aria-hidden="true"></i>Thích 3</span>
+              <span class="share">Chia sẻ</span>
+            </div>
+            <div class="wrapperInfo">
+              <ul class="wrapperInfo__content">
+                <li class="item__info">
+                  <p class="item__info__content">
+                    <span class="textColor">Nhà sản xuất: </span>
+                    PiXar
+                  </p>
+                  <p class="item__info__content">
+                    <span class="textColor">Đạo diễn: </span>
+                    PiXar
+                  </p>
+                  <p class="item__info__content">
+                    <span class="textColor">Quốc gia: </span>
+                    Mỹ
+                  </p>
+                  <p class="item__info__content">
+                    <span class="textColor">Diễn viên: </span>
+                    toan ngyen
+                  </p>
+                  <p class="item__info__content">
+                    <span class="textColor">Thể loại: </span>
+                    PiXar
+                  </p>
+                  <p class="item__info__content">
+                    <span class="textColor">Ngày: </span>
+                    {{detailPhim.ngayKhoiChieu}}
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="row detail__body">
+          <h5 class="detail__body--title">NỘI DUNG PHIM</h5>
+          <p class="detail__body--text">Lấy bối cảnh vùng ngoại ô một thế giới kỳ ảo, hai anh em yêu tinh tuổi teen bắt
+            đầu hành trình khám phá
+            xem, liệu rằng đâu đó ngoài kia có còn tồn tại ma thuật không?
+          </p>
+          <p class="detail__body--explan"> {{detailPhim.moTa}}.</p>
+        </div>
+      </div>
+      <div class="col-md-4 detailMainInfo__content--right">
+        <div class="promotion">
+          <h5 class="promotion__title">NHẬN KHUYẾN MÃI</h5>
+          <div class="regis">
+            <div class="regis__content">
+              <input class="regisInput" type="text" placeholder="Email">
+              <button class="btn_regis">
+                Đăng kí
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="typeFilm">
+          <h5 class="typeFilm__title">PHIM ĐANG CHIẾU</h5>
+          <div class="typeFilm__body">
+            <ul class="typeFilm__body__list">
+              <li class="typeFilm__body__list__item" *ngFor="let item of phimDangChieu">
+                <div class="wrapperImg">
+                  <img class="img-fluid" [src]="item.hinhAnh" alt="">
+
+                  <div class="overPlayMuave">
+                    <div class="overPlayMuave__content">
+                      <span class="age">
+                        C18
+                      </span>
+                      <button class="overPlayMuave__content__bntBuyTicket">
+                        Mua vé
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <p>
+                  {{item.tenPhim}}
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="btnXemThem">
+          <button class="btnXemThem__button">Xem Thêm
+            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+          </button>
+        </div>
       </div>
     </div>
   </div>
