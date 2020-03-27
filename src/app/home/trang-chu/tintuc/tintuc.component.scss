@@ -1,11 +1,5 @@
-.homeNews {
-  background-image: url("https://tix.vn/app/assets/img/icons/back-news.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding-top: 120px;
-  margin: 40px 0;
-}
 .tintuc {
+  margin-top: 50px;
   .active {
     color: red;
   }
@@ -15,7 +9,8 @@
     font-weight: bold;
     padding: 0px 13px;
     transition: all 0.2s;
-    line-height: 24px;
+    
+    color: #ffffff;
 
     &:hover {
       font-size: 25px;

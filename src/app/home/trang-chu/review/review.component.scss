@@ -9,6 +9,7 @@
       }
     }
     .dienAnh-info {
+      color: #ffffff;
       p {
         font-weight: bold;
         font-size: 16px;
@@ -16,21 +17,23 @@
       }
       span {
         font-size: 13px;
-        color: #4a4a4a;
+        
       }
     }
   
     .blockIconFacebook {
+      color: #ffffff;
       margin-top: 50px;
       i {
         cursor: pointer;
-        color: gray;
+        
         font-size: 20px;
         margin-right: 20px;
       }
     }
   }
   .listNews {
+    color: #ffffff;
     .new {
       nav-down: auto;
       display: flex;

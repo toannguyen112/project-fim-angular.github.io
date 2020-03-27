@@ -21,6 +21,7 @@ export class CinemaComponent implements OnInit, OnDestroy {
     this.sub = this.rapService.layThongTinHeThongRap().subscribe(res => {
       this.heThongRap = res;
     });
+    
   }
 
   ngOnDestroy() {

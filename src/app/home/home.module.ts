@@ -14,7 +14,7 @@ import { LoaiPhimComponent } from "./trang-chu/loai-phim/loai-phim.component";
 import { CinemaComponent } from "./trang-chu/cinema/cinema.component";
 import { TintucComponent } from "./trang-chu/tintuc/tintuc.component";
 import { FooterComponent } from "./trang-chu/footer/footer.component";
-
+import {NgxPaginationModule} from 'ngx-pagination';
 import { PhimDangChieuComponent } from "./trang-chu/phim-dang-chieu/phim-dang-chieu.component";
 import { PhimSapChieuComponent } from "./trang-chu/phim-sap-chieu/phim-sap-chieu.component";
 import { TrangChuComponent } from "./trang-chu/trang-chu.component";
@@ -24,9 +24,6 @@ import { CinemaFilmItemComponent } from "./trang-chu/cinema-film-item/cinema-fil
 import { KhuyenMaiComponent } from "./trang-chu/khuyen-mai/khuyen-mai.component";
 import { ReviewComponent } from "./trang-chu/review/review.component";
 import { DienAnhComponent } from "./trang-chu/dien-anh/dien-anh.component";
-import { DanhGiaComponent } from "./detail-page/danh-gia/danh-gia.component";
-import { ThongTinFilmComponent } from "./detail-page/thong-tin-film/thong-tin-film.component";
-import { LichChieuComponent } from "./detail-page/lich-chieu/lich-chieu.component";
 import { ItemPhimComponent } from "./trang-chu/item-phim/item-phim.component";
 import { ItemTinTucComponent } from "./trang-chu/item-tin-tuc/item-tin-tuc.component";
 
@@ -50,6 +47,7 @@ import { CheckoutContentComponent } from "./checkout/checkout/checkout-content/c
 import { CheckoutOfficeDetailComponent } from "./checkout/checkout/checkout-office-detail/checkout-office-detail.component";
 import { MatRadioModule } from "@angular/material/radio";
 import { LoadingComponent } from './loading/loading.component';
+import { DetailMainComponent } from './detail-page/detail-main/detail-main.component';
 
 @NgModule({
   declarations: [
@@ -80,9 +78,6 @@ import { LoadingComponent } from './loading/loading.component';
     KhuyenMaiComponent,
     ReviewComponent,
     DienAnhComponent,
-    DanhGiaComponent,
-    ThongTinFilmComponent,
-    LichChieuComponent,
     ItemPhimComponent,
     ItemTinTucComponent,
     DetailPageComponent,
@@ -98,9 +93,10 @@ import { LoadingComponent } from './loading/loading.component';
     ModalLoginRegisterComponent,
     CheckoutContentComponent,
     CheckoutOfficeDetailComponent,
-    LoadingComponent
+    LoadingComponent,
+    DetailMainComponent
   ],
-  imports: [CommonModule, RouterModule, MatInputModule, MatRadioModule
+  imports: [CommonModule, RouterModule, MatInputModule, MatRadioModule ,NgxPaginationModule
   ,FormsModule],
   exports: [
     TrangChuComponent,
@@ -129,9 +125,6 @@ import { LoadingComponent } from './loading/loading.component';
     KhuyenMaiComponent,
     ReviewComponent,
     DienAnhComponent,
-    DanhGiaComponent,
-    ThongTinFilmComponent,
-    LichChieuComponent,
     ItemPhimComponent,
     ItemTinTucComponent,
     DetailPageComponent,

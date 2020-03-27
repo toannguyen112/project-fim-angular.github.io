@@ -1,7 +1,30 @@
 <div class="profileHistory">
     <ul class="profileHistory__list">
-        <app-profile-history-item *ngFor="let thongTin of thongTinDatVe" [thongTin]="thongTin" ></app-profile-history-item>
+        <table class="table table-striped table-inverse ">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Tên Phim</th>
+                   
+                    <th>Giá vé</th>
+                    <th>Ngày đặt vé</th>
 
 
+                </tr>
+            </thead>
+            <tbody>
+                <!-- <app-profile-history-item *ngFor="let thongTin of thongTinDatVe" [thongTin]="thongTin" ></app-profile-history-item> -->
+                <tr *ngFor="let item of thongTinDatVe | paginate: { itemsPerPage: 5, currentPage: currentPage }  let i = index" >
+                    <td>{{ i + 1 }}</td>
+                    <td>{{ item.tenPhim }}</td>
+                    <td>{{ item.giaVe }}</td>
+                    <td>{{ item.ngayDat }}</td>
+
+
+
+                </tr>
+            </tbody>
+        </table>
+        <pagination-controls  (pageChange)="currentPage = $event"></pagination-controls>
     </ul>
 </div>
