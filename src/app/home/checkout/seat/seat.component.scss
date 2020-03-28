@@ -1,0 +1,15 @@
+.datGhe {
+  border: none;
+  margin: 0 5px;
+  width: 25px;
+  height: 25px;
+  border-radius: 5px;
+  outline: none;
+}
+.datGhe.btn-selectSeat{
+  background-color: forestgreen;
+}
+.GheDaDat {
+  @extend .datGhe;
+  background-color: #ffcb31;
+}

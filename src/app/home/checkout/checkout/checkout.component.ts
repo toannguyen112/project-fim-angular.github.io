@@ -1,6 +1,6 @@
 import { ActivatedRoute } from "@angular/router";
 import { Subscription } from "rxjs";
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, OnDestroy } from "@angular/core";
 import { PhongveService } from "src/app/services/phongve.service";
 
 @Component({
@@ -8,7 +8,7 @@ import { PhongveService } from "src/app/services/phongve.service";
   templateUrl: "./checkout.component.html",
   styleUrls: ["./checkout.component.scss"]
 })
-export class CheckoutComponent implements OnInit {
+export class CheckoutComponent implements OnInit, OnDestroy {
   public thongTinPhim: any;
   public sub: Subscription;
   public status: boolean = true;
@@ -19,7 +19,6 @@ export class CheckoutComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-     
       this.sub = this.phongVeService
         .chiTietPhongVe(params.maLichChieu)
         .subscribe(res => {
@@ -27,6 +26,9 @@ export class CheckoutComponent implements OnInit {
           console.log(res.thongTinPhim);
         });
     });
+  }
+  ngOnDestroy() {
+    this.sub.unsubscribe();
   }
   changeStatus(value) {
     this.status = value;

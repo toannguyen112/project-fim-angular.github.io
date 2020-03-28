@@ -32,8 +32,9 @@
               A
             </span>
             <div class="btn-seat">
-              <button *ngFor="let ghe of danhSachGheDayA" (click)="chonGhe(ghe)"
-                [ngClass]="{active: ghe.TrangThai}"></button>
+
+              <app-seat *ngFor="let ghe of danhSachGheDayA" [itemGhe]="ghe" (emitterStatus)="datGheParent($event,ghe)">
+              </app-seat>
 
             </div>
           </div>
@@ -42,8 +43,8 @@
               B
             </span>
             <div class="btn-seat">
-              <button *ngFor="let ghe of danhSachGheDayB" (click)="chonGhe(ghe)" [ngClass]="{active: ghe.TrangThai}">
-              </button>
+              <app-seat *ngFor="let ghe of danhSachGheDayB" [itemGhe]="ghe" (emitterStatus)="datGheParent($event,ghe)">
+              </app-seat>
             </div>
 
           </div>
@@ -52,8 +53,8 @@
               C
             </span>
             <div class="btn-seat">
-              <button *ngFor="let ghe of danhSachGheDayC" (click)="chonGhe(ghe)"
-                [ngClass]="{active: ghe.TrangThai}"></button>
+              <app-seat *ngFor="let ghe of danhSachGheDayC" [itemGhe]="ghe" (emitterStatus)="datGheParent($event,ghe)">
+              </app-seat>
 
 
             </div>
@@ -63,8 +64,8 @@
               D
             </span>
             <div class="btn-seat">
-              <button *ngFor="let ghe of danhSachGheDayD" (click)="chonGhe(ghe)"
-                [ngClass]="{active: ghe.TrangThai}"></button>
+              <app-seat *ngFor="let ghe of danhSachGheDayD" [itemGhe]="ghe" (emitterStatus)="datGheParent($event,ghe)">
+              </app-seat>
 
             </div>
           </div>
@@ -73,8 +74,8 @@
               E
             </span>
             <div class="btn-seat">
-              <button *ngFor="let ghe of danhSachGheDayE" (click)="chonGhe(ghe)"
-                [ngClass]="{active: ghe.TrangThai}"></button>
+              <app-seat *ngFor="let ghe of danhSachGheDayE" [itemGhe]="ghe" (emitterStatus)="datGheParent($event,ghe)">
+              </app-seat>
 
             </div>
           </div>
@@ -84,9 +85,8 @@
               F
             </span>
             <div class="btn-seat">
-              <button *ngFor="let ghe of danhSachGheDayF" (click)="chonGhe(ghe)"
-                [ngClass]="{active: ghe.TrangThai}"></button>
-
+              <app-seat *ngFor="let ghe of danhSachGheDayF" [itemGhe]="ghe" (emitterStatus)="datGheParent($event,ghe)">
+              </app-seat>
             </div>
           </div>
 
@@ -95,8 +95,8 @@
               H
             </span>
             <div class="btn-seat">
-              <button *ngFor="let ghe of danhSachGheDayH" (click)="chonGhe(ghe)"
-                [ngClass]="{active: ghe.TrangThai}"></button>
+              <app-seat *ngFor="let ghe of danhSachGheDayH" [itemGhe]="ghe" (emitterStatus)="datGheParent($event,ghe)">
+              </app-seat>
 
             </div>
           </div>
@@ -105,8 +105,8 @@
               I
             </span>
             <div class="btn-seat">
-              <button *ngFor="let ghe of danhSachGheDayI" (click)="chonGhe(ghe)"
-                [ngClass]="{active: ghe.TrangThai}"></button>
+              <app-seat *ngFor="let ghe of danhSachGheDayI" [itemGhe]="ghe" (emitterStatus)="datGheParent($event,ghe)">
+              </app-seat>
 
             </div>
           </div>
@@ -115,22 +115,25 @@
 
         <div class="chooseSeat__bottom">
           <div class="row seatInfo">
-            <div class="col-md-3 text-center">
+            <div class="col-md-4 text-center">
               <button class="seat-vip"></button>
               <p>Ghế VIP</p>
             </div>
-            <div class="col-md-3  text-center">
+            <div class="col-md-4  text-center">
               <button class="seat-load "></button>
               <p>Ghế đang chọn</p>
             </div>
-            <div class="col-md-3  text-center">
+            <div class="col-md-4  text-center">
               <button class="seat-has-user"></button>
               <p>Ghế đã có người chọn</p>
             </div>
-            <div class="col-md-3  text-center">
-              <button class="seat-no-choose"></button>
-              <p>Ghế không thể chọn</p>
-            </div>
+           
+          </div>
+
+
+          <div>
+            <p>Danh sách ghế đang đặt</p>
+            <p *ngFor="let item of danhSachGheDangDat"> Số Ghế : {{item.SoGhe  }} Dãy Ghế : {{  item.Day}} </p>
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { FormsModule } from '@angular/forms';
+import { FormsModule } from "@angular/forms";
 import { SliderComponent } from "./trang-chu/slider/slider.component";
 
 import { NgModule } from "@angular/core";
@@ -14,7 +14,7 @@ import { LoaiPhimComponent } from "./trang-chu/loai-phim/loai-phim.component";
 import { CinemaComponent } from "./trang-chu/cinema/cinema.component";
 import { TintucComponent } from "./trang-chu/tintuc/tintuc.component";
 import { FooterComponent } from "./trang-chu/footer/footer.component";
-import {NgxPaginationModule} from 'ngx-pagination';
+import { NgxPaginationModule } from "ngx-pagination";
 import { PhimDangChieuComponent } from "./trang-chu/phim-dang-chieu/phim-dang-chieu.component";
 import { PhimSapChieuComponent } from "./trang-chu/phim-sap-chieu/phim-sap-chieu.component";
 import { TrangChuComponent } from "./trang-chu/trang-chu.component";
@@ -46,8 +46,9 @@ import { ModalLoginRegisterComponent } from "./modal-login-register/modal-login-
 import { CheckoutContentComponent } from "./checkout/checkout/checkout-content/checkout-content.component";
 import { CheckoutOfficeDetailComponent } from "./checkout/checkout/checkout-office-detail/checkout-office-detail.component";
 import { MatRadioModule } from "@angular/material/radio";
-import { LoadingComponent } from './loading/loading.component';
-import { DetailMainComponent } from './detail-page/detail-main/detail-main.component';
+import { LoadingComponent } from "./loading/loading.component";
+import { DetailMainComponent } from "./detail-page/detail-main/detail-main.component";
+import { SeatComponent } from "./checkout/seat/seat.component";
 
 @NgModule({
   declarations: [
@@ -94,10 +95,17 @@ import { DetailMainComponent } from './detail-page/detail-main/detail-main.compo
     CheckoutContentComponent,
     CheckoutOfficeDetailComponent,
     LoadingComponent,
-    DetailMainComponent
+    DetailMainComponent,
+    SeatComponent
   ],
-  imports: [CommonModule, RouterModule, MatInputModule, MatRadioModule ,NgxPaginationModule
-  ,FormsModule],
+  imports: [
+    CommonModule,
+    RouterModule,
+    MatInputModule,
+    MatRadioModule,
+    NgxPaginationModule,
+    FormsModule
+  ],
   exports: [
     TrangChuComponent,
     LoginComponent,
@@ -107,7 +115,7 @@ import { DetailMainComponent } from './detail-page/detail-main/detail-main.compo
     DetailPageComponent,
     CheckoutHeaderComponent,
     DanhgiaCinemaComponent,
-
+    SeatComponent,
     LichchieuCinemaComponent,
     ThongtinCinemaComponent,
     HomeLayoutComponent,

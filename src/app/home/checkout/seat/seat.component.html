@@ -1,0 +1,9 @@
+<ng-container *ngIf="!trangThai; else gheDaDat">
+    <button 
+    class="datGhe"
+    (click)="datGhe(itemGhe)" [ngClass]="{ 'btn-selectSeat': status }">
+    </button>
+</ng-container>
+<ng-template #gheDaDat>
+    <button class="GheDaDat" style="cursor: not-allowed;"></button>
+</ng-template>
