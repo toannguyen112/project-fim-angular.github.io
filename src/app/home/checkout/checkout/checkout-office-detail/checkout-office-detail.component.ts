@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from "@angular/core";
+import { TransformDataService } from "src/app/services/transformData.service";
 
 @Component({
   selector: "app-checkout-office-detail",
@@ -11,6 +12,7 @@ export class CheckoutOfficeDetailComponent implements OnInit {
 
   public email: string = "";
   public phone: string = "";
+  public price: number = 0;
   payment: any[] = [
     {
       name: "Thanh toan qua zalo pay",
@@ -29,11 +31,111 @@ export class CheckoutOfficeDetailComponent implements OnInit {
     }
   ];
 
+  public danhSachGheDayA: any[] = [
+    { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: false },
+    { SoGhe: 2, TenGhe: "số 2", Gia: 60000, TrangThai: false },
+    { SoGhe: 3, TenGhe: "số 3", Gia: 60000, TrangThai: false },
+    { SoGhe: 4, TenGhe: "số 4", Gia: 60000, TrangThai: false },
+    { SoGhe: 5, TenGhe: "số 5", Gia: 60000, TrangThai: false },
+    { SoGhe: 6, TenGhe: "số 6", Gia: 60000, TrangThai: false },
+    { SoGhe: 7, TenGhe: "số 7", Gia: 60000, TrangThai: false },
+    { SoGhe: 8, TenGhe: "số 8", Gia: 60000, TrangThai: false },
+    { SoGhe: 9, TenGhe: "số 9", Gia: 60000, TrangThai: false },
+    { SoGhe: 10, TenGhe: "số 10", Gia: 60000, TrangThai: false }
+  ];
+  public danhSachGheDayB: any[] = [
+    { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: true },
+    { SoGhe: 2, TenGhe: "số 2", Gia: 60000, TrangThai: true },
+    { SoGhe: 3, TenGhe: "số 3", Gia: 60000, TrangThai: true },
+    { SoGhe: 4, TenGhe: "số 4", Gia: 60000, TrangThai: true },
+    { SoGhe: 5, TenGhe: "số 5", Gia: 60000, TrangThai: true },
+    { SoGhe: 6, TenGhe: "số 6", Gia: 60000, TrangThai: false },
+    { SoGhe: 7, TenGhe: "số 7", Gia: 60000, TrangThai: false },
+    { SoGhe: 8, TenGhe: "số 8", Gia: 60000, TrangThai: false },
+    { SoGhe: 9, TenGhe: "số 9", Gia: 60000, TrangThai: false },
+    { SoGhe: 10, TenGhe: "số 10", Gia: 60000, TrangThai: false }
+  ];
+  public danhSachGheDayC: any[] = [
+    { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: false },
+    { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: false },
+    { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: false },
+    { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: false },
+    { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: false },
+    { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: false },
+    { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: false },
+    { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: true },
+    { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: true },
+    { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: true }
+  ];
+  public danhSachGheDayD: any[] = [
+    { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: false },
+    { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: false },
+    { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: false },
+    { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: false },
+    { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: false },
+    { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: false },
+    { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: false },
+    { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: false },
+    { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: false },
+    { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: false }
+  ];
+  public danhSachGheDayE: any[] = [
+    { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: false },
+    { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: false },
+    { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: false },
+    { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: false },
+    { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: false },
+    { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: false },
+    { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: false },
+    { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: false },
+    { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: false },
+    { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: false }
+  ];
+  public danhSachGheDayF: any[] = [
+    { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: false },
+    { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: false },
+    { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: false },
+    { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: false },
+    { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: false },
+    { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: false },
+    { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: false },
+    { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: false },
+    { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: false },
+    { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: false }
+  ];
+  public danhSachGheDayH: any[] = [
+    { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: false },
+    { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: false },
+    { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: false },
+    { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: false },
+    { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: false },
+    { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: false },
+    { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: false },
+    { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: false },
+    { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: false },
+    { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: false }
+  ];
+  public danhSachGheDayI: any[] = [
+    { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: false },
+    { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: false },
+    { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: false },
+    { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: false },
+    { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: true },
+    { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: true },
+    { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: true },
+    { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: false },
+    { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: false },
+    { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: false }
+  ];
+
   public counter: number = 0;
-  constructor() {}
+  constructor(private _transformData: TransformDataService) {}
 
   ngOnInit() {
-    this.startCountdown();
+    // this.startCountdown();
+    this._transformData.asData.subscribe(res => {
+      this.price = res;
+    });
   }
   startCountdown() {
     if (this.init && this.init > 0) {
@@ -56,5 +158,9 @@ export class CheckoutOfficeDetailComponent implements OnInit {
     } else {
       this.doCountdown();
     }
+  }
+
+  chonGhe(ghe) {
+    console.log(ghe);
   }
 }

@@ -5,7 +5,7 @@ import { BehaviorSubject } from "rxjs";
   providedIn: "root"
 })
 export class TransformDataService {
-  private data = new BehaviorSubject([]);
+  private data = new BehaviorSubject(null);
   public asData = this.data.asObservable();
   public dataDsPhim = new BehaviorSubject([]);
   public asDataPhim = this.dataDsPhim.asObservable();

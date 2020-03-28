@@ -4,10 +4,7 @@
       <div class="chooseSeat">
         <div class="row chooseSeat__top">
           <div class="col-md-6   chooseSeat__top--left">
-            <img
-              src="https://s3img.vcdn.vn/123phim/2018/09/f32670fd0eb083c9c4c804f0f3a252ed.png"
-              alt=""
-            />
+            <img src="https://s3img.vcdn.vn/123phim/2018/09/f32670fd0eb083c9c4c804f0f3a252ed.png" alt="" />
             <div class="info">
               <div class="cinema">
                 <span> {{ thongTinPhim.tenCumRap }} </span> -
@@ -35,22 +32,9 @@
               A
             </span>
             <div class="btn-seat">
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
+              <button *ngFor="let ghe of danhSachGheDayA" (click)="chonGhe(ghe)"
+                [ngClass]="{active: ghe.TrangThai}"></button>
+
             </div>
           </div>
           <div class="row">
@@ -58,45 +42,20 @@
               B
             </span>
             <div class="btn-seat">
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
+              <button *ngFor="let ghe of danhSachGheDayB" (click)="chonGhe(ghe)" [ngClass]="{active: ghe.TrangThai}">
+              </button>
             </div>
+
           </div>
           <div class="row">
             <span class="seat">
               C
             </span>
             <div class="btn-seat">
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
+              <button *ngFor="let ghe of danhSachGheDayC" (click)="chonGhe(ghe)"
+                [ngClass]="{active: ghe.TrangThai}"></button>
+
+
             </div>
           </div>
           <div class="row">
@@ -104,22 +63,9 @@
               D
             </span>
             <div class="btn-seat">
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
+              <button *ngFor="let ghe of danhSachGheDayD" (click)="chonGhe(ghe)"
+                [ngClass]="{active: ghe.TrangThai}"></button>
+
             </div>
           </div>
           <div class="row">
@@ -127,22 +73,9 @@
               E
             </span>
             <div class="btn-seat">
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
+              <button *ngFor="let ghe of danhSachGheDayE" (click)="chonGhe(ghe)"
+                [ngClass]="{active: ghe.TrangThai}"></button>
+
             </div>
           </div>
 
@@ -151,22 +84,9 @@
               F
             </span>
             <div class="btn-seat">
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
+              <button *ngFor="let ghe of danhSachGheDayF" (click)="chonGhe(ghe)"
+                [ngClass]="{active: ghe.TrangThai}"></button>
+
             </div>
           </div>
 
@@ -175,22 +95,9 @@
               H
             </span>
             <div class="btn-seat">
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
+              <button *ngFor="let ghe of danhSachGheDayH" (click)="chonGhe(ghe)"
+                [ngClass]="{active: ghe.TrangThai}"></button>
+
             </div>
           </div>
           <div class="row">
@@ -198,47 +105,12 @@
               I
             </span>
             <div class="btn-seat">
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
+              <button *ngFor="let ghe of danhSachGheDayI" (click)="chonGhe(ghe)"
+                [ngClass]="{active: ghe.TrangThai}"></button>
+
             </div>
           </div>
-          <div class="row">
-            <span class="seat">
-              J
-            </span>
-            <div class="btn-seat">
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-            </div>
-          </div>
+
         </div>
 
         <div class="chooseSeat__bottom">
@@ -269,8 +141,7 @@
           <div>
             <P><span>C18</span> {{ thongTinPhim.tenPhim }} </P>
             <P>{{ thongTinPhim.tenCumRap }} - {{ thongTinPhim.diaChi }} </P>
-            <P
-              >Hôm nay {{ thongTinPhim.ngayChieu }} -
+            <P>Hôm nay {{ thongTinPhim.ngayChieu }} -
               {{ thongTinPhim.gioChieu }} - {{ thongTinPhim.tenRap }}
             </P>
           </div>
@@ -281,7 +152,7 @@
             <p>Chọn combo :</p>
           </div>
           <div class="col-6 p-0 price__number">
-            <p class="number">120.000</p>
+            <p class="number"> {{price}} </p>
             <p class="number">0 d</p>
           </div>
         </div>
@@ -298,29 +169,21 @@
           </mat-form-field>
         </div>
         <div class="categoryPayment">
-          <mat-radio-button
-            style="display: block;"
-            class="example-radio-button"
-            *ngFor="let pay of payment"
-            [value]="season"
-          >
+          <mat-radio-button style="display: block;" class="example-radio-button" *ngFor="let pay of payment"
+            [value]="season">
             <div>
               <img style="width: 35px;" [src]="pay.img" alt="" /> {{ pay.name }}
             </div>
           </mat-radio-button>
         </div>
         <div class="alert">
-          <img
-            src="https://tix.vn/app/assets/img/icons/exclamation.png"
-            alt=""
-          />
+          <img src="https://tix.vn/app/assets/img/icons/exclamation.png" alt="" />
           <div>Vé đã mua không thể đổi hoặc hoàn tiền</div>
           <br />
           <span class="text-center">
             Mã vé sẽ được gửi qua tin nhắn
             <span style="color: #f79320;">ZMS </span>(tin nhắn Zalo) và
-            <span style="color: #f79320;"> Email</span> đã nhập.</span
-          >
+            <span style="color: #f79320;"> Email</span> đã nhập.</span>
         </div>
       </div>
       <div class="buyTicket " [ngClass]="{ active: email && phone }" style="cursor: pointer;">

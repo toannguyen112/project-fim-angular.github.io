@@ -16,7 +16,6 @@ export class HeaderComponent implements OnInit {
   constructor(private userService: UserService, private _route: Router) {}
 
   ngOnInit() {
-    console.log("header work");
     this.credentials = this.userService.credentials;
     this.userService.credentialEmitter.subscribe(newCredentials => {
       this.credentials = newCredentials;

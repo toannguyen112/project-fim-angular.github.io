@@ -1,33 +1,37 @@
 .cinema__item {
-    margin-bottom: 10px;
-    list-style: none;
-    text-align: center;
+  margin-bottom: 10px;
+  list-style: none;
+  text-align: center;
 
-    a {
-      position: relative;
-      &::after {
-        content: '';
-        position: absolute;
-        bottom: -20px;
-        left: 50%;
-        width: 100%;
-        transform: translateX(-50%);
-        border-bottom: 1px solid #fff;
-        border-color: rgba(238,238,238,.88);
-      }
-    }
-    text-decoration: none;
-    padding: 20px;
-
-    img {
-      width: 50px;
-
-      opacity: 0.5;
-    }
-
-    &:hover {
-      img {
-        opacity: 1;
-      }
+  a {
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      width: 100%;
+      transform: translateX(-50%);
+      border-bottom: 1px solid #fff;
+      border-color: rgba(238, 238, 238, 0.88);
     }
   }
+  text-decoration: none;
+  padding: 20px;
+
+  img {
+    width: 50px;
+    opacity: 0.5;
+  }
+
+  &:hover {
+    img {
+      opacity: 1;
+    }
+  }
+}
+.cinema__item.active {
+  img {
+    opacity: 1;
+  }
+}

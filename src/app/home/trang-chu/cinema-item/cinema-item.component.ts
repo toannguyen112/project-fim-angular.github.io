@@ -1,5 +1,4 @@
 import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
-import { TransformDataService } from "src/app/services/transformData.service";
 
 @Component({
   selector: "app-cinema-item",
@@ -12,11 +11,8 @@ export class CinemaItemComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {
-    console.log(this.cumRap);
-  }
+  ngOnInit() {}
   showListFilm() {
     this.emitLichChieuPhim.emit(this.cumRap);
   }
-  
 }

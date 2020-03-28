@@ -1,7 +1,7 @@
 <div class="cinema">
   <div class="cinema-navigation">
     <ul class="cinema__list">
-      <app-cinema-theaters *ngFor="let rap of heThongRap" [rap]="rap" (emitRap)="selectCinema($event)">
+      <app-cinema-theaters *ngFor="let rap of heThongRap" [rap]="rap" (emitRap)="selectCinema($event)" [valueDefaut]="valueDefaut" >
       </app-cinema-theaters>
     </ul>
   </div>

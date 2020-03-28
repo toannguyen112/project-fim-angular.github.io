@@ -10,6 +10,8 @@ export class ProfileHistoryItemComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
+    console.log(this.thongTin.tenPhim);
+    
   
   }
 }

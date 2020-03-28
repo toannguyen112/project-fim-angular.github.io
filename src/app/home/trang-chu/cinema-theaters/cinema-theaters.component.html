@@ -1,4 +1,4 @@
-<li class="cinema__item" (click)="selectCinema(rap.maHeThongRap)">
+<li class="cinema__item "  (click)="selectCinema(rap.maHeThongRap)" [ngClass]="{active: valueDefaut == rap.maHeThongRap}">
   <div>
     <img [src]="rap.logo" alt="" />
   </div>

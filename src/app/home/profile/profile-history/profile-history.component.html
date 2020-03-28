@@ -5,26 +5,27 @@
                 <tr>
                     <th>#</th>
                     <th>Tên Phim</th>
-                   
                     <th>Giá vé</th>
                     <th>Ngày đặt vé</th>
-
+                    <th>Thời lượng phim</th>
 
                 </tr>
             </thead>
             <tbody>
                 <!-- <app-profile-history-item *ngFor="let thongTin of thongTinDatVe" [thongTin]="thongTin" ></app-profile-history-item> -->
-                <tr *ngFor="let item of thongTinDatVe | paginate: { itemsPerPage: 5, currentPage: currentPage }  let i = index" >
+                <tr *ngFor="
+            let item of thongTinDatVe
+              | paginate: { itemsPerPage: 10, currentPage: currentPage };
+            let i = index
+          ">
                     <td>{{ i + 1 }}</td>
-                    <td>{{ item.tenPhim }}</td>
-                    <td>{{ item.giaVe }}</td>
-                    <td>{{ item.ngayDat }}</td>
-
-
-
+                    <td>{{ item.tenPhim | uppercase }}</td>
+                    <td>{{ item.giaVe  | currency:"VND" }}</td>
+                    <td>{{ item.ngayDat | date:'M/d/yy' }}</td>
+                    <td> {{item.thoiLuongPhim}}p </td>
                 </tr>
             </tbody>
         </table>
-        <pagination-controls  (pageChange)="currentPage = $event"></pagination-controls>
     </ul>
+    <pagination-controls class="my-pagination" (pageChange)="currentPage = $event"></pagination-controls>   
 </div>

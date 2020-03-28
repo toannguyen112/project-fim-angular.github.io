@@ -83,6 +83,10 @@
             width: 25px;
             height: 25px;
             border-radius: 5px;
+            outline: none;
+          }
+          button.active{
+            background-color: red;
           }
         }
       }

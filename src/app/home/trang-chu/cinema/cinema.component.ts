@@ -14,14 +14,15 @@ export class CinemaComponent implements OnInit, OnDestroy {
   public listCumRap: any[] = [];
   public listPhim: any[] = [];
   public lstLichChieuTheoPhim: any[] = [];
-
+  public valueDefaut = "BHDStar";
+  public lichChieuDefaut: any;
   constructor(private rapService: RapService) {}
 
   ngOnInit() {
     this.sub = this.rapService.layThongTinHeThongRap().subscribe(res => {
       this.heThongRap = res;
     });
-    
+    this.selectCinema(this.valueDefaut);
   }
 
   ngOnDestroy() {
@@ -29,13 +30,15 @@ export class CinemaComponent implements OnInit, OnDestroy {
   }
 
   selectCinema(value) {
-    this.rapService.layLichChieuTheoMaHeThongRap(value).subscribe(res => {
+    this.valueDefaut = value
+    this.rapService.layLichChieuTheoMaHeThongRap(this.valueDefaut).subscribe(res => {
       for (let rap of res) {
         this.listCumRap = rap.lstCumRap;
       }
     });
   }
   onListLichChieu(value) {
+    console.log(value);
     this.listPhim = value.danhSachPhim;
   }
 }

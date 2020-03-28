@@ -4,10 +4,7 @@
     <div class="overplay"></div>
     <div class="chooseTiket__left__film">
       <div class="arrow" [routerLink]="['/']">
-        <img
-          src="https://tix.vn/app/assets/img/icons/prev_checkout.png"
-          alt=""
-        />
+        <img src="https://tix.vn/app/assets/img/icons/prev_checkout.png" alt="" />
       </div>
       <div class="info">
         <p class="today">Hôm nay</p>
@@ -22,11 +19,8 @@
 <div class="chooseTiket__right">
   <div class="ticket">
     <div class="header_content">
-      <img
-        style="width: 44px; height: 44px;"
-        src="https://s3img.vcdn.vn/123phim/2018/09/f32670fd0eb083c9c4c804f0f3a252ed.png"
-        alt=""
-      />
+      <img style="width: 44px; height: 44px;"
+        src="https://s3img.vcdn.vn/123phim/2018/09/f32670fd0eb083c9c4c804f0f3a252ed.png" alt="" />
       <div class="diachi">
         <p *ngIf="thongTinPhim; else ''">
           <span> {{ thongTinPhim.tenCumRap }}</span> -
@@ -49,11 +43,10 @@
               Vé VIP 2D
             </div>
           </td>
-          <td class="price">{{ priceVeVip2D }} đ</td>
+          <td class="price">60.000đ</td>
           <td class="btn-number">
             <button class="tru" (click)="gheVip2DGiam()">-</button>
-            <span>{{ initVeVip2D }} </span
-            ><button class="cong" (click)="gheVip2DTang()">+</button>
+            <span>{{ initVeVip2D }} </span><button class="cong" (click)="gheVip2DTang()">+</button>
           </td>
         </tr>
         <tr>
@@ -65,11 +58,10 @@
               Vé thường 2D
             </div>
           </td>
-          <td class="price">{{ priceVeThuong2D }} đ</td>
+          <td class="price"> 80.000 đ</td>
           <td class="btn-number">
             <button class="tru" (click)="giamVeThuong()">-</button>
-            <span> {{ initVeThuong }} </span
-            ><button class="cong" (click)="tangVeThuong()">+</button>
+            <span> {{ initVeThuong }} </span><button class="cong" (click)="tangVeThuong()">+</button>
           </td>
         </tr>
 
@@ -82,11 +74,10 @@
               Ghế đôi 2D
             </div>
           </td>
-          <td class="price">{{ priceGheDoi2D }} đ</td>
+          <td class="price"> 120.000 đ</td>
           <td class="btn-number">
             <button class="tru" (click)="giamGheDoi()">-</button>
-            <span> {{ initGheDoi2D }} </span
-            ><button class="cong" (click)="tangGheDoi()">+</button>
+            <span> {{ initGheDoi2D }} </span><button class="cong" (click)="tangGheDoi()">+</button>
           </td>
         </tr>
       </tbody>

@@ -1,13 +1,40 @@
-
-.row{
-    margin: 0;
+.row {
+  margin: 0;
 }
 .profileHistory {
   .profileHistory__list {
     list-style: none;
     padding: 0;
-    .table{
+    .table {
       color: #ffffff;
+      thead {
+        tr {
+          th {
+            color: #d4dd29;
+            width: 20%;
+          }
+        }
+      }
+      tbody {
+        tr {
+          &:hover {
+            background-color: #ffcb31;
+          }
+        }
+      }
+    }
+
+   
+  }
+  .my-pagination {
+    text-align: center;
+    .ngx-pagination {
+      padding: 0!important;
+      .li {
+        a {
+          color: #ffffff !important;
+        }
+      }
     }
   }
 }

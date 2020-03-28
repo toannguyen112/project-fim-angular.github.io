@@ -1,7 +1,7 @@
 <app-header></app-header>
 <div class=" profile">
   <div class="profile__content">
-    <h3 class="profile__content-header">profile </h3>
+
     <div class="profile__content__body">
       <div class="row">
         <div class="col-md-2 col-sm-2 p-0">
@@ -14,20 +14,17 @@
               [ngClass]="{active: choosen === 'history'}">
               Lịch sử đặt vé
             </li>
-            <li class="profile__content__body--list--item" (click)="choosenComponent('contact')"
-              [ngClass]="{active: choosen === 'contact'}">
-              Liên lạc
-            </li>
+           
           </ul>
         </div>
         <div class="col-md-10 col-sm-10 p-0">
           <div class="profile__content__body--content">
             <div [ngSwitch]="choosen">
               <div *ngSwitchCase="'about'">
-                <app-profile-about [thongTinTaiKhoan]="thongTinTaiKhoan" ></app-profile-about>
+                <app-profile-about [thongTinTaiKhoan]="thongTinTaiKhoan"></app-profile-about>
               </div>
               <div *ngSwitchCase="'history'">
-                <app-profile-history [thongTinTaiKhoan] ="thongTinTaiKhoan" ></app-profile-history>
+                <app-profile-history [thongTinTaiKhoan]="thongTinTaiKhoan"></app-profile-history>
               </div>
               <div *ngSwitchCase="'contact'">
                 <app-profile-contact></app-profile-contact>
