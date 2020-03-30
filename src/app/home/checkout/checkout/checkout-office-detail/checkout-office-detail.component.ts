@@ -1,6 +1,8 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 import { TransformDataService } from "src/app/services/transformData.service";
 
+import "sweetalert2/src/sweetalert2.scss";
+import Swal from "sweetalert2";
 @Component({
   selector: "app-checkout-office-detail",
   templateUrl: "./checkout-office-detail.component.html",
@@ -9,7 +11,8 @@ import { TransformDataService } from "src/app/services/transformData.service";
 export class CheckoutOfficeDetailComponent implements OnInit {
   @Input("thongTinPhim") thongTinPhim: any;
   @Input() init: number = null;
-
+  @Output("emitterStatus") emitterStatus = new EventEmitter();
+  public status: boolean = true;
   public email: string = "";
   public phone: string = "";
   public price: number = 0;
@@ -156,11 +159,25 @@ export class CheckoutOfficeDetailComponent implements OnInit {
     // emit  event count
     console.log("count is ", this.counter);
     if (this.counter === 0) {
-      // emit event counter end
-      alert("Hết Thời Gian Đặt Vé");
+      this.openAlert();
+      this.emitterStatus.emit(this.status);
     } else {
       this.doCountdown();
     }
+  }
+
+  openAlert() {
+    Swal.fire({
+      title: "Hết thời gian đặt vé",
+      showClass: {
+        popup: "animated fadeInDown faster"
+      },
+      hideClass: {
+        popup: "animated fadeOutUp faster"
+      }
+    });
+
+    // quay ve component checkout-content
   }
 
   datGheParent(status, ghe) {

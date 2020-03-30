@@ -13,13 +13,15 @@ import { MatButtonModule } from "@angular/material/button";
 import { AdminRegisteredComponent } from "./admin-registered/admin-registered.component";
 import { FormsModule } from "@angular/forms";
 import {NgxPaginationModule} from 'ngx-pagination';
+import { ThemPhimComponent } from './admin-manage/them-phim/them-phim.component';
 @NgModule({
   declarations: [
     AdminLayoutComponent,
     AdminManageComponent,
     QuanliphimContentComponent,
     QuanlinguoidungContentComponent,
-    AdminRegisteredComponent
+    AdminRegisteredComponent,
+    ThemPhimComponent
   ],
   imports: [
     CommonModule,

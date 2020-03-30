@@ -2,13 +2,12 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 
 import { Injectable, Output, EventEmitter } from "@angular/core";
 import { Observable } from "rxjs";
-import { map } from "rxjs/operators";
+
 import { UserService } from "./user.service";
 @Injectable({
   providedIn: "root"
 })
 export class FilmService {
-  token = JSON.parse(localStorage.getItem("admin")).accessToken;
   constructor(private _http: HttpClient, private _userService: UserService) {}
   readonly api = {
     // đối tương quản lí api
@@ -71,14 +70,15 @@ export class FilmService {
   // xoa phim
 
   DeleteFilm(maPhim: string) {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        "Content-Type": "application/json",
-        Authorization: "Bearer" + this.token
-      })
-    };
-    console.log(httpOptions);
-
+    console.log(httpOptions.headers);
     return this._http.delete(this.api.deleteFilm + maPhim, httpOptions);
   }
 }
+
+const accessTokenAdmin = JSON.parse(localStorage.getItem("admin")).accessToken;
+const httpOptions = {
+  headers: new HttpHeaders({
+    "Content-Type": "application/json",
+    Authorization: "Bearer" + accessTokenAdmin
+  })
+};

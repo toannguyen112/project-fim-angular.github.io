@@ -33,4 +33,8 @@ export class CheckoutComponent implements OnInit, OnDestroy {
   changeStatus(value) {
     this.status = value;
   }
+  recivceStatus(status) {
+    console.log(status);
+    this.status = status;
+  }
 }
