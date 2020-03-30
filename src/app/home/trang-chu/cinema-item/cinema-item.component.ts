@@ -7,11 +7,14 @@ import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 })
 export class CinemaItemComponent implements OnInit {
   @Input("cumRap") cumRap: any;
+  @Input("maCumRapActive") maCumRapActive: any;
   @Output("emitLichChieuPhim") emitLichChieuPhim = new EventEmitter();
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log(this.maCumRapActive);
+  }
   showListFilm() {
     this.emitLichChieuPhim.emit(this.cumRap);
   }

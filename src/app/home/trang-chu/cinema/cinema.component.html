@@ -7,7 +7,7 @@
   </div>
 
   <div class="cinema-tab-content">
-    <app-cinema-item *ngFor="let item of listCumRap" [cumRap]="item" (emitLichChieuPhim)="onListLichChieu($event)">
+    <app-cinema-item *ngFor="let item of listCumRap" [cumRap]="item" (emitLichChieuPhim)="onListLichChieu($event)" [maCumRapActive]="maCumRapActive" >
     </app-cinema-item>
   </div>
   <div class="cinema-listFilm">

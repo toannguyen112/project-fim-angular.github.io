@@ -51,17 +51,14 @@ export class FilmService {
 
   // lấy danh sách phim
   getListFilms(): Observable<any> {
-    let observable = this._http
-      .get(this.api.getListFilm)
-      .pipe(map((res: Response) => res));
+    let observable = this._http.get(this.api.getListFilm);
+
     return observable;
   }
 
   // lấy chi tiết phim
   getFilmDetail(maPhim: any): Observable<any> {
-    let obser = this._http
-      .get(this.api.getFilmDetail + maPhim)
-      .pipe(map((res: Response) => res));
+    let obser = this._http.get(this.api.getFilmDetail + maPhim);
     return obser;
   }
 

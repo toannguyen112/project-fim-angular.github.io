@@ -1,4 +1,4 @@
-<div class="cinema-list-item" (click)="showListFilm()" style="cursor: pointer;">
+<div class="cinema-list-item " [ngClass]="{active: maCumRapActive == cumRap.maCumRap}" (click)="showListFilm()" style="cursor: pointer;">
     <div class="cinema-list-item-img">
         <img src="https://s3img.vcdn.vn/123phim/2020/01/galaxy-linh-trung-15791435324335.jpg" alt="">
     </div>

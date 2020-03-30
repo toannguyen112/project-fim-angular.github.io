@@ -1,5 +1,6 @@
 .cinema-list-item {
   position: relative;
+  opacity: .5;
   &::after{
     position: absolute;
     width: 100%;
@@ -44,4 +45,7 @@
       color: #f60;
     }
   }
+}
+.cinema-list-item.active {
+  opacity: 1;
 }

@@ -135,7 +135,7 @@ export class CheckoutOfficeDetailComponent implements OnInit {
   constructor(private _transformData: TransformDataService) {}
 
   ngOnInit() {
-    // this.startCountdown();
+    this.startCountdown();
     this._transformData.asData.subscribe(res => {
       this.price = res;
     });
@@ -174,7 +174,5 @@ export class CheckoutOfficeDetailComponent implements OnInit {
         }
       }
     }
-
-    console.log(this.danhSachGheDangDat);
   }
 }

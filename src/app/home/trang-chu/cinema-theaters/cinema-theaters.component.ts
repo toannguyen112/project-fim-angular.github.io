@@ -10,12 +10,11 @@ import { Rap } from "src/app/models/rap";
 export class CinemaTheatersComponent implements OnInit {
   @Input("rap") rap: Rap;
   @Output("emitRap") emitRap = new EventEmitter();
-  @Input("valueDefaut") valueDefaut : any;
+  @Input("valueDefaut") valueDefaut: any;
   public heThongRap: any[] = [];
   public sub: Subscription;
 
   constructor() {
-    console.log(this.valueDefaut);
     
   }
 

@@ -1,5 +1,4 @@
-
-button{
+button {
   outline: none;
 }
 .chooseTiket__left {
@@ -102,7 +101,6 @@ button{
       }
     }
     .table {
-      
       tbody {
         tr {
           td {
@@ -181,7 +179,7 @@ button{
         }
       }
       .chosenbutton {
-        cursor: pointer;
+        border: none;
         position: relative;
         width: 160px;
         height: 100px;

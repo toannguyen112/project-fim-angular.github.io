@@ -28,7 +28,7 @@ export class RapService {
   }
 
   // lay thong tin lich chieu phim
-  layThongTinLichChieuPhim(maPhim) {
+  layThongTinLichChieuPhim(maPhim): Observable<any> {
     let api = `http://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinLichChieuPhim?MaPhim=${maPhim}`;
     let obser = this._http.get(api).pipe(map((res: Response) => res));
     return obser;

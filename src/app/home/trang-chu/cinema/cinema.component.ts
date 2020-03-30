@@ -16,6 +16,7 @@ export class CinemaComponent implements OnInit, OnDestroy {
   public lstLichChieuTheoPhim: any[] = [];
   public valueDefaut = "BHDStar";
   public lichChieuDefaut: any;
+  public maCumRapActive: any;
   constructor(private rapService: RapService) {}
 
   ngOnInit() {
@@ -30,15 +31,20 @@ export class CinemaComponent implements OnInit, OnDestroy {
   }
 
   selectCinema(value) {
-    this.valueDefaut = value
-    this.rapService.layLichChieuTheoMaHeThongRap(this.valueDefaut).subscribe(res => {
-      for (let rap of res) {
-        this.listCumRap = rap.lstCumRap;
-      }
-    });
+    this.valueDefaut = value;
+    this.rapService
+      .layLichChieuTheoMaHeThongRap(this.valueDefaut)
+      .subscribe(res => {
+        for (let rap of res) {
+          this.listCumRap = rap.lstCumRap;
+        }
+      });
   }
+
   onListLichChieu(value) {
-    console.log(value);
+    this.maCumRapActive = value.maCumRap;
+    console.log(this.maCumRapActive);
+
     this.listPhim = value.danhSachPhim;
   }
 }
