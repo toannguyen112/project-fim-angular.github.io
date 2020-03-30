@@ -2,6 +2,7 @@ import { Subscription } from "rxjs";
 import { Film } from "src/app/models/film";
 import { Component, OnInit, ViewChild, OnDestroy } from "@angular/core";
 import { FilmService } from "src/app/services/film.service";
+import Swal from "sweetalert2";
 
 @Component({
   selector: "app-quanliphim-content",
@@ -10,6 +11,7 @@ import { FilmService } from "src/app/services/film.service";
 })
 export class QuanliphimContentComponent implements OnInit, OnDestroy {
   public movieList: Film[] = [];
+  public newMovieList: any;
   public sub: Subscription;
   constructor(private _filmService: FilmService) {}
 
@@ -30,15 +32,32 @@ export class QuanliphimContentComponent implements OnInit, OnDestroy {
   }
 
   deleteFilm(phim) {
+    console.log(phim.maPhim);
+
     this._filmService.DeleteFilm(phim.maPhim).subscribe(
       res => {
         console.log(res);
-        console.log("xoa thanh cong");
+
+        Swal.fire({
+          icon: "success",
+          title: "",
+          text: "Xóa thành công"
+        });
       },
       err => {
         console.log(err);
+        
       }
     );
+  }
+
+  addPhim(film) {
+    Swal.fire({
+      icon: "success",
+      title: "",
+      text: "Thêm thành công"
+    });
+    this.movieList.push(film);
   }
   ngOnDestroy() {
     this.sub.unsubscribe();

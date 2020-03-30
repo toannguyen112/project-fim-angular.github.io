@@ -1,4 +1,4 @@
-import { DangKi } from "src/app/models/dangKi";
+
 import { Subscription } from "rxjs";
 import { Component, OnInit, OnDestroy } from "@angular/core";
 import { UserService } from "src/app/services/user.service";

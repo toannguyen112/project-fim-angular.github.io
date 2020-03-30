@@ -8,7 +8,7 @@ import { UserService } from "./user.service";
   providedIn: "root"
 })
 export class FilmService {
-  constructor(private _http: HttpClient, private _userService: UserService) {}
+  constructor(private _http: HttpClient) {}
   readonly api = {
     // đối tương quản lí api
     getListFilm:
@@ -18,7 +18,8 @@ export class FilmService {
     getFilmDetail:
       "http://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayThongTinPhim?MaPhim=",
     deleteFilm:
-      "http://movie0706.cybersoft.edu.vn/api/QuanLyPhim/XoaPhim?MaPhim="
+      "http://movie0706.cybersoft.edu.vn/api/QuanLyPhim/XoaPhim?MaPhim=",
+    addFilm: "http://movie0706.cybersoft.edu.vn/api/QuanLyPhim/ThemPhim"
   };
 
   public movieList: any[] = [];
@@ -67,10 +68,18 @@ export class FilmService {
     return obser;
   }
 
+  addFilm(film): Observable<any> {
+    // let headers = new HttpHeaders().set(
+    //   "Authorization",
+    //   "Bearer" + accessTokenAdmin
+    // );
+    let obser = this._http.post(this.api.addFilm, film, httpOptions);
+    return obser;
+  }
+
   // xoa phim
 
   DeleteFilm(maPhim: string) {
-    console.log(httpOptions.headers);
     return this._http.delete(this.api.deleteFilm + maPhim, httpOptions);
   }
 }
@@ -79,6 +88,6 @@ const accessTokenAdmin = JSON.parse(localStorage.getItem("admin")).accessToken;
 const httpOptions = {
   headers: new HttpHeaders({
     "Content-Type": "application/json",
-    Authorization: "Bearer" + accessTokenAdmin
+    Authorization: "Bearer " + accessTokenAdmin
   })
 };
