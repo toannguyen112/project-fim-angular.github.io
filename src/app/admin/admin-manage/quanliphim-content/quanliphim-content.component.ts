@@ -13,6 +13,7 @@ export class QuanliphimContentComponent implements OnInit, OnDestroy {
   public movieList: Film[] = [];
   public newMovieList: any;
   public sub: Subscription;
+  public maPhim: any;
   constructor(private _filmService: FilmService) {}
 
   ngOnInit() {
@@ -33,20 +34,23 @@ export class QuanliphimContentComponent implements OnInit, OnDestroy {
 
   deleteFilm(phim) {
     console.log(phim.maPhim);
+    this.maPhim = phim.maPhim;
 
-    this._filmService.DeleteFilm(phim.maPhim).subscribe(
+    this._filmService.DeleteFilm(this.maPhim).subscribe(
       res => {
-        console.log(res);
-
+        console.log(res.data);
+      },
+      err => {
+        console.log(err);
+        let newArray = this.movieList.filter(
+          item => item.maPhim != this.maPhim
+        );
+        this.movieList = newArray;
         Swal.fire({
           icon: "success",
           title: "",
           text: "Xóa thành công"
         });
-      },
-      err => {
-        console.log(err);
-        
       }
     );
   }

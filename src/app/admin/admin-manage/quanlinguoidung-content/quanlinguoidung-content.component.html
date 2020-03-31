@@ -1,102 +1,38 @@
 <!-- Button trigger modal -->
-<button type="button" class="mb-5" data-toggle="modal" data-target="#modelId" mat-raised-button>
-  Thêm người dùng
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title"> Thêm người dùng</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="row">
-          <div class="col-md-6 col-sm-6">
-            <mat-form-field class="example-full-width">
-              <mat-label>Tài khoản</mat-label>
-              <input matInput placeholder="Ex. Pizza" value="Sushi">
-            </mat-form-field>
-            <mat-form-field class="example-full-width">
-              <mat-label>Mật khẩu</mat-label>
-              <input matInput placeholder="Ex. Pizza" value="Sushi">
-            </mat-form-field>
-            <mat-form-field class="example-full-width">
-              <mat-label>Họ tên</mat-label>
-              <input matInput placeholder="Ex. Pizza" value="Sushi">
-            </mat-form-field>
-          </div>
-          <div class="col-md-6 col-sm-6">
-            <mat-form-field class="example-full-width">
-              <mat-label>Email</mat-label>
-              <input matInput placeholder="Ex. Pizza" value="Sushi">
-            </mat-form-field>
-            <mat-form-field class="example-full-width">
-              <mat-label>Số điện thoại</mat-label>
-              <input matInput placeholder="Ex. Pizza" value="Sushi">
-            </mat-form-field>
-            <div class="form-group">
-              <label for="">Loại người dùng</label>
-              <select class="form-control" name="" id="">
-                <option>Khách hàng</option>
-                <option>quản trị</option>
-
-              </select>
-            </div>
-
-          </div>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save</button>
-      </div>
-    </div>
-  </div>
-</div>
+<app-them-nguoi-dung (emitterUser)="addUser($event)" ></app-them-nguoi-dung>
 <div class="page__wrapper_manage">
-  <mat-form-field>
-    <mat-label>Tìm kiếm</mat-label>
-    <input matInput (keyup)="applyFilter($event)" placeholder="">
-  </mat-form-field>
-  <div class="mat-elevation-z8">
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-  
-      <!-- Position Column -->
-      <ng-container matColumnDef="position">
-        <th mat-header-cell *matHeaderCellDef> No. </th>
-        <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-      </ng-container>
-  
-      <!-- Name Column -->
-      <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef> Name </th>
-        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-      </ng-container>
-  
-      <!-- Weight Column -->
-      <ng-container matColumnDef="weight">
-        <th mat-header-cell *matHeaderCellDef> Weight </th>
-        <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
-      </ng-container>
-  
-      <!-- Symbol Column -->
-      <ng-container matColumnDef="symbol">
-        <th mat-header-cell *matHeaderCellDef> Symbol </th>
-        <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
-      </ng-container>
-      <ng-container matColumnDef="status">
-        <th mat-header-cell *matHeaderCellDef> Symbol </th>
-        <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
-      </ng-container>
-  
-  
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table>
-    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
-  </div>
+  <table class="table table-striped table-inverse">
+    <thead class="thead-inverse">
+      <tr class="header__title">
+        <th>#</th>
+        <th>Tài khoản</th>
+        <th>Mật khẩu</th>
+        <th>Họ tên</th>
+        <th>Email</th>
+        <th>Số diện thoại</th>
+        <th>Thao tác</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="item" *ngFor="let user of danhSachNguoDung   | paginate: { itemsPerPage: 5, currentPage: currentPage }  let i = index">
+        <td>{{ i + 1 }}</td>
+        <td class="taiKhoan">{{ user.taiKhoan }}</td>
+        <td class="matKhau">{{ user.matKhau }}</td>
+        <td class="hoTen">{{ user.hoTen }}</td>
+
+        <td class="Email">{{ user.email }}</td>
+        <td class="sdt">{{ user.soDt }}</td>
+        <td class="thaoTac">
+          <button class="btnSua btn-danger ">
+            <i class="fa fa-wrench" aria-hidden="true"></i>
+          </button>
+          <button class="btnXoa btn-primary ">
+            <i class="fa fa-trash" aria-hidden="true" (click)="deleteUser(user.taiKhoan)" ></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+    <pagination-controls style="text-align: center;" (pageChange)="currentPage = $event"></pagination-controls>
+
 </div>

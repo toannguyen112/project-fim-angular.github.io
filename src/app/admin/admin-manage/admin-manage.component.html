@@ -200,7 +200,8 @@
         <span>Quản Lí Phim</span>
       </div>
     </li>
-    <li class="sidebar__menu__item" (click)="chosenType('quanLiNguoiDung')"  [ngClass]="{active: type == 'quanLiNguoiDung'}">
+    <li class="sidebar__menu__item" (click)="chosenType('quanLiNguoiDung')"
+      [ngClass]="{active: type == 'quanLiNguoiDung'}">
       <div class="sidebar__menu__item__content">
         <i class="fa fa-pie-chart" aria-hidden="true"></i>
         <span>Quản lí người dùng</span>
@@ -215,10 +216,10 @@
 <!-- page wrapper -->
 <div class="page__wrapper" [ngClass]="{ box: !show }">
   <ng-container *ngIf="type ==='quanLiPhim' ;else quanlinguoidung">
-    <app-quanliphim-content></app-quanliphim-content>
+    <app-quanlinguoidung-content></app-quanlinguoidung-content>
   </ng-container>
   <ng-template #quanlinguoidung>
-    <app-quanlinguoidung-content></app-quanlinguoidung-content>
+    <app-quanliphim-content></app-quanliphim-content>
   </ng-template>
 
 </div>

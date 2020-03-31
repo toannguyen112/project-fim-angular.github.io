@@ -1,0 +1,99 @@
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#taolihchieu">
+    Tạo lịch chiếu
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="taolihchieu" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document" style="max-width: none;">
+        <div class="modal-content">
+            <h3 style="text-align: center; color: grey;">Thông tin lịch chiếu phim  {{thongTinPhim.tenPhim}} </h3>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Chọn hệ thống rạp</label>
+                            <select class="form-control " name="" id="">
+                                <option></option>
+                                <option></option>
+                                <option></option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Chọn cụm rạp</label>
+                            <select class="form-control " name="" id="">
+                                <option></option>
+                                <option></option>
+                                <option></option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Chọn rạp</label>
+                            <select class="form-control " name="" id="">
+                                <option></option>
+                                <option></option>
+                                <option></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Chọn ngày chiếu ,giờ chiếu</label>
+                            <input type="text" name="" type="date" class="form-control" placeholder=""
+                                aria-describedby="helpId">
+
+                        </div>
+                        <div class="form-group">
+                            <label for="">Thời lượng phim</label>
+                            <input type="text" name="" type="text" class="form-control" placeholder=""
+                                aria-describedby="helpId">
+
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">giá vé</label>
+                            <input type="text" name="" type="text" class="form-control" placeholder=""
+                                aria-describedby="helpId">
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="table">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Mã lịch chiếu</th>
+                                <th>Hệ thống rạp</th>
+                                <th>Cụm rạp</th>
+                                <th>Ngàu giờ chiéu</th>
+                                <th>Giá vé</th>
+                                <th>Thời lượng phim</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>HHD start</td>
+                                <td>BHD</td>
+                                <td>11/02/2000</td>
+                                <td>7000</td>
+                                <td>120p</td>
+                                <td></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save</button>
+            </div>
+        </div>
+    </div>
+</div>

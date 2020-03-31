@@ -14,9 +14,7 @@ export class UserService {
 
   // store
   public credentials: any;
-  public credentialsAdmin :any;
-  public token: string =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoic3RyaW5nIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiS2hhY2hIYW5nIiwibmJmIjoxNTYzNDQ1MzkzLCJleHAiOjE1NjM0NDg5OTN9.RsXFA9I2ICZip3PlDdBZNVoy5UjBjkoeyumqLAaLhiA";
+  public credentialsAdmin: any;
   @Output("credentials") credentialEmitter = new EventEmitter();
   @Output("credentialsAdmin") credentialsAdminEmitter = new EventEmitter();
 
@@ -25,7 +23,7 @@ export class UserService {
     this.credentialEmitter.emit(this.credentials);
   }
 
-  setCredentialsAdmin(credentials){
+  setCredentialsAdmin(credentials) {
     this.credentialsAdmin = credentials;
     this.credentialsAdminEmitter.emit(this.credentials);
   }
@@ -33,12 +31,6 @@ export class UserService {
     this.credentials = credentials;
   }
 
-  httpOptions = {
-    headers: new HttpHeaders({
-      "Content-Type": "application/json",
-      "Authorization": this.token
-    })
-  };
   // dang ki
   dangKi(data: DangKi): Observable<any> {
     let api = "http://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/DangKy";
@@ -48,26 +40,51 @@ export class UserService {
   // dang nhap
   dangNhap(data: DangNhap): Observable<any> {
     let api = "http://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/DangNhap";
-    let obser = this._http.post(api, data, this.httpOptions);
+    let obser = this._http.post(api, data, httpOptions);
 
     return obser;
   }
 
   // lay thong tin ca nhan
   layThongTinTaiKhoan(taiKhoan: Taikhoan): Observable<any> {
-    this.httpOptions.headers = this.httpOptions.headers.set(
-      "Authorization",
-      "Bearer" + this.token
-    );
     let api =
       "http://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/ThongTinTaiKhoan";
-    let obser = this._http.post(api, taiKhoan, this.httpOptions);
+    let obser = this._http.post(api, taiKhoan, httpOptions);
+    return obser;
+  }
+
+  layDanhSachNguoiDung(): Observable<any> {
+    let api =
+      "http://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/LayDanhSachNguoiDung?MaNhom=GP01";
+    let obser = this._http.get(api);
+    return obser;
+  }
+
+  addUser(user): Observable<any> {
+    let api =
+      "http://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/ThemNguoiDung";
+    let obser = this._http.post(api, user, httpOptions);
+    return obser;
+  }
+
+  deleteUser(taiKhoan : string): Observable<any> {
+    let api =
+      "http://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/XoaNguoiDung=";
+    let obser = this._http.delete(api + taiKhoan, httpOptions);
     return obser;
   }
   loggedIn() {
     return !!JSON.parse(localStorage.getItem("credentials"));
   }
-  loggedInAdmin(){
-    return !!JSON.parse(localStorage.getItem("admin"))
+  loggedInAdmin() {
+    return !!JSON.parse(localStorage.getItem("admin"));
   }
 }
+const accessTokenCredentials = JSON.parse(localStorage.getItem("credentials"))
+  .accessToken;
+const httpOptions = {
+  headers: new HttpHeaders({
+    "Content-Type": "application/json",
+    Authorization: "Bearer " + accessTokenCredentials
+  })
+};

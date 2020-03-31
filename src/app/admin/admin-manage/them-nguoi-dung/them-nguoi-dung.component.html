@@ -1,0 +1,61 @@
+<button type="button" class="mb-5" data-toggle="modal" data-target="#themnguoidung" mat-raised-button>
+  Thêm người dùng
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="themnguoidung" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"> Thêm người dùng</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form #FormAdduser="ngForm" (ngSubmit)="addUser(FormAdduser)">
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-6 col-sm-6">
+              <mat-form-field class="example-full-width">
+                <mat-label>Tài khoản</mat-label>
+                <input matInput placeholder="" value="" name="taiKhoan" ngModel>
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <mat-label>Mật khẩu</mat-label>
+                <input matInput placeholder="" value="" name="matKhau" ngModel>
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <mat-label>Họ tên</mat-label>
+                <input matInput placeholder="" value="" name="hoTen" ngModel>
+              </mat-form-field>
+            </div>
+            <div class="col-md-6 col-sm-6">
+              <mat-form-field class="example-full-width">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="" value="" name="email" ngModel>
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <mat-label>Số điện thoại</mat-label>
+                <input matInput placeholder="" value="" name="soDT" ngModel>
+              </mat-form-field>
+              <div class="form-group">
+                <label for="">Loại người dùng</label>
+                <select class="form-control" name="" id="" >
+                  <option>Khách hàng</option>
+                  <option>quản trị</option>
+
+                </select>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Thêm</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

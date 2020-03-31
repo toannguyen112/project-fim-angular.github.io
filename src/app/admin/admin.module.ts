@@ -14,6 +14,8 @@ import { AdminRegisteredComponent } from "./admin-registered/admin-registered.co
 import { FormsModule } from "@angular/forms";
 import {NgxPaginationModule} from 'ngx-pagination';
 import { ThemPhimComponent } from './admin-manage/them-phim/them-phim.component';
+import { TaoLichChieuComponent } from './admin-manage/tao-lich-chieu/tao-lich-chieu.component';
+import { ThemNguoiDungComponent } from './admin-manage/them-nguoi-dung/them-nguoi-dung.component';
 @NgModule({
   declarations: [
     AdminLayoutComponent,
@@ -21,7 +23,9 @@ import { ThemPhimComponent } from './admin-manage/them-phim/them-phim.component'
     QuanliphimContentComponent,
     QuanlinguoidungContentComponent,
     AdminRegisteredComponent,
-    ThemPhimComponent
+    ThemPhimComponent,
+    TaoLichChieuComponent,
+    ThemNguoiDungComponent
   ],
   imports: [
     CommonModule,

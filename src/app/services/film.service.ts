@@ -1,9 +1,7 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-
 import { Injectable, Output, EventEmitter } from "@angular/core";
 import { Observable } from "rxjs";
 
-import { UserService } from "./user.service";
 @Injectable({
   providedIn: "root"
 })
@@ -69,18 +67,15 @@ export class FilmService {
   }
 
   addFilm(film): Observable<any> {
-    // let headers = new HttpHeaders().set(
-    //   "Authorization",
-    //   "Bearer" + accessTokenAdmin
-    // );
     let obser = this._http.post(this.api.addFilm, film, httpOptions);
     return obser;
   }
 
   // xoa phim
 
-  DeleteFilm(maPhim: string) {
-    return this._http.delete(this.api.deleteFilm + maPhim, httpOptions);
+  DeleteFilm(maPhim): Observable<any> {
+    let obser = this._http.delete(this.api.deleteFilm + maPhim, httpOptions);
+    return obser;
   }
 }
 
