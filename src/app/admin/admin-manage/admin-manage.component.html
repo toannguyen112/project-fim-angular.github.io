@@ -139,6 +139,8 @@
     </div>
   </div>
   <div class="header-right">
+   
+   
     <div class="profile_details  " id="triggerId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
       (click)="showArrow()">
       <img
@@ -216,10 +218,10 @@
 <!-- page wrapper -->
 <div class="page__wrapper" [ngClass]="{ box: !show }">
   <ng-container *ngIf="type ==='quanLiPhim' ;else quanlinguoidung">
-    <app-quanlinguoidung-content></app-quanlinguoidung-content>
+    <app-quanliphim-content ></app-quanliphim-content>
   </ng-container>
   <ng-template #quanlinguoidung>
-    <app-quanliphim-content></app-quanliphim-content>
+    <app-quanlinguoidung-content ></app-quanlinguoidung-content>
   </ng-template>
 
 </div>

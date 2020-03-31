@@ -49,6 +49,7 @@ import { MatRadioModule } from "@angular/material/radio";
 import { LoadingComponent } from "./loading/loading.component";
 import { DetailMainComponent } from "./detail-page/detail-main/detail-main.component";
 import { SeatComponent } from "./checkout/seat/seat.component";
+import { LichChieuComponent } from './detail-page/lich-chieu/lich-chieu.component';
 
 @NgModule({
   declarations: [
@@ -71,7 +72,7 @@ import { SeatComponent } from "./checkout/seat/seat.component";
     CinemaComponent,
     TintucComponent,
     FooterComponent,
-
+    LichChieuComponent,
     PhimDangChieuComponent,
     PhimSapChieuComponent,
     CinemaItemComponent,
@@ -115,6 +116,7 @@ import { SeatComponent } from "./checkout/seat/seat.component";
     DetailPageComponent,
     CheckoutHeaderComponent,
     DanhgiaCinemaComponent,
+    LichChieuComponent,
     SeatComponent,
     LichchieuCinemaComponent,
     ThongtinCinemaComponent,

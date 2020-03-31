@@ -1,3 +1,4 @@
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { RouterModule } from "@angular/router";
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
@@ -36,7 +37,9 @@ import { ThemNguoiDungComponent } from './admin-manage/them-nguoi-dung/them-nguo
     MatPaginatorModule,
     MatButtonModule,
     FormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    Ng2SearchPipeModule
+    
   ]
 })
 export class AdminModule {}

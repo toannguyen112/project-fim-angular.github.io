@@ -1,4 +1,12 @@
-<app-them-phim (emitterFilm)="addPhim($event)"></app-them-phim>
+<div class="row" style="justify-content: space-between;">
+  <app-them-phim (emitterFilm)="addPhim($event)"></app-them-phim>
+  <div class="form-group">
+
+    <!-- <input type="text" name="search" [(ngModel)]="searchText" autocomplete="off" (input)="search()"  placeholder="Tìm kiếm"> -->
+    <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off"
+      placeholder=" Tìm kiếm" style="padding: 10px; border: 1px solid gray;">
+  </div>
+</div>
 
 
 
@@ -17,7 +25,8 @@
       </tr>
     </thead>
     <tbody>
-      <tr class="item" *ngFor="let phim of movieList | paginate: { itemsPerPage: 5, currentPage: currentPage }">
+      <tr class="item"
+        *ngFor="let phim of movieList |filter : searchText | paginate: { itemsPerPage: 5, currentPage: currentPage }  ">
         <td class="maPhim"> {{phim.maPhim}} </td>
         <td class="tenPhim">{{phim.tenPhim}}</td>
         <td class="hinhAnh"> <img [src]="phim.hinhAnh" alt="" style="width: 50px; height: 50px;"> </td>

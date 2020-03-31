@@ -23,6 +23,7 @@ import { AdminGuard } from './admin.guard';
     BrowserAnimationsModule,
     HttpClientModule,
     
+    
   ],
   providers: [AuthGuard ,AdminGuard],
   bootstrap: [AppComponent]

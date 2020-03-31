@@ -12,6 +12,7 @@ export class AdminManageComponent implements OnInit {
   public showDownArrow: boolean = false;
   public type: string = "quanLiPhim";
   public credentialsAdmin: any;
+  
   constructor(private _userService: UserService, private _route: Router) {}
 
   ngOnInit() {

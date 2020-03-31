@@ -1,6 +1,6 @@
 import { Subscription } from "rxjs";
 import { Film } from "src/app/models/film";
-import { Component, OnInit, ViewChild, OnDestroy } from "@angular/core";
+import { Component, OnInit, OnDestroy, Input } from "@angular/core";
 import { FilmService } from "src/app/services/film.service";
 import Swal from "sweetalert2";
 
@@ -10,10 +10,12 @@ import Swal from "sweetalert2";
   styleUrls: ["./quanliphim-content.component.scss"]
 })
 export class QuanliphimContentComponent implements OnInit, OnDestroy {
+ 
   public movieList: Film[] = [];
   public newMovieList: any;
   public sub: Subscription;
   public maPhim: any;
+  public searchText ;
   constructor(private _filmService: FilmService) {}
 
   ngOnInit() {
@@ -63,6 +65,18 @@ export class QuanliphimContentComponent implements OnInit, OnDestroy {
     });
     this.movieList.push(film);
   }
+  // search() {
+  //   if (this.searchText != "") {
+  //     this.movieList = this.movieList.filter(res => {
+  //       return res.tenPhim
+  //         .toLocaleLowerCase()
+  //         .match(this.searchText.toLocaleLowerCase());
+  //     });
+  //   } else if (this.searchText == "") {
+  //     this.ngOnInit();
+  //   }
+  // }
+
   ngOnDestroy() {
     this.sub.unsubscribe();
   }

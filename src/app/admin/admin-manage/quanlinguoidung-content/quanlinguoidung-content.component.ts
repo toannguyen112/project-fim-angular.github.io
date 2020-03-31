@@ -12,6 +12,8 @@ export class QuanlinguoidungContentComponent implements OnInit {
 
   public sub: Subscription;
   public danhSachNguoDung: any[] = [];
+  public searchText;
+
   ngOnInit() {
     this.sub = this._userService.layDanhSachNguoiDung().subscribe(
       res => {

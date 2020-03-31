@@ -37,7 +37,7 @@ export class ThemNguoiDungComponent implements OnInit {
       err => {
         console.log(err);
         Swal.fire({
-          title: "Thêm thất bại",
+          title: "Tài khoản hoặc email đã tồn tại",
           icon: "error"
         });
       }

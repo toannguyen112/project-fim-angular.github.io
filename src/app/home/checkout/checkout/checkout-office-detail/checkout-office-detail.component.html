@@ -127,14 +127,10 @@
               <button class="seat-has-user"></button>
               <p>Ghế đã có người chọn</p>
             </div>
-           
+
           </div>
 
 
-          <div>
-            <p>Danh sách ghế đang đặt</p>
-            <p *ngFor="let item of danhSachGheDangDat"> Số Ghế : {{item.SoGhe  }} Dãy Ghế : {{  item.Day}} </p>
-          </div>
         </div>
       </div>
     </div>
@@ -151,7 +147,9 @@
         </div>
         <div class="row price">
           <div class="col-6 p-0">
-            <p class="seat">Ghế :</p>
+            <p class="seat">Ghế :
+               <a *ngFor="let item of danhSachGheDangDat"> Số Ghế : {{item.SoGhe  }} Dãy Ghế :
+                {{  item.Day}} </a> </p>
             <p>Chọn combo :</p>
           </div>
           <div class="col-6 p-0 price__number">
