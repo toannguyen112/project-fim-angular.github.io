@@ -1,8 +1,8 @@
-<div class="row" style="justify-content: space-between;">
+<div class="row" style="justify-content: space-between; align-items: center;">
   <app-them-nguoi-dung (emitterUser)="addUser($event)"></app-them-nguoi-dung>
   <div class="form-group">
-   
-  
+
+
     <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off"
       placeholder=" Tìm kiếm">
   </div>
@@ -32,10 +32,10 @@
         <td class="Email">{{ user.email }}</td>
         <td class="sdt">{{ user.soDt }}</td>
         <td class="thaoTac">
-          <button class="btnSua btn-danger ">
+          <button class="btnSua btn">
             <i class="fa fa-wrench" aria-hidden="true"></i>
           </button>
-          <button class="btnXoa btn-primary ">
+          <button class="btnXoa btn ">
             <i class="fa fa-trash" aria-hidden="true" (click)="deleteUser(user.taiKhoan)"></i>
           </button>
         </td>

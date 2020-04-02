@@ -1,4 +1,4 @@
-<div style="cursor: pointer;" class="movie__item " [routerLink]="['/detail',itemPhim.maPhim]">
+<div style="cursor: pointer;" class="movie__item">
     <div class="movie__item__cotent">
         <img [src]="itemPhim.hinhAnh" alt="">
         <div class="overPlay">
@@ -6,10 +6,13 @@
         </div>
     </div>
     <p class="name">{{itemPhim.tenPhim}} (C18) </p>
-    <button class="btnDatve">
+    <button class="btnDatve" (click)="datVe(itemPhim.maPhim)" [disabled]="isLoading">
         <span class="ticket">
             <i class="fa fa-ticket" aria-hidden="true"></i>
-        </span> mua vé
+            mua vé
+        </span>
+
+
     </button>
 
 </div>

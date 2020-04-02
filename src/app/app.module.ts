@@ -9,7 +9,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { HttpClientModule } from "@angular/common/http";
 import { AuthGuard } from './auth.guard';
 import { AdminGuard } from './admin.guard';
-
+import {NgxSpinnerModule} from 'ngx-spinner'
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,7 +17,7 @@ import { AdminGuard } from './admin.guard';
     BrowserModule,
     AppRoutingModule,
     CommonModule,
-
+    NgxSpinnerModule,
     HomeModule,
     AdminModule,
     BrowserAnimationsModule,

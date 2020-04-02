@@ -67,7 +67,7 @@ export class UserService {
     return obser;
   }
 
-  deleteUser(taiKhoan : string): Observable<any> {
+  deleteUser(taiKhoan: string): Observable<any> {
     let api =
       "http://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/XoaNguoiDung=";
     let obser = this._http.delete(api + taiKhoan, httpOptions);
@@ -80,8 +80,8 @@ export class UserService {
     return !!JSON.parse(localStorage.getItem("admin"));
   }
 }
-const accessTokenCredentials = JSON.parse(localStorage.getItem("credentials"))
-  .accessToken;
+const accessTokenCredentials =  localStorage.getItem("credentials") ? JSON.parse(localStorage.getItem("credentials")).accessToken : []
+ 
 const httpOptions = {
   headers: new HttpHeaders({
     "Content-Type": "application/json",

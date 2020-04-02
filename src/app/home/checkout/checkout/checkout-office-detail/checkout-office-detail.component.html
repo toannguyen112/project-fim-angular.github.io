@@ -187,7 +187,7 @@
             <span style="color: #f79320;"> Email</span> đã nhập.</span>
         </div>
       </div>
-      <div class="buyTicket " [ngClass]="{ active: email && phone }" style="cursor: pointer;">
+      <div class="buyTicket" (click)="handleDatve()" [ngClass]="{ active: email && phone }" style="cursor: pointer;">
         Đặt vé
       </div>
     </div>

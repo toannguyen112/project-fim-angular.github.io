@@ -3,6 +3,7 @@ import { TransformDataService } from "src/app/services/transformData.service";
 
 import "sweetalert2/src/sweetalert2.scss";
 import Swal from "sweetalert2";
+import { Router } from "@angular/router";
 @Component({
   selector: "app-checkout-office-detail",
   templateUrl: "./checkout-office-detail.component.html",
@@ -151,10 +152,13 @@ export class CheckoutOfficeDetailComponent implements OnInit {
   ];
 
   public counter: number = 0;
-  constructor(private _transformData: TransformDataService) {}
+  constructor(
+    private _transformData: TransformDataService,
+    private _route: Router
+  ) {}
 
   ngOnInit() {
-    this.startCountdown();
+    // this.startCountdown();
     this._transformData.asData.subscribe(res => {
       this.price = res;
     });
@@ -209,5 +213,23 @@ export class CheckoutOfficeDetailComponent implements OnInit {
     }
 
     console.log(this.danhSachGheDangDat);
+  }
+
+  handleDatve() {
+    let credentials = localStorage.getItem("credentials");
+    if (credentials) {
+      Swal.fire({
+        title: "mua vé thành công",
+
+        icon: "success"
+      });
+    } else {
+      Swal.fire({
+        title: "Yêu cầu đăng nhập",
+
+        icon: "error"
+      });
+      this._route.navigate(["/"]);
+    }
   }
 }

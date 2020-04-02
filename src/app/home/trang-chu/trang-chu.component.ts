@@ -2,20 +2,30 @@ import { FilmService } from "./../../services/film.service";
 import { Component, OnInit, OnDestroy } from "@angular/core";
 import { Film } from "src/app/models/film";
 import { Subscription } from "rxjs";
-
+import { NgxSpinnerService } from "ngx-spinner";
 @Component({
   selector: "app-trang-chu",
   templateUrl: "./trang-chu.component.html",
   styleUrls: ["./trang-chu.component.scss"]
 })
 export class TrangChuComponent implements OnInit, OnDestroy {
-  constructor(private filmService: FilmService) {}
+  constructor(
+    private filmService: FilmService,
+    private spinner: NgxSpinnerService
+  ) {}
   public sub = new Subscription();
 
   public status: boolean;
   public movieList: Film[] = [];
 
   ngOnInit() {
+    this.spinner.show();
+
+    setTimeout(() => {
+      /** spinner ends after 5 seconds */
+      this.spinner.hide();
+    }, 2000);
+
     this.movieList = this.filmService.movieList;
     this.filmService.emitterMovieList.subscribe((newMovieList: Film[]) => {
       this.movieList = newMovieList;

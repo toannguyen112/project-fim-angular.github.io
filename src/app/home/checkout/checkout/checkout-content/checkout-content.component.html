@@ -92,8 +92,14 @@
           </p>
         </div>
       </div>
-      <button class="chosenbutton">
-        <span (click)="chonGhe(false)">CHỌN GHẾ</span>
+      <button class="chosenbutton" [disabled]="isLoading" (click)="chonGhe(false)">
+
+        <span *ngIf="!isLoading else loading">
+
+          CHỌN GHẾ</span>
+        <ng-template #loading>
+          <app-loading ></app-loading>
+        </ng-template>
       </button>
     </div>
 

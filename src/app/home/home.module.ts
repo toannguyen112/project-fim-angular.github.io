@@ -50,7 +50,8 @@ import { LoadingComponent } from "./loading/loading.component";
 import { DetailMainComponent } from "./detail-page/detail-main/detail-main.component";
 import { SeatComponent } from "./checkout/seat/seat.component";
 import { LichChieuComponent } from './detail-page/lich-chieu/lich-chieu.component';
-
+import {NgxSpinnerModule} from 'ngx-spinner';
+import { LoadingButtonItemPhimComponent } from './trang-chu/loading-button-item-phim/loading-button-item-phim.component'
 @NgModule({
   declarations: [
     TrangChuComponent,
@@ -97,7 +98,8 @@ import { LichChieuComponent } from './detail-page/lich-chieu/lich-chieu.componen
     CheckoutOfficeDetailComponent,
     LoadingComponent,
     DetailMainComponent,
-    SeatComponent
+    SeatComponent,
+    LoadingButtonItemPhimComponent
   ],
   imports: [
     CommonModule,
@@ -105,7 +107,8 @@ import { LichChieuComponent } from './detail-page/lich-chieu/lich-chieu.componen
     MatInputModule,
     MatRadioModule,
     NgxPaginationModule,
-    FormsModule
+    FormsModule,
+    NgxSpinnerModule
   ],
   exports: [
     TrangChuComponent,

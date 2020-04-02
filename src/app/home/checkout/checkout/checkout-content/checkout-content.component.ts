@@ -21,15 +21,26 @@ export class CheckoutContentComponent implements OnInit {
   public priceTiketGheThuong2D: number = 80000;
   public priceTiketGheDoi: number = 120000;
   public total: number = 0;
+
+  public isLoading  : boolean = false ; 
   constructor(
     private _transformData : TransformDataService
   ) {}
 
   ngOnInit() {}
   chonGhe(value) {
-    this.total = this.priceGheDoi2D + this.priceVeVip2D + this.priceVeThuong2D;
-    this._transformData.transformData(this.total)
-    this.emitNavigate.emit(value);
+
+    this.isLoading = true
+    setTimeout(() => {
+        this.isLoading = false
+        this.total = this.priceGheDoi2D + this.priceVeVip2D + this.priceVeThuong2D;
+        this._transformData.transformData(this.total)
+        this.emitNavigate.emit(value);
+    }, 3000);
+
+
+
+   
   }
 
   // ve vip

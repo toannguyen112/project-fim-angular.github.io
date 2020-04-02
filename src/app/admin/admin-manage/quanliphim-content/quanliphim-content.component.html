@@ -1,4 +1,4 @@
-<div class="row" style="justify-content: space-between;">
+<div class="row" style="justify-content: space-between ; align-items: center;">
   <app-them-phim (emitterFilm)="addPhim($event)"></app-them-phim>
   <div class="form-group">
 
@@ -39,6 +39,7 @@
           <button class="btnXoa btn " (click)="deleteFilm(phim)">
             <i class="fa fa-trash" aria-hidden="true"></i>
           </button>
+          <app-tao-lich-chieu></app-tao-lich-chieu>
 
 
 

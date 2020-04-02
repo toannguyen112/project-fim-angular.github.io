@@ -79,7 +79,7 @@ export class FilmService {
   }
 }
 
-const accessTokenAdmin = JSON.parse(localStorage.getItem("admin")).accessToken;
+const accessTokenAdmin = localStorage.getItem("admin")  ?  JSON.parse(localStorage.getItem("admin")).accessToken : []
 const httpOptions = {
   headers: new HttpHeaders({
     "Content-Type": "application/json",
