@@ -6,11 +6,11 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./tao-lich-chieu.component.scss']
 })
 export class TaoLichChieuComponent implements OnInit {
-  @Input("thongTinPhim") thongTinPhim : any ; 
+  @Input("phim") phim : any ; 
   constructor() { }
 
   ngOnInit() {
-    console.log(this.thongTinPhim);
+   
     
   }
 

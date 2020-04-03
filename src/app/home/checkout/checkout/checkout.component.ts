@@ -11,6 +11,7 @@ import { PhongveService } from "src/app/services/phongve.service";
 export class CheckoutComponent implements OnInit, OnDestroy {
   public thongTinPhim: any;
   public sub: Subscription;
+  public maLichChieu;
   public status: boolean = true;
   constructor(
     private phongVeService: PhongveService,
@@ -19,7 +20,9 @@ export class CheckoutComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
+      this.maLichChieu = params.maLichChieu
       this.sub = this.phongVeService
+
         .chiTietPhongVe(params.maLichChieu)
         .subscribe(res => {
           this.thongTinPhim = res.thongTinPhim;

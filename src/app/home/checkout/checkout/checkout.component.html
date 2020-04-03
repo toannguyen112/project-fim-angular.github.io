@@ -3,6 +3,6 @@
   *ngIf="status; else chiTietPhongVe">
 </app-checkout-content>
 <ng-template #chiTietPhongVe>
-  <app-checkout-office-detail [thongTinPhim]="thongTinPhim" [init]="300" (emitterStatus)="recivceStatus($event)">
+  <app-checkout-office-detail [maLichChieu]="maLichChieu" [thongTinPhim]="thongTinPhim" [init]="300" (emitterStatus)="recivceStatus($event)">
   </app-checkout-office-detail>
 </ng-template>

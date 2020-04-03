@@ -51,7 +51,8 @@ import { DetailMainComponent } from "./detail-page/detail-main/detail-main.compo
 import { SeatComponent } from "./checkout/seat/seat.component";
 import { LichChieuComponent } from './detail-page/lich-chieu/lich-chieu.component';
 import {NgxSpinnerModule} from 'ngx-spinner';
-import { LoadingButtonItemPhimComponent } from './trang-chu/loading-button-item-phim/loading-button-item-phim.component'
+import { LoadingButtonItemPhimComponent } from './trang-chu/loading-button-item-phim/loading-button-item-phim.component';
+import { ModalUpdateUserComponent } from './profile/modal-update-user/modal-update-user.component'
 @NgModule({
   declarations: [
     TrangChuComponent,
@@ -99,7 +100,8 @@ import { LoadingButtonItemPhimComponent } from './trang-chu/loading-button-item-
     LoadingComponent,
     DetailMainComponent,
     SeatComponent,
-    LoadingButtonItemPhimComponent
+    LoadingButtonItemPhimComponent,
+    ModalUpdateUserComponent
   ],
   imports: [
     CommonModule,

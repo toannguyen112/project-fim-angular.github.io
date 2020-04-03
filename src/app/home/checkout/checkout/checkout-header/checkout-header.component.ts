@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from "@angular/core";
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: "app-checkout-header",
@@ -7,8 +8,14 @@ import { Component, OnInit, Input } from "@angular/core";
 })
 export class CheckoutHeaderComponent implements OnInit {
   @Input("status") status: any;
+  public user;
+  constructor(
+    private userservice  : UserService
+  ) {}
 
-  constructor() {}
-
-  ngOnInit() {}
+  ngOnInit() {
+      this.user = this.userservice.credentials ; 
+      console.log(this.user);
+      
+}
 }

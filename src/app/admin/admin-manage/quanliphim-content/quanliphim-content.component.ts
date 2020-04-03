@@ -1,8 +1,9 @@
 import { Subscription } from "rxjs";
 import { Film } from "src/app/models/film";
-import { Component, OnInit, OnDestroy, Input } from "@angular/core";
+import { Component, OnInit, OnDestroy } from "@angular/core";
 import { FilmService } from "src/app/services/film.service";
 import Swal from "sweetalert2";
+import { HttpClient } from "@angular/common/http";
 
 @Component({
   selector: "app-quanliphim-content",
@@ -15,8 +16,8 @@ export class QuanliphimContentComponent implements OnInit, OnDestroy {
   public sub: Subscription;
   public maPhim: any;
   public searchText;
-  constructor(private _filmService: FilmService) {}
-
+  constructor(private _filmService: FilmService, private http: HttpClient) {}
+  public selectedFile: File = null;
   ngOnInit() {
     this.movieList = this._filmService.movieList;
     this._filmService.emitterMovieList.subscribe(res => {
@@ -26,6 +27,25 @@ export class QuanliphimContentComponent implements OnInit, OnDestroy {
     this.sub = this._filmService.getListFilms().subscribe(
       res => {
         this._filmService.setDanhSachPhim(res);
+      },
+      err => {
+        console.log(err);
+      }
+    );
+  }
+
+  onFileSelected(event) {
+    this.selectedFile = <File>event.target.files[0];
+    console.log(this.selectedFile);
+  }
+  upLoad(tenPhim) {
+    var frm = new FormData();
+    frm.append("File", this.selectedFile, this.selectedFile.name);
+    frm.append("tenPhim", tenPhim);
+    frm.append("maNhom", "GP01");
+    this._filmService.upLoadImg(frm).subscribe(
+      res => {
+        console.log(res);
       },
       err => {
         console.log(err);

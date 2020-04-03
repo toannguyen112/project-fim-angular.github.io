@@ -59,6 +59,11 @@ export class UserService {
     let obser = this._http.get(api);
     return obser;
   }
+  // updateUser 
+  updateUser(newUser){
+    let api = "http://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/ThongTinTaiKhoan"
+    return this._http.post(api,newUser,httpOptions)
+  }
 
   addUser(user): Observable<any> {
     let api =

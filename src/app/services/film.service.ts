@@ -17,7 +17,9 @@ export class FilmService {
       "http://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayThongTinPhim?MaPhim=",
     deleteFilm:
       "http://movie0706.cybersoft.edu.vn/api/QuanLyPhim/XoaPhim?MaPhim=",
-    addFilm: "http://movie0706.cybersoft.edu.vn/api/QuanLyPhim/ThemPhim"
+    addFilm: "http://movie0706.cybersoft.edu.vn/api/QuanLyPhim/ThemPhim",
+    updateImg:
+      "http://movie0706.cybersoft.edu.vn/api/QuanLyPhim/UploadHinhAnhPhim"
   };
 
   public movieList: any[] = [];
@@ -77,9 +79,16 @@ export class FilmService {
     let obser = this._http.delete(this.api.deleteFilm + maPhim, httpOptions);
     return obser;
   }
+
+  // upload hinh anh
+  upLoadImg(fd): Observable<any> {
+    return this._http.post(this.api.updateImg, fd);
+  }
 }
 
-const accessTokenAdmin = localStorage.getItem("admin")  ?  JSON.parse(localStorage.getItem("admin")).accessToken : []
+const accessTokenAdmin = localStorage.getItem("admin")
+  ? JSON.parse(localStorage.getItem("admin")).accessToken
+  : [];
 const httpOptions = {
   headers: new HttpHeaders({
     "Content-Type": "application/json",

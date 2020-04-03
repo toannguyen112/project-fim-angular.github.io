@@ -3,7 +3,8 @@ import { TransformDataService } from "src/app/services/transformData.service";
 
 import "sweetalert2/src/sweetalert2.scss";
 import Swal from "sweetalert2";
-import { Router } from "@angular/router";
+import { Router, ActivatedRoute } from "@angular/router";
+import { PhongveService } from "src/app/services/phongve.service";
 @Component({
   selector: "app-checkout-office-detail",
   templateUrl: "./checkout-office-detail.component.html",
@@ -12,8 +13,10 @@ import { Router } from "@angular/router";
 export class CheckoutOfficeDetailComponent implements OnInit {
   @Input("thongTinPhim") thongTinPhim: any;
   @Input() init: number = null;
+  @Input() maLichChieu;
   @Output("emitterStatus") emitterStatus = new EventEmitter();
   public status: boolean = true;
+
   public email: string = "";
   public phone: string = "";
   public price: number = 0;
@@ -154,7 +157,8 @@ export class CheckoutOfficeDetailComponent implements OnInit {
   public counter: number = 0;
   constructor(
     private _transformData: TransformDataService,
-    private _route: Router
+    private _route: Router,
+    private phongVeService: PhongveService
   ) {}
 
   ngOnInit() {
@@ -216,20 +220,46 @@ export class CheckoutOfficeDetailComponent implements OnInit {
   }
 
   handleDatve() {
-    let credentials = localStorage.getItem("credentials");
-    if (credentials) {
-      Swal.fire({
-        title: "mua vé thành công",
+    console.log(this.maLichChieu);
+    var credentials = localStorage.getItem("credentials")
+      ? JSON.parse(localStorage.getItem("credentials"))
+      : null;
+    console.log(credentials.taiKhoan);
 
-        icon: "success"
-      });
-    } else {
-      Swal.fire({
-        title: "Yêu cầu đăng nhập",
+    const datVe = {
+      maLichChieu: this.maLichChieu,
+      danhSachVe: [
+        {
+          maGhe: "0",
+          giaVe: "0"
+        }
+      ],
+      taiKhoanNguoiDung: credentials.taiKhoan
+    };
+    console.log(datVe);
 
-        icon: "error"
-      });
-      this._route.navigate(["/"]);
-    }
+    this.phongVeService.datVe(datVe).subscribe(
+      res => {
+        console.log(res);
+      },
+      err => {
+        console.log(err);
+      }
+    );
+
+    // if (credentials) {
+    //   Swal.fire({
+    //     title: "mua vé thành công",
+
+    //     icon: "success"
+    //   });
+    // } else {
+    //   Swal.fire({
+    //     title: "Yêu cầu đăng nhập",
+
+    //     icon: "error"
+    //   });
+    //   this._route.navigate(["/"]);
+    // }
   }
 }
