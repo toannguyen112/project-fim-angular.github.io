@@ -1,12 +1,10 @@
 import { FormsModule } from "@angular/forms";
 import { SliderComponent } from "./trang-chu/slider/slider.component";
-
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { LoginComponent } from "./login/login/login.component";
 import { RegisteredComponent } from "./registered/registered/registered.component";
 import { CheckoutComponent } from "./checkout/checkout/checkout.component";
-
 import { CheckoutHeaderComponent } from "./checkout/checkout/checkout-header/checkout-header.component";
 import { HomeLayoutComponent } from "./home-layout/home-layout.component";
 import { HeaderComponent } from "./trang-chu/header/header.component";
@@ -26,9 +24,7 @@ import { ReviewComponent } from "./trang-chu/review/review.component";
 import { DienAnhComponent } from "./trang-chu/dien-anh/dien-anh.component";
 import { ItemPhimComponent } from "./trang-chu/item-phim/item-phim.component";
 import { ItemTinTucComponent } from "./trang-chu/item-tin-tuc/item-tin-tuc.component";
-
 import { DetailCinemaPageComponent } from "./detail-cinema-page/detail-cinema-page/detail-cinema-page.component";
-
 import { DanhgiaCinemaComponent } from "./detail-cinema-page/detail-cinema-page/danhgia-cinema/danhgia-cinema.component";
 import { LichchieuCinemaComponent } from "./detail-cinema-page/detail-cinema-page/lichchieu-cinema/lichchieu-cinema.component";
 import { ThongtinCinemaComponent } from "./detail-cinema-page/detail-cinema-page/thongtin-cinema/thongtin-cinema.component";
@@ -39,7 +35,6 @@ import { ProfileHistoryComponent } from "./profile/profile-history/profile-histo
 import { ProfileContactComponent } from "./profile/profile-contact/profile-contact.component";
 import { ProfileHistoryItemComponent } from "./profile/profile-history-item/profile-history-item.component";
 import { CinemaTheatersComponent } from "./trang-chu/cinema-theaters/cinema-theaters.component";
-import { ItemPhimSapChieuComponent } from "./trang-chu/item-phim-sap-chieu/item-phim-sap-chieu.component";
 import { HomeToolsComponent } from "./trang-chu/home-tools/home-tools.component";
 import { MatInputModule } from "@angular/material/input";
 import { ModalLoginRegisterComponent } from "./modal-login-register/modal-login-register.component";
@@ -49,22 +44,22 @@ import { MatRadioModule } from "@angular/material/radio";
 import { LoadingComponent } from "./loading/loading.component";
 import { DetailMainComponent } from "./detail-page/detail-main/detail-main.component";
 import { SeatComponent } from "./checkout/seat/seat.component";
-import { LichChieuComponent } from './detail-page/lich-chieu/lich-chieu.component';
-import {NgxSpinnerModule} from 'ngx-spinner';
-import { LoadingButtonItemPhimComponent } from './trang-chu/loading-button-item-phim/loading-button-item-phim.component';
-import { ModalUpdateUserComponent } from './profile/modal-update-user/modal-update-user.component'
+import { LichChieuComponent } from "./detail-page/lich-chieu/lich-chieu.component";
+import { NgxSpinnerModule } from "ngx-spinner";
+import { LoadingButtonItemPhimComponent } from "./trang-chu/loading-button-item-phim/loading-button-item-phim.component";
+import { ModalUpdateUserComponent } from "./profile/modal-update-user/modal-update-user.component";
+import { SeeMoreComponent } from './see-more/see-more.component';
+import { PipeModule } from '../pipe/pipe.module';
 @NgModule({
   declarations: [
     TrangChuComponent,
     LoginComponent,
     RegisteredComponent,
-
     CheckoutComponent,
     DetailPageComponent,
     CheckoutHeaderComponent,
     DanhgiaCinemaComponent,
     ItemTinTucComponent,
-
     LichchieuCinemaComponent,
     ThongtinCinemaComponent,
     HomeLayoutComponent,
@@ -92,7 +87,6 @@ import { ModalUpdateUserComponent } from './profile/modal-update-user/modal-upda
     ProfileContactComponent,
     ProfileHistoryItemComponent,
     CinemaTheatersComponent,
-    ItemPhimSapChieuComponent,
     HomeToolsComponent,
     ModalLoginRegisterComponent,
     CheckoutContentComponent,
@@ -101,7 +95,8 @@ import { ModalUpdateUserComponent } from './profile/modal-update-user/modal-upda
     DetailMainComponent,
     SeatComponent,
     LoadingButtonItemPhimComponent,
-    ModalUpdateUserComponent
+    ModalUpdateUserComponent,
+    SeeMoreComponent
   ],
   imports: [
     CommonModule,
@@ -110,7 +105,8 @@ import { ModalUpdateUserComponent } from './profile/modal-update-user/modal-upda
     MatRadioModule,
     NgxPaginationModule,
     FormsModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    
   ],
   exports: [
     TrangChuComponent,
@@ -132,7 +128,6 @@ import { ModalUpdateUserComponent } from './profile/modal-update-user/modal-upda
     CinemaComponent,
     TintucComponent,
     FooterComponent,
-
     PhimDangChieuComponent,
     PhimSapChieuComponent,
     CinemaItemComponent,

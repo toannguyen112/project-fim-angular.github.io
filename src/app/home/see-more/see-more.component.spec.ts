@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ItemPhimSapChieuComponent } from './item-phim-sap-chieu.component';
+import { SeeMoreComponent } from './see-more.component';
 
-describe('ItemPhimSapChieuComponent', () => {
-  let component: ItemPhimSapChieuComponent;
-  let fixture: ComponentFixture<ItemPhimSapChieuComponent>;
+describe('SeeMoreComponent', () => {
+  let component: SeeMoreComponent;
+  let fixture: ComponentFixture<SeeMoreComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ItemPhimSapChieuComponent ]
+      declarations: [ SeeMoreComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ItemPhimSapChieuComponent);
+    fixture = TestBed.createComponent(SeeMoreComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

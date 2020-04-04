@@ -15,6 +15,7 @@ import { AuthGuard } from "./auth.guard";
 import { AdminRegisteredComponent } from "./admin/admin-registered/admin-registered.component";
 import { AdminLayoutComponent } from "./admin/admin-layout/admin-layout.component";
 import { AdminGuard } from './admin.guard';
+import { SeeMoreComponent } from './home/see-more/see-more.component';
 
 const routes: Routes = [
   {
@@ -42,6 +43,10 @@ const routes: Routes = [
       {
         path: "registered",
         component: RegisteredComponent
+      },
+      {
+        path: "seemore",
+        component: SeeMoreComponent
       },
       {
         path: "profile",

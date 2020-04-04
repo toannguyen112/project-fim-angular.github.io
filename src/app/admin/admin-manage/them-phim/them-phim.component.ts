@@ -29,14 +29,6 @@ export class ThemPhimComponent implements OnInit {
         console.log(res);
         this.film = res;
         this.emitterFilm.emit(this.film);
-        this._filmSercive.upLoadImg(formThemPhim.hinhAnh,formThemPhim.tenPhim).subscribe(
-          res => {
-            console.log(res);
-          },
-          err => {
-            console.log(err);
-          }
-        );
       },
       error => {
         console.log(error);
