@@ -1,60 +1,70 @@
 <header>
   <div class="navigate">
     <div class="navigate-logo">
-      <img class="logo" src="https://www.bhdstar.vn/wp-content/themes/bhd/assets/images/logo.png" [routerLink]="['/']" />
+      <img class="logo" src="https://www.bhdstar.vn/wp-content/themes/bhd/assets/images/logo.png"
+        [routerLink]="['/']" />
     </div>
-   
-  
-    <div class="user">  
-
-     
-      <ng-container *ngIf="credentials ; else account">
-
-        <div class="userAcount" [routerLink]="['/profile']"  >
-          <img class="userAcount__img"
-            src="
-        https://instagram.fsgn6-1.fna.fbcdn.net/v/t51.2885-19/s320x320/66482175_334260424128185_7085073249431715840_n.jpg?_nc_ht=instagram.fsgn6-1.fna.fbcdn.net&_nc_ohc=aA94PXO8tu8AX-Xde22&oh=aaa613024daaabd6704dccece050afbd&oe=5E99B1B6"
-            alt="" />
-        
-          <div class="userAcount__logout" (click)="dangXuat()">
-            <p>Đăng xuất</p>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="social col-md-6">
+          <div class="social__wrapper__img">
+            <img class="social__img" src="https://www.bhdstar.vn/wp-content/themes/bhd/assets/images/fb_logo.png"
+              alt="">
+            <img class="social__img" src="https://www.bhdstar.vn/wp-content/themes/bhd/assets/images/lc.png" alt="">
+            <img class="social__img" src="https://www.bhdstar.vn/wp-content/themes/bhd/assets/images/mvtr.png" alt="">
+          </div>
+          <div class="social__sub">
+            <span class="social__sub-item social__sub__active">VN |</span>
+            <span class="social__sub-item ">EN</span>
+          </div>
+        </div>
+        <div class="user  col-md-6">
+          <div class="hotline">
+           <img class="phone" src="https://www.bhdstar.vn/wp-content/themes/bhd/assets/images/phone.png" alt="">
+           <span class="phone__number">
+             : 19002099
+           </span>
           </div>
 
-        </div>
-      </ng-container>
-     
-      <ng-template #account>
-        <div class="user__content " (click)="login('true')" data-toggle="modal" data-target="#modalDangNhap">
-          <img class="user__img" src="https://tix.vn/app/assets/img/avatar.png" alt="" />
-          <p>Đăng nhập</p>
-        </div>
-        
-        
-      </ng-template>
+          <ng-container *ngIf="credentials ; else account">
 
+            <div class="userAcount" [routerLink]="['/profile']">
+              <img class="userAcount__img"
+                src="
+            https://instagram.fsgn6-1.fna.fbcdn.net/v/t51.2885-19/s320x320/66482175_334260424128185_7085073249431715840_n.jpg?_nc_ht=instagram.fsgn6-1.fna.fbcdn.net&_nc_ohc=aA94PXO8tu8AX-Xde22&oh=aaa613024daaabd6704dccece050afbd&oe=5E99B1B6"
+                alt="" />
 
-      <div class="place">
-        <div class="dropdown">
-          <button class=" dropdown-toggle" type="button" id="place" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">
-            <img src="https://tix.vn/app/assets/img/icons/location-header.png" alt="">
-            <div class="dropdow__selected">
-              Vũng tàu
+              <div class="userAcount__logout" (click)="dangXuat()">
+                <p>Đăng xuất</p>
+              </div>
+
             </div>
-            <img src="https://tix.vn/app/assets/img/icons/dropdown-icon.png" class="iconDropdown" alt="">
-          </button>
-          <div class="dropdown-menu" aria-labelledby="place">
-            <button class="dropdown-item" type="button">Hồ Chí Minh</button>
-            <button class="dropdown-item" type="button">Đà Nẵng </button>
+          </ng-container>
 
+          <ng-template #account>
+            <div class="user__content " (click)="login('true')" data-toggle="modal" data-target="#modalDangNhap">
+              <img class="user__img" src="https://tix.vn/app/assets/img/avatar.png" alt="" />
+              <p>Đăng nhập</p>
+            </div>
+
+
+          </ng-template>
+
+
+          <div class="menu">
+            <i class="fa fa-bars" aria-hidden="true"></i>
           </div>
         </div>
+
+      
+
       </div>
     </div>
+
     <div class="line__header">
       <img src="https://www.bhdstar.vn/wp-content/themes/bhd/assets/images/line-header1.png" alt="">
     </div>
   </div>
 
-  
+
 </header>
