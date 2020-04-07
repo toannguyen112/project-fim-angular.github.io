@@ -50,6 +50,7 @@ import { LoadingButtonItemPhimComponent } from "./trang-chu/loading-button-item-
 import { ModalUpdateUserComponent } from "./profile/modal-update-user/modal-update-user.component";
 import { SeeMoreComponent } from './see-more/see-more.component';
 import { PipeModule } from '../pipe/pipe.module';
+
 @NgModule({
   declarations: [
     TrangChuComponent,
@@ -96,7 +97,8 @@ import { PipeModule } from '../pipe/pipe.module';
     SeatComponent,
     LoadingButtonItemPhimComponent,
     ModalUpdateUserComponent,
-    SeeMoreComponent
+    SeeMoreComponent,
+
   ],
   imports: [
     CommonModule,
@@ -106,6 +108,7 @@ import { PipeModule } from '../pipe/pipe.module';
     NgxPaginationModule,
     FormsModule,
     NgxSpinnerModule,
+    PipeModule
     
   ],
   exports: [

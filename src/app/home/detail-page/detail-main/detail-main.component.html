@@ -4,11 +4,11 @@
       <div class="col-md-8 detailMainInfo__content--left">
         <div class="row detail__header">
           <div class="col-md-5 detail__header--img ">
-            <img class="img-fluid" [src]="detailPhim.hinhAnh" alt="" />
-            <img class="overPlay" src="https://tix.vn/app/assets/img/icons/play-video.png" alt="">
+            <img class="img-fluid" [src]="chiTietPhim.hinhAnh" alt="" />
+            <img class="overPlay"  src="https://tix.vn/app/assets/img/icons/play-video.png" alt="">
           </div>
           <div class=" col-md-7 detail__header--info">
-            <h2 class="nameFilm"> {{detailPhim.tenPhim}} </h2>
+            <h2 class="nameFilm"> {{chiTietPhim.tenPhim}} </h2>
             <h2 class="subname">SA MẠC CHẾT</h2>
             <div class="wraperDanhGia">
               <div class="wraperDanhGia__start">
@@ -56,23 +56,25 @@
                   </p>
                   <p class="item__info__content">
                     <span class="textColor">Ngày: </span>
-                    {{detailPhim.ngayKhoiChieu}}
+                 {{chiTietPhim.ngayKhoiChieu}}
                   </p>
                 </li>
               </ul>
             </div>
           </div>
         </div>
+
+        <iframe [src]="chiTietPhim.trailer | safe" frameborder="0"></iframe>
         <div class="row detail__body">
           <h5 class="detail__body--title">NỘI DUNG PHIM</h5>
           <p class="detail__body--text">Lấy bối cảnh vùng ngoại ô một thế giới kỳ ảo, hai anh em yêu tinh tuổi teen bắt
             đầu hành trình khám phá
             xem, liệu rằng đâu đó ngoài kia có còn tồn tại ma thuật không?
           </p>
-          <p class="detail__body--explan"> {{detailPhim.moTa}}.</p>
+          <p class="detail__body--explan"> mota.</p>
         </div>
         <app-lich-chieu></app-lich-chieu>
-       
+      
 
 
 
@@ -110,7 +112,7 @@
                   </div>
                 </div>
                 <p>
-                  {{item.tenPhim}}
+                tenphim
                 </p>
               </li>
             </ul>

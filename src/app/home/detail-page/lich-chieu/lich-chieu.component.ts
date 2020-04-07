@@ -1,22 +1,30 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { TransformDataService } from "src/app/services/transformData.service";
+import { ActivatedRoute } from "@angular/router";
+import { RapService } from "src/app/services/rap.service";
+import { FilmService } from "src/app/services/film.service";
 
 @Component({
   selector: "app-lich-chieu",
   templateUrl: "./lich-chieu.component.html",
-  styleUrls: ["./lich-chieu.component.scss"]
+  styleUrls: ["./lich-chieu.component.scss"],
 })
 export class LichChieuComponent implements OnInit {
-  public heThong: any[] = [];
   public cumRapChieu: any[];
   public lichChieuPhim: any[] = [];
   public valueDefaut: string = "";
-  constructor(private transformData: TransformDataService) {}
+  public heThongRapChieu;
+  constructor(
+    private route: ActivatedRoute,
+    private rap: RapService,
+    private filmService: FilmService
+  ) {}
 
   ngOnInit() {
-    this.transformData.asData.subscribe(res => {
-      this.heThong = res;
-      console.log(this.heThong);
+    console.log(this.rap.HeThongRapChieu);
+    this.rap.emitterHeThongRapChieu.subscribe((res) => {
+      this.heThongRapChieu = res;
+      console.log(this.heThongRapChieu);
     });
   }
   selectRap(e, maHethongRap) {

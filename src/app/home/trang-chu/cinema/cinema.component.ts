@@ -6,7 +6,7 @@ import { TransformDataService } from "src/app/services/transformData.service";
 @Component({
   selector: "app-cinema",
   templateUrl: "./cinema.component.html",
-  styleUrls: ["./cinema.component.scss"]
+  styleUrls: ["./cinema.component.scss"],
 })
 export class CinemaComponent implements OnInit, OnDestroy {
   public sub: Subscription;
@@ -20,7 +20,7 @@ export class CinemaComponent implements OnInit, OnDestroy {
   constructor(private rapService: RapService) {}
 
   ngOnInit() {
-    this.sub = this.rapService.layThongTinHeThongRap().subscribe(res => {
+    this.sub = this.rapService.layThongTinHeThongRap().subscribe((res) => {
       this.heThongRap = res;
     });
     this.selectCinema(this.valueDefaut);
@@ -34,7 +34,7 @@ export class CinemaComponent implements OnInit, OnDestroy {
     this.valueDefaut = value;
     this.rapService
       .layLichChieuTheoMaHeThongRap(this.valueDefaut)
-      .subscribe(res => {
+      .subscribe((res) => {
         for (let rap of res) {
           this.listCumRap = rap.lstCumRap;
         }
@@ -42,9 +42,8 @@ export class CinemaComponent implements OnInit, OnDestroy {
   }
 
   onListLichChieu(value) {
-    this.maCumRapActive = value.maCumRap;
-    console.log(this.maCumRapActive);
-
+    console.log(value);
+    this.maCumRapActive = value.maCumRap
     this.listPhim = value.danhSachPhim;
   }
 }

@@ -1,7 +1,7 @@
 <div class="detailFilm-bottom">
   <div class="detailFilm-bottom--left">
     <ul class="cinema-list">
-      <li class="cinema-list-item" [ngClass]="{active: valueDefaut == rap.maHeThongRap}" *ngFor="let rap of heThong"
+      <li class="cinema-list-item" [ngClass]="{active: valueDefaut == rap.maHeThongRap}" *ngFor="let rap of heThongRapChieu"
         style="cursor: pointer;" (click)="selectRap(rap.cumRapChieu,rap.maHeThongRap)">
         <div class="cinema-list-item-content">
           <img [src]="rap.logo" alt="" />
