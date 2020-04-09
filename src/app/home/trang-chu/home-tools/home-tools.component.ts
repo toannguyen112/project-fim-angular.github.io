@@ -1,21 +1,20 @@
 import { Component, OnInit } from "@angular/core";
-import { TransformDataService } from "src/app/services/transformData.service";
 import { FilmService } from "src/app/services/film.service";
 
 @Component({
   selector: "app-home-tools",
   templateUrl: "./home-tools.component.html",
-  styleUrls: ["./home-tools.component.scss"]
+  styleUrls: ["./home-tools.component.scss"],
 })
 export class HomeToolsComponent implements OnInit {
   public DanhSachPhim: any[] = [];
   public dsRap: any[] = [
     {
-      ten: "Rạp 1"
+      ten: "Rạp 1",
     },
     {
-      ten: "Rạp 2"
-    }
+      ten: "Rạp 2",
+    },
   ];
   public showPhim: string = "";
   public showRap: string = "";
@@ -25,7 +24,7 @@ export class HomeToolsComponent implements OnInit {
 
   ngOnInit() {
     this.DanhSachPhim = this._filmService.movieList;
-    this._filmService.emitterMovieList.subscribe(res => {
+    this._filmService.emitterMovieList.subscribe((res) => {
       this.DanhSachPhim = res;
     });
   }

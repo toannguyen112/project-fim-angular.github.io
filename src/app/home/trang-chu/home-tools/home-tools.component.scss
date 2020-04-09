@@ -78,13 +78,17 @@
   }
   .muave {
     width: 164px;
-    button {
+    .btnMuave {
       color: #fff;
       background-color: #4a4a4a;
       border: none;
       text-transform: uppercase;
       border-radius: 4px;
       padding: 10px 10px;
+    }
+    .btnMuave.active {
+      background-color: #87c243;
+      color: #fff;
     }
   }
 }

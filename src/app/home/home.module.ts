@@ -47,9 +47,8 @@ import { SeatComponent } from "./checkout/seat/seat.component";
 import { LichChieuComponent } from "./detail-page/lich-chieu/lich-chieu.component";
 import { NgxSpinnerModule } from "ngx-spinner";
 import { LoadingButtonItemPhimComponent } from "./trang-chu/loading-button-item-phim/loading-button-item-phim.component";
-import { ModalUpdateUserComponent } from "./profile/modal-update-user/modal-update-user.component";
-import { SeeMoreComponent } from './see-more/see-more.component';
-import { PipeModule } from '../pipe/pipe.module';
+import { SeeMoreComponent } from "./see-more/see-more.component";
+import { PipeModule } from "../pipe/pipe.module";
 
 @NgModule({
   declarations: [
@@ -96,9 +95,8 @@ import { PipeModule } from '../pipe/pipe.module';
     DetailMainComponent,
     SeatComponent,
     LoadingButtonItemPhimComponent,
-    ModalUpdateUserComponent,
+    
     SeeMoreComponent,
-
   ],
   imports: [
     CommonModule,
@@ -108,8 +106,7 @@ import { PipeModule } from '../pipe/pipe.module';
     NgxPaginationModule,
     FormsModule,
     NgxSpinnerModule,
-    PipeModule
-    
+    PipeModule,
   ],
   exports: [
     TrangChuComponent,
@@ -141,7 +138,7 @@ import { PipeModule } from '../pipe/pipe.module';
     ItemPhimComponent,
     ItemTinTucComponent,
     DetailPageComponent,
-    DetailCinemaPageComponent
-  ]
+    DetailCinemaPageComponent,
+  ],
 })
 export class HomeModule {}

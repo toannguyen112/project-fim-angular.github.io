@@ -1,20 +1,24 @@
 .detailFilm-bottom {
   display: flex;
-  background-color: #fff;
+  background-color: transparent;
   border-radius: 4px;
-  overflow-y: auto;
+
   height: 500px;
+  border: 1px solid #ebebec;
 
   .detailFilm-bottom--left {
+    border-right: 1px solid #ebebec;
     width: 248px;
     .cinema-list {
       padding: 0;
       .cinema-list-item {
         padding: 15px 10px;
         list-style: none;
-        opacity: .5;
+        opacity: 0.5;
         .cinema-list-item-content {
+          color: #fff;
           display: flex;
+          align-items: center;
           border-bottom: 1px solid #ebebec;
           padding-bottom: 10px;
           img {
@@ -28,19 +32,19 @@
             }
             span {
               font-size: 13px;
-              color: #fb4226;
+              color: #87c243;
             }
           }
         }
       }
-      .cinema-list-item.active{
+      .cinema-list-item.active {
         opacity: 1;
       }
     }
   }
 
   .detailFilm-bottom--right {
-    border-left: 1px solid #ebebec;
+    overflow-y: auto;
     width: 627px;
     .order {
       .order-list {
@@ -61,7 +65,7 @@
       padding: 0 21px;
       .cinemaFilm-tab-item {
         margin: 22px 0;
-
+        color: #fff;
         .cinemaFilm-tab-top {
           display: flex;
           img {
@@ -89,16 +93,20 @@
           }
           .time-film {
             text-align: center;
-            background-color: rgba(246, 246, 246, 0.5);
+            background-color: #fff;
             border-radius: 7px;
             color: #9b9b9b;
             border: 1px solid #e4e4e4;
             padding: 8px;
-            margin-right: 10px;
+            margin: 10px 0;
+            display: inline-block;
             .text-clolor {
-              font-weight: 600;
+              font-weight: 400;
               font-size: 20px;
-              color: #108f3e;
+             color: #87c243;
+             &:hover{
+               color: #fb4226;
+             }
             }
           }
         }

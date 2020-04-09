@@ -77,6 +77,6 @@
     </div>
   </div>
   <div class=" dropdown  muave">
-    <button (click)="muaVe()">Mua vé ngay</button>
+    <button class="btnMuave " [ngClass]="{active: showSuatChieu}" [disabled]="!showSuatChieu" (click)="muaVe()">Mua vé ngay</button>
   </div>
 </div>

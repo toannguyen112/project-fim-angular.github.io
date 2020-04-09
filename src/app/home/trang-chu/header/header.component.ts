@@ -3,10 +3,11 @@ import "lodash";
 import * as _ from "lodash";
 import { UserService } from "src/app/services/user.service";
 import { Router } from "@angular/router";
+import Swal from "sweetalert2";
 @Component({
   selector: "app-header",
   templateUrl: "./header.component.html",
-  styleUrls: ["./header.component.scss"]
+  styleUrls: ["./header.component.scss"],
 })
 export class HeaderComponent implements OnInit {
   @Output("emitStatus") emitStatus = new EventEmitter();
@@ -17,7 +18,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.credentials = this.userService.credentials;
-    this.userService.credentialEmitter.subscribe(newCredentials => {
+    this.userService.credentialEmitter.subscribe((newCredentials) => {
       this.credentials = newCredentials;
     });
   }
@@ -30,6 +31,10 @@ export class HeaderComponent implements OnInit {
     localStorage.removeItem("credentials");
     this.credentials = null;
     this.userService.setNoCredentials(null);
+    Swal.fire({
+      title: "Đăng xuất thành công",
+      icon: "success",
+    });
     this._route.navigate([""]);
   }
 }

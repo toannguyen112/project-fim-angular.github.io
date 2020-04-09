@@ -8,7 +8,7 @@ import { PhongveService } from "src/app/services/phongve.service";
 @Component({
   selector: "app-checkout-office-detail",
   templateUrl: "./checkout-office-detail.component.html",
-  styleUrls: ["./checkout-office-detail.component.scss"]
+  styleUrls: ["./checkout-office-detail.component.scss"],
 })
 export class CheckoutOfficeDetailComponent implements OnInit {
   @Input("thongTinPhim") thongTinPhim: any;
@@ -27,18 +27,18 @@ export class CheckoutOfficeDetailComponent implements OnInit {
     {
       name: "Thanh toan qua zalo pay",
       img:
-        "https://s3img.vcdn.vn/123phim/2018/12/08075f42d0c4bfc8f2063a35d5b9fca7.jpg"
+        "https://s3img.vcdn.vn/123phim/2018/12/08075f42d0c4bfc8f2063a35d5b9fca7.jpg",
     },
     {
       name: "Visa, Master, JCB",
       img:
-        "https://s3img.vcdn.vn/123phim/2018/12/e20d486bc2a60a2a1d7186c0ec9e177b.png"
+        "https://s3img.vcdn.vn/123phim/2018/12/e20d486bc2a60a2a1d7186c0ec9e177b.png",
     },
     {
       name: "Thẻ ATM nội địa",
       img:
-        "https://s3img.vcdn.vn/123phim/2018/12/784b134b515da6e0cb8779e2a33f8221.png"
-    }
+        "https://s3img.vcdn.vn/123phim/2018/12/784b134b515da6e0cb8779e2a33f8221.png",
+    },
   ];
 
   public danhSachGheDayA: any[] = [
@@ -53,7 +53,7 @@ export class CheckoutOfficeDetailComponent implements OnInit {
     { SoGhe: 9, TenGhe: "số 9", Gia: 60000, TrangThai: false, Day: "A" },
     { SoGhe: 10, TenGhe: "số 10", Gia: 60000, TrangThai: false, Day: "A" },
     { SoGhe: 11, TenGhe: "số 11", Gia: 60000, TrangThai: false, Day: "A" },
-    { SoGhe: 12, TenGhe: "số 12", Gia: 60000, TrangThai: false, Day: "A" }
+    { SoGhe: 12, TenGhe: "số 12", Gia: 60000, TrangThai: false, Day: "A" },
   ];
   public danhSachGheDayB: any[] = [
     { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: true, Day: "B" },
@@ -67,7 +67,7 @@ export class CheckoutOfficeDetailComponent implements OnInit {
     { SoGhe: 9, TenGhe: "số 9", Gia: 60000, TrangThai: false, Day: "B" },
     { SoGhe: 10, TenGhe: "số 10", Gia: 60000, TrangThai: false, Day: "B" },
     { SoGhe: 11, TenGhe: "số 11", Gia: 60000, TrangThai: false, Day: "B" },
-    { SoGhe: 12, TenGhe: "số 12", Gia: 60000, TrangThai: false, Day: "B" }
+    { SoGhe: 12, TenGhe: "số 12", Gia: 60000, TrangThai: false, Day: "B" },
   ];
   public danhSachGheDayC: any[] = [
     { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: true, Day: "C" },
@@ -81,7 +81,7 @@ export class CheckoutOfficeDetailComponent implements OnInit {
     { SoGhe: 9, TenGhe: "số 9", Gia: 60000, TrangThai: false, Day: "C" },
     { SoGhe: 10, TenGhe: "số 10", Gia: 60000, TrangThai: false, Day: "C" },
     { SoGhe: 11, TenGhe: "số 11", Gia: 60000, TrangThai: false, Day: "C" },
-    { SoGhe: 12, TenGhe: "số 12", Gia: 60000, TrangThai: false, Day: "C" }
+    { SoGhe: 12, TenGhe: "số 12", Gia: 60000, TrangThai: false, Day: "C" },
   ];
   public danhSachGheDayD: any[] = [
     { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: false, Day: "D" },
@@ -95,7 +95,7 @@ export class CheckoutOfficeDetailComponent implements OnInit {
     { SoGhe: 9, TenGhe: "số 9", Gia: 60000, TrangThai: false, Day: "D" },
     { SoGhe: 10, TenGhe: "số 10", Gia: 60000, TrangThai: false, Day: "D" },
     { SoGhe: 11, TenGhe: "số 11", Gia: 60000, TrangThai: false, Day: "D" },
-    { SoGhe: 12, TenGhe: "số 12", Gia: 60000, TrangThai: false, Day: "D" }
+    { SoGhe: 12, TenGhe: "số 12", Gia: 60000, TrangThai: false, Day: "D" },
   ];
   public danhSachGheDayE: any[] = [
     { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: true, Day: "E" },
@@ -109,7 +109,7 @@ export class CheckoutOfficeDetailComponent implements OnInit {
     { SoGhe: 9, TenGhe: "số 9", Gia: 60000, TrangThai: true, Day: "E" },
     { SoGhe: 10, TenGhe: "số 10", Gia: 60000, TrangThai: false, Day: "E" },
     { SoGhe: 11, TenGhe: "số 11", Gia: 60000, TrangThai: false, Day: "E" },
-    { SoGhe: 12, TenGhe: "số 12", Gia: 60000, TrangThai: false, Day: "E" }
+    { SoGhe: 12, TenGhe: "số 12", Gia: 60000, TrangThai: false, Day: "E" },
   ];
   public danhSachGheDayF: any[] = [
     { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: false, Day: "F" },
@@ -123,7 +123,7 @@ export class CheckoutOfficeDetailComponent implements OnInit {
     { SoGhe: 9, TenGhe: "số 9", Gia: 60000, TrangThai: true, Day: "F" },
     { SoGhe: 10, TenGhe: "số 10", Gia: 60000, TrangThai: false, Day: "F" },
     { SoGhe: 11, TenGhe: "số 11", Gia: 60000, TrangThai: false, Day: "F" },
-    { SoGhe: 12, TenGhe: "số 12", Gia: 60000, TrangThai: false, Day: "F" }
+    { SoGhe: 12, TenGhe: "số 12", Gia: 60000, TrangThai: false, Day: "F" },
   ];
   public danhSachGheDayH: any[] = [
     { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: false, Day: "H" },
@@ -137,7 +137,7 @@ export class CheckoutOfficeDetailComponent implements OnInit {
     { SoGhe: 9, TenGhe: "số 9", Gia: 60000, TrangThai: false, Day: "H" },
     { SoGhe: 10, TenGhe: "số 10", Gia: 60000, TrangThai: false, Day: "H" },
     { SoGhe: 11, TenGhe: "số 11", Gia: 60000, TrangThai: false, Day: "H" },
-    { SoGhe: 12, TenGhe: "số 12", Gia: 60000, TrangThai: false, Day: "H" }
+    { SoGhe: 12, TenGhe: "số 12", Gia: 60000, TrangThai: false, Day: "H" },
   ];
   public danhSachGheDayI: any[] = [
     { SoGhe: 1, TenGhe: "số 1", Gia: 60000, TrangThai: true, Day: "I" },
@@ -151,7 +151,7 @@ export class CheckoutOfficeDetailComponent implements OnInit {
     { SoGhe: 9, TenGhe: "số 9", Gia: 60000, TrangThai: false, Day: "I" },
     { SoGhe: 10, TenGhe: "số 10", Gia: 60000, TrangThai: false, Day: "I" },
     { SoGhe: 11, TenGhe: "số 11", Gia: 60000, TrangThai: false, Day: "I" },
-    { SoGhe: 12, TenGhe: "số 12", Gia: 60000, TrangThai: false, Day: "I" }
+    { SoGhe: 12, TenGhe: "số 12", Gia: 60000, TrangThai: false, Day: "I" },
   ];
 
   public counter: number = 0;
@@ -163,7 +163,7 @@ export class CheckoutOfficeDetailComponent implements OnInit {
 
   ngOnInit() {
     // this.startCountdown();
-    this._transformData.asData.subscribe(res => {
+    this._transformData.asData.subscribe((res) => {
       this.price = res;
     });
   }
@@ -194,11 +194,11 @@ export class CheckoutOfficeDetailComponent implements OnInit {
     Swal.fire({
       title: "Hết thời gian đặt vé",
       showClass: {
-        popup: "animated fadeInDown faster"
+        popup: "animated fadeInDown faster",
       },
       hideClass: {
-        popup: "animated fadeOutUp faster"
-      }
+        popup: "animated fadeOutUp faster",
+      },
     });
 
     // quay ve component checkout-content
@@ -224,42 +224,21 @@ export class CheckoutOfficeDetailComponent implements OnInit {
     var credentials = localStorage.getItem("credentials")
       ? JSON.parse(localStorage.getItem("credentials"))
       : null;
-    console.log(credentials.taiKhoan);
 
-    const datVe = {
-      maLichChieu: this.maLichChieu,
-      danhSachVe: [
-        {
-          maGhe: "0",
-          giaVe: "0"
-        }
-      ],
-      taiKhoanNguoiDung: credentials.taiKhoan
-    };
-    console.log(datVe);
+    if (credentials) {
+      Swal.fire({
+        title: "mua vé thành công",
 
-    this.phongVeService.datVe(datVe).subscribe(
-      res => {
-        console.log(res);
-      },
-      err => {
-        console.log(err);
-      }
-    );
+        icon: "success",
+      });
+    } else {
+      Swal.fire({
+        title: "Yêu cầu đăng nhập",
 
-    // if (credentials) {
-    //   Swal.fire({
-    //     title: "mua vé thành công",
-
-    //     icon: "success"
-    //   });
-    // } else {
-    //   Swal.fire({
-    //     title: "Yêu cầu đăng nhập",
-
-    //     icon: "error"
-    //   });
-    //   this._route.navigate(["/"]);
-    // }
+        icon: "error",
+      });
+      this._route.navigate(["/"]);
+    }
   }
 }
+  

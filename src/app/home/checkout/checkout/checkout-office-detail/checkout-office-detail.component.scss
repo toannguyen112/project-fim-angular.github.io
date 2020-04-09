@@ -101,11 +101,10 @@
         .seat-has-user {
           @include seatColor(#ffcb31);
         }
-       
+
         p {
           color: #9b9b9b;
           font-size: 12px;
-          
         }
       }
     }
