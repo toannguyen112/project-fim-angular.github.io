@@ -11,7 +11,7 @@
             <div class="header__right__info">
                <div class="header__right__info__content">
                     <img src="https://graph.facebook.com/198385967933190/picture?type=square" alt="" />
-                    <span> {{user.taiKhoan}} </span>
+                    <span *ngIf="user"> {{user.taiKhoan}} </span>
                </div>
             </div>
         </div>

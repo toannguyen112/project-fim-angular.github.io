@@ -12,7 +12,7 @@ import { PhongveService } from "src/app/services/phongve.service";
 })
 export class CheckoutOfficeDetailComponent implements OnInit {
   @Input("thongTinPhim") thongTinPhim: any;
-  @Input() init: number = null;
+  @Input() init = 10;
   @Input() maLichChieu;
   @Output("emitterStatus") emitterStatus = new EventEmitter();
   public status: boolean = true;
@@ -154,35 +154,40 @@ export class CheckoutOfficeDetailComponent implements OnInit {
     { SoGhe: 12, TenGhe: "số 12", Gia: 60000, TrangThai: false, Day: "I" },
   ];
 
-  public counter: number = 0;
+  public counter = 0;
   constructor(
     private _transformData: TransformDataService,
-    private _route: Router,
-    private phongVeService: PhongveService
+    private _route: Router
   ) {}
 
   ngOnInit() {
-    // this.startCountdown();
+    this.doCountdown();
     this._transformData.asData.subscribe((res) => {
       this.price = res;
     });
   }
-  startCountdown() {
-    if (this.init && this.init > 0) {
-      this.counter = this.init;
-      this.doCountdown();
-    }
-  }
+
   doCountdown() {
     setTimeout(() => {
-      this.counter = this.counter - 1;
+      this.counter++;
+      this.timer = this.convertSecond(this.timeleft - this.counter);
       this.processCount();
     }, 1000);
+    console.log(this.timer);
+  }
+  public timer;
+  public timeleft = 300;
+
+  convertSecond(s) {
+    var min = Math.floor(s / 60);
+    var sec = s % 60;
+    return min + ":" + sec;
   }
   processCount() {
     // emit  event count
-    console.log("count is ", this.counter);
-    if (this.counter === 0) {
+
+    console.log("count is ", this.timer);
+    if (this.counter == this.timeleft) {
       this.openAlert();
       this.emitterStatus.emit(this.status);
     } else {
@@ -231,6 +236,7 @@ export class CheckoutOfficeDetailComponent implements OnInit {
 
         icon: "success",
       });
+      this._route.navigate(["/"])
     } else {
       Swal.fire({
         title: "Yêu cầu đăng nhập",
@@ -241,4 +247,3 @@ export class CheckoutOfficeDetailComponent implements OnInit {
     }
   }
 }
-  
