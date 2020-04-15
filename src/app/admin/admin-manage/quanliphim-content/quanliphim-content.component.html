@@ -1,16 +1,8 @@
 <div class="row" style="justify-content: space-between ; align-items: center;">
   <app-them-phim (emitterFilm)="addPhim($event)"></app-them-phim>
   <div class="form-group">
-    <!-- <input type="text" name="search" [(ngModel)]="searchText" autocomplete="off" (input)="search()"  placeholder="Tìm kiếm"> -->
-    <input
-      class="form-control"
-      type="text"
-      name="search"
-      [(ngModel)]="searchText"
-      autocomplete="off"
-      placeholder=" Tìm kiếm"
-      style="padding: 10px; border: 1px solid gray;"
-    />
+    <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off"
+      placeholder=" Tìm kiếm" style="padding: 10px; border: 1px solid gray;" />
   </div>
 </div>
 
@@ -27,14 +19,11 @@
       </tr>
     </thead>
     <tbody>
-      <tr
-        class="item"
-        *ngFor="
+      <tr class="item" *ngFor="
           let phim of movieList
             | filter: searchText
             | paginate: { itemsPerPage: 5, currentPage: currentPage }
-        "
-      >
+        ">
         <td class="maPhim">{{ phim.maPhim }}</td>
         <td class="tenPhim">{{ phim.tenPhim }}</td>
         <td class="hinhAnh">
@@ -44,7 +33,6 @@
           </button>
           <input type="file" (change)="onFileSelected($event)" />
         </td>
-        <!-- <td  class="moTa"style="white-space: normal;"> {{phim.moTa}} </td> -->
         <td class="ngayChieu">{{ phim.ngayKhoiChieu | date: "medium" }}</td>
         <td class="thaoTac">
           <button class="btnSua btn ">
@@ -58,8 +46,5 @@
       </tr>
     </tbody>
   </table>
-  <pagination-controls
-    style="text-align: center;"
-    (pageChange)="currentPage = $event"
-  ></pagination-controls>
+  <pagination-controls style="text-align: center;" (pageChange)="currentPage = $event"></pagination-controls>
 </div>

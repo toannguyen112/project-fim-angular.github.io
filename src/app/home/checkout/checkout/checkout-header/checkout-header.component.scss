@@ -1,25 +1,14 @@
-.row {
-  margin: 0;
-}
 header {
-  background-color: #fff;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
   height: 80px;
-  z-index: 99;
-
   .header__left {
-    padding: 0;
-    align-items: center;
     ul {
-      height: 100%;
+      padding: 0;
       display: flex;
       justify-content: space-around;
       margin: 0;
-      padding-left: 50px;
+
+     
 
       li {
         list-style: none;
@@ -35,8 +24,6 @@ header {
     }
   }
   .header__right {
-    padding: 0;
-
     .header__right__info {
       .header__right__info__content {
         display: inline-block;
@@ -56,5 +43,11 @@ header {
       line-height: 80px;
       padding-right: 55px;
     }
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .hidden__mobile {
+    display: none;
   }
 }

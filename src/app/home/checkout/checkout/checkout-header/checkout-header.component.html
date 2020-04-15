@@ -1,19 +1,24 @@
 <header>
-    <div class="row">
-        <div class="col-md-6 col-sm-12 header__left">
-            <ul>
-                <li [ngClass]="{active: status}"><span class="stepnumber">01</span> CHỌN LOẠI VÉ</li>
-                <li [ngClass]="{active: !status}"><span class="stepnumber">02</span> CHỌN GHẾ & THANH TOÁN</li>
-                <li><span class="stepnumber">03</span> KẾT QUẢ ĐẶT VÉ</li>
-            </ul>
-        </div>
-        <div class="col-md-6  header__right">
-            <div class="header__right__info">
-               <div class="header__right__info__content">
-                    <img src="https://graph.facebook.com/198385967933190/picture?type=square" alt="" />
-                    <span *ngIf="user"> {{user.taiKhoan}} </span>
-               </div>
+    <div class="container-fluid ">
+        <div class="row">
+            <div class="col-md-8 header__left">
+                <ul>
+                    <li [ngClass]="{active: status}"><span class="stepnumber">01</span> CHỌN LOẠI VÉ</li>
+                    <li [ngClass]="{active: !status}"><span class="stepnumber">02</span> CHỌN GHẾ & THANH TOÁN</li>
+                    <li><span class="stepnumber">03</span> KẾT QUẢ ĐẶT VÉ</li>
+                </ul>
             </div>
+
+            <div class="col-md-4  header__right hidden__mobile">
+                <div class="header__right__info">
+                    <div class="header__right__info__content">
+                        <img src="https://graph.facebook.com/198385967933190/picture?type=square" alt="" />
+                        <span *ngIf="user"> {{user.taiKhoan}} </span>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
     </div>
 </header>

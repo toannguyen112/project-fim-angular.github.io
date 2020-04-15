@@ -1,125 +1,131 @@
-<div class="chooseTiket__left">
-  <div class="chooseTiket__left__img">
-    <img *ngIf="thongTinPhim; else ''" [src]="thongTinPhim.hinhAnh  " alt="" />
-    <div class="overplay"></div>
-    <div class="chooseTiket__left__film">
-      <div class="arrow" [routerLink]="['/']">
-        <img src="https://tix.vn/app/assets/img/icons/prev_checkout.png" alt="" />
-      </div>
-      <div class="info">
-        <p class="today">Hôm nay</p>
-        <p class="name" *ngIf="thongTinPhim; else ''">
-          <span class="agetext">C18</span> {{ thongTinPhim.tenPhim }}
-        </p>
-        <p class="time">100 phút - TIX - IMDb 0 - 2D/L.Tiếng</p>
+<div class="wrapper__content container-fluid ">
+  <div class="row">
+    <div class="chooseTiket__left p-0 col-xl-3 col-md-12">
+      <div class="chooseTiket__left__img">
+
+        <img class="filmImg img-fluid" *ngIf="thongTinPhim; else ''" [src]="thongTinPhim.hinhAnh  " alt="" />
+       
+        <div class="chooseTiket__left__film">
+          <div class="arrow" [routerLink]="['/']">
+            <img src="https://tix.vn/app/assets/img/icons/prev_checkout.png" alt="" />
+          </div>
+          <div class="info">
+            <p class="today">Hôm nay</p>
+            <p class="name" *ngIf="thongTinPhim; else ''">
+              <span class="agetext">C18</span> {{ thongTinPhim.tenPhim }}
+            </p>
+            <p class="time">100 phút - TIX - IMDb 0 - 2D/L.Tiếng</p>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-<div class="chooseTiket__right">
-  <div class="ticket">
-    <div class="header_content">
-      <img style="width: 44px; height: 44px;"
-        src="https://s3img.vcdn.vn/123phim/2018/09/f32670fd0eb083c9c4c804f0f3a252ed.png" alt="" />
-      <div class="diachi">
-        <p *ngIf="thongTinPhim; else ''">
-          <span> {{ thongTinPhim.tenCumRap }}</span> -
-          {{ thongTinPhim.diaChi }}
-        </p>
-        <p *ngIf="thongTinPhim; else ''">
-          Hôm nay - {{ thongTinPhim.gioChieu }}
-          <span> {{ thongTinPhim.tenRap }}</span>
-        </p>
-      </div>
-    </div>
-    <table class="table">
-      <tbody>
-        <tr>
-          <td scope="row category">
-            <div class="text-top">
-              Vé VIP 2D
-            </div>
-            <div class="text-bot">
-              Vé VIP 2D
-            </div>
-          </td>
-          <td class="price">60.000đ</td>
-          <td class="btn-number">
-            <button class="tru" (click)="gheVip2DGiam()">-</button>
-            <span>{{ initVeVip2D }} </span><button class="cong" (click)="gheVip2DTang()">+</button>
-          </td>
-        </tr>
-        <tr>
-          <td scope="row category">
-            <div class="text-top">
-              Vé thường 2D
-            </div>
-            <div class="text-bot">
-              Vé thường 2D
-            </div>
-          </td>
-          <td class="price"> 80.000 đ</td>
-          <td class="btn-number">
-            <button class="tru" (click)="giamVeThuong()">-</button>
-            <span> {{ initVeThuong }} </span><button class="cong" (click)="tangVeThuong()">+</button>
-          </td>
-        </tr>
+    <div class="chooseTiket__right p-0 col-xl-9 col-md-12">
+      <div class="ticket">
+        <div class="header_content">
+          <img style="width: 44px; height: 44px;"
+            src="https://s3img.vcdn.vn/123phim/2018/09/f32670fd0eb083c9c4c804f0f3a252ed.png" alt="" />
+          <div class="diachi">
+            <p *ngIf="thongTinPhim; else ''">
+              <span> {{ thongTinPhim.tenCumRap }}</span> -
+              {{ thongTinPhim.diaChi }}
+            </p>
+            <p *ngIf="thongTinPhim; else ''">
+              Hôm nay - {{ thongTinPhim.gioChieu }}
+              <span> {{ thongTinPhim.tenRap }}</span>
+            </p>
+          </div>
+        </div>
+        <table class="table">
+          <tbody>
+            <tr>
+              <td scope="row category">
+                <div class="text-top">
+                  Vé VIP 2D
+                </div>
+                <div class="text-bot">
+                  Vé VIP 2D
+                </div>
+              </td>
+              <td class="price">60.000đ</td>
+              <td class="btn-number">
+                <button class="tru" (click)="gheVip2DGiam()">-</button>
+                <span>{{ initVeVip2D }} </span><button class="cong" (click)="gheVip2DTang()">+</button>
+              </td>
+            </tr>
+            <tr>
+              <td scope="row category">
+                <div class="text-top">
+                  Vé thường 2D
+                </div>
+                <div class="text-bot">
+                  Vé thường 2D
+                </div>
+              </td>
+              <td class="price"> 80.000 đ</td>
+              <td class="btn-number">
+                <button class="tru" (click)="giamVeThuong()">-</button>
+                <span> {{ initVeThuong }} </span><button class="cong" (click)="tangVeThuong()">+</button>
+              </td>
+            </tr>
 
-        <tr>
-          <td scope="row category">
-            <div class="text-top">
-              Ghế đôi 2D
-            </div>
-            <div class="text-bot">
-              Ghế đôi 2D
-            </div>
-          </td>
-          <td class="price"> 120.000 đ</td>
-          <td class="btn-number">
-            <button class="tru" (click)="giamGheDoi()">-</button>
-            <span> {{ initGheDoi2D }} </span><button class="cong" (click)="tangGheDoi()">+</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+            <tr>
+              <td scope="row category">
+                <div class="text-top">
+                  Ghế đôi 2D
+                </div>
+                <div class="text-bot">
+                  Ghế đôi 2D
+                </div>
+              </td>
+              <td class="price"> 120.000 đ</td>
+              <td class="btn-number">
+                <button class="tru" (click)="giamGheDoi()">-</button>
+                <span> {{ initGheDoi2D }} </span><button class="cong" (click)="tangGheDoi()">+</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
-    <div class="chosencontent">
-      <div class="total-price">
-        <div class="totalcostfull">
-          <p class="total-text">TỔNG TIỀN</p>
-          <p class="price">
-            {{ priceGheDoi2D + priceVeThuong2D + priceVeVip2D }} đ
+        <div class="chosencontent">
+          <div class="total-price">
+            <div class="totalcostfull">
+              <p class="total-text">TỔNG TIỀN</p>
+              <p class="price">
+                {{ priceGheDoi2D + priceVeThuong2D + priceVeVip2D }} đ
+              </p>
+            </div>
+          </div>
+          <button class="chosenbutton" [disabled]="isLoading" (click)="chonGhe(false)">
+
+            <span *ngIf="!isLoading else loading">
+
+              CHỌN GHẾ</span>
+            <ng-template #loading>
+              <app-loading></app-loading>
+            </ng-template>
+          </button>
+        </div>
+
+        <div class="hotline">
+          <p>
+            Xin lưu ý, bạn không thể hủy hoặc thay đổi suất chiếu cho vé đã mua.
           </p>
-        </div>
-      </div>
-      <button class="chosenbutton" [disabled]="isLoading" (click)="chonGhe(false)">
-
-        <span *ngIf="!isLoading else loading">
-
-          CHỌN GHẾ</span>
-        <ng-template #loading>
-          <app-loading ></app-loading>
-        </ng-template>
-      </button>
-    </div>
-
-    <div class="hotline">
-      <p>
-        Xin lưu ý, bạn không thể hủy hoặc thay đổi suất chiếu cho vé đã mua.
-      </p>
-      <div class="hotline__content">
-        <div class="hotline-left">
-          <span class="hotlinetitle">
-            HOTLINE
-          </span>
-          <span class="coscast">
-            Phí cuộc gọi 1000VND/phú
-          </span>
-        </div>
-        <div class="hotline-right">
-          1900 545 436
+          <div class="hotline__content">
+            <div class="hotline-left">
+              <span class="hotlinetitle">
+                HOTLINE
+              </span>
+              <span class="coscast">
+                Phí cuộc gọi 1000VND/phú
+              </span>
+            </div>
+            <div class="hotline-right">
+              1900 545 436
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
+  
 </div>

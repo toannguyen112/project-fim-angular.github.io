@@ -12,8 +12,6 @@
 }
 
 .roomContent {
-  margin-top: 80px;
-
   .chooseSeat {
     padding: 40px;
     .chooseSeat__top {
@@ -70,7 +68,7 @@
       }
     }
     .chooseSeat__body {
-      padding: 0 107px;
+      
       .row {
         span {
           width: 5%;
@@ -111,10 +109,15 @@
   }
 
   .payment {
-    p {
-      font-weight: bold;
-    }
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #fff;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    p {
+      font-weight: 700;
+    }
+
     .payment__content {
       padding: 42px 30px 25px 30px;
 
@@ -189,9 +192,27 @@
       padding: 20px;
       color: white;
       font-size: 24px;
+      margin-top: 10px;
     }
     .buyTicket.active {
       background-color: red;
     }
   }
 }
+@media screen and (min-width: 740px) and (max-width: 1023px) {
+  
+}
+@media screen and (max-width: 1024px) {
+  .hidden__mobile{
+    display: none;
+  }
+}
+
+
+@media screen and (max-width: 740px) {
+ .hidden__mobile{
+   display: none;
+ }
+ 
+}
+
