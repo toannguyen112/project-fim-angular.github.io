@@ -1,25 +1,19 @@
 import { OnDestroy, Input } from "@angular/core";
 import { Component, OnInit } from "@angular/core";
 import { Subscription } from "rxjs";
-import { ActivatedRoute } from "@angular/router";
-import { RapService } from "src/app/services/rap.service";
-import { TransformDataService } from "src/app/services/transformData.service";
-import { FilmService } from "src/app/services/film.service";
 
 @Component({
   selector: "app-detail-main",
   templateUrl: "./detail-main.component.html",
   styleUrls: ["./detail-main.component.scss"],
 })
-export class DetailMainComponent implements OnInit, OnDestroy {
+export class DetailMainComponent implements OnInit {
   @Input() chiTietPhim;
 
-  constructor(
-   
-  ) {}
+  constructor() {}
   public detailPhim: any;
   public maPhim: any;
-
+  public isShowtrailer = false;
   public phimDangChieu: any = [
     {
       hinhAnh:
@@ -37,30 +31,12 @@ export class DetailMainComponent implements OnInit, OnDestroy {
       tenPhim: "FAST & FURIOUS",
     },
   ];
-  public sub = new Subscription();
-  
-  ngOnInit() {
-    
 
-    // this.sub = this.route.params.subscribe((params) => {
-    //   this.maPhim = params.id;
-    //   this.filmService.getFilmDetail(this.maPhim).subscribe((res)=>{
-    //     this.detailPhim = res
-    //   }
-    //   ,(err)=>{
-    //     console.log(err);
-    //   })
-
-    //   this.rap.layThongTinLichChieuPhim(this.maPhim).subscribe((res) => {
-    //     this.detailPhim = res;
-    //     console.log(this.detailPhim);
-
-    //     this.heThongRapChieu = this.detailPhim.heThongRapChieu;
-    //     this.transformData.transformData(this.heThongRapChieu);
-    //   });
-    // });
+  showTrailer() {
+    this.isShowtrailer = true;
   }
-  ngOnDestroy() {
-    this.sub.unsubscribe();
+  closeTrailer() {
+    this.isShowtrailer = false;
   }
+  ngOnInit() {}
 }

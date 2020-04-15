@@ -130,7 +130,39 @@ header {
     }
   }
 }
-
+.bar__menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba($color: #000000, $alpha: 0.9);
+  z-index: 31;
+  animation: showbar ease-in;
+  .list__item {
+    padding: 0;
+    color: #fff;
+    list-style: none;
+    .item {
+      font-size: 25px;
+      padding: 20px 0 20px 20px;
+      i{
+        width: 10%;
+      }
+      span{
+        width: 90%;
+      }
+    }
+  }
+}
+@keyframes showbar {
+  from {
+    left: 100%;
+  }
+  to {
+    left: 0;
+  }
+}
 
 $tablet-width: 768px;
 $desktop-width: 1024px;
@@ -151,7 +183,7 @@ $desktop-width: 1024px;
   }
 }
 
-@media screen and (max-width: $tablet-width) {
+@media screen and (max-width: 740px) {
   header {
     .navigate {
       .social {

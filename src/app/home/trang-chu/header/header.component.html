@@ -52,8 +52,8 @@
           </ng-template>
 
 
-          <div class="menu">
-            <i class="fa fa-bars" aria-hidden="true"></i>
+          <div class="menu" (click)="showBar()"  >
+            <i *ngIf="!showBarMenu" class="fa fa-bars" aria-hidden="true"></i>
           </div>
         </div>
 
@@ -69,3 +69,20 @@
 
 
 </header>
+<div class="bar__menu" *ngIf="showBarMenu">
+  <ul class="list__item">
+    <li class="item">
+      <i class="fa fa-home" aria-hidden="true"></i>
+      <span>Trang chủ</span>
+    </li>
+
+    <li class="item">
+      <i class="fa fa-mobile" aria-hidden="true"></i>
+     <span> Liên hệ</span>
+    </li>
+    <li class="item">
+      <i class="fa fa-sign-in" aria-hidden="true"></i>
+     <span> Đăng nhập</span>
+    </li>
+  </ul>
+</div>

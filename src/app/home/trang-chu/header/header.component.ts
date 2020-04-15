@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
   @Output("emitStatus") emitStatus = new EventEmitter();
   public loGin: boolean = false;
   public credentials: any;
-
+  public showBarMenu: boolean = false;
   constructor(private userService: UserService, private _route: Router) {}
 
   ngOnInit() {
@@ -36,5 +36,8 @@ export class HeaderComponent implements OnInit {
       icon: "success",
     });
     this._route.navigate([""]);
+  }
+  showBar() {
+    this.showBarMenu = true;
   }
 }

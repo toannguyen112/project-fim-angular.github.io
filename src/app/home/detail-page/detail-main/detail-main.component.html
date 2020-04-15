@@ -2,10 +2,10 @@
   <div class="detailMainInfo__content container ">
     <div class="row">
       <div class="col-md-8 detailMainInfo__content--left">
-        <div class="row detail__header">
-          <div class="col-md-5 detail__header--img ">
+        <div class="row   ">
+          <div class="col-md-5 detail__header--img " (click)="showTrailer()">
             <img class="img-fluid" [src]="chiTietPhim.hinhAnh" alt="" />
-            <img class="overPlay"  src="https://tix.vn/app/assets/img/icons/play-video.png" alt="">
+            <img class="overPlay" src="https://tix.vn/app/assets/img/icons/play-video.png" alt="">
           </div>
           <div class=" col-md-7 detail__header--info">
             <h2 class="nameFilm"> {{chiTietPhim.tenPhim}} </h2>
@@ -56,7 +56,7 @@
                   </p>
                   <p class="item__info__content">
                     <span class="textColor">Ngày: </span>
-                 {{chiTietPhim.ngayKhoiChieu}}
+                    {{chiTietPhim.ngayKhoiChieu}}
                   </p>
                 </li>
               </ul>
@@ -64,7 +64,7 @@
           </div>
         </div>
 
-        <iframe [src]="chiTietPhim.trailer | safe" frameborder="0"></iframe>
+
         <div class="row detail__body">
           <h5 class="detail__body--title">NỘI DUNG PHIM</h5>
           <p class="detail__body--text">Lấy bối cảnh vùng ngoại ô một thế giới kỳ ảo, hai anh em yêu tinh tuổi teen bắt
@@ -74,7 +74,7 @@
           <p class="detail__body--explan"> mota.</p>
         </div>
         <app-lich-chieu></app-lich-chieu>
-      
+
 
 
 
@@ -112,7 +112,7 @@
                   </div>
                 </div>
                 <p>
-                tenphim
+                  tenphim
                 </p>
               </li>
             </ul>
@@ -130,4 +130,10 @@
 
 
 
+</div>
+<div class="play__film" *ngIf="isShowtrailer">
+  <div class="play__film__img">
+    <iframe class="trailer" [src]="chiTietPhim.trailer | safe" frameborder="0"></iframe>
+    <img class="close" src="https://tix.vn/app/assets/img/icons/close.png" alt="" (click)="closeTrailer()">
+  </div>
 </div>
