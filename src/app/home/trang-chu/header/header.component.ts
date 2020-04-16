@@ -34,6 +34,7 @@ export class HeaderComponent implements OnInit {
     Swal.fire({
       title: "Đăng xuất thành công",
       icon: "success",
+      timer : 1000
     });
     this._route.navigate([""]);
   }

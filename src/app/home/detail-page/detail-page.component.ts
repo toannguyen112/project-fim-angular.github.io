@@ -1,6 +1,5 @@
 import { Subscription } from "rxjs";
 import { Component, OnInit, OnDestroy } from "@angular/core";
-import { FilmService } from "src/app/services/film.service";
 import { ActivatedRoute } from "@angular/router";
 import { RapService } from "src/app/services/rap.service";
 
@@ -15,9 +14,12 @@ export class DetailPageComponent implements OnInit, OnDestroy {
   public chiTietPhim;
   public heThongRapChieu ;
   public sub: Subscription;
-  constructor(private route: ActivatedRoute, private rapService: RapService) {}
+ 
+  constructor(private route: ActivatedRoute, private rapService: RapService,
+  ) {}
 
   ngOnInit() {
+    
     this.sub = this.route.params.subscribe((params) => {
       this.maPhim = params.id;
       this.rapService.layThongTinLichChieuPhim(this.maPhim).subscribe((res) => {

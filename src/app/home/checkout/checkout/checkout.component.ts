@@ -2,6 +2,7 @@ import { ActivatedRoute } from "@angular/router";
 import { Subscription } from "rxjs";
 import { Component, OnInit, OnDestroy } from "@angular/core";
 import { PhongveService } from "src/app/services/phongve.service";
+import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
   selector: "app-checkout",
@@ -13,12 +14,21 @@ export class CheckoutComponent implements OnInit, OnDestroy {
   public sub: Subscription;
   public maLichChieu;
   public status: boolean = true;
+  public isShow = false ; 
   constructor(
     private phongVeService: PhongveService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private spinner : NgxSpinnerService
   ) {}
 
   ngOnInit() {
+    this.spinner.show();
+    setTimeout(() => {
+      this.isShow = true;
+      this.spinner.hide()
+    }, 2000);
+
+
     this.route.params.subscribe(params => {
       this.maLichChieu = params.maLichChieu
       this.sub = this.phongVeService
