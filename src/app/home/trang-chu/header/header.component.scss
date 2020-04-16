@@ -25,6 +25,11 @@ header {
       .social__img {
         width: 55px;
         height: 55px;
+        margin-right: 10px;
+        transition: transform .8s ease-in-out;
+        &:hover{
+          transform: rotate(360deg);
+        }
       }
       .social__sub {
         color: #fff;
