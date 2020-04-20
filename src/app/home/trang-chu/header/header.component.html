@@ -1,88 +1,107 @@
 <header>
   <div class="header__content">
     <div class="navigate-logo">
-      <img class="logo" src="https://www.bhdstar.vn/wp-content/themes/bhd/assets/images/logo.png"
-        [routerLink]="['/']" />
+      <img
+        class="logo"
+        src="https://www.bhdstar.vn/wp-content/themes/bhd/assets/images/logo.png"
+        [routerLink]="['/']"
+      />
     </div>
     <div class="container-fluid">
       <div class="row">
         <div class="social col-md-6">
           <div class="social__wrapper__img">
-            <img class="social__img" src="https://www.bhdstar.vn/wp-content/themes/bhd/assets/images/fb_logo.png"
-              alt="">
-            <img class="social__img" src="https://www.bhdstar.vn/wp-content/themes/bhd/assets/images/lc.png" alt="">
-            <img class="social__img" src="https://www.bhdstar.vn/wp-content/themes/bhd/assets/images/mvtr.png" alt="">
+            <img
+              class="social__img"
+              src="https://www.bhdstar.vn/wp-content/themes/bhd/assets/images/fb_logo.png"
+              alt=""
+            />
+            <img
+              class="social__img"
+              src="https://www.bhdstar.vn/wp-content/themes/bhd/assets/images/lc.png"
+              alt=""
+            />
+            <img
+              class="social__img"
+              src="https://www.bhdstar.vn/wp-content/themes/bhd/assets/images/mvtr.png"
+              alt=""
+            />
           </div>
           <div class="social__sub">
             <span class="social__sub-item social__sub__active">VN |</span>
-            <span class="social__sub-item ">EN</span>
+            <span class="social__sub-item">EN</span>
           </div>
         </div>
-        <div class="user  col-md-6">
+        <div class="user col-md-6">
           <div class="hotline">
-            <img class="phone" src="https://www.bhdstar.vn/wp-content/themes/bhd/assets/images/phone.png" alt="">
+            <img
+              class="phone"
+              src="https://www.bhdstar.vn/wp-content/themes/bhd/assets/images/phone.png"
+              alt=""
+            />
             <span class="phone__number">
               : 19002099
             </span>
           </div>
 
-          <ng-container *ngIf="credentials ; else account">
-
+          <ng-container *ngIf="credentials; else account">
             <div class="userAcount" [routerLink]="['/profile']">
-              <img class="userAcount__img"
-                src="
-            https://instagram.fsgn6-1.fna.fbcdn.net/v/t51.2885-19/s320x320/66482175_334260424128185_7085073249431715840_n.jpg?_nc_ht=instagram.fsgn6-1.fna.fbcdn.net&_nc_ohc=aA94PXO8tu8AX-Xde22&oh=aaa613024daaabd6704dccece050afbd&oe=5E99B1B6"
-                alt="" />
+              <img
+                class="userAcount__img"
+                src="https://scontent.fsgn6-2.fna.fbcdn.net/v/t1.0-0/p160x160/49308610_106238597147928_3522069505675100160_n.jpg?_nc_cat=102&_nc_sid=7aed08&_nc_ohc=NVxHxKqTo9sAX_Pd8gU&_nc_ht=scontent.fsgn6-2.fna&_nc_tp=6&oh=787d9620703d60c1a4909527b5ad1e4d&oe=5EC4A50F"
+                alt=""
+              />
 
               <div class="userAcount__logout" (click)="dangXuat()">
                 <p>Đăng xuất</p>
               </div>
-
             </div>
           </ng-container>
 
           <ng-template #account>
-            <div class="user__content " (click)="login('true')" data-toggle="modal" data-target="#modalDangNhap">
-              <img class="user__img" src="https://tix.vn/app/assets/img/avatar.png" alt="" />
+            <div
+              class="user__content"
+              (click)="login('true')"
+              data-toggle="modal"
+              data-target="#modalDangNhap"
+            >
+              <img
+                class="user__img"
+                src="https://tix.vn/app/assets/img/avatar.png"
+                alt=""
+              />
               <p>Đăng nhập</p>
             </div>
-
-
-
           </ng-template>
-
-
-          <div class="menu" (click)="showBar()"  >
+          <div class="menu" (click)="showBar()">
             <i *ngIf="!showBarMenu" class="fa fa-bars" aria-hidden="true"></i>
           </div>
         </div>
-
-
-
       </div>
     </div>
 
     <div class="line__header">
-      <img src="https://www.bhdstar.vn/wp-content/themes/bhd/assets/images/line-header1.png" alt="">
+      <img
+        src="https://www.bhdstar.vn/wp-content/themes/bhd/assets/images/line-header1.png"
+        alt=""
+      />
     </div>
   </div>
-
-
 </header>
 <div class="bar__menu" *ngIf="showBarMenu">
   <ul class="list__item">
     <li class="item">
       <i class="fa fa-home" aria-hidden="true"></i>
-      <span>Trang chủ</span>
+      <span (click)="closeShowBarMenu()">Trang chủ</span>
     </li>
 
     <li class="item">
       <i class="fa fa-mobile" aria-hidden="true"></i>
-     <span> Liên hệ</span>
+      <span> Liên hệ</span>
     </li>
     <li class="item">
       <i class="fa fa-sign-in" aria-hidden="true"></i>
-     <span> Đăng nhập</span>
+      <span> Đăng nhập</span>
     </li>
   </ul>
 </div>

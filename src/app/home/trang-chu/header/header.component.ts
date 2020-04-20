@@ -1,6 +1,4 @@
 import { Component, OnInit, Output, EventEmitter, Input } from "@angular/core";
-import "lodash";
-import * as _ from "lodash";
 import { UserService } from "src/app/services/user.service";
 import { Router } from "@angular/router";
 import Swal from "sweetalert2";
@@ -34,11 +32,16 @@ export class HeaderComponent implements OnInit {
     Swal.fire({
       title: "Đăng xuất thành công",
       icon: "success",
-      timer : 1000
+      timer: 1000,
     });
     this._route.navigate([""]);
   }
   showBar() {
     this.showBarMenu = true;
+  }
+  closeShowBarMenu() {
+    console.log("toan nguyen");
+    
+    this.showBarMenu = false;
   }
 }

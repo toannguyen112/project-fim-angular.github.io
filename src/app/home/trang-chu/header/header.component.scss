@@ -26,8 +26,8 @@ header {
         width: 55px;
         height: 55px;
         margin-right: 10px;
-        transition: transform .8s ease-in-out;
-        &:hover{
+        transition: transform 0.8s ease-in-out;
+        &:hover {
           transform: rotate(360deg);
         }
       }
@@ -136,7 +136,7 @@ header {
 .bar__menu {
   position: fixed;
   top: 0;
-  left: 0;
+
   bottom: 0;
   right: 0;
   background-color: rgba($color: #000000, $alpha: 0.9);
@@ -155,13 +155,15 @@ header {
     color: #fff;
     list-style: none;
     .item {
-      font-size: 25px;
+      font-size: 20px;
       padding: 20px 0 20px 20px;
       i {
         width: 10%;
       }
       span {
+        cursor: pointer;
         width: 90%;
+        padding: 0 10px;
       }
     }
   }
@@ -170,21 +172,6 @@ header {
 $tablet-width: 768px;
 $desktop-width: 1024px;
 
-// tablet
-@media screen and (min-width: $tablet-width) and (max-width: $desktop-width) {
-  header {
-    .navigate {
-      .user {
-        .user__content {
-          display: none;
-        }
-      }
-      .menu {
-        display: block;
-      }
-    }
-  }
-}
 
 @media screen and (max-width: 740px) {
   header {
@@ -202,6 +189,20 @@ $desktop-width: 1024px;
         }
         .menu {
           display: block;
+        }
+      }
+
+      .line__header {
+        display: none;
+      }
+      .navigate-logo {
+        top: 15%;
+        left: 10%;
+        .logo {
+          width: 50px;
+          height: 50px;
+          cursor: pointer;
+          outline: none;
         }
       }
     }
