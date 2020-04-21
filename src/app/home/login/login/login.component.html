@@ -17,7 +17,7 @@
 <form
   class="example-form"
   #formDangNhap="ngForm"
-  (ngSubmit)="dangNhap(formDangNhap.value)"
+  (ngSubmit)="login(formDangNhap.value)"
 >
   <mat-form-field class="example-full-width">
     <mat-label>Tài khoản</mat-label>
@@ -29,7 +29,7 @@
     <input matInput value="" name="matKhau" ngModel />
   </mat-form-field>
 
-  <button class="sub" type="submit">
+  <button class="sub" type="submit" >
     Đăng nhập
   </button>
   <p class="signUp">

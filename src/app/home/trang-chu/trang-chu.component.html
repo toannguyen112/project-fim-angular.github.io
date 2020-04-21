@@ -1,19 +1,14 @@
-
-
-<ng-container >
-
+<ng-container>
   <ngx-spinner [fullScreen]="true" type="ball-clip-rotate-multiple" size="large">
-    <p class="loading" style="color: #ffff;" >Loading Awesomeness...</p>
+    <p class="loading" style="color: #ffff;">Loading Awesomeness...</p>
   </ngx-spinner>
 </ng-container>
-<app-header (emitStatus)="reciveStatus($event)"></app-header>
+<app-header></app-header>
 <app-slider></app-slider>
 <div class="warpper">
   <div class="container text-center pt-5">
     <app-loai-phim [danhSachPhimDangChieu]="danhSachPhimDangChieu" [danhSachPhimSapChieu]="danhSachPhimSapChieu">
     </app-loai-phim>
-
-
   </div>
   <div class="container">
     <app-cinema></app-cinema>
@@ -27,6 +22,3 @@
 <app-footer></app-footer>
 
 
-<!-- modal_login_registered  -->
-<app-modal-login-register (emitUser)="reciveUser($event)"></app-modal-login-register>
-<!-- end  -->

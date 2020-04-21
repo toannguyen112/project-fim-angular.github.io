@@ -1,29 +1,18 @@
-<div
-  class="modal fade"
-  id="modalDangNhap"
-  tabindex="-1"
-  role="dialog"
-  aria-labelledby="modelTitleId"
-  aria-hidden="true"
->
+<div class="modal fade" id="modalDangNhap" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+  aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="wrapper">
         <div class="wrapper__content">
           <div class="wrapper__content__title row">
             <div class="col-6">
-              <span
-                class="dangNhap"
-                [ngClass]="{ active: !type }"
-                (click)="selectType(false)"
-                >Đăng nhập</span
-              >
+              <span class="dangNhap" [ngClass]="{ active: !type }" (click)="selectType(false)">Đăng nhập</span>
             </div>
             <div class="col-6">
               <span class="dangKi" (click)="selectType(true)" [ngClass]="{active: type}">Đăng kí</span>
             </div>
           </div>
-          <app-login *ngIf="!type; else dangki"  (emitUser)="reciveUser($event)"  ></app-login>
+          <app-login *ngIf="!type; else dangki" (emitUser)="reciveUser($event)"></app-login>
           <ng-template #dangki>
             <app-registered></app-registered>
           </ng-template>

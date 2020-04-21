@@ -66,6 +66,35 @@ header {
           cursor: pointer;
         }
       }
+      .modal {
+ 
+        overflow-y: hidden;
+        .modal-dialog {
+          max-width: 400px;
+          .modal-content {
+           
+            .wrapper {
+              .wrapper__content {
+              
+                padding: 20px;
+                text-align: center;
+                .dangNhap {
+                  cursor: pointer;
+                  font-size: 20px;
+                  color: #000000;
+                }
+                .dangNhap.active {
+                  color: red;
+                }
+                .dangKi {
+                  @extend .dangNhap;
+                }
+              }
+            }
+          }
+        }
+      }
+      
 
       .hotline {
         .phone {

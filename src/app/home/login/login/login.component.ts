@@ -3,6 +3,8 @@ import { Component, OnInit, OnDestroy } from "@angular/core";
 import { UserService } from "src/app/services/user.service";
 import { Router } from "@angular/router";
 import Swal from "sweetalert2";
+import $ from "jquery";
+declare var $: any;
 @Component({
   selector: "app-login",
   templateUrl: "./login.component.html",
@@ -14,12 +16,14 @@ export class LoginComponent implements OnInit {
   constructor(private userService: UserService, private route: Router) {}
 
   ngOnInit() {}
-  dangNhap(user) {
+  login(user) {
+    $("#modalDangNhap").modal("hide");
     this.userService.dangNhap(user).subscribe(
       (res) => {
         if (typeof res == "object") {
           localStorage.setItem("credentials", JSON.stringify(res));
           this.userService.setCredentials(res);
+
           Swal.fire({
             text: "Đăng nhập thành công",
             timer: 2000,

@@ -8,10 +8,9 @@ import Swal from "sweetalert2";
   styleUrls: ["./header.component.scss"],
 })
 export class HeaderComponent implements OnInit {
-  @Output("emitStatus") emitStatus = new EventEmitter();
-  public loGin: boolean = false;
   public credentials: any;
   public showBarMenu: boolean = false;
+  public type: boolean = false;
   constructor(private userService: UserService, private _route: Router) {}
 
   ngOnInit() {
@@ -21,10 +20,6 @@ export class HeaderComponent implements OnInit {
     });
   }
 
-  login(e) {
-    this.loGin = e;
-    this.emitStatus.emit(this.loGin);
-  }
   dangXuat() {
     localStorage.removeItem("credentials");
     this.credentials = null;
@@ -40,8 +35,10 @@ export class HeaderComponent implements OnInit {
     this.showBarMenu = true;
   }
   closeShowBarMenu() {
-    console.log("toan nguyen");
-    
     this.showBarMenu = false;
+  }
+
+  selectType(value) {
+    this.type = value;
   }
 }

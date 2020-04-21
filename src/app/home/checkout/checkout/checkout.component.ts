@@ -22,11 +22,7 @@ export class CheckoutComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
-    this.spinner.show();
-    setTimeout(() => {
-      this.isShow = true;
-      this.spinner.hide()
-    }, 2000);
+   
 
 
     this.route.params.subscribe(params => {
@@ -39,6 +35,13 @@ export class CheckoutComponent implements OnInit, OnDestroy {
           console.log(res.thongTinPhim);
         });
     });
+
+
+    this.spinner.show();
+    setTimeout(() => {
+      this.isShow = true;
+      this.spinner.hide()
+    }, 2000);
   }
   ngOnDestroy() {
     this.sub.unsubscribe();
