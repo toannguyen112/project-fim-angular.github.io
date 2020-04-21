@@ -2,7 +2,6 @@
   display: flex;
   background-color: transparent;
   border-radius: 4px;
-
   height: 500px;
   border: 1px solid #ebebec;
 
@@ -46,6 +45,25 @@
   .detailFilm-bottom--right {
     overflow-y: auto;
     width: 627px;
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    
+    /* Track */
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1; 
+    }
+     
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: #888; 
+    }
+    
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #555; 
+    }
+   
     .order {
       .order-list {
         margin: 0;
@@ -103,10 +121,10 @@
             .text-clolor {
               font-weight: 400;
               font-size: 20px;
-             color: #87c243;
-             &:hover{
-               color: #fb4226;
-             }
+              color: #87c243;
+              &:hover {
+                color: #fb4226;
+              }
             }
           }
         }
