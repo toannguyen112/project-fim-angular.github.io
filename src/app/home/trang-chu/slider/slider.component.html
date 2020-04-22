@@ -19,14 +19,14 @@
       <button class="playTrailer" (click)="showTrailer()">
         <img src="https://tix.vn/app/assets/img/icons/play-video.png" alt="" />
       </button>
-      <div class="play_trailer" (click)="closeTrailer()" *ngIf="isShowTrailer">
+      <div class="play_trailer" (click)="closeTrailer()" *ngIf="!isShowTrailer">
         <div class="play__trailer__content">
           <iframe
-            class="trainer"
-            [src]="item.trailer | safe"
-            frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          ></iframe>
+          class="trainer"
+          [src]="item.trailer | safe "
+          frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        ></iframe>
         </div>
       </div>
     </div>

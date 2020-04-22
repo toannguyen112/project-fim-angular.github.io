@@ -10,6 +10,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { AuthGuard } from './auth.guard';
 import { AdminGuard } from './admin.guard';
 import {NgxSpinnerModule} from 'ngx-spinner'
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,6 +23,7 @@ import {NgxSpinnerModule} from 'ngx-spinner'
     AdminModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    
     
     
   ],

@@ -6,7 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./profile-history.component.scss']
 })
 export class ProfileHistoryComponent implements OnInit {
-  @Input("thongTinTaiKhoan") thongTinTaiKhoan : any ;
+  @Input("thongTinTaiKhoan") thongTinTaiKhoan  ;
   public thongTinDatVe : []
   constructor() { }
 

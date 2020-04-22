@@ -1,7 +1,8 @@
 import { Observable } from "rxjs";
-import { Injectable, EventEmitter, Output } from "@angular/core";
+import { Injectable, EventEmitter, Output, Directive } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 
+@Directive()
 @Injectable({
   providedIn: "root",
 })
@@ -22,14 +23,14 @@ export class RapService {
     return this._http.get(api);
   }
   // lấy các lịch chiếu theo mã hệ thống rạp
-  layLichChieuTheoMaHeThongRap(maHeThongRap: any): Observable<any> {
+  layLichChieuTheoMaHeThongRap(maHeThongRap): Observable<any> {
     let api = `http://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinLichChieuHeThongRap?maHeThongRap=${maHeThongRap}&maNhom=GP01`;
     let obser = this._http.get(api);
     return obser;
   }
 
   // lay thong tin lich chieu phim
-  layThongTinLichChieuPhim(maPhim: any): Observable<any> {
+  layThongTinLichChieuPhim(maPhim): Observable<any> {
     let api = `http://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinLichChieuPhim?MaPhim=${maPhim}`;
     let obser = this._http.get(api);
     return obser;

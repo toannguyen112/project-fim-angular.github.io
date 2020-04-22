@@ -170,7 +170,7 @@
         </div>
         <div class="categoryPayment">
           <mat-radio-button style="display: block;" class="example-radio-button" *ngFor="let pay of payment"
-            [value]="season">
+           >
             <div>
               <img style="width: 35px;" [src]="pay.img" alt="" /> {{ pay.name }}
             </div>
@@ -186,7 +186,7 @@
             <span style="color: #f79320;"> Email</span> đã nhập.</span>
         </div>
       </div>
-      <div class="buyTicket" (click)="handleDatve()" [ngClass]="{ active: email && phone && danhSachGheDangDat > 0 }"   style="cursor: pointer;">
+      <div class="buyTicket" (click)="handleDatve()" [ngClass]="{ active: email && phone && danhSachGheDangDat  }"   style="cursor: pointer;">
         Đặt vé
       </div>
     </div>

@@ -40,6 +40,16 @@ import { ThemNguoiDungComponent } from './admin-manage/them-nguoi-dung/them-nguo
     NgxPaginationModule,
     Ng2SearchPipeModule
     
+  ],
+  exports : [
+    AdminLayoutComponent,
+    AdminManageComponent,
+    QuanliphimContentComponent,
+    QuanlinguoidungContentComponent,
+    AdminRegisteredComponent,
+    ThemPhimComponent,
+    TaoLichChieuComponent,
+    ThemNguoiDungComponent
   ]
 })
 export class AdminModule {}

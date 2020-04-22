@@ -14,7 +14,7 @@ export class SeatComponent implements OnInit {
   ngOnInit() {
    this.trangThai = this.itemGhe.TrangThai
   }
-  datGhe() {
+  datGhe(itemGhe) {
     if (this.status) {
       this.status = false;
     } else {

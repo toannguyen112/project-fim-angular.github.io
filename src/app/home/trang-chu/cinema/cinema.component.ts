@@ -1,7 +1,7 @@
 import { Subscription } from "rxjs";
 import { Component, OnInit, Input, OnDestroy } from "@angular/core";
 import { RapService } from "src/app/services/rap.service";
-import { TransformDataService } from "src/app/services/transformData.service";
+
 
 @Component({
   selector: "app-cinema",

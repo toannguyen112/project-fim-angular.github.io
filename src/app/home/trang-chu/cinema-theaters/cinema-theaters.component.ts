@@ -8,7 +8,7 @@ import { Rap } from "src/app/models/rap";
   styleUrls: ["./cinema-theaters.component.scss"]
 })
 export class CinemaTheatersComponent implements OnInit {
-  @Input("rap") rap: Rap;
+  @Input("rap") rap;
   @Output("emitRap") emitRap = new EventEmitter();
   @Input("valueDefaut") valueDefaut: any;
   public heThongRap: any[] = [];

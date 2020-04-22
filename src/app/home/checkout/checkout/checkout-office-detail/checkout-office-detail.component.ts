@@ -1,19 +1,24 @@
-import { Subscription } from "rxjs";
-import { Component, OnInit, Input, Output, EventEmitter, OnDestroy } from "@angular/core";
+import {
+  Component,
+  OnInit,
+  Input,
+  Output,
+  EventEmitter,
+  OnDestroy,
+} from "@angular/core";
 import { TransformDataService } from "src/app/services/transformData.service";
 
 import "sweetalert2/src/sweetalert2.scss";
 import Swal from "sweetalert2";
-import { Router, ActivatedRoute } from "@angular/router";
+import { Router } from "@angular/router";
 import { PhongveService } from "src/app/services/phongve.service";
 @Component({
   selector: "app-checkout-office-detail",
   templateUrl: "./checkout-office-detail.component.html",
   styleUrls: ["./checkout-office-detail.component.scss"],
 })
-export class CheckoutOfficeDetailComponent implements OnInit ,OnDestroy {
-  @Input("thongTinPhim") thongTinPhim: any;
-
+export class CheckoutOfficeDetailComponent implements OnInit, OnDestroy {
+  @Input("thongTinPhim") thongTinPhim;
   @Input() maLichChieu;
   @Output("emitterStatus") emitterStatus = new EventEmitter();
   public status: boolean = true;
@@ -168,14 +173,13 @@ export class CheckoutOfficeDetailComponent implements OnInit ,OnDestroy {
       this.price = res;
     });
   }
-  ngOnDestroy(){
-
-    // stop time 
-   clearTimeout(this.myvar)
+  ngOnDestroy() {
+    // stop time
+    clearTimeout(this.myvar);
   }
-  public myvar ;
+  public myvar;
   doCountdown() {
-   this.myvar =  setTimeout(() => {
+    this.myvar = setTimeout(() => {
       this.counter++;
       this.timer = this.convertSecond(this.timeleft - this.counter);
       this.processCount();
@@ -258,11 +262,21 @@ export class CheckoutOfficeDetailComponent implements OnInit ,OnDestroy {
     );
 
     if (credentials && this.danhSachGheDangDat) {
-    
       Swal.fire({
-        title: "mua vé thành công",
-        icon: "success",
+        title: " Mua vé thành công",
+        width: 600,
+        padding: "3em",
+        background: "#fff url(/images/trees.png)",
+        backdrop: `
+          rgba(0,0,123,0.4)
+          url("https://media.giphy.com/media/sIIhZliB2McAo/giphy.gif")
+          left top
+          no-repeat
+        `,
       });
+      setTimeout(() => {
+        this._route.navigate(["/"]);
+      }, 3000);
     } else {
       Swal.fire({
         title: "Yêu cầu đăng nhập",

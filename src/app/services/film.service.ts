@@ -1,7 +1,8 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { Injectable, Output, EventEmitter } from "@angular/core";
+import { Injectable, Output, EventEmitter, Directive } from "@angular/core";
 import { Observable } from "rxjs";
 
+@Directive()
 @Injectable({
   providedIn: "root"
 })
@@ -57,13 +58,13 @@ export class FilmService {
   }
 
   // lấy chi tiết phim
-  getFilmDetail(maPhim: any): Observable<any> {
+  getFilmDetail(maPhim): Observable<any> {
     let obser = this._http.get(this.api.getFilmDetail + maPhim);
     return obser;
   }
 
   // lấy phim tìm kiếm
-  searchFilm(tenPhim: string): Observable<any> {
+  searchFilm(tenPhim): Observable<any> {
     let obser = this._http.get(this.api.searchFilm + tenPhim);
     return obser;
   }

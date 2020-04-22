@@ -23,7 +23,7 @@
     </thead>
     <tbody>
       <tr class="item"
-        *ngFor="let user of danhSachNguoDung  |filter :searchText  | paginate: { itemsPerPage: 5, currentPage: currentPage }  let i = index">
+        *ngFor="let user of danhSachNguoDung  |filter :searchText    let i = index">
         <td>{{ i + 1 }}</td>
         <td class="taiKhoan">{{ user.taiKhoan }}</td>
         <td class="matKhau">{{ user.matKhau }}</td>
@@ -42,6 +42,6 @@
       </tr>
     </tbody>
   </table>
-  <pagination-controls style="text-align: center;" (pageChange)="currentPage = $event"></pagination-controls>
+  <!-- <pagination-controls style="text-align: center;" (pageChange)="currentPage = $event"></pagination-controls> -->
 
 </div>

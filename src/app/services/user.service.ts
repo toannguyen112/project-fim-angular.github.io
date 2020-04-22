@@ -1,11 +1,12 @@
 import { DangKi } from "src/app/models/dangKi";
 import { HttpClient } from "@angular/common/http";
-import { Injectable, Output, EventEmitter } from "@angular/core";
+import { Injectable, Output, EventEmitter, Directive } from "@angular/core";
 import { Observable } from "rxjs";
 import { DangNhap } from "../models/dangNhap";
 import { HttpHeaders } from "@angular/common/http";
 import { Taikhoan } from "../models/taikhoan";
 
+@Directive()
 @Injectable({
   providedIn: "root"
 })

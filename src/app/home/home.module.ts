@@ -37,7 +37,7 @@ import { ProfileHistoryItemComponent } from "./profile/profile-history-item/prof
 import { CinemaTheatersComponent } from "./trang-chu/cinema-theaters/cinema-theaters.component";
 import { HomeToolsComponent } from "./trang-chu/home-tools/home-tools.component";
 import { MatInputModule } from "@angular/material/input";
-import { ModalLoginRegisterComponent } from "./modal-login-register/modal-login-register.component";
+
 import { CheckoutContentComponent } from "./checkout/checkout/checkout-content/checkout-content.component";
 import { CheckoutOfficeDetailComponent } from "./checkout/checkout/checkout-office-detail/checkout-office-detail.component";
 import { MatRadioModule } from "@angular/material/radio";
@@ -47,7 +47,6 @@ import { SeatComponent } from "./checkout/seat/seat.component";
 import { LichChieuComponent } from "./detail-page/lich-chieu/lich-chieu.component";
 import { NgxSpinnerModule } from "ngx-spinner";
 import { LoadingButtonItemPhimComponent } from "./trang-chu/loading-button-item-phim/loading-button-item-phim.component";
-import { SeeMoreComponent } from "./see-more/see-more.component";
 import { PipeModule } from "../pipe/pipe.module";
 
 @NgModule({
@@ -88,15 +87,13 @@ import { PipeModule } from "../pipe/pipe.module";
     ProfileHistoryItemComponent,
     CinemaTheatersComponent,
     HomeToolsComponent,
-    ModalLoginRegisterComponent,
+
     CheckoutContentComponent,
     CheckoutOfficeDetailComponent,
     LoadingComponent,
     DetailMainComponent,
     SeatComponent,
     LoadingButtonItemPhimComponent,
-    
-    SeeMoreComponent,
   ],
   imports: [
     CommonModule,
@@ -112,13 +109,11 @@ import { PipeModule } from "../pipe/pipe.module";
     TrangChuComponent,
     LoginComponent,
     RegisteredComponent,
-    LoadingComponent,
     CheckoutComponent,
     DetailPageComponent,
     CheckoutHeaderComponent,
     DanhgiaCinemaComponent,
-    LichChieuComponent,
-    SeatComponent,
+    ItemTinTucComponent,
     LichchieuCinemaComponent,
     ThongtinCinemaComponent,
     HomeLayoutComponent,
@@ -128,6 +123,7 @@ import { PipeModule } from "../pipe/pipe.module";
     CinemaComponent,
     TintucComponent,
     FooterComponent,
+    LichChieuComponent,
     PhimDangChieuComponent,
     PhimSapChieuComponent,
     CinemaItemComponent,
@@ -139,6 +135,20 @@ import { PipeModule } from "../pipe/pipe.module";
     ItemTinTucComponent,
     DetailPageComponent,
     DetailCinemaPageComponent,
+    ProfileComponent,
+    ProfileAboutComponent,
+    ProfileHistoryComponent,
+    ProfileContactComponent,
+    ProfileHistoryItemComponent,
+    CinemaTheatersComponent,
+    HomeToolsComponent,
+
+    CheckoutContentComponent,
+    CheckoutOfficeDetailComponent,
+    LoadingComponent,
+    DetailMainComponent,
+    SeatComponent,
+    LoadingButtonItemPhimComponent,
   ],
 })
 export class HomeModule {}

@@ -22,7 +22,7 @@
       <tr class="item" *ngFor="
           let phim of movieList
             | filter: searchText
-            | paginate: { itemsPerPage: 5, currentPage: currentPage }
+           
         ">
         <td class="maPhim">{{ phim.maPhim }}</td>
         <td class="tenPhim">{{ phim.tenPhim }}</td>
@@ -46,5 +46,5 @@
       </tr>
     </tbody>
   </table>
-  <pagination-controls style="text-align: center;" (pageChange)="currentPage = $event"></pagination-controls>
+  <!-- <pagination-controls style="text-align: center;" (pageChange)="currentPage = $event"></pagination-controls> -->
 </div>

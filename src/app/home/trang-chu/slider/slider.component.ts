@@ -36,7 +36,10 @@ export class SliderComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log(this.silder);
+    
+  }
   showTrailer() {
     this.isShowTrailer = true;
   }

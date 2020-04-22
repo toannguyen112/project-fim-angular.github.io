@@ -12,20 +12,21 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- <app-profile-history-item *ngFor="let thongTin of thongTinDatVe" [thongTin]="thongTin" ></app-profile-history-item> -->
+                <app-profile-history-item *ngFor="let thongTin of thongTinDatVe" [thongTin]="thongTin">
+                </app-profile-history-item>
                 <tr *ngFor="
             let item of thongTinDatVe
-              | paginate: { itemsPerPage: 10, currentPage: currentPage };
+             ;
             let i = index
           ">
                     <td>{{ i + 1 }}</td>
-                    <td>{{ item.tenPhim | uppercase }}</td>
-                    <td>{{ item.giaVe  | currency:"VND" }}</td>
-                    <td>{{ item.ngayDat | date:'M/d/yy' }}</td>
+                    <td>{{ item.tenPhim  }}</td>
+                    <td>{{ item.giaVe   }}</td>
+                    <td>{{ item.ngayDat  }}</td>
                     <td> {{item.thoiLuongPhim}}p </td>
                 </tr>
             </tbody>
         </table>
     </ul>
-    <pagination-controls class="my-pagination" (pageChange)="currentPage = $event"></pagination-controls>   
+    <!-- <pagination-controls class="my-pagination" (pageChange)="currentPage = $event"></pagination-controls>    -->
 </div>
