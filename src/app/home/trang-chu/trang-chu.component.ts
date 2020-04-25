@@ -1,12 +1,13 @@
 import { FilmService } from "./../../services/film.service";
-import { Component, OnInit, OnDestroy } from "@angular/core";
+import { Component, OnInit, OnDestroy, AfterViewInit } from "@angular/core";
 import { Film } from "src/app/models/film";
 import { Subscription } from "rxjs";
 import { NgxSpinnerService } from "ngx-spinner";
+
 @Component({
   selector: "app-trang-chu",
   templateUrl: "./trang-chu.component.html",
-  styleUrls: ["./trang-chu.component.scss"]
+  styleUrls: ["./trang-chu.component.scss"],
 })
 export class TrangChuComponent implements OnInit, OnDestroy {
   constructor(
@@ -30,7 +31,7 @@ export class TrangChuComponent implements OnInit, OnDestroy {
     this.filmService.emitterMovieList.subscribe((newMovieList: Film[]) => {
       this.movieList = newMovieList;
     });
-    this.sub = this.filmService.getListFilms().subscribe(res => {
+    this.sub = this.filmService.getListFilms().subscribe((res) => {
       this.filmService.setDanhSachPhim(res);
       //gửi data lên service
       this.luuDanhSachPhimDangChieu(res);
@@ -59,6 +60,7 @@ export class TrangChuComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.sub.unsubscribe();
   }
+
   reciveStatus(value) {
     this.status = value;
   }

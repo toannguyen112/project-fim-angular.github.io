@@ -1,21 +1,23 @@
 
 <div class="row tintuc">
-  <div class="col-12 text-center " style="height: 30px;">
-    <a
-      [ngClass]="{ active: loaiTinTuc == 'DienAnh' }"
-      (click)="chonLoaiTin('DienAnh')"
-      >Điện Ảnh 24h</a
-    >
-    <a
-      [ngClass]="{ active: loaiTinTuc == 'Review' }"
-      (click)="chonLoaiTin('Review')"
-      >Review</a
-    >
-    <a
-      [ngClass]="{ active: loaiTinTuc == 'KhuyenMai' }"
-      (click)="chonLoaiTin('KhuyenMai')"
-      >Khuyễn mãi</a
-    >
+  <div class="col-md-12 col-lg-12 col-sm-12 text-center " style="height: 30px;">
+   <div class="tintuc__title" style="flex-wrap: nowrap ; text-align: center; ">
+      <a 
+        [ngClass]="{ active: loaiTinTuc == 'DienAnh' }"
+        (click)="chonLoaiTin('DienAnh')"
+        >Điện Ảnh 24h</a
+      >
+      <a 
+        [ngClass]="{ active: loaiTinTuc == 'Review' }"
+        (click)="chonLoaiTin('Review')"
+        >Review</a
+      > 
+      <a
+        [ngClass]="{ active: loaiTinTuc == 'KhuyenMai' }"
+        (click)="chonLoaiTin('KhuyenMai')"
+        >Khuyễn mãi</a
+      >
+   </div>
   </div>
 </div>
 

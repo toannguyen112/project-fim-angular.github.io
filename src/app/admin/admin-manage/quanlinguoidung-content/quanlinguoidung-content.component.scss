@@ -1,42 +1,18 @@
-
 .page__wrapper_manage {
-    table {
-      text-align: left;
-      margin-bottom: 50px;
-      tbody {
-        tr {
-          .maPhim {
-            width: 10%;
-          }
-          .tenPhim {
-            width: 20%;
-          }
-          .hinhAnh {
-            width: 10%;
-          }
-          .moTa {
-            width: 10%;
-          }
-          .ngayChieu {
-            width: 15%;
-          }
-          .thaoTac {
-            width: 10%;
-            .btn {
-              padding: 10px;
-              color: #fff;
-              margin: 0 5px;
-              border: none;
-            }
-            .btnSua {
-              background-color: red;
-            }
-            .btnXoa {
-              background-color: green;
-            }
-          }
+  table {
+    text-align: left;
+    margin-bottom: 50px;
+    tbody {
+      tr {
+        .btnSua {
+          background-color: red;
+          color: #fff;
+        }
+        .btnXoa {
+          background-color: green;
+          color: #fff;
         }
       }
     }
   }
-  
+}

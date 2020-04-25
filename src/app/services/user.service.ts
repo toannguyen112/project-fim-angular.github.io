@@ -8,7 +8,7 @@ import { Taikhoan } from "../models/taikhoan";
 
 @Directive()
 @Injectable({
-  providedIn: "root"
+  providedIn: "root",
 })
 export class UserService {
   constructor(private _http: HttpClient) {}
@@ -60,12 +60,13 @@ export class UserService {
     let obser = this._http.get(api);
     return obser;
   }
-  // updateUser 
-  updateUser(newUser){
-    let api = "http://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/ThongTinTaiKhoan"
-    return this._http.post(api,newUser,httpOptions)
+  // updateUser
+  updateUser(newUser) {
+    let api =
+      "http://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/ThongTinTaiKhoan";
+    return this._http.post(api, newUser, httpOptions);
   }
-
+  // add user
   addUser(user): Observable<any> {
     let api =
       "http://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/ThemNguoiDung";
@@ -73,24 +74,31 @@ export class UserService {
     return obser;
   }
 
+  // delete user
   deleteUser(taiKhoan: string): Observable<any> {
     let api =
       "http://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/XoaNguoiDung=";
     let obser = this._http.delete(api + taiKhoan, httpOptions);
     return obser;
   }
+
+  // check current credentials
   loggedIn() {
     return !!JSON.parse(localStorage.getItem("credentials"));
   }
+
+  // check current admin
   loggedInAdmin() {
     return !!JSON.parse(localStorage.getItem("admin"));
   }
 }
-const accessTokenCredentials =  localStorage.getItem("credentials") ? JSON.parse(localStorage.getItem("credentials")).accessToken : []
- 
+const accessTokenCredentials = localStorage.getItem("credentials")
+  ? JSON.parse(localStorage.getItem("credentials")).accessToken
+  : [];
+
 const httpOptions = {
   headers: new HttpHeaders({
     "Content-Type": "application/json",
-    Authorization: "Bearer " + accessTokenCredentials
-  })
+    Authorization: "Bearer " + accessTokenCredentials,
+  }),
 };

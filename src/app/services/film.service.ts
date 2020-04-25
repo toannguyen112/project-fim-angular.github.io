@@ -4,7 +4,7 @@ import { Observable } from "rxjs";
 
 @Directive()
 @Injectable({
-  providedIn: "root"
+  providedIn: "root",
 })
 export class FilmService {
   constructor(private _http: HttpClient) {}
@@ -19,8 +19,9 @@ export class FilmService {
     deleteFilm:
       "http://movie0706.cybersoft.edu.vn/api/QuanLyPhim/XoaPhim?MaPhim=",
     addFilm: "http://movie0706.cybersoft.edu.vn/api/QuanLyPhim/ThemPhim",
+    updateFil: "http://movie0706.cybersoft.edu.vn/api/QuanLyPhim/CapNhatPhim",
     updateImg:
-      "http://movie0706.cybersoft.edu.vn/api/QuanLyPhim/UploadHinhAnhPhim"
+      "http://movie0706.cybersoft.edu.vn/api/QuanLyPhim/UploadHinhAnhPhim",
   };
 
   public movieList: any[] = [];
@@ -69,6 +70,8 @@ export class FilmService {
     return obser;
   }
 
+  // add phim
+
   addFilm(film): Observable<any> {
     let obser = this._http.post(this.api.addFilm, film, httpOptions);
     return obser;
@@ -79,6 +82,10 @@ export class FilmService {
   DeleteFilm(maPhim): Observable<any> {
     let obser = this._http.delete(this.api.deleteFilm + maPhim, httpOptions);
     return obser;
+  }
+
+  updateFilm(data): Observable<any> {
+    return this._http.post(this.api.updateFil, data, httpOptions);
   }
 
   // upload hinh anh
@@ -93,6 +100,6 @@ const accessTokenAdmin = localStorage.getItem("admin")
 const httpOptions = {
   headers: new HttpHeaders({
     "Content-Type": "application/json",
-    Authorization: "Bearer " + accessTokenAdmin
-  })
+    Authorization: "Bearer " + accessTokenAdmin,
+  }),
 };

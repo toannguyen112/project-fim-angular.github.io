@@ -1,63 +1,55 @@
-
-<button type="button" class="btntaoLichChieu btn" data-toggle="modal" data-target="#taolihchieu">
+<button type="button" class="btn btntaoLichChieu" (click)="show()">
     <i class="fa fa-video-camera" aria-hidden="true"></i>
 </button>
 
-<div class="modal fade" id="taolihchieu" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-    <div class="modal-dialog" role="document" style="max-width: none;">
-        <div class="modal-content">
-            <h3 style="text-align: center; color: grey;">Thông tin lịch chiếu phim  {{phim.tenPhim}} </h3>
+<div *ngIf="display" class="lichChieu__modal">
+    <div class="lichChieu__modal__content">
+        <form #form="ngForm" (ngSubmit)="taoLichChieu(form.value)">
+            <h3 style="text-align: center; color: grey;">
+                Thông tin lịch chiếu phim {{ phim.tenPhim }}
+            </h3>
             <div class="modal-body">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="">Chọn hệ thống rạp</label>
-                            <select class="form-control " name="" id="">
-                                <option></option>
-                                <option></option>
-                                <option></option>
+                            <select class="form-control">
+                                <option>BHD Start </option>
+                                <option>CGV</option>
+                                <option>Galaxycine </option>
+                                <option>Cinestar </option>
                             </select>
                         </div>
 
                         <div class="form-group">
                             <label for="">Chọn cụm rạp</label>
-                            <select class="form-control " name="" id="">
-                                <option></option>
-                                <option></option>
-                                <option></option>
+                            <select class="form-control">
+                                <option> Hồ Chí Minh</option>
+                                <option> Vũn Tàu</option>
+                                <option> Đà Nắng</option>
                             </select>
                         </div>
 
                         <div class="form-group">
                             <label for="">Chọn rạp</label>
-                            <select class="form-control " name="" id="">
-                                <option></option>
-                                <option></option>
-                                <option></option>
+                            <select class="form-control">
+                                <option> Rạp 1 </option>
+                                <option> Rạp 2 </option>
+                                <option> Rạp 3 </option>
                             </select>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="">Chọn ngày chiếu ,giờ chiếu</label>
-                            <input type="text" name="" type="date" class="form-control" placeholder=""
-                                aria-describedby="helpId">
-
+                            <input type="text" name="ngayChieuGioChieu" class="form-control" placeholder="" ngModel />
                         </div>
-                        <div class="form-group">
-                            <label for="">Thời lượng phim</label>
-                            <input type="text" name="" type="text" class="form-control" placeholder=""
-                                aria-describedby="helpId">
 
-                        </div>
 
                         <div class="form-group">
                             <label for="">giá vé</label>
-                            <input type="text" name="" type="text" class="form-control" placeholder=""
-                                aria-describedby="helpId">
-
+                            <input type="number" name="giaVe" class="form-control" placeholder="" ngModel />
                         </div>
-
                     </div>
                 </div>
 
@@ -84,15 +76,18 @@
                                 <td>120p</td>
                                 <td></td>
                             </tr>
-
                         </tbody>
                     </table>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="close()">
+                    Close
+                </button>
+                <button type="button" class="btn btn-primary" type="submit">
+                    Save
+                </button>
             </div>
-        </div>
+        </form>
     </div>
 </div>

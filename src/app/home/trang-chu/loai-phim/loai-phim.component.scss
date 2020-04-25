@@ -1,13 +1,16 @@
 .header__title {
   margin-bottom: 20px;
   a {
-   
     color: #ffffff;
     text-transform: uppercase;
     font-size: 18px;
     font-weight: 400;
     padding: 10px 0;
     cursor: pointer;
+    &:hover {
+      border-bottom: 1px solid #d4dd29;
+      color: #d4dd29;
+    }
   }
   a.active {
     border-bottom: 1px solid #d4dd29;
@@ -35,5 +38,11 @@
       background-color: #f26b38;
       color: #ffffff;
     }
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .btnXemThem {
+    text-align: center;
   }
 }

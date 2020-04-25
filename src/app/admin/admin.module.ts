@@ -1,4 +1,4 @@
-import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { Ng2SearchPipeModule } from "ng2-search-filter";
 import { RouterModule } from "@angular/router";
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
@@ -12,11 +12,12 @@ import { QuanliphimContentComponent } from "./admin-manage/quanliphim-content/qu
 import { QuanlinguoidungContentComponent } from "./admin-manage/quanlinguoidung-content/quanlinguoidung-content.component";
 import { MatButtonModule } from "@angular/material/button";
 import { AdminRegisteredComponent } from "./admin-registered/admin-registered.component";
-import { FormsModule } from "@angular/forms";
-import {NgxPaginationModule} from 'ngx-pagination';
-import { ThemPhimComponent } from './admin-manage/them-phim/them-phim.component';
-import { TaoLichChieuComponent } from './admin-manage/tao-lich-chieu/tao-lich-chieu.component';
-import { ThemNguoiDungComponent } from './admin-manage/them-nguoi-dung/them-nguoi-dung.component';
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { NgxPaginationModule } from "ngx-pagination";
+import { ThemPhimComponent } from "./admin-manage/them-phim/them-phim.component";
+import { TaoLichChieuComponent } from "./admin-manage/tao-lich-chieu/tao-lich-chieu.component";
+import { ThemNguoiDungComponent } from "./admin-manage/them-nguoi-dung/them-nguoi-dung.component";
+import { UpdatePhimComponent } from './admin-manage/update-phim/update-phim.component';
 @NgModule({
   declarations: [
     AdminLayoutComponent,
@@ -26,7 +27,8 @@ import { ThemNguoiDungComponent } from './admin-manage/them-nguoi-dung/them-nguo
     AdminRegisteredComponent,
     ThemPhimComponent,
     TaoLichChieuComponent,
-    ThemNguoiDungComponent
+    ThemNguoiDungComponent,
+    UpdatePhimComponent,
   ],
   imports: [
     CommonModule,
@@ -38,10 +40,10 @@ import { ThemNguoiDungComponent } from './admin-manage/them-nguoi-dung/them-nguo
     MatButtonModule,
     FormsModule,
     NgxPaginationModule,
-    Ng2SearchPipeModule
-    
+    Ng2SearchPipeModule,
+    ReactiveFormsModule,
   ],
-  exports : [
+  exports: [
     AdminLayoutComponent,
     AdminManageComponent,
     QuanliphimContentComponent,
@@ -49,7 +51,7 @@ import { ThemNguoiDungComponent } from './admin-manage/them-nguoi-dung/them-nguo
     AdminRegisteredComponent,
     ThemPhimComponent,
     TaoLichChieuComponent,
-    ThemNguoiDungComponent
-  ]
+    ThemNguoiDungComponent,
+  ],
 })
 export class AdminModule {}

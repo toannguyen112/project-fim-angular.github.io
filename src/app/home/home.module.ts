@@ -1,4 +1,4 @@
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SliderComponent } from "./trang-chu/slider/slider.component";
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
@@ -48,6 +48,7 @@ import { LichChieuComponent } from "./detail-page/lich-chieu/lich-chieu.componen
 import { NgxSpinnerModule } from "ngx-spinner";
 import { LoadingButtonItemPhimComponent } from "./trang-chu/loading-button-item-phim/loading-button-item-phim.component";
 import { PipeModule } from "../pipe/pipe.module";
+import { VeBanTruocComponent } from './trang-chu/ve-ban-truoc/ve-ban-truoc.component';
 
 @NgModule({
   declarations: [
@@ -94,6 +95,7 @@ import { PipeModule } from "../pipe/pipe.module";
     DetailMainComponent,
     SeatComponent,
     LoadingButtonItemPhimComponent,
+    VeBanTruocComponent,
   ],
   imports: [
     CommonModule,
@@ -104,6 +106,8 @@ import { PipeModule } from "../pipe/pipe.module";
     FormsModule,
     NgxSpinnerModule,
     PipeModule,
+    ReactiveFormsModule
+    
   ],
   exports: [
     TrangChuComponent,

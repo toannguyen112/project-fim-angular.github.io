@@ -25,10 +25,12 @@ export class LoginComponent implements OnInit {
           this.userService.setCredentials(res);
 
           Swal.fire({
-            text: "Đăng nhập thành công",
-            timer: 2000,
-            icon: "success",
-          });
+            position: 'top-end',
+            icon: 'success',
+            title: 'Đăng nhập thành công',
+            showConfirmButton: false,
+            timer: 1500
+          })
         } else {
           alert("vui long nhap lai");
         }

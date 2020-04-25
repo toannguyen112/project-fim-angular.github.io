@@ -19,7 +19,7 @@
       <button class="playTrailer" (click)="showTrailer()">
         <img src="https://tix.vn/app/assets/img/icons/play-video.png" alt="" />
       </button>
-      <div class="play_trailer" (click)="closeTrailer()" *ngIf="!isShowTrailer">
+      <div class="play_trailer" (click)="closeTrailer()" *ngIf="isShowTrailer">
         <div class="play__trailer__content">
           <iframe
           class="trainer"

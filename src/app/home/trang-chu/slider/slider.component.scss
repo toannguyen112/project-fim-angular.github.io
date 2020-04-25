@@ -3,11 +3,11 @@
     bottom: 10%;
     li {
       border-radius: 50%;
-      width: 10px;
-      height: 10px;
+      width: 15px;
+      height: 15px;
     }
     .active {
-      background-color: red;
+      background-color: #87C243;
     }
   }
   .carousel-inner {
@@ -61,5 +61,11 @@
       width: 898px;
       height: 530px;
     }
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .carousel {
+    display: none;
   }
 }

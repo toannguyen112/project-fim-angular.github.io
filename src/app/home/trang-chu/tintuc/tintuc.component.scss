@@ -1,5 +1,4 @@
 .tintuc {
-
   .active {
     color: red;
   }
@@ -9,7 +8,7 @@
     font-weight: bold;
     padding: 0px 13px;
     transition: all 0.2s;
-    
+
     color: #ffffff;
 
     &:hover {
@@ -36,6 +35,15 @@
       background-color: #fb4226;
       border-color: #fb4226;
       color: white;
+    }
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .tintuc {
+    a {
+      font-size: 18px;
+      white-space: nowrap;
     }
   }
 }

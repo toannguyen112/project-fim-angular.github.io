@@ -1,7 +1,20 @@
-.btntaoLichChieu{
-    border: none;
-    background-color: yellowgreen;
-    width: 46px;
-    height: 36px;
+.btntaoLichChieu {
+  border: none;
+  background-color: yellowgreen;
+  width: 46px;
+  height: 36px;
+}
+.lichChieu__modal {
+  position: fixed;
+  background-color: rgba($color: #000000, $alpha: 0.8);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  .lichChieu__modal__content {
+    background-color: #fff;
+    margin-top: 50px;
     
+  }
 }

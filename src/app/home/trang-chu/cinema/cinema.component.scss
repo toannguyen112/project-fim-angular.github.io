@@ -8,22 +8,22 @@
     width: 10%;
     .cinema__list {
       padding: 0;
-      
     }
   }
+  .cinema-tab-content {
+    width: 40%;
+    height: 600px;
+    overflow-y: auto;
+    border-right: 1px solid $gray-1;
+  }
+  
+  .cinema-listFilm {
+    overflow-y: auto;
+    width: 50%;
+  }
+  
 }
 
-.cinema-tab-content {
-  width: 40%;
-  height: 600px;
-  overflow-y: auto;
-  border-right: 1px solid $gray-1;
-}
-
-.cinema-listFilm {
-  overflow-y: auto;
-  width: 50%;
-}
 
 ::-webkit-scrollbar {
   width: 3px;
@@ -31,15 +31,34 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1; 
+  background: #f1f1f1;
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888; 
+  background: #888;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: #555;
+}
+
+@media screen and (min-width: 740px) and (max-width: 1024px) {
+  .cinema {
+    .cinema-navigation {
+      width: 20%;
+    }
+    .cinema-tab-content{
+      width: 40%;
+    }
+    .cinema-listFilm{
+      width: 40%;
+    }
+  }
+}
+@media screen and (max-width: 740px) {
+  .cinema {
+    display: none;
+  }
 }

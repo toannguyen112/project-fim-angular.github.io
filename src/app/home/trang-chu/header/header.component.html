@@ -1,3 +1,4 @@
+<!-- header  -->
 <header>
   <div class="header__content">
     <div class="navigate-logo">
@@ -54,11 +55,11 @@
                   <div class="wrapper">
                     <div class="wrapper__content">
                       <div class="wrapper__content__title row">
-                        <div class="col-6">
+                        <div class="col-md-6 col-lg-6 col-sm-12">
                           <span class="dangNhap" [ngClass]="{ active: !type }" (click)="selectType(false)">Đăng
                             nhập</span>
                         </div>
-                        <div class="col-6">
+                        <div class="col-md-6 col-lg-6 col-sm-12">
                           <span class="dangKi" (click)="selectType(true)" [ngClass]="{ active: type }">Đăng kí</span>
                         </div>
                       </div>
@@ -79,25 +80,34 @@
       </div>
     </div>
 
-    <div class="line__header">
-      <img src="https://www.bhdstar.vn/wp-content/themes/bhd/assets/images/line-header1.png" alt="" />
-    </div>
+    <img class="line__header" src="https://www.bhdstar.vn/wp-content/themes/bhd/assets/images/line-header1.png"
+      alt="" />
+
   </div>
 </header>
+<!-- end header -->
+
+
+<!-- BarMenu  -->
 <div class="bar__menu" *ngIf="showBarMenu">
   <ul class="list__item">
+    <li class="item" style="display: flex; align-items: center; ">
+      <img style="width: 40px; border-radius: 50%;" src="https://tix.vn/app/assets/img/avatar.png" alt="">
+      <span class="login">Đăng nhập </span>
+      <img style="width: 20px; cursor: pointer; margin-right: 20px;"
+        src="https://tix.vn/app/assets/img/icons/next-session.png" alt="" (click)="closeShowBarMenu()">
+    </li>
     <li class="item">
       <i class="fa fa-home" aria-hidden="true"></i>
-      <span (click)="closeShowBarMenu()">Trang chủ</span>
+      <span>Trang chủ</span>
     </li>
 
     <li class="item">
       <i class="fa fa-mobile" aria-hidden="true"></i>
       <span> Liên hệ</span>
     </li>
-    <li class="item">
-      <i class="fa fa-sign-in" aria-hidden="true"></i>
-      <span> Đăng nhập</span>
-    </li>
+   
   </ul>
 </div>
+
+<!-- end Bar__menu  -->

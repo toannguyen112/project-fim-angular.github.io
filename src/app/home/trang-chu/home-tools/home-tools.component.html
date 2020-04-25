@@ -1,5 +1,5 @@
 <div class="homeTools">
-  <div class=" dropdown  dropdown_phim" type="button" aria-expanded="false">
+  <div class=" dropdown  dropdown_phim">
     <div class="text" *ngIf="showPhim === ''; else phim">Phim</div>
     <ng-template #phim>
       <div class="text"> {{ showPhim }}</div>
@@ -77,6 +77,7 @@
     </div>
   </div>
   <div class=" dropdown  muave">
-    <button class="btnMuave " [ngClass]="{active: showSuatChieu}" [disabled]="!showSuatChieu" (click)="muaVe($event)">Mua vé ngay</button>
+    <button class="btnMuave " [ngClass]="{active: showSuatChieu}" [disabled]="!showSuatChieu"
+      (click)="muaVe($event)">Mua vé ngay</button>
   </div>
 </div>

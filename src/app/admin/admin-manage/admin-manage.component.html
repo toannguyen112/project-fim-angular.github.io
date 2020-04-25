@@ -29,7 +29,8 @@
                   <div class="user_img">
                     <img
                       src="https://lh5.googleusercontent.com/-PYUK7J56KVw/WpArqY4CvBI/AAAAAAABUnY/bA-tJEHptysfJrtzXtOzyZmaXjzEp6YpACLcBGAs/s400-c/anh-sex-maulon-0056250318.jpg"
-                      alt="" />
+                      alt=""
+                    />
                   </div>
                   <div class="notification_desc">
                     <P>Lorem ipsum dolor amet</P>
@@ -61,7 +62,8 @@
                   <div class="user_img">
                     <img
                       src="https://lh5.googleusercontent.com/-PYUK7J56KVw/WpArqY4CvBI/AAAAAAABUnY/bA-tJEHptysfJrtzXtOzyZmaXjzEp6YpACLcBGAs/s400-c/anh-sex-maulon-0056250318.jpg"
-                      alt="" />
+                      alt=""
+                    />
                   </div>
                   <div class="notification_desc">
                     <P>Lorem ipsum dolor amet</P>
@@ -99,8 +101,14 @@
                     </span>
                   </div>
                   <div class="progress">
-                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
-                      aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+                    <div
+                      class="progress-bar progress-bar-striped progress-bar-animated"
+                      role="progressbar"
+                      aria-valuenow="20"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                      style="width: 75%;"
+                    ></div>
                   </div>
                 </div>
                 <div href="" class="list-progress">
@@ -113,8 +121,14 @@
                     </span>
                   </div>
                   <div class="progress">
-                    <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar"
-                      aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+                    <div
+                      class="progress-bar progress-bar-striped progress-bar-animated bg-warning"
+                      role="progressbar"
+                      aria-valuenow="30"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                      style="width: 75%;"
+                    ></div>
                   </div>
                 </div>
                 <div href="" class="list-progress">
@@ -127,8 +141,14 @@
                     </span>
                   </div>
                   <div class="progress">
-                    <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar"
-                      aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+                    <div
+                      class="progress-bar progress-bar-striped progress-bar-animated bg-danger"
+                      role="progressbar"
+                      aria-valuenow="100"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                      style="width: 75%;"
+                    ></div>
                   </div>
                 </div>
               </li>
@@ -139,23 +159,30 @@
     </div>
   </div>
   <div class="header-right">
-   
-   
-    <div class="profile_details  " id="triggerId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-      (click)="showArrow()">
+    <div
+      class="profile_details"
+      id="triggerId"
+      data-toggle="dropdown"
+      aria-haspopup="true"
+      aria-expanded="false"
+      (click)="showArrow()"
+    >
       <img
         src="https://lh5.googleusercontent.com/-PYUK7J56KVw/WpArqY4CvBI/AAAAAAABUnY/bA-tJEHptysfJrtzXtOzyZmaXjzEp6YpACLcBGAs/s400-c/anh-sex-maulon-0056250318.jpg"
-        alt="" />
+        alt=""
+      />
       <div class="profile_details__info">
-        <p class="name">
-          Admin {{credentialsAdmin.taiKhoan}}
-        </p>
+        <p class="name">Admin {{ credentialsAdmin.taiKhoan }}</p>
         <p class="administrator">
           Administrator
         </p>
       </div>
       <ng-container>
-        <i class="fa fa-angle-down" aria-hidden="true" *ngIf="!showDownArrow; else angleUp"></i>
+        <i
+          class="fa fa-angle-down"
+          aria-hidden="true"
+          *ngIf="!showDownArrow; else angleUp"
+        ></i>
       </ng-container>
       <ng-template #angleUp>
         <i class="fa fa-angle-up" aria-hidden="true"></i>
@@ -196,18 +223,25 @@
     MAIN NAVIGATION
   </div>
   <ul class="sidebar__menu">
-    <li class="sidebar__menu__item " (click)="chosenType('quanLiPhim')" [ngClass]="{active: type == 'quanLiPhim'}">
+    <li
+      class="sidebar__menu__item"
+      (click)="chosenType('quanLiPhim')"
+      [ngClass]="{ active: type == 'quanLiPhim' }"
+    >
       <div class="sidebar__menu__item__content">
         <i class="fa fa-tachometer" aria-hidden="true"></i>
         <span>Quản Lí Phim</span>
       </div>
     </li>
-    <li class="sidebar__menu__item" (click)="chosenType('quanLiNguoiDung')"
-      [ngClass]="{active: type == 'quanLiNguoiDung'}">
+    <li
+      class="sidebar__menu__item"
+      (click)="chosenType('quanLiNguoiDung')"
+      [ngClass]="{ active: type == 'quanLiNguoiDung' }"
+    >
       <div class="sidebar__menu__item__content">
         <i class="fa fa-pie-chart" aria-hidden="true"></i>
         <span>Quản lí người dùng</span>
-        <span class="badge badge-red  pull-right">
+        <span class="badge badge-red pull-right">
           new
         </span>
       </div>
@@ -217,11 +251,10 @@
 
 <!-- page wrapper -->
 <div class="page__wrapper" [ngClass]="{ box: !show }">
-  <ng-container *ngIf="type ==='quanLiPhim' ;else quanlinguoidung">
-    <app-quanliphim-content ></app-quanliphim-content>
+  <ng-container *ngIf="type === 'quanLiPhim'; else quanlinguoidung">
+    <app-quanliphim-content></app-quanliphim-content>
   </ng-container>
   <ng-template #quanlinguoidung>
-    <app-quanlinguoidung-content ></app-quanlinguoidung-content>
+    <app-quanlinguoidung-content></app-quanlinguoidung-content>
   </ng-template>
-
 </div>
