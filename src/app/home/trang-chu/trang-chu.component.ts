@@ -20,13 +20,6 @@ export class TrangChuComponent implements OnInit, OnDestroy {
   public movieList: Film[] = [];
 
   ngOnInit() {
-    this.spinner.show();
-
-    setTimeout(() => {
-      /** spinner ends after 5 seconds */
-      this.spinner.hide();
-    }, 2000);
-
     this.movieList = this.filmService.movieList;
     this.filmService.emitterMovieList.subscribe((newMovieList: Film[]) => {
       this.movieList = newMovieList;

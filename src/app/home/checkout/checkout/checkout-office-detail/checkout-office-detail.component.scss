@@ -12,8 +12,12 @@
 }
 
 .roomContent {
+  position: relative;
+  height: 100%;
   .chooseSeat {
+    position: relative;
     padding: 40px;
+    width: 70%;
     .chooseSeat__top {
       .chooseSeat__top--left {
         display: flex;
@@ -68,7 +72,6 @@
       }
     }
     .chooseSeat__body {
-      
       .row {
         span {
           width: 5%;
@@ -107,112 +110,192 @@
       }
     }
   }
-
-  .payment {
+  .overPlay {
     position: absolute;
     top: 0;
+    left: 0;
     right: 0;
-    background: #fff;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-    p {
-      font-weight: 700;
-    }
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+}
+.payment {
+  position: fixed;
+  top: 0;
+  width: 30%;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  p {
+    font-weight: 700;
+  }
 
-    .payment__content {
-      padding: 42px 30px 25px 30px;
+  .payment__content {
+    padding: 42px 30px 25px 30px;
+    position: relative;
+    background-color: #fff;
+    .wrapperPopCorn {
+      position: absolute;
+      right: 0%;
+      max-height: 100vh;
+      overflow-y: auto;
+      background-color: #fff;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 9;
+      animation: showPopCorn ease 1s;
+      .popCornList {
+        padding: 10px;
+        .header__list {
+          margin-bottom: 15px;
+          font-family: "SF Medium";
+          font-size: 18px;
+          background-color: #f5f5f5;
+          border-bottom: 1px dashed #ddd;
+          padding: 3%;
+        }
+        .popCornListItem {
+          margin: 10px 0;
+          list-style: none;
+          .logoCorn {
+            width: 55px;
+          }
+          .cornInfo {
+            .cornInfo--text {
+              font-weight: 500;
+              .iconInfo {
+                width: 18px;
+              }
+            }
+            .cornInfo--price {
+              font-weight: 500;
+              color: #00ac4d;
+            }
+          }
+          .opnum {
+            display: flex;
+            align-items: center;
 
-      .name {
-        border-bottom: 1px dashed #e9e9e9;
-        p {
-          margin: 0;
-
-          span {
-            background-color: #00ac4d;
-            margin-right: 5px;
-            font-size: 12px;
-            color: #fff;
-            border-radius: 4px;
-            padding: 0 5px;
+            .sub {
+              border: none;
+              background-color: transparent;
+              color: #9b9b9b;
+            }
+            .count {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 32px;
+              height: 32px;
+              border: 1px solid #9b9b9b;
+            }
+            .plus {
+              @extend .sub;
+              color: red;
+            }
           }
         }
-        p:nth-child(3) {
-          margin-top: 5px;
-          font-family: "SF Regular";
-          font-size: 14px;
+      }
+    }
+    .name {
+      border-bottom: 1px dashed #e9e9e9;
+      p {
+        margin: 0;
+
+        span {
+          background-color: #00ac4d;
+          margin-right: 5px;
+          font-size: 12px;
+          color: #fff;
+          border-radius: 4px;
+          padding: 0 5px;
         }
       }
-      .price {
-        border-bottom: 1px dashed #e9e9e9;
-
+      p:nth-child(3) {
+        margin-top: 5px;
+        font-family: "SF Regular";
+        font-size: 14px;
+      }
+    }
+    .price {
+      padding: 10px 0;
+      border-bottom: 1px dashed #e9e9e9;
+      .price__top {
+        display: flex;
+        justify-content: space-between;
         .seat {
           color: #fb4226;
         }
-      }
-      .price__number {
         .number {
-          color: #44c020 !important;
-          font-size: 16px;
-          text-align: right;
+          color: #44c020;
         }
       }
-      .wrapper-email {
-        border-bottom: 1px dashed #e9e9e9;
-        label {
-          font-size: 12px;
-          font-weight: 300;
-          width: 10%;
-        }
-        input {
-          border: none;
-          width: 100%;
-        }
-      }
-      .wrapper-phone {
-        @extend .wrapper-email;
-      }
-
-      .alert {
-        padding-left: 40px;
-        padding-right: 40px;
-        margin: 0;
-        text-align: center;
-        font-weight: 500;
-        img {
-          @include img(16px, 16px);
-        }
-        span {
-          font-size: 14px;
-          color: #4a4a4a;
+      .price__bottom {
+        @extend .price__top;
+        .popCorn {
+          cursor: pointer;
+          .popCorn__img {
+            width: 17px;
+            margin-right: 10px;
+          }
         }
       }
     }
-    .buyTicket {
-      background-color: #afafaf;
+
+    .wrapper-email {
+      border-bottom: 1px dashed #e9e9e9;
+      label {
+        font-size: 12px;
+        font-weight: 300;
+        width: 10%;
+      }
+      input {
+        border: none;
+        width: 100%;
+      }
+    }
+    .wrapper-phone {
+      @extend .wrapper-email;
+    }
+
+    .alert {
+      padding-left: 40px;
+      padding-right: 40px;
+      margin: 0;
       text-align: center;
-      padding: 20px;
-      color: white;
-      font-size: 24px;
-      margin-top: 10px;
-    }
-    .buyTicket.active {
-      background-color: red;
+      font-weight: 500;
+      img {
+        @include img(16px, 16px);
+      }
+      span {
+        font-size: 14px;
+        color: #4a4a4a;
+      }
     }
   }
-}
-@media screen and (min-width: 740px) and (max-width: 1023px) {
-  
-}
-@media screen and (max-width: 1024px) {
-  .hidden__mobile{
-    display: none;
+
+  @keyframes showPopCorn {
+    from {
+      right: -100%;
+    }
+    to {
+      right: 0%;
+    }
+  }
+  .buyTicket {
+    background-color: #afafaf;
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+    color: white;
+    font-size: 24px;
+    margin-top: 10px;
+
+    border: none;
+  }
+  .buyTicket.active {
+    background-color: red;
   }
 }
-
-
-@media screen and (max-width: 740px) {
- .hidden__mobile{
-   display: none;
- }
- 
-}
-

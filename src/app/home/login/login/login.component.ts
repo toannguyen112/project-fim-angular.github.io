@@ -24,24 +24,21 @@ export class LoginComponent implements OnInit {
           localStorage.setItem("credentials", JSON.stringify(res));
           this.userService.setCredentials(res);
 
-          Swal.fire({
-            position: 'top-end',
-            icon: 'success',
-            title: 'Đăng nhập thành công',
-            showConfirmButton: false,
-            timer: 1500
-          })
+          this.noti("Đăng nhập thành công", "success");
         } else {
           alert("vui long nhap lai");
         }
       },
       (err) => {
-        Swal.fire({
-          text: "Tài khoản hoặc mật khẩu không đúng",
-          timer: 2000,
-          icon: "warning",
-        });
+        this.noti("Tài khoản hoặc mật khẩu chưa đúng", "warning");
       }
     );
+  }
+  // alert
+  noti(title, icon) {
+    Swal.fire({
+      title: title,
+      icon: icon,
+    });
   }
 }

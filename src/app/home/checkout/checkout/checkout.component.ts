@@ -41,7 +41,7 @@ export class CheckoutComponent implements OnInit, OnDestroy {
     setTimeout(() => {
       this.isShow = true;
       this.spinner.hide()
-    }, 2000);
+    }, 0);
   }
   ngOnDestroy() {
     this.sub.unsubscribe();

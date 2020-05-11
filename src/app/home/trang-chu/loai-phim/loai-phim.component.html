@@ -1,9 +1,11 @@
 <div class="row mt-5 header__title">
   <div class="col-12   ">
-    <a [ngClass]="{ active: dangChieuStatus }" class="mr-2" (click)="hienPhimDangChieu()">
+    <a [ngClass]="{ active: dangChieuStatus }" class="mr-3" (click)="hienPhimDangChieu()">
       Phim Đang Chiếu</a>
-    <a [ngClass]="{ active: !dangChieuStatus }" (click)="hienPhimSapChieu()">
+    <a [ngClass]="{ active: !dangChieuStatus }" class="mr-3" (click)="hienPhimSapChieu()">
       Phim Sắp Chiếu</a>
+    <a [ngClass]="{ active: !dangChieuStatus }" (click)="hienPhimSapChieu()">
+      Vé Bán Trước</a>
   </div>
 </div>
 <div class="row body__content mt-5">

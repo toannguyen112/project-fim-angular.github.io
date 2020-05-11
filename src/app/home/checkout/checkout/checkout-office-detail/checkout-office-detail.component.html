@@ -1,194 +1,539 @@
 <div class="roomContent container-fluid p-0">
   <div class="row">
-    <div class="col-lg-8 col-sm-12 p-0 col-md-12 ">
-      <div class="chooseSeat">
-        <div class="row chooseSeat__top">
-          <div class="col-md-12 col-lg-6    chooseSeat__top--left">
-            <img src="https://s3img.vcdn.vn/123phim/2018/09/f32670fd0eb083c9c4c804f0f3a252ed.png" alt="" />
-            <div class="info">
-              <div class="cinema">
-                <span> {{ thongTinPhim.tenCumRap }} </span> -
-                {{ thongTinPhim.diaChi }}
-              </div>
-              <div class="day">
-                Hôm nay - {{ thongTinPhim.gioChieu }} -
-                {{ thongTinPhim.tenRap }}
-              </div>
+    <div class="chooseSeat">
+      <div class="row chooseSeat__top">
+        <div class="col-md-12 col-lg-6 chooseSeat__top--left">
+          <img
+            src="https://s3img.vcdn.vn/123phim/2018/09/f32670fd0eb083c9c4c804f0f3a252ed.png"
+            alt=""
+          />
+          <div class="info">
+            <div class="cinema">
+              <span> {{ thongTinPhim.tenCumRap }} </span> -
+              {{ thongTinPhim.diaChi }}
             </div>
-          </div>
-          <div class="col-md-12 col-lg-6 chooseSeat__top--right">
-            <div class="timeSeat">
-              <p class="time-text">thời gian giữ ghế</p>
-              <p class="time">{{ timer   }}</p>
+            <div class="day">
+              Hôm nay - {{ thongTinPhim.gioChieu }} -
+              {{ thongTinPhim.tenRap }}
             </div>
           </div>
         </div>
-        <div class="screen">
-          <img src="https://tix.vn/app/assets/img/icons/screen.png" alt="" />
+        <div class="col-md-12 col-lg-6 chooseSeat__top--right">
+          <div class="timeSeat">
+            <p class="time-text">thời gian giữ ghế</p>
+            <p class="time">{{ timer }}</p>
+          </div>
         </div>
-        <div class="chooseSeat__body ">
-          <div class="row">
-            <span class="seat ">
-              A
-            </span>
-            <div class="btn-seat">
-
-              <app-seat *ngFor="let ghe of danhSachGheDayA" [itemGhe]="ghe" (emitterStatus)="datGheParent($event,ghe)">
-              </app-seat>
-
-            </div>
+      </div>
+      <div class="screen">
+        <img src="https://tix.vn/app/assets/img/icons/screen.png" alt="" />
+      </div>
+      <div class="chooseSeat__body">
+        <div class="row">
+          <span class="seat">
+            A
+          </span>
+          <div class="btn-seat">
+            <app-seat
+              *ngFor="let ghe of danhSachGheDayA"
+              [itemGhe]="ghe"
+              (emitterStatus)="datGheParent($event, ghe)"
+            >
+            </app-seat>
           </div>
-          <div class="row">
-            <span class="seat">
-              B
-            </span>
-            <div class="btn-seat">
-              <app-seat *ngFor="let ghe of danhSachGheDayB" [itemGhe]="ghe" (emitterStatus)="datGheParent($event,ghe)">
-              </app-seat>
-            </div>
-
+        </div>
+        <div class="row">
+          <span class="seat">
+            B
+          </span>
+          <div class="btn-seat">
+            <app-seat
+              *ngFor="let ghe of danhSachGheDayB"
+              [itemGhe]="ghe"
+              (emitterStatus)="datGheParent($event, ghe)"
+            >
+            </app-seat>
           </div>
-          <div class="row">
-            <span class="seat">
-              C
-            </span>
-            <div class="btn-seat">
-              <app-seat *ngFor="let ghe of danhSachGheDayC" [itemGhe]="ghe" (emitterStatus)="datGheParent($event,ghe)">
-              </app-seat>
-
-
-            </div>
+        </div>
+        <div class="row">
+          <span class="seat">
+            C
+          </span>
+          <div class="btn-seat">
+            <app-seat
+              *ngFor="let ghe of danhSachGheDayC"
+              [itemGhe]="ghe"
+              (emitterStatus)="datGheParent($event, ghe)"
+            >
+            </app-seat>
           </div>
-          <div class="row">
-            <span class="seat">
-              D
-            </span>
-            <div class="btn-seat">
-              <app-seat *ngFor="let ghe of danhSachGheDayD" [itemGhe]="ghe" (emitterStatus)="datGheParent($event,ghe)">
-              </app-seat>
-
-            </div>
+        </div>
+        <div class="row">
+          <span class="seat">
+            D
+          </span>
+          <div class="btn-seat">
+            <app-seat
+              *ngFor="let ghe of danhSachGheDayD"
+              [itemGhe]="ghe"
+              (emitterStatus)="datGheParent($event, ghe)"
+            >
+            </app-seat>
           </div>
-          <div class="row">
-            <span class="seat">
-              E
-            </span>
-            <div class="btn-seat">
-              <app-seat *ngFor="let ghe of danhSachGheDayE" [itemGhe]="ghe" (emitterStatus)="datGheParent($event,ghe)">
-              </app-seat>
-
-            </div>
+        </div>
+        <div class="row">
+          <span class="seat">
+            E
+          </span>
+          <div class="btn-seat">
+            <app-seat
+              *ngFor="let ghe of danhSachGheDayE"
+              [itemGhe]="ghe"
+              (emitterStatus)="datGheParent($event, ghe)"
+            >
+            </app-seat>
           </div>
-
-          <div class="row">
-            <span class="seat">
-              F
-            </span>
-            <div class="btn-seat">
-              <app-seat *ngFor="let ghe of danhSachGheDayF" [itemGhe]="ghe" (emitterStatus)="datGheParent($event,ghe)">
-              </app-seat>
-            </div>
-          </div>
-
-          <div class="row">
-            <span class="seat">
-              H
-            </span>
-            <div class="btn-seat">
-              <app-seat *ngFor="let ghe of danhSachGheDayH" [itemGhe]="ghe" (emitterStatus)="datGheParent($event,ghe)">
-              </app-seat>
-
-            </div>
-          </div>
-          <div class="row">
-            <span class="seat">
-              I
-            </span>
-            <div class="btn-seat">
-              <app-seat *ngFor="let ghe of danhSachGheDayI" [itemGhe]="ghe" (emitterStatus)="datGheParent($event,ghe)">
-              </app-seat>
-
-            </div>
-          </div>
-
         </div>
 
-        <div class="chooseSeat__bottom">
-          <div class="row seatInfo">
-            <div class="col-md-4 text-center">
-              <button class="seat-vip"></button>
-              <p>Ghế VIP</p>
-            </div>
-            <div class="col-md-4  text-center">
-              <button class="seat-load "></button>
-              <p>Ghế đang chọn</p>
-            </div>
-            <div class="col-md-4  text-center">
-              <button class="seat-has-user"></button>
-              <p>Ghế đã có người chọn</p>
-            </div>
-
+        <div class="row">
+          <span class="seat">
+            F
+          </span>
+          <div class="btn-seat">
+            <app-seat
+              *ngFor="let ghe of danhSachGheDayF"
+              [itemGhe]="ghe"
+              (emitterStatus)="datGheParent($event, ghe)"
+            >
+            </app-seat>
           </div>
+        </div>
 
+        <div class="row">
+          <span class="seat">
+            H
+          </span>
+          <div class="btn-seat">
+            <app-seat
+              *ngFor="let ghe of danhSachGheDayH"
+              [itemGhe]="ghe"
+              (emitterStatus)="datGheParent($event, ghe)"
+            >
+            </app-seat>
+          </div>
+        </div>
+        <div class="row">
+          <span class="seat">
+            I
+          </span>
+          <div class="btn-seat">
+            <app-seat
+              *ngFor="let ghe of danhSachGheDayI"
+              [itemGhe]="ghe"
+              (emitterStatus)="datGheParent($event, ghe)"
+            >
+            </app-seat>
+          </div>
+        </div>
+      </div>
 
+      <div class="chooseSeat__bottom">
+        <div class="row seatInfo">
+          <div class="col-md-4 text-center">
+            <button class="seat-vip"></button>
+            <p>Ghế VIP</p>
+          </div>
+          <div class="col-md-4 text-center">
+            <button class="seat-load"></button>
+            <p>Ghế đang chọn</p>
+          </div>
+          <div class="col-md-4 text-center">
+            <button class="seat-has-user"></button>
+            <p>Ghế đã có người chọn</p>
+          </div>
         </div>
       </div>
     </div>
-    <div class="col-lg-4  p-0 payment hidden__mobile ">
-      <div class="payment__content">
-        <div class="row name">
-          <div>
-            <P><span>C18</span> {{ thongTinPhim.tenPhim }} </P>
-            <P>{{ thongTinPhim.tenCumRap }} - {{ thongTinPhim.diaChi }} </P>
-            <P>Hôm nay {{ thongTinPhim.ngayChieu }} -
-              {{ thongTinPhim.gioChieu }} - {{ thongTinPhim.tenRap }}
-            </P>
+    <div class="overPlay" *ngIf="showCorn" (click)="showPopCorn()"></div>
+  </div>
+  <div class="payment">
+    <div class="payment__content">
+      <div class="row name">
+        <div>
+          <P><span>C18</span> {{ thongTinPhim.tenPhim }} </P>
+          <P>{{ thongTinPhim.tenCumRap }} - {{ thongTinPhim.diaChi }} </P>
+          <P
+            >Hôm nay {{ thongTinPhim.ngayChieu }} -
+            {{ thongTinPhim.gioChieu }} - {{ thongTinPhim.tenRap }}
+          </P>
+        </div>
+      </div>
+      <div class="row price">
+        <div class="price__top col-12 p-0">
+          <span class="seat"
+            >Ghế :
+            <small *ngFor="let item of danhSachGheDangDat">
+              Số ghế : {{ item.SoGhe }} Dãy : {{ item.Day }}
+            </small>
+          </span>
+          <span class="number"> {{ price }} </span>
+        </div>
+        <div class="price__bottom col-12 p-0">
+          <div class="popCorn" (click)="showPopCorn()">
+            <img
+              class="popCorn__img"
+              src="https://tix.vn/app/assets/img/icons/popcorn.png"
+              alt=""
+            />
+            Chọn combo :
           </div>
+          <span class="number">0 đ</span>
         </div>
-        <div class="row price">
-          <div class="col-6 p-0">
-            <p class="seat">Ghế :
-            </p>
-            <p>Chọn combo :</p>
-          </div>
-          <div class="col-6 p-0 price__number">
-            <p class="number"> {{price}} </p>
-            <p class="number">0 d</p>
-          </div>
-        </div>
-        <div class="row wrapper-email">
-          <mat-form-field style="width: 100%;" class="example-full-width">
-            <mat-label>Email</mat-label>
-            <input matInput placeholder="" [(ngModel)]="email" />
-          </mat-form-field>
-        </div>
-        <div class="row wrapper-phone">
-          <mat-form-field style="width: 100%;" class="example-full-width">
-            <mat-label>Phone</mat-label>
-            <input matInput placeholder="" [(ngModel)]="phone" />
-          </mat-form-field>
-        </div>
-        <div class="categoryPayment">
-          <mat-radio-button style="display: block;" class="example-radio-button" *ngFor="let pay of payment"
-           >
-            <div>
-              <img style="width: 35px;" [src]="pay.img" alt="" /> {{ pay.name }}
-            </div>
+      </div>
+      <div class="row wrapper-email">
+        <mat-form-field style="width: 100%;" class="example-full-width">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="" [(ngModel)]="email" />
+        </mat-form-field>
+      </div>
+      <div class="row wrapper-phone">
+        <mat-form-field style="width: 100%;" class="example-full-width">
+          <mat-label>Phone</mat-label>
+          <input matInput placeholder="" [(ngModel)]="phone" />
+        </mat-form-field>
+      </div>
+      <div class="categoryPayment">
+        <mat-radio-group [(ngModel)]="choosePayment">
+          <mat-radio-button
+            mat-radio-button
+            style="display: block;"
+            class="example-radio-button"
+            *ngFor="let pay of payment"
+            [value]="pay.name"
+          >
+            <img style="width: 35px;" [src]="pay.img" alt="" /> {{ pay.name }}
           </mat-radio-button>
-        </div>
-        <div class="alert">
-          <img src="https://tix.vn/app/assets/img/icons/exclamation.png" alt="" />
-          <div>Vé đã mua không thể đổi hoặc hoàn tiền</div>
-          <br />
-          <span class="text-center">
-            Mã vé sẽ được gửi qua tin nhắn
-            <span style="color: #f79320;">ZMS </span>(tin nhắn Zalo) và
-            <span style="color: #f79320;"> Email</span> đã nhập.</span>
-        </div>
+        </mat-radio-group>
       </div>
-      <div class="buyTicket" (click)="handleDatve()" [ngClass]="{ active: email && phone && danhSachGheDangDat  }"   style="cursor: pointer;">
-        Đặt vé
+      <div class="alert">
+        <img src="https://tix.vn/app/assets/img/icons/exclamation.png" alt="" />
+        <div>Vé đã mua không thể đổi hoặc hoàn tiền</div>
+        <br />
+        <span class="text-center">
+          Mã vé sẽ được gửi qua tin nhắn
+          <span style="color: #f79320;">ZMS </span>(tin nhắn Zalo) và
+          <span style="color: #f79320;"> Email</span> đã nhập.</span
+        >
+      </div>
+
+      <div *ngIf="showCorn" class="wrapperPopCorn">
+        <ul class="popCornList">
+          <div class="header__list">
+            COMBO
+          </div>
+          <li class="popCornListItem row">
+            <div class="col-sm-3 p-0">
+              <img
+                src="https://mcinox.cgv.vn/cinox/atomicDownload/downloadFile.fo?ATTCH_NO=206457&SEQ_NO=308491"
+                alt=""
+                class="logoCorn"
+              />
+            </div>
+            <div class="col-sm-7 p-0">
+              <div class="cornInfo">
+                <div class="cornInfo--text">
+                  <img
+                    class="iconInfo"
+                    src="https://tix.vn/app/assets/img/icons/information.png"
+                    alt=""
+                  />
+                  MY COMBO MR 2020 (ONLINE)
+                </div>
+                <div class="cornInfo--price">79.0000 d</div>
+              </div>
+            </div>
+            <div class="col-sm-2 p-0">
+              <div class="opnum">
+                <button class="sub">-</button>
+                <div class="count">0</div>
+                <button class="plus">
+                  +
+                </button>
+              </div>
+            </div>
+          </li>
+          <li class="popCornListItem row">
+            <div class="col-sm-3 p-0">
+              <img
+                src="https://mcinox.cgv.vn/cinox/atomicDownload/downloadFile.fo?ATTCH_NO=206457&SEQ_NO=308491"
+                alt=""
+                class="logoCorn"
+              />
+            </div>
+            <div class="col-sm-7 p-0">
+              <div class="cornInfo">
+                <div class="cornInfo--text">
+                  <img
+                    class="iconInfo"
+                    src="https://tix.vn/app/assets/img/icons/information.png"
+                    alt=""
+                  />
+                  MY COMBO MR 2020 (ONLINE)
+                </div>
+                <div class="cornInfo--price">79.0000 d</div>
+              </div>
+            </div>
+            <div class="col-sm-2 p-0">
+              <div class="opnum">
+                <button class="sub">-</button>
+                <div class="count">0</div>
+                <button class="plus">
+                  +
+                </button>
+              </div>
+            </div>
+          </li>
+          <li class="popCornListItem row">
+            <div class="col-sm-3 p-0">
+              <img
+                src="https://mcinox.cgv.vn/cinox/atomicDownload/downloadFile.fo?ATTCH_NO=206457&SEQ_NO=308491"
+                alt=""
+                class="logoCorn"
+              />
+            </div>
+            <div class="col-sm-7 p-0">
+              <div class="cornInfo">
+                <div class="cornInfo--text">
+                  <img
+                    class="iconInfo"
+                    src="https://tix.vn/app/assets/img/icons/information.png"
+                    alt=""
+                  />
+                  MY COMBO MR 2020 (ONLINE)
+                </div>
+                <div class="cornInfo--price">79.0000 d</div>
+              </div>
+            </div>
+            <div class="col-sm-2 p-0">
+              <div class="opnum">
+                <button class="sub">-</button>
+                <div class="count">0</div>
+                <button class="plus">
+                  +
+                </button>
+              </div>
+            </div>
+          </li>
+        </ul>
+
+        <ul class="popCornList">
+          <div class="header__list">
+            COMBO
+          </div>
+          <li class="popCornListItem row">
+            <div class="col-sm-3 p-0">
+              <img
+                src="https://mcinox.cgv.vn/cinox/atomicDownload/downloadFile.fo?ATTCH_NO=206457&SEQ_NO=308491"
+                alt=""
+                class="logoCorn"
+              />
+            </div>
+            <div class="col-sm-7 p-0">
+              <div class="cornInfo">
+                <div class="cornInfo--text">
+                  <img
+                    class="iconInfo"
+                    src="https://tix.vn/app/assets/img/icons/information.png"
+                    alt=""
+                  />
+                  MY COMBO MR 2020 (ONLINE)
+                </div>
+                <div class="cornInfo--price">79.0000 d</div>
+              </div>
+            </div>
+            <div class="col-sm-2 p-0">
+              <div class="opnum">
+                <button class="sub">-</button>
+                <div class="count">0</div>
+                <button class="plus">
+                  +
+                </button>
+              </div>
+            </div>
+          </li>
+          <li class="popCornListItem row">
+            <div class="col-sm-3 p-0">
+              <img
+                src="https://mcinox.cgv.vn/cinox/atomicDownload/downloadFile.fo?ATTCH_NO=206457&SEQ_NO=308491"
+                alt=""
+                class="logoCorn"
+              />
+            </div>
+            <div class="col-sm-7 p-0">
+              <div class="cornInfo">
+                <div class="cornInfo--text">
+                  <img
+                    class="iconInfo"
+                    src="https://tix.vn/app/assets/img/icons/information.png"
+                    alt=""
+                  />
+                  MY COMBO MR 2020 (ONLINE)
+                </div>
+                <div class="cornInfo--price">79.0000 d</div>
+              </div>
+            </div>
+            <div class="col-sm-2 p-0">
+              <div class="opnum">
+                <button class="sub">-</button>
+                <div class="count">0</div>
+                <button class="plus">
+                  +
+                </button>
+              </div>
+            </div>
+          </li>
+          <li class="popCornListItem row">
+            <div class="col-sm-3 p-0">
+              <img
+                src="https://mcinox.cgv.vn/cinox/atomicDownload/downloadFile.fo?ATTCH_NO=206457&SEQ_NO=308491"
+                alt=""
+                class="logoCorn"
+              />
+            </div>
+            <div class="col-sm-7 p-0">
+              <div class="cornInfo">
+                <div class="cornInfo--text">
+                  <img
+                    class="iconInfo"
+                    src="https://tix.vn/app/assets/img/icons/information.png"
+                    alt=""
+                  />
+                  MY COMBO MR 2020 (ONLINE)
+                </div>
+                <div class="cornInfo--price">79.0000 d</div>
+              </div>
+            </div>
+            <div class="col-sm-2 p-0">
+              <div class="opnum">
+                <button class="sub">-</button>
+                <div class="count">0</div>
+                <button class="plus">
+                  +
+                </button>
+              </div>
+            </div>
+          </li>
+        </ul>
+
+        <ul class="popCornList">
+          <div class="header__list">
+            COMBO
+          </div>
+          <li class="popCornListItem row">
+            <div class="col-sm-3 p-0">
+              <img
+                src="https://mcinox.cgv.vn/cinox/atomicDownload/downloadFile.fo?ATTCH_NO=206457&SEQ_NO=308491"
+                alt=""
+                class="logoCorn"
+              />
+            </div>
+            <div class="col-sm-7 p-0">
+              <div class="cornInfo">
+                <div class="cornInfo--text">
+                  <img
+                    class="iconInfo"
+                    src="https://tix.vn/app/assets/img/icons/information.png"
+                    alt=""
+                  />
+                  MY COMBO MR 2020 (ONLINE)
+                </div>
+                <div class="cornInfo--price">79.0000 d</div>
+              </div>
+            </div>
+            <div class="col-sm-2 p-0">
+              <div class="opnum">
+                <button class="sub">-</button>
+                <div class="count">0</div>
+                <button class="plus">
+                  +
+                </button>
+              </div>
+            </div>
+          </li>
+          <li class="popCornListItem row">
+            <div class="col-sm-3 p-0">
+              <img
+                src="https://mcinox.cgv.vn/cinox/atomicDownload/downloadFile.fo?ATTCH_NO=206457&SEQ_NO=308491"
+                alt=""
+                class="logoCorn"
+              />
+            </div>
+            <div class="col-sm-7 p-0">
+              <div class="cornInfo">
+                <div class="cornInfo--text">
+                  <img
+                    class="iconInfo"
+                    src="https://tix.vn/app/assets/img/icons/information.png"
+                    alt=""
+                  />
+                  MY COMBO MR 2020 (ONLINE)
+                </div>
+                <div class="cornInfo--price">79.0000 d</div>
+              </div>
+            </div>
+            <div class="col-sm-2 p-0">
+              <div class="opnum">
+                <button class="sub">-</button>
+                <div class="count">0</div>
+                <button class="plus">
+                  +
+                </button>
+              </div>
+            </div>
+          </li>
+          <li class="popCornListItem row">
+            <div class="col-sm-3 p-0">
+              <img
+                src="https://mcinox.cgv.vn/cinox/atomicDownload/downloadFile.fo?ATTCH_NO=206457&SEQ_NO=308491"
+                alt=""
+                class="logoCorn"
+              />
+            </div>
+            <div class="col-sm-7 p-0">
+              <div class="cornInfo">
+                <div class="cornInfo--text">
+                  <img
+                    class="iconInfo"
+                    src="https://tix.vn/app/assets/img/icons/information.png"
+                    alt=""
+                  />
+                  MY COMBO MR 2020 (ONLINE)
+                </div>
+                <div class="cornInfo--price">79.0000 d</div>
+              </div>
+            </div>
+            <div class="col-sm-2 p-0">
+              <div class="opnum">
+                <button class="sub">-</button>
+                <div class="count">0</div>
+                <button class="plus">
+                  +
+                </button>
+              </div>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
+
+    <button
+      type="button"
+      class="buyTicket"
+      (click)="handleDatve()"
+      [ngClass]="{ active: email && phone && danhSachGheDangDat.length }"
+      [disabled]="!danhSachGheDangDat.length"
+    >
+      Đặt vé
+    </button>
   </div>
 </div>

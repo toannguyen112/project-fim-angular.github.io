@@ -1,4 +1,4 @@
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { SliderComponent } from "./trang-chu/slider/slider.component";
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
@@ -41,14 +41,14 @@ import { MatInputModule } from "@angular/material/input";
 import { CheckoutContentComponent } from "./checkout/checkout/checkout-content/checkout-content.component";
 import { CheckoutOfficeDetailComponent } from "./checkout/checkout/checkout-office-detail/checkout-office-detail.component";
 import { MatRadioModule } from "@angular/material/radio";
-import { LoadingComponent } from "./loading/loading.component";
 import { DetailMainComponent } from "./detail-page/detail-main/detail-main.component";
 import { SeatComponent } from "./checkout/seat/seat.component";
 import { LichChieuComponent } from "./detail-page/lich-chieu/lich-chieu.component";
 import { NgxSpinnerModule } from "ngx-spinner";
 import { LoadingButtonItemPhimComponent } from "./trang-chu/loading-button-item-phim/loading-button-item-phim.component";
 import { PipeModule } from "../pipe/pipe.module";
-import { VeBanTruocComponent } from './trang-chu/ve-ban-truoc/ve-ban-truoc.component';
+import { VeBanTruocComponent } from "./trang-chu/ve-ban-truoc/ve-ban-truoc.component";
+import { LoadingComponent } from './loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -91,11 +91,11 @@ import { VeBanTruocComponent } from './trang-chu/ve-ban-truoc/ve-ban-truoc.compo
 
     CheckoutContentComponent,
     CheckoutOfficeDetailComponent,
-    LoadingComponent,
     DetailMainComponent,
     SeatComponent,
     LoadingButtonItemPhimComponent,
     VeBanTruocComponent,
+    LoadingComponent
   ],
   imports: [
     CommonModule,
@@ -106,12 +106,12 @@ import { VeBanTruocComponent } from './trang-chu/ve-ban-truoc/ve-ban-truoc.compo
     FormsModule,
     NgxSpinnerModule,
     PipeModule,
-    ReactiveFormsModule
-    
+    ReactiveFormsModule,
   ],
   exports: [
     TrangChuComponent,
     LoginComponent,
+    LoadingComponent,
     RegisteredComponent,
     CheckoutComponent,
     DetailPageComponent,
@@ -149,7 +149,6 @@ import { VeBanTruocComponent } from './trang-chu/ve-ban-truoc/ve-ban-truoc.compo
 
     CheckoutContentComponent,
     CheckoutOfficeDetailComponent,
-    LoadingComponent,
     DetailMainComponent,
     SeatComponent,
     LoadingButtonItemPhimComponent,

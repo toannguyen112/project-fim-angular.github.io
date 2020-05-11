@@ -22,13 +22,18 @@ export class CheckoutOfficeDetailComponent implements OnInit, OnDestroy {
   @Input() maLichChieu;
   @Output("emitterStatus") emitterStatus = new EventEmitter();
   public status: boolean = true;
-
   public email: string = "";
   public phone: string = "";
   public price: number = 0;
   public soGheDaDat: number = 0;
   public SoGheConLai: number = 0;
   public danhSachGheDangDat: any[] = [];
+  public myTime;
+  public timer;
+  public timeleft = 300;
+  public counter = 0;
+  public choosePayment = "";
+  public showCorn = false;
   public payment: any[] = [
     {
       name: "Thanh toan qua zalo pay",
@@ -160,7 +165,6 @@ export class CheckoutOfficeDetailComponent implements OnInit, OnDestroy {
     { SoGhe: 12, TenGhe: "số 12", Gia: 60000, TrangThai: false, Day: "I" },
   ];
 
-  public counter = 0;
   constructor(
     private _transformData: TransformDataService,
     private _route: Router,
@@ -175,19 +179,22 @@ export class CheckoutOfficeDetailComponent implements OnInit, OnDestroy {
   }
   ngOnDestroy() {
     // stop time
-    clearTimeout(this.myvar);
+    clearTimeout(this.myTime);
   }
-  public myvar;
+  showPopCorn() {
+    console.log("work");
+    
+    this.showCorn = !this.showCorn;
+  }
+
   doCountdown() {
-    this.myvar = setTimeout(() => {
+    this.myTime = setTimeout(() => {
       this.counter++;
       this.timer = this.convertSecond(this.timeleft - this.counter);
       this.processCount();
     }, 1000);
     console.log(this.timer);
   }
-  public timer;
-  public timeleft = 300;
 
   convertSecond(s) {
     var min = Math.floor(s / 60);
@@ -199,90 +206,74 @@ export class CheckoutOfficeDetailComponent implements OnInit, OnDestroy {
 
     console.log("count is ", this.timer);
     if (this.counter == this.timeleft) {
-      this.openAlert();
+      this.noti("Hết thời gian đặt vé", "warning");
       this.emitterStatus.emit(this.status);
     } else {
       this.doCountdown();
     }
   }
 
-  openAlert() {
-    Swal.fire({
-      title: "Hết thời gian đặt vé",
-      showClass: {
-        popup: "animated fadeInDown faster",
-      },
-      hideClass: {
-        popup: "animated fadeOutUp faster",
-      },
-    });
-
-    // quay ve component checkout-content
-  }
-
+  // funtcion dat ghe
   datGheParent(status, ghe) {
     console.log(status, ghe);
     if (status) {
       this.danhSachGheDangDat.push(ghe);
     } else {
-      for (let index in this.danhSachGheDangDat) {
-        if (this.danhSachGheDangDat[index].SoGhe === ghe.SoGhe) {
-          this.danhSachGheDangDat.splice(parseInt(index, 1));
-        }
-      }
+      let index = this.danhSachGheDangDat.findIndex(
+        (item) => item.SoGhe == ghe.ShoGhe
+      );
+      this.danhSachGheDangDat.splice(index, 1);
     }
-
-    console.log(this.danhSachGheDangDat);
   }
 
+  //  funtcion thông báo
+  noti(text, icon) {
+    Swal.fire({
+      title: text,
+      icon: icon,
+    });
+  }
   handleDatve() {
-    var credentials = localStorage.getItem("credentials")
+    var credentials = JSON.parse(localStorage.getItem("credentials"))
       ? JSON.parse(localStorage.getItem("credentials")).taiKhoan
-      : [];
+      : null;
     console.log(credentials);
 
-    const ve = {
-      maLichChieu: this.maLichChieu,
-      danhSachVe: [
-        {
-          maGhe: 0,
-          giaVe: 0,
-        },
-      ],
-      taiKhoanNguoiDung: credentials,
-    };
+    // const ve = {
+    //   maLichChieu: this.maLichChieu,
+    //   danhSachVe: [
+    //     {
+    //       maGhe: 0,
+    //       giaVe: 0,
+    //     },
+    //   ],
+    //   taiKhoanNguoiDung: credentials,
+    // };
 
-    this.phonVeService.datVe(ve).subscribe(
-      (res) => {
-        console.log(res);
-      },
-      (err) => {
-        console.log(err);
-      }
-    );
+    // this.phonVeService.datVe(ve).subscribe(
+    //   (res) => {
+    //     console.log(res);
+    //   },
+    //   (err) => {
+    //     console.log(err);
+    //   }
+    // );
 
-    if (credentials && this.danhSachGheDangDat) {
-      Swal.fire({
-        title: " Mua vé thành công",
-        width: 600,
-        padding: "3em",
-        background: "#fff url(/images/trees.png)",
-        backdrop: `
-          rgba(0,0,123,0.4)
-          url("https://media.giphy.com/media/sIIhZliB2McAo/giphy.gif")
-          left top
-          no-repeat
-        `,
-      });
-      setTimeout(() => {
-        this._route.navigate(["/"]);
-      }, 3000);
+    if (!credentials) {
+      this.noti("Yêu cầu đăng nhập", "warning");
+      this._route.navigate(["/"]);
+    } else if (!this.danhSachGheDangDat.length) {
+      this.noti("Bạn chưa chọn ghế", "warning");
+    } else if (this.email == "") {
+      this.noti("Yêu cầu nhập Email", "warning");
+    } else if (this.phone == "") {
+      this.noti("Yêu cầu nhập Phone", "warning");
+    } else if (this.choosePayment == "") {
+      this.noti("Yêu cầu chọn phương thức thanh toán", "warning");
     } else {
-      Swal.fire({
-        title: "Yêu cầu đăng nhập",
-
-        icon: "error",
-      });
+      this.noti("Mua vé thành công", "success");
     }
   }
+
+ 
 }

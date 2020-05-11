@@ -43,7 +43,6 @@ export class QuanliphimContentComponent implements OnInit, OnDestroy {
     console.log(this.selectedFile);
   }
 
-  // upload phim
   upLoad(tenPhim) {
     var frm = new FormData();
     frm.append("File", this.selectedFile, this.selectedFile.name);
@@ -93,12 +92,22 @@ export class QuanliphimContentComponent implements OnInit, OnDestroy {
   }
   updateFilm(data) {
     console.log(data);
-    let index = this.movieList.findIndex((phim) => phim.maPhim == data.maPhim);
-    for (let phim of this.movieList) {
-      if (phim.maPhim == data.maPhim) {
-        this.movieList[index] = data;
+
+    this._filmService.updateFilm(data).subscribe(
+      (res) => {
+        let index = this.movieList.findIndex(
+          (phim) => phim.maPhim == data.maPhim
+        );
+        for (let phim of this.movieList) {
+          if (phim.maPhim == res.maPhim) {
+            this.movieList[index] = res;
+          }
+        }
+      },
+      (err) => {
+        console.log(err);
       }
-    }
+    );
   }
 
   ngOnDestroy() {

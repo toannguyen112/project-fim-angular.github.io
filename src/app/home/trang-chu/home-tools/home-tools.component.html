@@ -30,7 +30,7 @@
             Vui lòng chọn phim
           </p>
           <ng-template #Rap>
-            <p *ngFor="let rap of dsRap" (click)="selectRap(rap.ten)">{{rap.ten}} </p>
+            <p *ngFor="let rap of dsRap" (click)="selectRap(rap)">{{rap}} </p>
 
           </ng-template>
         </li>
@@ -38,7 +38,7 @@
     </div>
   </div>
   <div class=" dropdown  dropdown_ngayxem">
-    <div class="text" *ngIf="showNgayXem === ''; else ngayxem">Ngay xem</div>
+    <div class="text" *ngIf="showNgayXem === ''; else ngayxem">Ngày xem</div>
     <ng-template #ngayxem>
       <div class="text">{{ showNgayXem }}</div>
     </ng-template>
@@ -48,8 +48,16 @@
         <li class="item">
           <p *ngIf="showRap === ''; else ngayXem">Vui lòng chọn phim và rạp</p>
           <ng-template #ngayXem>
-            <p (click)="selectNgayXem('11/02/2000')">11/02/2000</p>
-            <p (click)="selectNgayXem('1/02/1999')">1/02/1999</p>
+            <p (click)="selectNgayXem(' 2020-05-11')">Hôm nay
+              <span class="date" style="display: block; color: #aaa; font-size: 11px;">
+                2020-05-11
+              </span>
+            </p>
+            <p (click)="selectNgayXem('2020-05-12')">Ngày mai
+              <span class="date" style="display: block; color: #aaa; font-size: 11px;">
+                2020-05-12
+              </span>
+            </p>
           </ng-template>
         </li>
       </ul>
@@ -69,8 +77,8 @@
             Vui lòng chọn phim ,rạp và ngày xem
           </p>
           <ng-template #suatChieu>
-            <p (click)="selectSuatChieu('12h')">12h</p>
-            <p (click)="selectSuatChieu('1h')">1h</p>
+            <p (click)="selectSuatChieu('17:40')">17:40</p>
+            <p (click)="selectSuatChieu('20:00')">20:00</p>
           </ng-template>
         </li>
       </ul>

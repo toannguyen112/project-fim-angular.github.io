@@ -1,9 +1,7 @@
 <div style="cursor: pointer;" class="movie__item">
     <div class="movie__item__cotent">
-        <img [src]="itemPhim.hinhAnh" alt="">
-        <div class="overPlay">
-            <img class="overPlayImg" src="https://tix.vn/app/assets/img/icons/play-video.png" alt="">
-        </div>
+        <img class="img-fluid" [src]="itemPhim.hinhAnh" alt="">
+        
     </div>
     <p class="name">{{itemPhim.tenPhim}} (C18) </p>
     <button class="btnDatve" (click)="datVe(itemPhim.maPhim)" >

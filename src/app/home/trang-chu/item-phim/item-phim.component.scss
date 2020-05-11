@@ -1,48 +1,36 @@
 .movie__item {
   position: relative;
+  margin: 10px 0;
+  
   .movie__item__cotent {
     position: relative;
+    overflow: hidden;
     img {
       width: 100%;
+      transition: 0.3s ease-in-out;
+      transform: scale(1);
       height: 318px;
       border-radius: 5px;
-    }
-    .overPlay {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      opacity: 0;
-      background: linear-gradient(to top, #000, transparent 100%);
-      top: 0;
-      left: 0;
-      display: none;
-      
-
-      .overPlayImg {
-        position: absolute;
-        border-radius: 50%;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 50px;
-        height: 50px;
-        opacity: 1;
-        &hover{
-          opacity: 0.7;
-        }
       }
+      &:hover {
+        img {
+          transform: scale(1.1);
+        }
+      
     }
   }
   .name {
     height: 60px;
     text-align: left;
-    font-size: 18px;font-family: 'SF Medium';line-height: 22px;
+    font-size: 18px;
+    font-family: "SF Medium";
+    line-height: 22px;
     font-weight: 600;
     color: #fdfffd;
     padding: 5px 5px;
   }
   .btnDatve {
-    background-color: #45AB3D;
+    background-color: #45ab3d;
     border: none;
     padding: 10px;
     color: white;
@@ -50,25 +38,13 @@
     width: 100%;
     font-size: 20px;
     border-radius: 5px;
-    display: none;
+    transition: 0.3s ease-in-out;
+
     font-weight: 500;
     margin-top: 10px;
-  }
-
-  &:hover {
-    .movie__item__cotent {
-      .overPlay {
-        display: block;
-        opacity: 1;
-      }
-    }
-  }
-  &:hover {
-    .name {
-      display: none;
-    }
-    .btnDatve {
-      display: block;
+    &:hover {
+      background-color: #fff;
+      color: #45ab3d;
     }
   }
 }

@@ -4,11 +4,11 @@ import { UserService } from "./services/user.service";
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
-  styleUrls: ["./app.component.scss"]
+  styleUrls: ["./app.component.scss"],
 })
 export class AppComponent implements OnInit {
   constructor(private userService: UserService) {}
-  title = "project-film";
+
   ngOnInit() {
     const credentialUser = JSON.parse(localStorage.getItem("credentials"));
     const credentialAdmin = JSON.parse(localStorage.getItem("admin"));
