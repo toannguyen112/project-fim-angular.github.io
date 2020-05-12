@@ -22,6 +22,7 @@
     &:hover {
       .dropdown__content {
         display: block;
+        width: 100%;
       }
     }
   }
@@ -46,7 +47,7 @@
         padding: 0;
         .item {
           padding: 0;
-          white-space: nowrap;
+         
           p {
             padding: 3px 20px;
 

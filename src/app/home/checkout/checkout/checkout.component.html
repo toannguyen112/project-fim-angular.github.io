@@ -4,7 +4,7 @@
 <ng-template #phongve>
   <app-checkout-header [status]="status"></app-checkout-header>
   <app-checkout-content [thongTinPhim]="thongTinPhim" (emitNavigate)="changeStatus($event)"
-    *ngIf="status; else chiTietPhongVe">
+    *ngIf="!status; else chiTietPhongVe">
   </app-checkout-content>
 </ng-template>
 <ng-template #chiTietPhongVe>

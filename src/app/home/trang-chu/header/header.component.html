@@ -26,53 +26,65 @@
               : 19002099
             </span>
           </div>
+          <div class="wrapper__right">
+            <div class="wrapper__blank">
+              <img src="https://www.bhdstar.vn/wp-content/themes/bhd/assets/images/movie-365.png" alt=""
+                class="img__blank">
+              <img src="https://www.bhdstar.vn/wp-content/themes/bhd/assets/images/bhdstar-member.png" alt=""
+                class="img__blank">
+              <img src="https://www.bhdstar.vn/wp-content/themes/bhd/assets/images/movie-365.png" alt=""
+                class="img__blank">
 
-          <ng-container *ngIf="credentials; else account">
-            <div class="userAcount" [routerLink]="['/profile']">
-              <img class="userAcount__img"
-                src="https://graph.facebook.com/198385967933190/picture?type=square"
-                alt="" />
 
-              <div class="userAcount__logout" (click)="dangXuat()">
-                <p>Đăng xuất</p>
+            </div>
+
+            <ng-container *ngIf="credentials; else account">
+              <div class="userAcount" [routerLink]="['/profile']">
+
+                <img class="userAcount__img" src="https://graph.facebook.com/198385967933190/picture?type=square"
+                  alt="" />
+
+                <div class="userAcount__logout" (click)="dangXuat()">
+                  <p>Đăng xuất</p>
+                </div>
               </div>
-            </div>
-          </ng-container>
+            </ng-container>
 
-          <ng-template #account>
-            <div class="user__content" data-toggle="modal" data-target="#modalDangNhap">
-              <img class="user__img" src="https://tix.vn/app/assets/img/avatar.png" alt="" />
-              <p>Đăng nhập</p>
-            </div>
-
+            <ng-template #account>
+              <div class="user__content" data-toggle="modal" data-target="#modalDangNhap">
+                <img class="user__img" src="https://tix.vn/app/assets/img/avatar.png" alt="" />
+                <p>Đăng nhập</p>
+              </div>
 
 
 
-            <div class="modal fade" id="modalDangNhap" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
-              aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="wrapper">
-                    <div class="wrapper__content">
-                      <div class="wrapper__content__title row">
-                        <div class="col-md-6 col-lg-6 col-sm-12">
-                          <span class="dangNhap" [ngClass]="{ active: !type }" (click)="selectType(false)">Đăng
-                            nhập</span>
+
+              <div class="modal fade" id="modalDangNhap" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="wrapper">
+                      <div class="wrapper__content">
+                        <div class="wrapper__content__title row">
+                          <div class="col-md-6 col-lg-6 col-sm-12">
+                            <span class="dangNhap" [ngClass]="{ active: !type }" (click)="selectType(false)">Đăng
+                              nhập</span>
+                          </div>
+                          <div class="col-md-6 col-lg-6 col-sm-12">
+                            <span class="dangKi" (click)="selectType(true)" [ngClass]="{ active: type }">Đăng kí</span>
+                          </div>
                         </div>
-                        <div class="col-md-6 col-lg-6 col-sm-12">
-                          <span class="dangKi" (click)="selectType(true)" [ngClass]="{ active: type }">Đăng kí</span>
-                        </div>
+                        <app-login *ngIf="!type; else dangki"></app-login>
+                        <ng-template #dangki>
+                          <app-registered></app-registered>
+                        </ng-template>
                       </div>
-                      <app-login *ngIf="!type; else dangki"></app-login>
-                      <ng-template #dangki>
-                        <app-registered></app-registered>
-                      </ng-template>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </ng-template>
+            </ng-template>
+          </div>
           <div class="menu" (click)="showBar()">
             <i *ngIf="!showBarMenu" class="fa fa-bars" aria-hidden="true"></i>
           </div>
@@ -106,7 +118,7 @@
       <i class="fa fa-mobile" aria-hidden="true"></i>
       <span> Liên hệ</span>
     </li>
-   
+
   </ul>
 </div>
 
