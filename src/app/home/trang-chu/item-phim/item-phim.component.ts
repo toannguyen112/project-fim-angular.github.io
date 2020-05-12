@@ -14,6 +14,6 @@ export class ItemPhimComponent implements OnInit {
 
   ngOnInit() {}
   datVe(maPhim) {
-    this._router.navigate([`/detail/${maPhim}`]);
+    this._router.navigate([`/detail/${maPhim}`] ,{fragment : "phimDangChieu"});
   }
 }

@@ -1,6 +1,6 @@
 <div class="roomContent container-fluid p-0">
   <div class="row">
-    <div class="chooseSeat">
+    <div class="chooseSeat col-8">
       <div class="row chooseSeat__top">
         <div class="col-md-12 col-lg-6 chooseSeat__top--left">
           <img
@@ -154,386 +154,390 @@
         </div>
       </div>
     </div>
+    <div class="payment col-4">
+      <div class="payment__content ">
+        <div class="row name">
+          <div>
+            <P><span>C18</span> {{ thongTinPhim.tenPhim }} </P>
+            <P>{{ thongTinPhim.tenCumRap }} - {{ thongTinPhim.diaChi }} </P>
+            <P
+              >Hôm nay {{ thongTinPhim.ngayChieu }} -
+              {{ thongTinPhim.gioChieu }} - {{ thongTinPhim.tenRap }}
+            </P>
+          </div>
+        </div>
+        <div class="row price">
+          <div class="price__top col-12 p-0">
+            <span class="seat"
+              >Ghế :
+              <small *ngFor="let item of danhSachGheDangDat">
+                Số ghế : {{ item.SoGhe }} Dãy : {{ item.Day }}
+              </small>
+            </span>
+            <span class="number"> {{ price }} </span>
+          </div>
+          <div class="price__bottom col-12 p-0">
+            <div class="popCorn" (click)="showPopCorn()">
+              <img
+                class="popCorn__img"
+                src="https://tix.vn/app/assets/img/icons/popcorn.png"
+                alt=""
+              />
+              Chọn combo :
+            </div>
+            <span class="number">0 đ</span>
+          </div>
+        </div>
+        <div class="row wrapper-email">
+          <mat-form-field style="width: 100%;" class="example-full-width">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="" [(ngModel)]="email" />
+          </mat-form-field>
+        </div>
+        <div class="row wrapper-phone">
+          <mat-form-field style="width: 100%;" class="example-full-width">
+            <mat-label>Phone</mat-label>
+            <input matInput placeholder="" [(ngModel)]="phone" />
+          </mat-form-field>
+        </div>
+        <div class="categoryPayment">
+          <mat-radio-group [(ngModel)]="choosePayment">
+            <mat-radio-button
+              mat-radio-button
+              style="display: block;"
+              class="example-radio-button"
+              *ngFor="let pay of payment"
+              [value]="pay.name"
+            >
+              <img style="width: 35px;" [src]="pay.img" alt="" /> {{ pay.name }}
+            </mat-radio-button>
+          </mat-radio-group>
+        </div>
+        <div class="alert">
+          <img src="https://tix.vn/app/assets/img/icons/exclamation.png" alt="" />
+          <div>Vé đã mua không thể đổi hoặc hoàn tiền</div>
+          <br />
+          <span class="text-center">
+            Mã vé sẽ được gửi qua tin nhắn
+            <span style="color: #f79320;">ZMS </span>(tin nhắn Zalo) và
+            <span style="color: #f79320;"> Email</span> đã nhập.</span
+          >
+        </div>
+  
+        <div *ngIf="showCorn" class="wrapperPopCorn">
+          <ul class="popCornList">
+            <div class="header__list">
+              COMBO
+            </div>
+            <li class="popCornListItem row">
+              <div class="col-sm-3 p-0">
+                <img
+                  src="https://mcinox.cgv.vn/cinox/atomicDownload/downloadFile.fo?ATTCH_NO=206457&SEQ_NO=308491"
+                  alt=""
+                  class="logoCorn"
+                />
+              </div>
+              <div class="col-sm-7 p-0">
+                <div class="cornInfo">
+                  <div class="cornInfo--text">
+                    <img
+                      class="iconInfo"
+                      src="https://tix.vn/app/assets/img/icons/information.png"
+                      alt=""
+                    />
+                    MY COMBO MR 2020 (ONLINE)
+                  </div>
+                  <div class="cornInfo--price">79.0000 d</div>
+                </div>
+              </div>
+              <div class="col-sm-2 p-0">
+                <div class="opnum">
+                  <button class="sub">-</button>
+                  <div class="count">0</div>
+                  <button class="plus">
+                    +
+                  </button>
+                </div>
+              </div>
+            </li>
+            <li class="popCornListItem row">
+              <div class="col-sm-3 p-0">
+                <img
+                  src="https://mcinox.cgv.vn/cinox/atomicDownload/downloadFile.fo?ATTCH_NO=206457&SEQ_NO=308491"
+                  alt=""
+                  class="logoCorn"
+                />
+              </div>
+              <div class="col-sm-7 p-0">
+                <div class="cornInfo">
+                  <div class="cornInfo--text">
+                    <img
+                      class="iconInfo"
+                      src="https://tix.vn/app/assets/img/icons/information.png"
+                      alt=""
+                    />
+                    MY COMBO MR 2020 (ONLINE)
+                  </div>
+                  <div class="cornInfo--price">79.0000 d</div>
+                </div>
+              </div>
+              <div class="col-sm-2 p-0">
+                <div class="opnum">
+                  <button class="sub">-</button>
+                  <div class="count">0</div>
+                  <button class="plus">
+                    +
+                  </button>
+                </div>
+              </div>
+            </li>
+            <li class="popCornListItem row">
+              <div class="col-sm-3 p-0">
+                <img
+                  src="https://mcinox.cgv.vn/cinox/atomicDownload/downloadFile.fo?ATTCH_NO=206457&SEQ_NO=308491"
+                  alt=""
+                  class="logoCorn"
+                />
+              </div>
+              <div class="col-sm-7 p-0">
+                <div class="cornInfo">
+                  <div class="cornInfo--text">
+                    <img
+                      class="iconInfo"
+                      src="https://tix.vn/app/assets/img/icons/information.png"
+                      alt=""
+                    />
+                    MY COMBO MR 2020 (ONLINE)
+                  </div>
+                  <div class="cornInfo--price">79.0000 d</div>
+                </div>
+              </div>
+              <div class="col-sm-2 p-0">
+                <div class="opnum">
+                  <button class="sub">-</button>
+                  <div class="count">0</div>
+                  <button class="plus">
+                    +
+                  </button>
+                </div>
+              </div>
+            </li>
+          </ul>
+  
+          <ul class="popCornList">
+            <div class="header__list">
+              COMBO
+            </div>
+            <li class="popCornListItem row">
+              <div class="col-sm-3 p-0">
+                <img
+                  src="https://mcinox.cgv.vn/cinox/atomicDownload/downloadFile.fo?ATTCH_NO=206457&SEQ_NO=308491"
+                  alt=""
+                  class="logoCorn"
+                />
+              </div>
+              <div class="col-sm-7 p-0">
+                <div class="cornInfo">
+                  <div class="cornInfo--text">
+                    <img
+                      class="iconInfo"
+                      src="https://tix.vn/app/assets/img/icons/information.png"
+                      alt=""
+                    />
+                    MY COMBO MR 2020 (ONLINE)
+                  </div>
+                  <div class="cornInfo--price">79.0000 d</div>
+                </div>
+              </div>
+              <div class="col-sm-2 p-0">
+                <div class="opnum">
+                  <button class="sub">-</button>
+                  <div class="count">0</div>
+                  <button class="plus">
+                    +
+                  </button>
+                </div>
+              </div>
+            </li>
+            <li class="popCornListItem row">
+              <div class="col-sm-3 p-0">
+                <img
+                  src="https://mcinox.cgv.vn/cinox/atomicDownload/downloadFile.fo?ATTCH_NO=206457&SEQ_NO=308491"
+                  alt=""
+                  class="logoCorn"
+                />
+              </div>
+              <div class="col-sm-7 p-0">
+                <div class="cornInfo">
+                  <div class="cornInfo--text">
+                    <img
+                      class="iconInfo"
+                      src="https://tix.vn/app/assets/img/icons/information.png"
+                      alt=""
+                    />
+                    MY COMBO MR 2020 (ONLINE)
+                  </div>
+                  <div class="cornInfo--price">79.0000 d</div>
+                </div>
+              </div>
+              <div class="col-sm-2 p-0">
+                <div class="opnum">
+                  <button class="sub">-</button>
+                  <div class="count">0</div>
+                  <button class="plus">
+                    +
+                  </button>
+                </div>
+              </div>
+            </li>
+            <li class="popCornListItem row">
+              <div class="col-sm-3 p-0">
+                <img
+                  src="https://mcinox.cgv.vn/cinox/atomicDownload/downloadFile.fo?ATTCH_NO=206457&SEQ_NO=308491"
+                  alt=""
+                  class="logoCorn"
+                />
+              </div>
+              <div class="col-sm-7 p-0">
+                <div class="cornInfo">
+                  <div class="cornInfo--text">
+                    <img
+                      class="iconInfo"
+                      src="https://tix.vn/app/assets/img/icons/information.png"
+                      alt=""
+                    />
+                    MY COMBO MR 2020 (ONLINE)
+                  </div>
+                  <div class="cornInfo--price">79.0000 d</div>
+                </div>
+              </div>
+              <div class="col-sm-2 p-0">
+                <div class="opnum">
+                  <button class="sub">-</button>
+                  <div class="count">0</div>
+                  <button class="plus">
+                    +
+                  </button>
+                </div>
+              </div>
+            </li>
+          </ul>
+  
+          <ul class="popCornList">
+            <div class="header__list">
+              COMBO
+            </div>
+            <li class="popCornListItem row">
+              <div class="col-sm-3 p-0">
+                <img
+                  src="https://mcinox.cgv.vn/cinox/atomicDownload/downloadFile.fo?ATTCH_NO=206457&SEQ_NO=308491"
+                  alt=""
+                  class="logoCorn"
+                />
+              </div>
+              <div class="col-sm-7 p-0">
+                <div class="cornInfo">
+                  <div class="cornInfo--text">
+                    <img
+                      class="iconInfo"
+                      src="https://tix.vn/app/assets/img/icons/information.png"
+                      alt=""
+                    />
+                    MY COMBO MR 2020 (ONLINE)
+                  </div>
+                  <div class="cornInfo--price">79.0000 d</div>
+                </div>
+              </div>
+              <div class="col-sm-2 p-0">
+                <div class="opnum">
+                  <button class="sub">-</button>
+                  <div class="count">0</div>
+                  <button class="plus">
+                    +
+                  </button>
+                </div>
+              </div>
+            </li>
+            <li class="popCornListItem row">
+              <div class="col-sm-3 p-0">
+                <img
+                  src="https://mcinox.cgv.vn/cinox/atomicDownload/downloadFile.fo?ATTCH_NO=206457&SEQ_NO=308491"
+                  alt=""
+                  class="logoCorn"
+                />
+              </div>
+              <div class="col-sm-7 p-0">
+                <div class="cornInfo">
+                  <div class="cornInfo--text">
+                    <img
+                      class="iconInfo"
+                      src="https://tix.vn/app/assets/img/icons/information.png"
+                      alt=""
+                    />
+                    MY COMBO MR 2020 (ONLINE)
+                  </div>
+                  <div class="cornInfo--price">79.0000 d</div>
+                </div>
+              </div>
+              <div class="col-sm-2 p-0">
+                <div class="opnum">
+                  <button class="sub">-</button>
+                  <div class="count">0</div>
+                  <button class="plus">
+                    +
+                  </button>
+                </div>
+              </div>
+            </li>
+            <li class="popCornListItem row">
+              <div class="col-sm-3 p-0">
+                <img
+                  src="https://mcinox.cgv.vn/cinox/atomicDownload/downloadFile.fo?ATTCH_NO=206457&SEQ_NO=308491"
+                  alt=""
+                  class="logoCorn"
+                />
+              </div>
+              <div class="col-sm-7 p-0">
+                <div class="cornInfo">
+                  <div class="cornInfo--text">
+                    <img
+                      class="iconInfo"
+                      src="https://tix.vn/app/assets/img/icons/information.png"
+                      alt=""
+                    />
+                    MY COMBO MR 2020 (ONLINE)
+                  </div>
+                  <div class="cornInfo--price">79.0000 d</div>
+                </div>
+              </div>
+              <div class="col-sm-2 p-0">
+                <div class="opnum">
+                  <button class="sub">-</button>
+                  <div class="count">0</div>
+                  <button class="plus">
+                    +
+                  </button>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      
+        <button
+        type="button"
+        class="buyTicket"
+        (click)="handleDatve()"
+        [ngClass]="{ active: email && phone && danhSachGheDangDat.length }"
+        [disabled]="!danhSachGheDangDat.length"
+      >
+        Đặt vé
+      </button>
+      </div>
+     
+    </div>
+    
+   
     <div class="overPlay" *ngIf="showCorn" (click)="showPopCorn()"></div>
   </div>
-  <div class="payment">
-    <div class="payment__content">
-      <div class="row name">
-        <div>
-          <P><span>C18</span> {{ thongTinPhim.tenPhim }} </P>
-          <P>{{ thongTinPhim.tenCumRap }} - {{ thongTinPhim.diaChi }} </P>
-          <P
-            >Hôm nay {{ thongTinPhim.ngayChieu }} -
-            {{ thongTinPhim.gioChieu }} - {{ thongTinPhim.tenRap }}
-          </P>
-        </div>
-      </div>
-      <div class="row price">
-        <div class="price__top col-12 p-0">
-          <span class="seat"
-            >Ghế :
-            <small *ngFor="let item of danhSachGheDangDat">
-              Số ghế : {{ item.SoGhe }} Dãy : {{ item.Day }}
-            </small>
-          </span>
-          <span class="number"> {{ price }} </span>
-        </div>
-        <div class="price__bottom col-12 p-0">
-          <div class="popCorn" (click)="showPopCorn()">
-            <img
-              class="popCorn__img"
-              src="https://tix.vn/app/assets/img/icons/popcorn.png"
-              alt=""
-            />
-            Chọn combo :
-          </div>
-          <span class="number">0 đ</span>
-        </div>
-      </div>
-      <div class="row wrapper-email">
-        <mat-form-field style="width: 100%;" class="example-full-width">
-          <mat-label>Email</mat-label>
-          <input matInput placeholder="" [(ngModel)]="email" />
-        </mat-form-field>
-      </div>
-      <div class="row wrapper-phone">
-        <mat-form-field style="width: 100%;" class="example-full-width">
-          <mat-label>Phone</mat-label>
-          <input matInput placeholder="" [(ngModel)]="phone" />
-        </mat-form-field>
-      </div>
-      <div class="categoryPayment">
-        <mat-radio-group [(ngModel)]="choosePayment">
-          <mat-radio-button
-            mat-radio-button
-            style="display: block;"
-            class="example-radio-button"
-            *ngFor="let pay of payment"
-            [value]="pay.name"
-          >
-            <img style="width: 35px;" [src]="pay.img" alt="" /> {{ pay.name }}
-          </mat-radio-button>
-        </mat-radio-group>
-      </div>
-      <div class="alert">
-        <img src="https://tix.vn/app/assets/img/icons/exclamation.png" alt="" />
-        <div>Vé đã mua không thể đổi hoặc hoàn tiền</div>
-        <br />
-        <span class="text-center">
-          Mã vé sẽ được gửi qua tin nhắn
-          <span style="color: #f79320;">ZMS </span>(tin nhắn Zalo) và
-          <span style="color: #f79320;"> Email</span> đã nhập.</span
-        >
-      </div>
-
-      <div *ngIf="showCorn" class="wrapperPopCorn">
-        <ul class="popCornList">
-          <div class="header__list">
-            COMBO
-          </div>
-          <li class="popCornListItem row">
-            <div class="col-sm-3 p-0">
-              <img
-                src="https://mcinox.cgv.vn/cinox/atomicDownload/downloadFile.fo?ATTCH_NO=206457&SEQ_NO=308491"
-                alt=""
-                class="logoCorn"
-              />
-            </div>
-            <div class="col-sm-7 p-0">
-              <div class="cornInfo">
-                <div class="cornInfo--text">
-                  <img
-                    class="iconInfo"
-                    src="https://tix.vn/app/assets/img/icons/information.png"
-                    alt=""
-                  />
-                  MY COMBO MR 2020 (ONLINE)
-                </div>
-                <div class="cornInfo--price">79.0000 d</div>
-              </div>
-            </div>
-            <div class="col-sm-2 p-0">
-              <div class="opnum">
-                <button class="sub">-</button>
-                <div class="count">0</div>
-                <button class="plus">
-                  +
-                </button>
-              </div>
-            </div>
-          </li>
-          <li class="popCornListItem row">
-            <div class="col-sm-3 p-0">
-              <img
-                src="https://mcinox.cgv.vn/cinox/atomicDownload/downloadFile.fo?ATTCH_NO=206457&SEQ_NO=308491"
-                alt=""
-                class="logoCorn"
-              />
-            </div>
-            <div class="col-sm-7 p-0">
-              <div class="cornInfo">
-                <div class="cornInfo--text">
-                  <img
-                    class="iconInfo"
-                    src="https://tix.vn/app/assets/img/icons/information.png"
-                    alt=""
-                  />
-                  MY COMBO MR 2020 (ONLINE)
-                </div>
-                <div class="cornInfo--price">79.0000 d</div>
-              </div>
-            </div>
-            <div class="col-sm-2 p-0">
-              <div class="opnum">
-                <button class="sub">-</button>
-                <div class="count">0</div>
-                <button class="plus">
-                  +
-                </button>
-              </div>
-            </div>
-          </li>
-          <li class="popCornListItem row">
-            <div class="col-sm-3 p-0">
-              <img
-                src="https://mcinox.cgv.vn/cinox/atomicDownload/downloadFile.fo?ATTCH_NO=206457&SEQ_NO=308491"
-                alt=""
-                class="logoCorn"
-              />
-            </div>
-            <div class="col-sm-7 p-0">
-              <div class="cornInfo">
-                <div class="cornInfo--text">
-                  <img
-                    class="iconInfo"
-                    src="https://tix.vn/app/assets/img/icons/information.png"
-                    alt=""
-                  />
-                  MY COMBO MR 2020 (ONLINE)
-                </div>
-                <div class="cornInfo--price">79.0000 d</div>
-              </div>
-            </div>
-            <div class="col-sm-2 p-0">
-              <div class="opnum">
-                <button class="sub">-</button>
-                <div class="count">0</div>
-                <button class="plus">
-                  +
-                </button>
-              </div>
-            </div>
-          </li>
-        </ul>
-
-        <ul class="popCornList">
-          <div class="header__list">
-            COMBO
-          </div>
-          <li class="popCornListItem row">
-            <div class="col-sm-3 p-0">
-              <img
-                src="https://mcinox.cgv.vn/cinox/atomicDownload/downloadFile.fo?ATTCH_NO=206457&SEQ_NO=308491"
-                alt=""
-                class="logoCorn"
-              />
-            </div>
-            <div class="col-sm-7 p-0">
-              <div class="cornInfo">
-                <div class="cornInfo--text">
-                  <img
-                    class="iconInfo"
-                    src="https://tix.vn/app/assets/img/icons/information.png"
-                    alt=""
-                  />
-                  MY COMBO MR 2020 (ONLINE)
-                </div>
-                <div class="cornInfo--price">79.0000 d</div>
-              </div>
-            </div>
-            <div class="col-sm-2 p-0">
-              <div class="opnum">
-                <button class="sub">-</button>
-                <div class="count">0</div>
-                <button class="plus">
-                  +
-                </button>
-              </div>
-            </div>
-          </li>
-          <li class="popCornListItem row">
-            <div class="col-sm-3 p-0">
-              <img
-                src="https://mcinox.cgv.vn/cinox/atomicDownload/downloadFile.fo?ATTCH_NO=206457&SEQ_NO=308491"
-                alt=""
-                class="logoCorn"
-              />
-            </div>
-            <div class="col-sm-7 p-0">
-              <div class="cornInfo">
-                <div class="cornInfo--text">
-                  <img
-                    class="iconInfo"
-                    src="https://tix.vn/app/assets/img/icons/information.png"
-                    alt=""
-                  />
-                  MY COMBO MR 2020 (ONLINE)
-                </div>
-                <div class="cornInfo--price">79.0000 d</div>
-              </div>
-            </div>
-            <div class="col-sm-2 p-0">
-              <div class="opnum">
-                <button class="sub">-</button>
-                <div class="count">0</div>
-                <button class="plus">
-                  +
-                </button>
-              </div>
-            </div>
-          </li>
-          <li class="popCornListItem row">
-            <div class="col-sm-3 p-0">
-              <img
-                src="https://mcinox.cgv.vn/cinox/atomicDownload/downloadFile.fo?ATTCH_NO=206457&SEQ_NO=308491"
-                alt=""
-                class="logoCorn"
-              />
-            </div>
-            <div class="col-sm-7 p-0">
-              <div class="cornInfo">
-                <div class="cornInfo--text">
-                  <img
-                    class="iconInfo"
-                    src="https://tix.vn/app/assets/img/icons/information.png"
-                    alt=""
-                  />
-                  MY COMBO MR 2020 (ONLINE)
-                </div>
-                <div class="cornInfo--price">79.0000 d</div>
-              </div>
-            </div>
-            <div class="col-sm-2 p-0">
-              <div class="opnum">
-                <button class="sub">-</button>
-                <div class="count">0</div>
-                <button class="plus">
-                  +
-                </button>
-              </div>
-            </div>
-          </li>
-        </ul>
-
-        <ul class="popCornList">
-          <div class="header__list">
-            COMBO
-          </div>
-          <li class="popCornListItem row">
-            <div class="col-sm-3 p-0">
-              <img
-                src="https://mcinox.cgv.vn/cinox/atomicDownload/downloadFile.fo?ATTCH_NO=206457&SEQ_NO=308491"
-                alt=""
-                class="logoCorn"
-              />
-            </div>
-            <div class="col-sm-7 p-0">
-              <div class="cornInfo">
-                <div class="cornInfo--text">
-                  <img
-                    class="iconInfo"
-                    src="https://tix.vn/app/assets/img/icons/information.png"
-                    alt=""
-                  />
-                  MY COMBO MR 2020 (ONLINE)
-                </div>
-                <div class="cornInfo--price">79.0000 d</div>
-              </div>
-            </div>
-            <div class="col-sm-2 p-0">
-              <div class="opnum">
-                <button class="sub">-</button>
-                <div class="count">0</div>
-                <button class="plus">
-                  +
-                </button>
-              </div>
-            </div>
-          </li>
-          <li class="popCornListItem row">
-            <div class="col-sm-3 p-0">
-              <img
-                src="https://mcinox.cgv.vn/cinox/atomicDownload/downloadFile.fo?ATTCH_NO=206457&SEQ_NO=308491"
-                alt=""
-                class="logoCorn"
-              />
-            </div>
-            <div class="col-sm-7 p-0">
-              <div class="cornInfo">
-                <div class="cornInfo--text">
-                  <img
-                    class="iconInfo"
-                    src="https://tix.vn/app/assets/img/icons/information.png"
-                    alt=""
-                  />
-                  MY COMBO MR 2020 (ONLINE)
-                </div>
-                <div class="cornInfo--price">79.0000 d</div>
-              </div>
-            </div>
-            <div class="col-sm-2 p-0">
-              <div class="opnum">
-                <button class="sub">-</button>
-                <div class="count">0</div>
-                <button class="plus">
-                  +
-                </button>
-              </div>
-            </div>
-          </li>
-          <li class="popCornListItem row">
-            <div class="col-sm-3 p-0">
-              <img
-                src="https://mcinox.cgv.vn/cinox/atomicDownload/downloadFile.fo?ATTCH_NO=206457&SEQ_NO=308491"
-                alt=""
-                class="logoCorn"
-              />
-            </div>
-            <div class="col-sm-7 p-0">
-              <div class="cornInfo">
-                <div class="cornInfo--text">
-                  <img
-                    class="iconInfo"
-                    src="https://tix.vn/app/assets/img/icons/information.png"
-                    alt=""
-                  />
-                  MY COMBO MR 2020 (ONLINE)
-                </div>
-                <div class="cornInfo--price">79.0000 d</div>
-              </div>
-            </div>
-            <div class="col-sm-2 p-0">
-              <div class="opnum">
-                <button class="sub">-</button>
-                <div class="count">0</div>
-                <button class="plus">
-                  +
-                </button>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <button
-      type="button"
-      class="buyTicket"
-      (click)="handleDatve()"
-      [ngClass]="{ active: email && phone && danhSachGheDangDat.length }"
-      [disabled]="!danhSachGheDangDat.length"
-    >
-      Đặt vé
-    </button>
-  </div>
+  
 </div>

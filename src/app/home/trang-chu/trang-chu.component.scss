@@ -1,6 +1,11 @@
 .warpper {
-  background-image: url("../../../assets//img/movie-details-bg.jpg");
-  background-size: contain;
+
+  background: url("../../../assets//img/movie-details-bg.jpg");
+    color: #fff;
+    background-position: top;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
  
 }
 .warpper__tinTuc{

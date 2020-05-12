@@ -1,40 +1,170 @@
-.row{
-  margin: 0;
-}
+@import "../../../../scss/variable";
 .profileAbout {
-    .profile__img {
-      img {
-        width: 274px;
-        height: 430px;
+  .profileAbout--left {
+    .alert {
+      color: #d9d9d9;
+      font-weight: 200;
+      background: #39454f;
+      .colorGreen {
+        font-weight: 500;
+        color: $green;
       }
     }
-    .profile__info {
-      padding: 10px;
-      .profile__info__list {
-        padding: 0;
-        list-style: none;
-        .profile__info__list--item {
-          padding: 20px;
-          display: flex;
-          border-bottom: 1px solid #777;
-          .li3.colorhover {
-            &:hover {
-              color: #009688;
+    .profileAbout__account {
+      background-color: #1c262f;
+
+      .profileAbout__account--header {
+        width: 100%;
+        border-bottom: 1px solid #23303b;
+        padding: 10px;
+        .profileAbout__account--header--img {
+          &:hover {
+            .wrapper_fix {
+              display: block;
             }
           }
-          .li1 {
-            width: 20%;
+          position: relative;
+          img {
+            border-radius: 8px;
           }
-          .li2 {
-            width: 10%;
+          .wrapper_fix {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            display: none;
+            background-color: #23303b;
+            text-align: center;
+            font-size: 13px;
+            cursor: pointer;
           }
-          .li3 {
-            width: 70%;
+        }
+        .profileAbout__account--header--text {
+          padding: 0 10px;
+          .info {
+            color: #d9d9d9;
+            font-size: 13px;
+          }
+          .name {
+            color: $green;
+            font-size: 15px;
+          }
+          .meta {
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            .meta__item {
+              list-style: none;
+              font-size: 15px;
+              color: #7c7c7b;
+              margin: 0 10px;
+              span {
+                color: #facf04;
+              }
+            }
           }
         }
       }
-      .btn-capnhat{
-        text-align: right;
+      .profileAbout__account--body {
+        padding-bottom: 20px;
+        .row {
+          margin: 15px 0;
+          color: #d9d9d9;
+          font-weight: 700;
+          .feld-right {
+            display: flex;
+            height: 36px;
+            justify-content: space-between;
+            input {
+              background-color: #39454f;
+              border: none;
+              border-radius: 3px;
+              width: 100%;
+              color: #fff;
+            }
+            .password {
+              width: 65%;
+            }
+            .form-group {
+              width: 100%;
+              .form-control {
+                background-color: #39454f;
+                border: none;
+                color: #d9d9d9;
+              }
+            }
+            .sinhNhat__box {
+              width: 30%;
+            }
+            .changePass {
+              width: 30%;
+              padding: 0 10px;
+              border: none;
+              border-radius: 4px;
+              white-space: nowrap;
+              background-color: #6b7379;
+              transition: all 0.4s ease;
+              text-transform: uppercase;
+              &:hover {
+                background: #89c441;
+                color: #fff;
+              }
+              .typeFild {
+                color: #fff;
+              }
+            }
+          }
+        }
+        .update {
+          border: none;
+          text-transform: uppercase;
+          color: #fff;
+          height: 47px;
+          border-radius: 5px;
+          font-size: 18px;
+          width: 195px;
+          background: #42af33
+            url("https://www.bhdstar.vn/wp-content/themes/bhd/assets/images/bg-button-yolo.png");
+        }
       }
     }
   }
+
+  .profileAbout--right {
+    .title {
+      text-transform: uppercase;
+    }
+    .warpper__body {
+      display: flex;
+      justify-content: space-between;
+      border: 1px solid #40a933;
+      border-radius: 5px;
+      background-color: #39454f;
+      padding: 10px;
+      .listMemberCart {
+        padding: 0;
+        display: flex;
+        align-items: center;
+
+        .wrapper__listMemberCart {
+          .list--item {
+            list-style: none;
+            font-weight: 500;
+            padding: 5px 0;
+            .rankStart {
+              padding: 2px 12px;
+              background: #f6a42d;
+            }
+          }
+        }
+      }
+      .qcode {
+        .qcode__img {
+          width: 150px;
+        }
+      }
+    }
+  }
+}

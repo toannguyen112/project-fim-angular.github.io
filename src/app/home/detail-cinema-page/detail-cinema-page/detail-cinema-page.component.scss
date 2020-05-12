@@ -1,6 +1,11 @@
 .detailMainInfo {
     margin-top: 72px;
-    position: relative;
+     background: url("../../../../assets//img//movie-details-bg.jpg");
+    color: #fff;
+    background-position: top;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     
     .img-main {
       width: 100%;

@@ -3,36 +3,26 @@
   <div class="profile__content">
     <div class="profile__content__body">
       <div class="row">
-        <div class="col-md-2 col-sm-2 p-0">
+        <div class="col-md-2 col-sm-2 ">
           <ul class="profile__content__body__list">
-            <li
-              class="profile__content__body--list--item"
-              (click)="choosenComponent('about')"
-              [ngClass]="{ active: choosen === 'about' }"
-            >
+            <li class="profile__content__body--list--item" (click)="choosenComponent('about')"
+              [ngClass]="{ active: choosen === 'about' }">
               Thông tin cá nhân
             </li>
-            <li
-              class="profile__content__body--list--item"
-              (click)="choosenComponent('history')"
-              [ngClass]="{ active: choosen === 'history' }"
-            >
+            <li class="profile__content__body--list--item" (click)="choosenComponent('history')"
+              [ngClass]="{ active: choosen === 'history' }">
               Lịch sử đặt vé
             </li>
           </ul>
         </div>
-        <div class="col-md-10 col-sm-10 p-0">
+        <div class="col-md-10 col-sm-10">
           <div class="profile__content__body--content">
             <div [ngSwitch]="choosen">
               <div *ngSwitchCase="'about'">
-                <app-profile-about
-                  [thongTinTaiKhoan]="thongTinTaiKhoan"
-                ></app-profile-about>
+                <app-profile-about [thongTinTaiKhoan]="thongTinTaiKhoan"></app-profile-about>
               </div>
               <div *ngSwitchCase="'history'">
-                <app-profile-history
-                  [thongTinTaiKhoan]="thongTinTaiKhoan"
-                ></app-profile-history>
+                <app-profile-history [thongTinTaiKhoan]="thongTinTaiKhoan"></app-profile-history>
               </div>
               <div *ngSwitchCase="'contact'">
                 <app-profile-contact></app-profile-contact>
@@ -45,4 +35,3 @@
   </div>
 </div>
 <app-footer></app-footer>
-

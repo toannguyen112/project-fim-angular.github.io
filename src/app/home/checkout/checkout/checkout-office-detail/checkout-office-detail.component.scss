@@ -16,7 +16,7 @@
 
   .chooseSeat {
     padding: 40px;
-    width: 70%;
+
     .chooseSeat__top {
       .chooseSeat__top--left {
         display: flex;
@@ -119,12 +119,11 @@
   }
 }
 .payment {
+  height: 100%;
   position: absolute;
   top: 0;
-  width: 30%;
-  height: 100%;
   right: 0;
-  bottom: 0;
+   bottom: 0;
   background: #fff;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
   p {
@@ -133,7 +132,7 @@
 
   .payment__content {
     padding: 15px;
-    position: relative;
+
     background-color: #fff;
     .wrapperPopCorn {
       position: absolute;
