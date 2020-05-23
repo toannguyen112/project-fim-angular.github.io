@@ -1,229 +1,252 @@
 <div class="profileAbout">
-    <div class="row">
-        <div class="col-sm-6">
-            <div class="profileAbout--left">
-                <div class="alert">
-                    “ Hi, <strong class="colorGreen">
-                        Nguyễn Toàn
-                    </strong>
-                    <br>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="profileAbout--left">
+        <div class="alert">
+          “ Hi,
+          <strong class="colorGreen">
+            {{ user.hoTen }}
+          </strong>
+          <br />
 
-                    Từ bảng thông tin tài khoản, bạn có thể xem bản sao các hoạt động của tài khoản bạn trong thời gian
-                    gần đây và cập nhật thông tin tài khoản của bạn. Chọn liên kết bên dưới để xem hoặc chỉnh sửa thông
-                    tin”
-
-                </div>
-                <div class="profileAbout__account">
-                    <div class="profileAbout__account--header">
-                        <div class="row">
-                            <div class="col-sm-3">
-                                <div class="profileAbout__account--header--img">
-                                    <img class="img-fluid" src="https://www.bhdstar.vn/wp-content/themes/bhd/assets/images/avatar.png"
-                                        alt="">
-                                    <div class="wrapper_fix">
-                                        <i class="fa fa-camera" aria-hidden="true"></i> Đổi
-                                        avarta
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-9">
-                                <div class="profileAbout__account--header--text">
-                                    <p class="info">Vui lòng đăng ảnh chân dung, thấy rõ mặt có kích thước: ngang 150
-                                        pixel và dọc 200 pixel (dung lượng dưới 1MB)</p>
-                                    <h4 class="name">
-                                        Nguyễn Toàn
-
-                                    </h4>
-                                    <ul class="meta">
-                                        <li class="meta__item">
-                                            <p>Tổng visit : <span class="meta__item__color__count">
-                                                    0
-                                                </span>
-                                            </p>
-                                        </li>
-                                        <li class="meta__item">
-                                            <p> Active visit : <span class="meta__item__color__count">
-                                                    0
-                                                </span>
-                                            </p>
-                                        </li>
-                                        <li class="meta__item">
-                                            <p> Expried visit : <span class="meta__item__color__count">
-                                                    0
-                                                </span>
-                                            </p>
-                                        </li>
-                                    </ul>
-                                    <ul class="meta">
-                                        <li class="meta__item">
-                                            <p>Điểm thưởng : <span class="meta__item__color__count">
-                                                    0
-                                                </span>
-                                            </p>
-                                        </li>
-                                        <li class="meta__item">
-                                            <p> Tổng chi tiêu trong tháng : <span class="meta__item__color__count">
-                                                    0
-                                                </span>
-                                            </p>
-                                        </li>
-
-                                    </ul>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="profileAbout__account--body">
-                        <div class="row  email">
-                            <div class="col-sm-3">
-                                <span class="typeFild"> Email</span>
-                            </div>
-                            <div class="col-sm-9  feld-right">
-                                <input type="text" type="email">
-                            </div>
-                        </div>
-                        <div class="row matKhau">
-                            <div class="col-sm-3">
-                                <span class="typeFild"> Mật khẩu</span>
-                            </div>
-                            <div class="col-sm-9  feld-right">
-                                <input class="password" type="text" type="email">
-                                <button class="changePass">
-                                    <span class="typeFild"> Đổi mật khẩu</span>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="row  ho">
-                            <div class="col-sm-3">
-                                <span class="typeFild"> Họ(*)</span>
-                            </div>
-                            <div class="col-sm-9  feld-right">
-                                <input type="text" type="email">
-                            </div>
-                        </div>
-                        <div class="row  ten">
-                            <div class="col-sm-3">
-                                <span class="typeFild"> Tên(*)</span>
-                            </div>
-                            <div class="col-sm-9  feld-right">
-                                <input type="text" type="email">
-                            </div>
-                        </div>
-                        <div class="row  sdt">
-                            <div class="col-sm-3">
-                                <span class="typeFild"> Số điện thoại(*)</span>
-                            </div>
-                            <div class="col-sm-9  feld-right">
-                                <input type="text" type="email">
-                            </div>
-                        </div>
-                        <div class="row  gioiTinh">
-                            <div class="col-sm-3">
-                                <span class="typeFild"> Giới tính(*)</span>
-                            </div>
-                            <div class="col-sm-9  feld-right">
-                                <div class="form-group">
-
-                                    <select class="form-control" name="" id="">
-                                        <option>Nam</option>
-                                        <option>Nữ</option>
-
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row  sinhNhat">
-                            <div class="col-sm-3">
-                                <span class="typeFild"> Sinh nhật</span>
-                            </div>
-                            <div class="col-sm-9  feld-right">
-                                <div class="form-group sinhNhat__box">
-
-                                    <select class="form-control  " name="" id="">
-                                        <option>1</option>
-                                        <option>1</option>
-                                        <option>1</option>
-                                    </select>
-                                </div>
-                                <div class="form-group sinhNhat__box">
-
-                                    <select class="form-control  " name="" id="">
-                                        <option>1</option>
-                                        <option>1</option>
-                                        <option>1</option>
-                                    </select>
-                                </div>
-                                <div class="form-group sinhNhat__box">
-
-                                    <select class="form-control  " name="" id="">
-                                        <option>1</option>
-                                        <option>1</option>
-                                        <option>1</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row  diaChi">
-                            <div class="col-sm-3">
-                                <span class="typeFild"> Địa chỉ</span>
-                            </div>
-                            <div class="col-sm-9  feld-right">
-                                <input type="text">
-                            </div>
-                        </div>
-                        <div class="row  thanhPho">
-                            <div class="col-sm-3">
-                                <span class="typeFild"> Thành phố</span>
-                            </div>
-                            <div class="col-sm-9  feld-right">
-                                TP.Hồ Chí Minh
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-12">
-
-                                <button class="update">
-                                    Cập nhật
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          Từ bảng thông tin tài khoản, bạn có thể xem bản sao các hoạt động của
+          tài khoản bạn trong thời gian gần đây và cập nhật thông tin tài khoản
+          của bạn. Chọn liên kết bên dưới để xem hoặc chỉnh sửa thông tin”
         </div>
-        <div class="col-sm-6">
-            <div class="profileAbout--right">
-                <h3 class="title">Thông tin thẻ thành viên</h3>
-                <div class="warpper__body ">
-                    <ul class="listMemberCart ">
-                        <div class="wrapper__listMemberCart">
-                            <li class="list--item">
-                                Username: nguyencongtoana1nhvt@gmail.com
-                            </li>
-                            <li class="list--item">
-                                Card number : ONLAO0226096
-                            </li>
-                            <li class="list--item">
-                                Hạng thẻ : <span class="rankStart">
-                                    Start
-                                </span>
-                            </li>
-                            <li class="list--item">
-                                Ngày đăng kí : <span class="time">
-                                    12/05/2020
-                                </span>
-                            </li>
-                        </div>
-                    </ul>
-                    <div class="qcode">
-                        <img class="qcode__img"
-                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSbYI5ztYOVu03HditpE7cAPxGz2x41SzTsHSfMszEhtwfS9mFy&usqp=CAU"
-                            alt="">
-                    </div>
+        <div class="profileAbout__account">
+          <div class="profileAbout__account--header">
+            <div class="row">
+              <div class="col-sm-3">
+                <div class="profileAbout__account--header--img">
+                  <img
+                    class="img-fluid"
+                    src="https://www.bhdstar.vn/wp-content/themes/bhd/assets/images/avatar.png"
+                    alt=""
+                  />
+                  <div class="wrapper_fix">
+                    <i class="fa fa-camera" aria-hidden="true"></i> Đổi avarta
+                  </div>
                 </div>
+              </div>
+              <div class="col-sm-9">
+                <div class="profileAbout__account--header--text">
+                  <p class="info">
+                    Vui lòng đăng ảnh chân dung, thấy rõ mặt có kích thước:
+                    ngang 150 pixel và dọc 200 pixel (dung lượng dưới 1MB)
+                  </p>
+                  <h4 class="name">
+                    {{ user.hoTen }}
+                  </h4>
+                  <ul class="meta">
+                    <li class="meta__item">
+                      <p>
+                        Tổng visit :
+                        <span class="meta__item__color__count">
+                          0
+                        </span>
+                      </p>
+                    </li>
+                    <li class="meta__item">
+                      <p>
+                        Active visit :
+                        <span class="meta__item__color__count">
+                          0
+                        </span>
+                      </p>
+                    </li>
+                    <li class="meta__item">
+                      <p>
+                        Expried visit :
+                        <span class="meta__item__color__count">
+                          0
+                        </span>
+                      </p>
+                    </li>
+                  </ul>
+                  <ul class="meta">
+                    <li class="meta__item">
+                      <p>
+                        Điểm thưởng :
+                        <span class="meta__item__color__count">
+                          0
+                        </span>
+                      </p>
+                    </li>
+                    <li class="meta__item">
+                      <p>
+                        Tổng chi tiêu trong tháng :
+                        <span class="meta__item__color__count">
+                          0
+                        </span>
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
+          </div>
+          <div class="profileAbout__account--body">
+            <form
+              #formUpdate="ngForm"
+              (ngSubmit)="handleUpdateuser(formUpdate.value)"
+            >
+              <div class="row email">
+                <div class="col-sm-3">
+                  <span class="typeFild"> Email</span>
+                </div>
+                <div class="col-sm-9 feld-right">
+                  <input
+                    disabled
+                    [value]="user.email"
+                    name="email"
+                    type="email"
+                  />
+                </div>
+              </div>
 
+              <div class="row matKhau">
+                <div class="col-sm-3">
+                  <span class="typeFild"> Mật khẩu</span>
+                </div>
+                <div class="col-sm-9 feld-right">
+                  <input
+                    class="password"
+                    name="matKhau"
+                    type="password"
+                    ngModel
+                  />
+                  <button class="changePass">
+                    <span class="typeFild"> Đổi mật khẩu</span>
+                  </button>
+                </div>
+              </div>
+              <div class="row ho">
+                <div class="col-sm-3">
+                  <span class="typeFild"> Họ & Tên(*)</span>
+                </div>
+                <div class="col-sm-9 feld-right">
+                  <input type="text" name="hoTen" ngModel />
+                </div>
+              </div>
+
+              <div class="row sdt">
+                <div class="col-sm-3">
+                  <span class="typeFild"> Số điện thoại(*)</span>
+                </div>
+                <div class="col-sm-9 feld-right">
+                  <input
+                    type="text"
+                    name="soDT"
+                    [value]="user.soDT"
+                    type="email"
+                    ngModel
+                  />
+                </div>
+              </div>
+              <div class="row gioiTinh">
+                <div class="col-sm-3">
+                  <span class="typeFild"> Giới tính(*)</span>
+                </div>
+                <div class="col-sm-9 feld-right">
+                  <div class="form-group">
+                    <select class="form-control">
+                      <option>Nam</option>
+                      <option>Nữ</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="row sinhNhat">
+                <div class="col-sm-3">
+                  <span class="typeFild"> Sinh nhật</span>
+                </div>
+                <div class="col-sm-9 feld-right">
+                  <div class="form-group sinhNhat__box">
+                    <select class="form-control">
+                      <option>1</option>
+                      <option>1</option>
+                      <option>1</option>
+                    </select>
+                  </div>
+                  <div class="form-group sinhNhat__box">
+                    <select class="form-control">
+                      <option>1</option>
+                      <option>1</option>
+                      <option>1</option>
+                    </select>
+                  </div>
+                  <div class="form-group sinhNhat__box">
+                    <select class="form-control">
+                      <option>1</option>
+                      <option>1</option>
+                      <option>1</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="row diaChi">
+                <div class="col-sm-3">
+                  <span class="typeFild"> Địa chỉ</span>
+                </div>
+                <div class="col-sm-9 feld-right">
+                  <input type="text" />
+                </div>
+              </div>
+              <div class="row thanhPho">
+                <div class="col-sm-3">
+                  <span class="typeFild"> Thành phố</span>
+                </div>
+                <div class="col-sm-9 feld-right">
+                  TP.Hồ Chí Minh
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12">
+                  <button class="update">
+                    Cập nhật
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
+      </div>
     </div>
+    <div class="col-sm-6">
+      <div class="profileAbout--right">
+        <h3 class="title">Thông tin thẻ thành viên</h3>
+        <div class="warpper__body">
+          <ul class="listMemberCart">
+            <div class="wrapper__listMemberCart">
+              <li class="list--item">
+                {{ user.email }}
+              </li>
+              <li class="list--item">
+                Card number : ONLAO0226096
+              </li>
+              <li class="list--item">
+                Hạng thẻ :
+                <span class="rankStart">
+                  Start
+                </span>
+              </li>
+              <li class="list--item">
+                Ngày đăng kí :
+                <span class="time">
+                  12/05/2020
+                </span>
+              </li>
+            </div>
+          </ul>
+          <div class="qcode">
+            <img
+              class="qcode__img"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSbYI5ztYOVu03HditpE7cAPxGz2x41SzTsHSfMszEhtwfS9mFy&usqp=CAU"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

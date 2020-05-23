@@ -1,4 +1,4 @@
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+  import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { SliderComponent } from "./trang-chu/slider/slider.component";
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
@@ -49,6 +49,8 @@ import { LoadingButtonItemPhimComponent } from "./trang-chu/loading-button-item-
 import { PipeModule } from "../pipe/pipe.module";
 import { VeBanTruocComponent } from "./trang-chu/ve-ban-truoc/ve-ban-truoc.component";
 import { LoadingComponent } from './loading/loading.component';
+import { ScrollComponent } from './scroll/scroll.component';
+
 
 @NgModule({
   declarations: [
@@ -88,14 +90,16 @@ import { LoadingComponent } from './loading/loading.component';
     ProfileHistoryItemComponent,
     CinemaTheatersComponent,
     HomeToolsComponent,
-
+    
     CheckoutContentComponent,
     CheckoutOfficeDetailComponent,
     DetailMainComponent,
     SeatComponent,
     LoadingButtonItemPhimComponent,
     VeBanTruocComponent,
-    LoadingComponent
+    LoadingComponent,
+    ScrollComponent,
+    
   ],
   imports: [
     CommonModule,
@@ -146,7 +150,7 @@ import { LoadingComponent } from './loading/loading.component';
     ProfileHistoryItemComponent,
     CinemaTheatersComponent,
     HomeToolsComponent,
-
+    ScrollComponent,
     CheckoutContentComponent,
     CheckoutOfficeDetailComponent,
     DetailMainComponent,

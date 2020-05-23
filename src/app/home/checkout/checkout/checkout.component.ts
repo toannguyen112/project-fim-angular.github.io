@@ -7,40 +7,35 @@ import { NgxSpinnerService } from "ngx-spinner";
 @Component({
   selector: "app-checkout",
   templateUrl: "./checkout.component.html",
-  styleUrls: ["./checkout.component.scss"]
+  styleUrls: ["./checkout.component.scss"],
 })
 export class CheckoutComponent implements OnInit, OnDestroy {
   public thongTinPhim: any;
   public sub: Subscription;
   public maLichChieu;
   public status: boolean = true;
-  public isShow = false ; 
+  public isShow = false;
   constructor(
     private phongVeService: PhongveService,
     private route: ActivatedRoute,
-    private spinner : NgxSpinnerService
+    private spinner: NgxSpinnerService
   ) {}
 
   ngOnInit() {
-   
-
-
-    this.route.params.subscribe(params => {
-      this.maLichChieu = params.maLichChieu
+    this.route.params.subscribe((params) => {
+      this.maLichChieu = params.maLichChieu;
       this.sub = this.phongVeService
 
         .chiTietPhongVe(params.maLichChieu)
-        .subscribe(res => {
+        .subscribe((res) => {
           this.thongTinPhim = res.thongTinPhim;
-          console.log(res.thongTinPhim);
         });
     });
-
 
     this.spinner.show();
     setTimeout(() => {
       this.isShow = true;
-      this.spinner.hide()
+      this.spinner.hide();
     }, 0);
   }
   ngOnDestroy() {

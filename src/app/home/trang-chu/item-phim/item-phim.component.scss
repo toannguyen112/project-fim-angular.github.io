@@ -1,7 +1,6 @@
 .movie__item {
   position: relative;
-  margin: 10px 0;
-  
+  margin: 20px 0;
   .movie__item__cotent {
     position: relative;
     overflow: hidden;
@@ -11,16 +10,15 @@
       transform: scale(1);
       height: 318px;
       border-radius: 5px;
+    }
+    &:hover {
+      img {
+        transform: scale(1.1);
       }
-      &:hover {
-        img {
-          transform: scale(1.1);
-        }
-      
     }
   }
   .name {
-    height: 60px;
+    height: 30px;
     text-align: center;
     text-transform: uppercase;
     font-size: 18px;

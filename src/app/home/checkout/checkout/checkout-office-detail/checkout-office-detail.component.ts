@@ -12,6 +12,8 @@ import "sweetalert2/src/sweetalert2.scss";
 import Swal from "sweetalert2";
 import { Router } from "@angular/router";
 import { PhongveService } from "src/app/services/phongve.service";
+import { log } from "util";
+
 @Component({
   selector: "app-checkout-office-detail",
   templateUrl: "./checkout-office-detail.component.html",
@@ -34,6 +36,10 @@ export class CheckoutOfficeDetailComponent implements OnInit, OnDestroy {
   public counter = 0;
   public choosePayment = "";
   public showCorn = false;
+  public countPopCorn: number = 0;
+  public show: boolean = false;
+  public totalPopCorn = 0;
+  public defautPopCorn = 79000;
   public payment: any[] = [
     {
       name: "Thanh toan qua zalo pay",
@@ -172,7 +178,7 @@ export class CheckoutOfficeDetailComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
-    this.doCountdown();
+    // this.doCountdown();
     this._transformData.asData.subscribe((res) => {
       this.price = res;
     });
@@ -181,10 +187,24 @@ export class CheckoutOfficeDetailComponent implements OnInit, OnDestroy {
     // stop time
     clearTimeout(this.myTime);
   }
-  showPopCorn() {
-    console.log("work");
-    
-    this.showCorn = !this.showCorn;
+  openPopCorn() {
+    this.show = !this.show;
+  }
+
+  handleCountPopCorn(value) {
+   
+
+    if (value === 1) {
+      this.countPopCorn++;
+      this.totalPopCorn = this.countPopCorn * this.defautPopCorn;
+    } else {
+      if (this.countPopCorn <= 0) {
+        return this.countPopCorn;
+      } else {
+        this.countPopCorn--;
+        this.totalPopCorn = this.countPopCorn * this.defautPopCorn;
+      }
+    }
   }
 
   doCountdown() {
@@ -194,6 +214,13 @@ export class CheckoutOfficeDetailComponent implements OnInit, OnDestroy {
       this.processCount();
     }, 1000);
     console.log(this.timer);
+  }
+
+  showclass() {
+    return this.show ? "translateX(0)" : "translateX(100%)";
+  }
+  showDisplay() {
+    return this.show ? "block" : "none";
   }
 
   convertSecond(s) {
@@ -237,27 +264,26 @@ export class CheckoutOfficeDetailComponent implements OnInit, OnDestroy {
     var credentials = JSON.parse(localStorage.getItem("credentials"))
       ? JSON.parse(localStorage.getItem("credentials")).taiKhoan
       : null;
-    console.log(credentials);
 
-    // const ve = {
-    //   maLichChieu: this.maLichChieu,
-    //   danhSachVe: [
-    //     {
-    //       maGhe: 0,
-    //       giaVe: 0,
-    //     },
-    //   ],
-    //   taiKhoanNguoiDung: credentials,
-    // };
+    const ve = {
+      maLichChieu: this.maLichChieu,
+      danhSachVe: [
+        {
+          maGhe: 0,
+          giaVe: 0,
+        },
+      ],
+      taiKhoanNguoiDung: credentials,
+    };
 
-    // this.phonVeService.datVe(ve).subscribe(
-    //   (res) => {
-    //     console.log(res);
-    //   },
-    //   (err) => {
-    //     console.log(err);
-    //   }
-    // );
+    this.phonVeService.datVe(ve).subscribe(
+      (res) => {
+        console.log(res);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
 
     if (!credentials) {
       this.noti("Yêu cầu đăng nhập", "warning");
@@ -274,6 +300,4 @@ export class CheckoutOfficeDetailComponent implements OnInit, OnDestroy {
       this.noti("Mua vé thành công", "success");
     }
   }
-
- 
 }

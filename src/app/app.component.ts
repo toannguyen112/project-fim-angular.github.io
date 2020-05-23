@@ -8,7 +8,7 @@ import { UserService } from "./services/user.service";
 })
 export class AppComponent implements OnInit {
   constructor(private userService: UserService) {}
-
+  
   ngOnInit() {
     const credentialUser = JSON.parse(localStorage.getItem("credentials"));
     const credentialAdmin = JSON.parse(localStorage.getItem("admin"));

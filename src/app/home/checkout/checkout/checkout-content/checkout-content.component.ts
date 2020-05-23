@@ -1,13 +1,13 @@
 import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
-import { TransformDataService } from 'src/app/services/transformData.service';
+import { TransformDataService } from "src/app/services/transformData.service";
 
 @Component({
   selector: "app-checkout-content",
   templateUrl: "./checkout-content.component.html",
-  styleUrls: ["./checkout-content.component.scss"]
+  styleUrls: ["./checkout-content.component.scss"],
 })
 export class CheckoutContentComponent implements OnInit {
-  @Input("thongTinPhim") thongTinPhim: any;
+  @Input("thongTinPhim") thongTinPhim;
   @Output("emitNavigate") emitNavigate = new EventEmitter();
   @Output("emitterTotalPrice") emitterTotalPrice = new EventEmitter();
   public initVeVip2D: number = 0;
@@ -16,31 +16,28 @@ export class CheckoutContentComponent implements OnInit {
   public priceGheDoi2D: number = 0;
   public priceVeVip2D: number = 0;
   public priceVeThuong2D: number = 0;
-
+  public url: string = "";
   public priceTicketVip2D: number = 60000;
   public priceTiketGheThuong2D: number = 80000;
   public priceTiketGheDoi: number = 120000;
   public total: number = 0;
 
-  public isLoading  : boolean = false ; 
-  constructor(
-    private _transformData : TransformDataService
-  ) {}
+  public isLoading: boolean = false;
+  constructor(private _transformData: TransformDataService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log(this.thongTinPhim);
+  }
+  
   chonGhe(value) {
-
-    this.isLoading = true
+    this.isLoading = true;
     setTimeout(() => {
-        this.isLoading = false
-        this.total = this.priceGheDoi2D + this.priceVeVip2D + this.priceVeThuong2D;
-        this._transformData.transformData(this.total)
-        this.emitNavigate.emit(value);
+      this.isLoading = false;
+      this.total =
+        this.priceGheDoi2D + this.priceVeVip2D + this.priceVeThuong2D;
+      this._transformData.transformData(this.total);
+      this.emitNavigate.emit(value);
     }, 3000);
-
-
-
-   
   }
 
   // ve vip

@@ -1,8 +1,9 @@
 <div class="detailFilm-bottom">
   <div class="detailFilm-bottom--left">
     <ul class="cinema-list">
-      <li class="cinema-list-item" [ngClass]="{active: valueDefaut == rap.maHeThongRap}" *ngFor="let rap of heThongRapChieu"
-        style="cursor: pointer;" (click)="selectRap(rap.cumRapChieu,rap.maHeThongRap)">
+      <li class="cinema-list-item" [ngClass]="{active: valueDefaut == rap.maHeThongRap}"
+        *ngFor="let rap of heThongRapChieu" style="cursor: pointer;"
+        (click)="selectRap(rap.cumRapChieu,rap.maHeThongRap)">
         <div class="cinema-list-item-content">
           <img [src]="rap.logo" alt="" />
           <div class="cinema-info">
@@ -30,7 +31,7 @@
         <div class="cinemaFilm-tab-bot collapse show" id="collapseOne" aria-labelledby="headingOne"
           data-parent="#accordionExample">
           <h5 href="">2D Digital | Cine & Living Room</h5>
-          <div class="time-film mx-2" *ngFor="let lich of lichChieuPhim"><span class="text-clolor">
+          <div  [routerLink]="['/checkout',lich.maLichChieu]"   class="time-film mx-2" *ngFor="let lich of lichChieuPhim"><span class="text-clolor">
               {{ lich.ngayChieuGioChieu | date:'mm:ss'   }} </span> ~
             14:37</div>
         </div>

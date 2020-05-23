@@ -16,7 +16,7 @@
     data-parent="#accordionExample">
     <p>2D Digital</p>
     <div *ngFor="let item of itemPhim.lstLichChieuTheoPhim" class="time" style="cursor: pointer;"
-      [routerLink]="['/checkout',item.maLichChieu]" routerLinkActive="router-link-active">
+      [routerLink]="['/checkout',item.maLichChieu]">
       {{item.ngayChieuGioChieu | date:'mm:ss'}} ~ <span class="smallText">22:02</span>
     </div>
   </div>

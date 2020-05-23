@@ -1,8 +1,7 @@
 .wrapper__content {
   .chooseTiket__left {
-
     position: relative;
-    display: flex;
+
     .chooseTiket__left__img {
       .filmImg {
         height: 90vh;
@@ -209,8 +208,6 @@
   }
 }
 
-
-
 @media screen and (max-width: 740px) {
   .wrapper__content {
     .chooseTiket__left {
@@ -218,8 +215,8 @@
         .filmImg {
           height: 50vh;
         }
-        .chooseTiket__left__film{
-          .info{
+        .chooseTiket__left__film {
+          .info {
             margin-top: 20px;
           }
         }

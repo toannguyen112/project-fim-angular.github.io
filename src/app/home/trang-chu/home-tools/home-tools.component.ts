@@ -1,4 +1,4 @@
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from "@angular/router";
 import { Component, OnInit } from "@angular/core";
 import { FilmService } from "src/app/services/film.service";
 
@@ -49,15 +49,16 @@ export class HomeToolsComponent implements OnInit {
   public showRap: string = "";
   public showNgayXem: string = "";
   public showSuatChieu: string = "";
-  constructor(private _filmService: FilmService,
-    private router :  ActivatedRoute) {}
+  constructor(
+    private _filmService: FilmService,
+    private router: ActivatedRoute
+  ) {}
 
   ngOnInit() {
     this.DanhSachPhim = this._filmService.movieList;
     this._filmService.emitterMovieList.subscribe((res) => {
       this.DanhSachPhim = res;
       console.log(this.DanhSachPhim);
-      
     });
   }
   selectPhim(tenPhim) {
@@ -78,6 +79,5 @@ export class HomeToolsComponent implements OnInit {
   muaVe(e) {
     console.log(this.showPhim);
     // this.router([""])
-    
   }
 }

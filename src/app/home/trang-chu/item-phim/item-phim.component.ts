@@ -5,7 +5,7 @@ import { Router } from "@angular/router";
 @Component({
   selector: "app-item-phim",
   templateUrl: "./item-phim.component.html",
-  styleUrls: ["./item-phim.component.scss"]
+  styleUrls: ["./item-phim.component.scss"],
 })
 export class ItemPhimComponent implements OnInit {
   @Input() itemPhim: Film;
@@ -14,6 +14,6 @@ export class ItemPhimComponent implements OnInit {
 
   ngOnInit() {}
   datVe(maPhim) {
-    this._router.navigate([`/detail/${maPhim}`] ,{fragment : "phimDangChieu"});
+    this._router.navigate([`/detail/${maPhim}`]);
   }
 }
